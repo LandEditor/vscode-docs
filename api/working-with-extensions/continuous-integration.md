@@ -143,7 +143,7 @@ jobs:
     runs-on: $\{{ matrix.os }}
     steps:
     - name: Checkout
-      uses: actions/checkout@v4
+      uses: actions/checkout@v4.1.4
     - name: Install Node.js
       uses: actions/setup-node@v4
       with:
