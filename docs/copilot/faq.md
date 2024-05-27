@@ -4,7 +4,7 @@ Area: copilot
 TOCTitle: FAQ
 ContentId: e02ded07-6e5a-4f94-b618-434a2c3e8f09
 PageTitle: GitHub Copilot frequently asked questions
-DateApproved: 04/04/2024
+DateApproved: 05/02/2024
 MetaDescription: Frequently asked questions for using GitHub Copilot in Visual Studio Code.
 MetaSocialImage: images/shared/github-copilot-social.png
 ---
@@ -86,6 +86,10 @@ Check each requirement if Copilot Chat doesn't work:
 - Make sure you are on the latest version of Visual Studio Code (run **Code: Check for Updates**).
 - Make sure you have the latest version of both the [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot) and [GitHub Copilot Chat](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat) extensions.
 - Your GitHub account that is signed into VS Code must have an active Copilot subscription. Check your [Copilot subscription](https://github.com/settings/copilot).
+
+### Why is my Copilot Chat extension blocked?
+
+If you receive a message that an extension is blocked from using Copilot Chat, the extension was likely disabled due to a detected pattern of abuse coming from that specific extension. Contact the publisher of the extension when you encounter this issue. You can find the publisher information on the extension details page in the Visual Studio Marketplace.
 
 ## Additional resources
 

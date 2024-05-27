@@ -4,7 +4,7 @@ Area: getstarted
 TOCTitle: Tips and Tricks
 ContentId: 9bbbe55d-cf81-428f-8a9f-4f60280cb874
 PageTitle: Visual Studio Code Tips and Tricks
-DateApproved: 04/04/2024
+DateApproved: 05/02/2024
 MetaDescription: Visual Studio Code Tips and Tricks for power users.
 ---
 # Visual Studio Code Tips and Tricks
@@ -644,7 +644,7 @@ Whole document format: `kb(editor.action.formatDocument)`
 
 ### Code folding
 
-Keyboard Shortcut: `kb(editor.fold)` and `kb(editor.unfold)`
+Keyboard Shortcut: `kb(editor.fold)`, `kb(editor.unfold)` and `kb(editor.toggleFold)`
 
 ![code folding](images/tips-and-tricks/code_folding.gif)
 

@@ -4,7 +4,7 @@ Area: sourcecontrol
 TOCTitle: Overview
 ContentId: 7E22CCC0-2AB8-4729-A4C9-BE2B16853820
 PageTitle: Source Control with Git in Visual Studio Code
-DateApproved: 04/04/2024
+DateApproved: 05/02/2024
 MetaDescription: Visual Studio Code source control management with integrated Git support.
 ---
 # Using Git source control in VS Code
@@ -92,6 +92,8 @@ If you run **Git: Checkout to**, you will see a dropdown list containing all of 
 ![Git checkout](images/overview/gitbranches.png)
 
 The **Git: Create Branch** command lets you quickly create a new branch. Just provide the name of your new branch and VS Code will create the branch and switch to it. If you choose to **Create new branch from...**, you'll get an extra prompt that allows you to specify which commit the new branch should be pointing to.
+
+> **Tip**: VS Code can automatically save and restore open editors when you switch to another branch. Use the `scm.workingSets.enabled` setting to enable this feature. To control the open editors when switching to a branch for the first time, you can use the `scm.workingSets.default` setting.
 
 ## Remotes
 

@@ -4,7 +4,7 @@ Area: copilot
 TOCTitle: Copilot Chat Tutorial
 ContentId: ae1f36a9-7597-425f-97fc-49bd51c153a3
 PageTitle: Getting started with Copilot Chat
-DateApproved: 04/04/2024
+DateApproved: 05/02/2024
 MetaDescription: Get started with AI-powered chat conversations with GitHub Copilot in Visual Studio Code, inline while you're coding, or in a separate chat view.
 MetaSocialImage: images/shared/github-copilot-social.png
 ---
@@ -34,7 +34,7 @@ In this tutorial, you'll be creating a simple Node.js web application. So, let's
 
     > **Tip**: You can drag the Chat view to the Secondary side bar to keep the Chat view and Explorer view open at the same time. Learn about [custom layouts and the Secondary side bar](/docs/editor/custom-layout.md#_secondary-side-bar).
 
-1. In the chat input field, enter *nodejs web server frameworks*, and then press `kb(workbench.action.chat.acceptInput)` to send the request to Copilot.
+1. In the chat input field, enter *nodejs web server frameworks*, and then press `kb(workbench.action.chat.submit)` to send the request to Copilot.
 
     Copilot returns a list of web frameworks and with some additional information. So, you can search for coding information while you stay in VS Code.
 
@@ -62,7 +62,7 @@ Even to create a simple Express.js application involves creating multiple files:
 
 Let's ask Copilot to generate a workspace for an Express.js and Pug application.
 
-1. Enter *@workspace /new express with typescript and pug* in the chat input field, and press `kb(workbench.action.chat.acceptInput)` to send the request.
+1. Enter *@workspace /new express with typescript and pug* in the chat input field, and press `kb(workbench.action.chat.submit)` to send the request.
 
     Notice how this chat prompt is precise and concise about its intent, which is to create a workspace for an Express.js web app that uses TypeScript and Pug.
 

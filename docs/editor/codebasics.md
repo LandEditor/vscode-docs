@@ -4,7 +4,7 @@ Area: editor
 TOCTitle: Basic Editing
 ContentId: DE4EAE2F-4542-4363-BB74-BE47D64141E6
 PageTitle: Basic Editing in Visual Studio Code
-DateApproved: 04/04/2024
+DateApproved: 05/02/2024
 MetaDescription: Learn about the basic editing features of Visual Studio Code. Search, multiple selection, code formatting.
 MetaSocialImage: images/codebasics/code-basics-social.png
 ---
@@ -162,6 +162,8 @@ VS Code allows you to quickly search over all files in the currently opened fold
 >**Tip:** We support regular expression searching in the search box, too.
 
 You can configure advanced search options by clicking the ellipsis (**Toggle Search Details**) below the search box on the right (or press `kb(workbench.action.search.toggleQueryDetails)`). This will show additional fields to configure the search.
+
+>**Tip:** You can use Quick Search to quickly find text across all files in the currently opened folder. Open the Command Palette (`kb(workbench.action.showCommands)`) and enter the **Search: Quick Search** command.
 
 ### Advanced search options
 

@@ -4,7 +4,7 @@ Area: getstarted
 TOCTitle: Key Bindings
 ContentId: 045980C1-62C7-4E8E-8CE4-BAD722FFE31E
 PageTitle: Visual Studio Code Key Bindings
-DateApproved: 04/04/2024
+DateApproved: 05/02/2024
 MetaDescription: Here you will find the complete list of key bindings for Visual Studio Code and how to change them.
 MetaSocialImage: images/keybinding/customization-keybindings-social.png
 ---
@@ -23,6 +23,12 @@ VS Code provides a rich keyboard shortcut editing experience with the Keyboard S
 Most importantly, you can see keybindings according to your keyboard layout. For example, key binding `kbstyle(Cmd+\)` in US keyboard layout will be shown as `kbstyle(Ctrl+Shift+Alt+Cmd+7)` when layout is changed to German. The dialog to enter key binding will assign the correct and desired key binding as per your keyboard layout.
 
 For doing more advanced keyboard shortcut customization, read [Advanced Customization](/docs/getstarted/keybindings.md#advanced-customization).
+
+## Customize shortcuts for UI actions
+
+You can quickly customize the keybinding for user interface actions. Right-click on any action item in your workbench, and select **Customize Keybinding**. If the action has a `when` clause, it's automatically included, making it easier to set up your keybindings just the way you need them.
+
+<video src="images/keybinding/customize-keybinding.mp4" title="Video that shows how to customize the keybinding for the split editor action." autoplay loop controls muted></video>
 
 ## Keymap extensions
 
@@ -423,6 +429,7 @@ Scroll Page Down|`kb(scrollPageDown)`|`scrollPageDown`
 Scroll Page Up|`kb(scrollPageUp)`|`scrollPageUp`
 Fold (collapse) region|`kb(editor.fold)`|`editor.fold`
 Unfold (uncollapse) region|`kb(editor.unfold)`|`editor.unfold`
+Toggle Fold region|`kb(editor.toggleFold)`|`editor.toggleFold`
 Fold (collapse) all subregions|`kb(editor.foldRecursively)`|`editor.foldRecursively`
 Unfold (uncollapse) all subregions|`kb(editor.unfoldRecursively)`|`editor.unfoldRecursively`
 Fold (collapse) all regions|`kb(editor.foldAll)`|`editor.foldAll`

@@ -4,7 +4,7 @@ Area: getstarted
 TOCTitle: User Interface
 ContentId: 3a33f35b-cded-4f7f-8674-6f2ba5fca023
 PageTitle: Visual Studio Code User Interface
-DateApproved: 04/04/2024
+DateApproved: 05/02/2024
 MetaDescription: A quick overview of the Visual Studio Code user interface. Learn about the editor, window management, and special UI to handle source control, extension management, full text search and more.
 ---
 # User Interface
@@ -136,7 +136,7 @@ You can select multiple files in the Explorer view and Open Editors section to r
 
 ### Advanced tree navigation
 
-You can filter the currently visible files in the Explorer view. With the focus on the Explorer view, press `kbstyle(Ctrl+F)` (`kbstyle(Cmd+F)` on macOS) to open the Find control and type part of the file name you want to match.
+You can filter the currently visible files in the Explorer view. With the focus on the Explorer view, press `kbstyle(Ctrl+Alt+F)` (`kbstyle(Cmd+Alt+F)` on macOS) to open the Find control and type part of the file name you want to match.
 
 Pressing the **Filter** button toggles between the two modes: highlighting and filtering. Pressing `kbstyle(DownArrow)` lets you focus on the first matched element and navigate to subsequent matching elements.
 
@@ -296,7 +296,7 @@ The following sample displays the `/src/orders/index.html` file with a tab label
 
 ![Screenshot of Setting editor to enable and specify custom labels for tabs](images/userinterface/tabs-custom-labels.png)
 
-> **Note**: The custom tab labels also apply in the Open Editors view.
+> **Note**: The custom tab labels also apply in the Open Editors view and in [Quick Open](/docs/getstarted/tips-and-tricks.md#quick-open) (`kb(workbench.action.quickOpen)`).
 
 ## Preview mode
 

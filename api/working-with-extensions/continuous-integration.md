@@ -1,7 +1,7 @@
 ---
 # DO NOT TOUCH — Managed by doc writer
 ContentId: 891072bb-c46d-4392-800a-84d747072ce3
-DateApproved: 04/04/2024
+DateApproved: 05/02/2024
 
 # Summarize the whole topic in less than 300 characters for SEO purpose
 MetaDescription: Use Continuous Integration for testing Visual Studio Code extensions (plug-ins).
@@ -143,7 +143,7 @@ jobs:
     runs-on: $\{{ matrix.os }}
     steps:
     - name: Checkout
-      uses: actions/checkout@v4.1.4
+      uses: actions/checkout@v4
     - name: Install Node.js
       uses: actions/setup-node@v4
       with:
