@@ -1,7 +1,7 @@
 {
 	"devDependencies": {
-		"lint-staged": "^15.2.5",
-		"shelljs": "^0.8.5"
+		"lint-staged": "15.2.5",
+		"shelljs": "0.8.5"
 	},
 	"lint-staged": {
 		"*.{gif,mp4,jpg,png,GIF,MP4,JPG,PNG}": [
@@ -11,7 +11,7 @@
 	"name": "vscode-docs",
 	"resolutions": {
 		"glob-parent": ">=5.1.2",
-		"hosted-git-info": "^3.0.8"
+		"hosted-git-info": "3.0.8"
 	},
 	"scripts": {
 		"check-lfs": "node ./build/check-lfs.js",
