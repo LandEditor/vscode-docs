@@ -11,10 +11,10 @@
 	},
 	"resolutions": {
 		"glob-parent": ">=5.1.2",
-		"hosted-git-info": "^3.0.8"
+		"hosted-git-info": "3.0.8"
 	},
 	"devDependencies": {
-		"lint-staged": "^12.3.3",
-		"shelljs": "^0.8.5"
+		"lint-staged": "12.3.3",
+		"shelljs": "0.8.5"
 	}
 }
