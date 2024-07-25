@@ -59,7 +59,7 @@ To cancel the commit operation, you can either clear the contents of the text ed
 
 You can disable this functionality by toggling the `git.useEditorAsCommitInput` setting. After the setting is changed, you have to restart VS Code for the change to take effect.
 
-To use the same flow for git commit commands executed in the integrated terminal, enable the `git.terminalGitEditor` setting.
+To use the same flow for git ecommit commands executed in the integrated terminal, enable the `git.terminalGitEditor` setting.
 
 ## Cloning a repository
 
@@ -244,7 +244,7 @@ This uses the `--diff` option that can be passed to VS Code to compare two files
 To summarize, here are some examples of where you can use VS Code as the editor:
 
 * `git rebase HEAD~3 -i` do interactive rebase using VS Code
-* `git commit` use VS Code for the commit message
+* `git ecommit` use VS Code for the commit message
 * `git add -p` followed by `kbstyle(e)` for interactive add
 * `git difftool <commit>^ <commit>` use VS Code as the diff editor for changes
 

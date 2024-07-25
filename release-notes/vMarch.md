@@ -392,7 +392,7 @@ This leverages the new `--diff` option you can pass to VS Code to compare two fi
 To summarize, here are some examples of where you can use Git with VS Code:
 
 * `git rebase HEAD~3 -i` allows to interactive rebase using VS Code
-* `git commit` allows to use VS Code for the commit message
+* `git ecommit` allows to use VS Code for the commit message
 * `git add -p` followed by `kbstyle(e)` for interactive add
 * `git difftool <commit>^ <commit>` allows to use VS Code as diff editor for changes
 
