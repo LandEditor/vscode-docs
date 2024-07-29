@@ -393,8 +393,7 @@ the editor contents is shown in the editor title like this:
 
 ### Remote Debugging
 
-The followings improvements enable VS Code to support remote debugging, includes
-debugging into a Docker container:
+The following improvements enable VS Code to support remote debugging, includes debugging into a Docker container:
 
 -   The `attach` launch configuration now supports an `address` attribute where
     a remote host can be specified. Please note that remote debugging is only
