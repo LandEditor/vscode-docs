@@ -1,7 +1,7 @@
 {
 	"devDependencies": {
-		"lint-staged": "^15.2.10",
-		"shelljs": "^0.8.5"
+		"lint-staged": "15.2.10",
+		"shelljs": "0.8.5"
 	},
 	"lint-staged": {
 		"*.{gif,mp4,jpg,png,GIF,MP4,JPG,PNG}": [
