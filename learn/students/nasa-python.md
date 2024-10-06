@@ -5,25 +5,18 @@ TOCTitle: NASA Lessons
 ContentId: 6a081d45-5324-458b-b60f-7c7ba01ac636
 PageTitle: Get Started tutorial for the NASA project in Visual Studio Code
 DateApproved: 10/22/2020
-MetaDescription:
-    NASA project tutorials using the Python extension in Visual Studio Code.
+MetaDescription: NASA project tutorials using the Python extension in Visual Studio Code.
 ---
-
 # NASA Inspired Lessons
 
-This learning path introduces you to the world of Python. Explore modules and
-learning paths inspired by National Aeronautics and Space Administration (NASA)
-scientists to prepare you for a career in space exploration. Visit
-[Microsoft Learn training](https://learn.microsoft.com/training/topics/nasa) for
-the full list of modules.
+This learning path introduces you to the world of Python. Explore modules and learning paths inspired by National Aeronautics and Space Administration (NASA) scientists to prepare you for a career in space exploration. Visit [Microsoft Learn training](https://learn.microsoft.com/training/topics/nasa) for the full list of modules.
 
 Through these modules, you will:
 
--   Understand and install the tools needed to learn programming
--   Learn core programming concepts and apply them to real-life NASA problems
--   Gain knowledge about cutting-edge technologies like machine learning and
-    artificial intelligence
--   See actual NASA employees talk about their job and give advice
+* Understand and install the tools needed to learn programming
+* Learn core programming concepts and apply them to real-life NASA problems
+* Gain knowledge about cutting-edge technologies like machine learning and artificial intelligence
+* See actual NASA employees talk about their job and give advice
 
 <div class="module">
     <div class="info">

@@ -7,19 +7,13 @@ ContentId: 1a14ff36-13ea-40ec-acc9-16bd0d6725f6
 MetaDescription: Add local file mount to a container
 DateApproved: 10/03/2024
 ---
-
 # Add another local file mount
 
-> **Note:** Mounting the local file system is not supported in GitHub
-> Codespaces. See
-> [developing inside a container on a remote Docker host](/remote/advancedcontainers/develop-remote-host.md)
-> for information on mounting remote folders in this scenario.
+> **Note:** Mounting the local file system is not supported in GitHub Codespaces. See [developing inside a container on a remote Docker host](/remote/advancedcontainers/develop-remote-host.md) for information on mounting remote folders in this scenario.
 
-You can add a volume bound to any local folder by using the following
-appropriate steps, based on what you reference in `devcontainer.json`:
+You can add a volume bound to any local folder by using the following appropriate steps, based on what you reference in `devcontainer.json`:
 
--   **Dockerfile or image**: Add the following to the `mounts` property (VS Code
-    1.41+) in this same file:
+* **Dockerfile or image**: Add the following to the `mounts` property (VS Code 1.41+) in this same file:
 
     ```json
     "mounts": [
@@ -27,10 +21,7 @@ appropriate steps, based on what you reference in `devcontainer.json`:
     ]
     ```
 
-    You can also reference local environment variables or the local path of the
-    workspace. For example, this will bind mount `~` (`$HOME`) on macOS/Linux
-    and the user's folder (`%USERPROFILE%`) on Windows and a sub-folder in the
-    workspace to a different location:
+    You can also reference local environment variables or the local path of the workspace. For example, this will bind mount `~` (`$HOME`) on macOS/Linux and the user's folder (`%USERPROFILE%`) on Windows and a sub-folder in the workspace to a different location:
 
     ```json
     "mounts": [
@@ -45,22 +36,17 @@ appropriate steps, based on what you reference in `devcontainer.json`:
 
 <br><br>
 
--   **Docker Compose:** Update (or
-    [extend](/docs/devcontainers/create-dev-container.md#extend-your-docker-compose-file-for-development))
-    your `docker-compose.yml` with the following for the appropriate service:
+* **Docker Compose:** Update (or [extend](/docs/devcontainers/create-dev-container.md#extend-your-docker-compose-file-for-development)) your `docker-compose.yml` with the following for the appropriate service:
 
     ```yaml
-    version: "3"
+    version: '3'
     services:
-        your-service-name-here:
-            volumes:
-                - /local/source/path/goes/here:/target/path/in/container/goes/here:cached
-                - ~:/host-home-folder:cached
-                - ./data-subfolder:/data:cached
-                # ...
+      your-service-name-here:
+        volumes:
+          - /local/source/path/goes/here:/target/path/in/container/goes/here:cached
+          - ~:/host-home-folder:cached
+          - ./data-subfolder:/data:cached
+         # ...
     ```
 
-If you've already built the container and connected to it, run **Dev Containers:
-Rebuild Container** from the Command Palette (`kbstyle(F1)`) to pick up the
-change. Otherwise run **Dev Containers: Open Folder in Container...** to connect
-to the container.
+If you've already built the container and connected to it, run **Dev Containers: Rebuild Container** from the Command Palette (`kbstyle(F1)`) to pick up the change. Otherwise run **Dev Containers: Open Folder in Container...** to connect to the container.
