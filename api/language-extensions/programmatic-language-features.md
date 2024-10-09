@@ -4,12 +4,18 @@ ContentId: A9D40038-7837-4320-8C2D-E0CA5769AA69
 DateApproved: 10/03/2024
 
 # Summarize the whole topic in less than 300 characters for SEO purpose
-MetaDescription: Visual Studio Code language extensions contribute programming language features. These guidelines present the language features available in Visual Studio Code and explain the API.
+MetaDescription:
+    Visual Studio Code language extensions contribute programming language
+    features. These guidelines present the language features available in Visual
+    Studio Code and explain the API.
 ---
 
 # Programmatic Language Features
 
-Programmatic Language Features is a set of smart-editing features powered by the [`vscode.languages.*`](/api/references/vscode-api#languages) API. There are two common ways to provide a dynamic language feature in Visual Studio Code. Let's take [Hover](#hover) as an example:
+Programmatic Language Features is a set of smart-editing features powered by the
+[`vscode.languages.*`](/api/references/vscode-api#languages) API. There are two
+common ways to provide a dynamic language feature in Visual Studio Code. Let's
+take [Hover](#hover) as an example:
 
 ```ts
 vscode.languages.registerHoverProvider('javascript', {
@@ -21,23 +27,40 @@ vscode.languages.registerHoverProvider('javascript', {
 });
 ```
 
-As you see above, the [`vscode.languages.registerHoverProvider`](/api/references/vscode-api#languages.registerHoverProvider) API provides an easy way to provide hover contents to JavaScript files. After this extension gets activated, whenever you hover over some JavaScript code, VS Code queries all [`HoverProvider`](/api/references/vscode-api#HoverProvider) for JavaScript and shows the result in a Hover widget. The [Language Feature Listing](#language-features-listing) and illustrated gif below provides an easy way for you to locate which VS Code API / LSP Method your extension needs.
+As you see above, the
+[`vscode.languages.registerHoverProvider`](/api/references/vscode-api#languages.registerHoverProvider)
+API provides an easy way to provide hover contents to JavaScript files. After
+this extension gets activated, whenever you hover over some JavaScript code, VS
+Code queries all [`HoverProvider`](/api/references/vscode-api#HoverProvider) for
+JavaScript and shows the result in a Hover widget. The
+[Language Feature Listing](#language-features-listing) and illustrated gif below
+provides an easy way for you to locate which VS Code API / LSP Method your
+extension needs.
 
-An alternative approach is to implement a Language Server that speaks [Language Server Protocol](https://microsoft.github.io/language-server-protocol/). The way it works is:
+An alternative approach is to implement a Language Server that speaks
+[Language Server Protocol](https://microsoft.github.io/language-server-protocol/).
+The way it works is:
 
-- An extension provides a Language Client and a Language Server for JavaScript.
-- The Language Client is like any other VS Code extension, running in the Node.js Extension Host context. When it gets activated, it spawns the Language Server in another process and communicates with it through [Language Server Protocol](https://microsoft.github.io/language-server-protocol/).
-- You hover over JavaScript code in VS Code
-- VS Code informs the Language Client of the hover
-- The Language Client queries the Language Server for a hover result and sends it back to VS Code
-- VS Code displays the hover result in a Hover widget
+-   An extension provides a Language Client and a Language Server for
+    JavaScript.
+-   The Language Client is like any other VS Code extension, running in the
+    Node.js Extension Host context. When it gets activated, it spawns the
+    Language Server in another process and communicates with it through
+    [Language Server Protocol](https://microsoft.github.io/language-server-protocol/).
+-   You hover over JavaScript code in VS Code
+-   VS Code informs the Language Client of the hover
+-   The Language Client queries the Language Server for a hover result and sends
+    it back to VS Code
+-   VS Code displays the hover result in a Hover widget
 
 The process seems more complicated, but it provides two major benefits:
 
-- The Language Server can be written in any language
-- The Language Server can be reused to provide smart editing features for multiple editors
+-   The Language Server can be written in any language
+-   The Language Server can be reused to provide smart editing features for
+    multiple editors
 
-For a more in-depth guide, head over to the [Language Server extension guide](/api/language-extensions/language-server-extension-guide).
+For a more in-depth guide, head over to the
+[Language Server extension guide](/api/language-extensions/language-server-extension-guide).
 
 ---
 
@@ -45,9 +68,9 @@ For a more in-depth guide, head over to the [Language Server extension guide](/a
 
 This listing includes the following items for each language feature:
 
-- An illustration of the language feature in VS Code
-- Related VS Code API
-- Related LSP methods
+-   An illustration of the language feature in VS Code
+-   Related VS Code API
+-   Related LSP methods
 
 | VS Code API                                                                                                                       | LSP method                                                                                                                                                                                                                               |
 | --------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -63,8 +86,8 @@ This listing includes the following items for each language feature:
 | [`registerDocumentSymbolProvider`](/api/references/vscode-api#languages.registerDocumentSymbolProvider)                           | [DocumentSymbol](https://microsoft.github.io/language-server-protocol/specification#textDocument_documentSymbol)                                                                                                                         |
 | [`registerCodeActionsProvider`](/api/references/vscode-api#languages.registerCodeActionsProvider)                                 | [CodeAction](https://microsoft.github.io/language-server-protocol/specification#textDocument_codeAction)                                                                                                                                 |
 | [`registerCodeLensProvider`](/api/references/vscode-api#languages.registerCodeLensProvider)                                       | [CodeLens](https://microsoft.github.io/language-server-protocol/specification#textDocument_codeLens) & [CodeLens Resolve](https://microsoft.github.io/language-server-protocol/specification#codeLens_resolve)                           |
-| [`registerDocumentLinkProvider`](/api/references/vscode-api#languages.registerDocumentLinkProvider)                               | [DocumentLink](https://microsoft.github.io/language-server-protocol/specification#textDocument_documentLink) & [DocumentLink Resolve](https://microsoft.github.io/language-server-protocol/specification#documentLink_resolve)                   |
-| [`registerColorProvider`](/api/references/vscode-api#languages.registerColorProvider)                                     | [DocumentColor](https://microsoft.github.io/language-server-protocol/specification#textDocument_documentColor) & [Color Presentation](https://microsoft.github.io/language-server-protocol/specification#textDocument_colorPresentation) |
+| [`registerDocumentLinkProvider`](/api/references/vscode-api#languages.registerDocumentLinkProvider)                               | [DocumentLink](https://microsoft.github.io/language-server-protocol/specification#textDocument_documentLink) & [DocumentLink Resolve](https://microsoft.github.io/language-server-protocol/specification#documentLink_resolve)           |
+| [`registerColorProvider`](/api/references/vscode-api#languages.registerColorProvider)                                             | [DocumentColor](https://microsoft.github.io/language-server-protocol/specification#textDocument_documentColor) & [Color Presentation](https://microsoft.github.io/language-server-protocol/specification#textDocument_colorPresentation) |
 | [`registerDocumentFormattingEditProvider`](/api/references/vscode-api#languages.registerDocumentFormattingEditProvider)           | [Formatting](https://microsoft.github.io/language-server-protocol/specification#textDocument_formatting)                                                                                                                                 |
 | [`registerDocumentRangeFormattingEditProvider`](/api/references/vscode-api#languages.registerDocumentRangeFormattingEditProvider) | [RangeFormatting](https://microsoft.github.io/language-server-protocol/specification#textDocument_rangeFormatting)                                                                                                                       |
 | [`registerOnTypeFormattingEditProvider`](/api/references/vscode-api#languages.registerOnTypeFormattingEditProvider)               | [OnTypeFormatting](https://microsoft.github.io/language-server-protocol/specification#textDocument_onTypeFormatting)                                                                                                                     |
@@ -79,9 +102,12 @@ Diagnostics are a way to indicate issues with the code.
 
 #### Language Server Protocol
 
-Your language server sends the `textDocument/publishDiagnostics` message to the language client. The message carries an array of diagnostic items for a resource URI.
+Your language server sends the `textDocument/publishDiagnostics` message to the
+language client. The message carries an array of diagnostic items for a resource
+URI.
 
-**Note**: The client does not ask the server for diagnostics. The server pushes the diagnostic information to the client.
+**Note**: The client does not ask the server for diagnostics. The server pushes
+the diagnostic information to the client.
 
 #### Direct Implementation
 
@@ -118,11 +144,14 @@ function onChange() {
 
 > **Basic**
 >
-> Report diagnostics for open editors. Minimally, this needs to happen on every save. Better, diagnostics should be computed based on the un-saved contents of the editor.
+> Report diagnostics for open editors. Minimally, this needs to happen on every
+> save. Better, diagnostics should be computed based on the un-saved contents of
+> the editor.
 
 > **Advanced**
 >
-> Report diagnostics not only for the open editors but for all resources in the open folder, no matter whether they have ever been opened in an editor or not.
+> Report diagnostics not only for the open editors but for all resources in the
+> open folder, no matter whether they have ever been opened in an editor or not.
 
 ## Show Code Completion Proposals
 
@@ -132,7 +161,10 @@ Code completions provide context sensitive suggestions to the user.
 
 #### Language Server Protocol
 
-In the response to the `initialize` method, your language server needs to announce that it provides completions and whether or not it supports the `completionItem\resolve` method to provide additional information for the computed completion items.
+In the response to the `initialize` method, your language server needs to
+announce that it provides completions and whether or not it supports the
+`completionItem\resolve` method to provide additional information for the
+computed completion items.
 
 ```json
 {
@@ -174,17 +206,21 @@ export function activate(ctx: vscode.ExtensionContext): void {
 
 > **Advanced**
 >
-> You support resolve providers that compute additional information for completion proposal the user selects. This information is displayed along-side the selected item.
+> You support resolve providers that compute additional information for
+> completion proposal the user selects. This information is displayed along-side
+> the selected item.
 
 ## Show Hovers
 
-Hovers show information about the symbol/object that's below the mouse cursor. This is usually the type of the symbol and a description.
+Hovers show information about the symbol/object that's below the mouse cursor.
+This is usually the type of the symbol and a description.
 
 ![Showing details about a workspace and a method when hovering over them](images/language-support/hovers.gif)
 
 #### Language Server Protocol
 
-In the response to the `initialize` method, your language server needs to announce that it provides hovers.
+In the response to the `initialize` method, your language server needs to
+announce that it provides hovers.
 
 ```json
 {
@@ -196,7 +232,8 @@ In the response to the `initialize` method, your language server needs to announ
 }
 ```
 
-In addition, your language server needs to respond to the `textDocument/hover` request.
+In addition, your language server needs to respond to the `textDocument/hover`
+request.
 
 #### Direct Implementation
 
@@ -228,13 +265,15 @@ export function activate(ctx: vscode.ExtensionContext): void {
 
 ## Help With Function and Method Signatures
 
-When the user enters a function or method, display information about the function/method that is being called.
+When the user enters a function or method, display information about the
+function/method that is being called.
 
 ![Showing information about the getPackageInfo method including the necessary parameters](images/language-support/signature-help.gif)
 
 #### Language Server Protocol
 
-In the response to the `initialize` method, your language server needs to announce that it provides signature help.
+In the response to the `initialize` method, your language server needs to
+announce that it provides signature help.
 
 ```json
 {
@@ -248,7 +287,8 @@ In the response to the `initialize` method, your language server needs to announ
 }
 ```
 
-In addition, your language server needs to respond to the `textDocument/signatureHelp` request.
+In addition, your language server needs to respond to the
+`textDocument/signatureHelp` request.
 
 #### Direct Implementation
 
@@ -272,7 +312,8 @@ export function activate(ctx: vscode.ExtensionContext): void {
 
 > **Basic**
 >
-> Ensure that the signature help contains the documentation of the parameters of the function or method.
+> Ensure that the signature help contains the documentation of the parameters of
+> the function or method.
 
 > **Advanced**
 >
@@ -280,13 +321,15 @@ export function activate(ctx: vscode.ExtensionContext): void {
 
 ## Show Definitions of a Symbol
 
-Allow the user to see the definition of variables/functions/methods right where the variables/functions/methods are being used.
+Allow the user to see the definition of variables/functions/methods right where
+the variables/functions/methods are being used.
 
 ![Right click a variable, function, or method and select "Go to Definition" to jump to the definition](images/language-support/goto-definition.gif)
 
 #### Language Server Protocol
 
-In the response to the `initialize` method, your language server needs to announce that it provides goto-definition locations.
+In the response to the `initialize` method, your language server needs to
+announce that it provides goto-definition locations.
 
 ```json
 {
@@ -298,7 +341,8 @@ In the response to the `initialize` method, your language server needs to announ
 }
 ```
 
-In addition, your language server needs to respond to the `textDocument/definition` request.
+In addition, your language server needs to respond to the
+`textDocument/definition` request.
 
 #### Direct Implementation
 
@@ -330,13 +374,15 @@ export function activate(ctx: vscode.ExtensionContext): void {
 
 ## Find All References to a Symbol
 
-Allow the user to see all the source code locations where a certain variable/function/method/symbol is being used.
+Allow the user to see all the source code locations where a certain
+variable/function/method/symbol is being used.
 
 ![Right clicking and selecting "Find All References" to highlight all the locations where that symbol is used](images/language-support/find-references.gif)
 
 #### Language Server Protocol
 
-In the response to the `initialize` method, your language server needs to announce that it provides symbol reference locations.
+In the response to the `initialize` method, your language server needs to
+announce that it provides symbol reference locations.
 
 ```json
 {
@@ -348,7 +394,8 @@ In the response to the `initialize` method, your language server needs to announ
 }
 ```
 
-In addition, your language server needs to respond to the `textDocument/references` request.
+In addition, your language server needs to respond to the
+`textDocument/references` request.
 
 #### Direct Implementation
 
@@ -387,7 +434,8 @@ Allow the user to see all occurrences of a symbol in the open editor.
 
 #### Language Server Protocol
 
-In the response to the `initialize` method, your language server needs to announce that it provides symbol document locations.
+In the response to the `initialize` method, your language server needs to
+announce that it provides symbol document locations.
 
 ```json
 {
@@ -399,7 +447,8 @@ In the response to the `initialize` method, your language server needs to announ
 }
 ```
 
-In addition, your language server needs to respond to the `textDocument/documentHighlight` request.
+In addition, your language server needs to respond to the
+`textDocument/documentHighlight` request.
 
 #### Direct Implementation
 
@@ -423,7 +472,8 @@ export function activate(ctx: vscode.ExtensionContext): void {
 
 > **Basic**
 >
-> You return the ranges in the editor's document where the references are being found.
+> You return the ranges in the editor's document where the references are being
+> found.
 
 > **Advanced**
 >
@@ -437,7 +487,8 @@ Allow the user to quickly navigate to any symbol definition in the open editor.
 
 #### Language Server Protocol
 
-In the response to the `initialize` method, your language server needs to announce that it provides symbol document locations.
+In the response to the `initialize` method, your language server needs to
+announce that it provides symbol document locations.
 
 ```json
 {
@@ -449,7 +500,8 @@ In the response to the `initialize` method, your language server needs to announ
 }
 ```
 
-In addition, your language server needs to respond to the `textDocument/documentSymbol` request.
+In addition, your language server needs to respond to the
+`textDocument/documentSymbol` request.
 
 #### Direct Implementation
 
@@ -473,7 +525,8 @@ export function activate(ctx: vscode.ExtensionContext): void {
 
 > **Basic**
 >
-> Return all symbols in the document. Define the kinds of symbols such as variables, functions, classes, methods, etc.
+> Return all symbols in the document. Define the kinds of symbols such as
+> variables, functions, classes, methods, etc.
 
 > **Advanced**
 >
@@ -481,13 +534,15 @@ export function activate(ctx: vscode.ExtensionContext): void {
 
 ## Show all Symbol Definitions in Folder
 
-Allow the user to quickly navigate to symbol definitions anywhere in the folder (workspace) opened in VS Code.
+Allow the user to quickly navigate to symbol definitions anywhere in the folder
+(workspace) opened in VS Code.
 
 ![Navigate to symbol definitions in the workspace using #](images/language-support/workspace-symbols.gif)
 
 #### Language Server Protocol
 
-In the response to the `initialize` method, your language server needs to announce that it provides global symbol locations.
+In the response to the `initialize` method, your language server needs to
+announce that it provides global symbol locations.
 
 ```json
 {
@@ -499,7 +554,8 @@ In the response to the `initialize` method, your language server needs to announ
 }
 ```
 
-In addition, your language server needs to respond to the `workspace/symbol` request.
+In addition, your language server needs to respond to the `workspace/symbol`
+request.
 
 #### Direct Implementation
 
@@ -523,7 +579,8 @@ export function activate(ctx: vscode.ExtensionContext): void {
 
 > **Basic**
 >
-> Return all symbols define by the source code within the open folder. Define the kinds of symbols such as variables, functions, classes, methods, etc.
+> Return all symbols define by the source code within the open folder. Define
+> the kinds of symbols such as variables, functions, classes, methods, etc.
 
 > **Advanced**
 >
@@ -531,13 +588,17 @@ export function activate(ctx: vscode.ExtensionContext): void {
 
 ## Possible Actions on Errors or Warnings
 
-Provide the user with possible corrective actions right next to an error or warning. If actions are available, a light bulb appears next to the error or warning. When the user clicks the light bulb, a list of available Code Actions is presented.
+Provide the user with possible corrective actions right next to an error or
+warning. If actions are available, a light bulb appears next to the error or
+warning. When the user clicks the light bulb, a list of available Code Actions
+is presented.
 
 ![Selecting a light bulb to view a list of available Code Actions](images/language-support/quick-fixes.gif)
 
 #### Language Server Protocol
 
-In the response to the `initialize` method, your language server needs to announce that it provides Code Actions.
+In the response to the `initialize` method, your language server needs to
+announce that it provides Code Actions.
 
 ```json
 {
@@ -549,7 +610,8 @@ In the response to the `initialize` method, your language server needs to announ
 }
 ```
 
-In addition, your language server needs to respond to the `textDocument/codeAction` request.
+In addition, your language server needs to respond to the
+`textDocument/codeAction` request.
 
 #### Direct Implementation
 
@@ -578,17 +640,21 @@ export function activate(ctx: vscode.ExtensionContext): void {
 
 > **Advanced**
 >
-> In addition, provide source code manipulation actions such as refactoring. For example, **Extract Method**.
+> In addition, provide source code manipulation actions such as refactoring. For
+> example, **Extract Method**.
 
 ## CodeLens - Show Actionable Context Information Within Source Code
 
-Provide the user with actionable, contextual information that is displayed interspersed with the source code.
+Provide the user with actionable, contextual information that is displayed
+interspersed with the source code.
 
 ![CodeLens providing context](images/language-support/code-lens.gif)
 
 #### Language Server Protocol
 
-In the response to the `initialize` method, your language server needs to announce that it provides CodeLens results and whether it supports the `codeLens\resolve` method to bind the CodeLens to its command.
+In the response to the `initialize` method, your language server needs to
+announce that it provides CodeLens results and whether it supports the
+`codeLens\resolve` method to bind the CodeLens to its command.
 
 ```json
 {
@@ -602,7 +668,8 @@ In the response to the `initialize` method, your language server needs to announ
 }
 ```
 
-In addition, your language server needs to respond to the `textDocument/codeLens` request.
+In addition, your language server needs to respond to the
+`textDocument/codeLens` request.
 
 #### Direct Implementation
 
@@ -644,7 +711,8 @@ Allow the user to preview and modify colors in the document.
 
 #### Language Server Protocol
 
-In the response to the `initialize` method, your language server needs to announce that it provides color information.
+In the response to the `initialize` method, your language server needs to
+announce that it provides color information.
 
 ```json
 {
@@ -656,7 +724,8 @@ In the response to the `initialize` method, your language server needs to announ
 }
 ```
 
-In addition, your language server needs to respond to the `textDocument/documentColor` and `textDocument/colorPresentation` requests.
+In addition, your language server needs to respond to the
+`textDocument/documentColor` and `textDocument/colorPresentation` requests.
 
 #### Direct Implementation
 
@@ -685,7 +754,8 @@ export function activate(ctx: vscode.ExtensionContext): void {
 
 > **Basic**
 >
-> Return all color references in the document. Provide color presentations for the color formats supported (for example rgb(...), hsl(...)).
+> Return all color references in the document. Provide color presentations for
+> the color formats supported (for example rgb(...), hsl(...)).
 
 > **Advanced**
 >
@@ -699,7 +769,8 @@ Provide the user with support for formatting whole documents.
 
 #### Language Server Protocol
 
-In the response to the `initialize` method, your language server needs to announce that it provides document formatting.
+In the response to the `initialize` method, your language server needs to
+announce that it provides document formatting.
 
 ```json
 {
@@ -711,7 +782,8 @@ In the response to the `initialize` method, your language server needs to announ
 }
 ```
 
-In addition, your language server needs to respond to the `textDocument/formatting` request.
+In addition, your language server needs to respond to the
+`textDocument/formatting` request.
 
 #### Direct Implementation
 
@@ -739,17 +811,21 @@ export function activate(ctx: vscode.ExtensionContext): void {
 
 > **Advanced**
 >
-> You should always return the smallest possible text edits that result in the source code being formatted. This is crucial to ensure that markers such as diagnostic results are adjusted correctly and are not lost.
+> You should always return the smallest possible text edits that result in the
+> source code being formatted. This is crucial to ensure that markers such as
+> diagnostic results are adjusted correctly and are not lost.
 
 ## Format the Selected Lines in an Editor
 
-Provide the user with support for formatting a selected range of lines in a document.
+Provide the user with support for formatting a selected range of lines in a
+document.
 
 ![Select lines, right click, and select format code](images/language-support/format-document-range.gif)
 
 #### Language Server Protocol
 
-In the response to the `initialize` method, your language server needs to announce that it provides formatting support for ranges of lines.
+In the response to the `initialize` method, your language server needs to
+announce that it provides formatting support for ranges of lines.
 
 ```json
 {
@@ -761,7 +837,8 @@ In the response to the `initialize` method, your language server needs to announ
 }
 ```
 
-In addition, your language server needs to respond to the `textDocument/rangeFormatting` request.
+In addition, your language server needs to respond to the
+`textDocument/rangeFormatting` request.
 
 #### Direct Implementation
 
@@ -790,19 +867,25 @@ export function activate(ctx: vscode.ExtensionContext): void {
 
 > **Advanced**
 >
-> You should always return the smallest possible text edits that result in the source code being formatted. This is crucial to ensure that markers such as diagnostic results are adjusted corrected and are not lost.
+> You should always return the smallest possible text edits that result in the
+> source code being formatted. This is crucial to ensure that markers such as
+> diagnostic results are adjusted corrected and are not lost.
 
 ## Incrementally Format Code as the User Types
 
 Provide the user with support for formatting text as they type.
 
-**Note**: The user [setting](/docs/getstarted/settings) `editor.formatOnType` controls whether source code gets formatted or not as the user types.
+**Note**: The user [setting](/docs/getstarted/settings) `editor.formatOnType`
+controls whether source code gets formatted or not as the user types.
 
 ![Visual indicators for formatting as code is typed](images/language-support/format-on-type.gif)
 
 #### Language Server Protocol
 
-In the response to the `initialize` method, your language server needs to announce that it provides formatting as the user types. It also needs to tell the client on which characters formatting should be triggered. `moreTriggerCharacters` is optional.
+In the response to the `initialize` method, your language server needs to
+announce that it provides formatting as the user types. It also needs to tell
+the client on which characters formatting should be triggered.
+`moreTriggerCharacters` is optional.
 
 ```json
 {
@@ -817,7 +900,8 @@ In the response to the `initialize` method, your language server needs to announ
 }
 ```
 
-In addition, your language server needs to respond to the `textDocument/onTypeFormatting` request.
+In addition, your language server needs to respond to the
+`textDocument/onTypeFormatting` request.
 
 #### Direct Implementation
 
@@ -846,7 +930,9 @@ export function activate(ctx: vscode.ExtensionContext): void {
 
 > **Advanced**
 >
-> You should always return the smallest possible text edits that result in the source code being formatted. This is crucial to ensure that markers such as diagnostic results are adjusted corrected and are not lost.
+> You should always return the smallest possible text edits that result in the
+> source code being formatted. This is crucial to ensure that markers such as
+> diagnostic results are adjusted corrected and are not lost.
 
 ## Rename Symbols
 
@@ -856,7 +942,8 @@ Allow the user to rename a symbol and update all references to the symbol.
 
 #### Language Server Protocol
 
-In the response to the `initialize` method, your language server needs to announce that it provides for renaming.
+In the response to the `initialize` method, your language server needs to
+announce that it provides for renaming.
 
 ```json
 {
@@ -868,7 +955,8 @@ In the response to the `initialize` method, your language server needs to announ
 }
 ```
 
-In addition, your language server needs to respond to the `textDocument/rename` request.
+In addition, your language server needs to respond to the `textDocument/rename`
+request.
 
 #### Direct Implementation
 
@@ -897,4 +985,5 @@ export function activate(ctx: vscode.ExtensionContext): void {
 
 > **Advanced**
 >
-> Return the list of all workspace edits that need to be performed, for example all edits across all files that contain references to the symbol.
+> Return the list of all workspace edits that need to be performed, for example
+> all edits across all files that contain references to the symbol.
