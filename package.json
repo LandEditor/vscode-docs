@@ -1,6 +1,6 @@
 {
 	"devDependencies": {
-		"lint-staged": "12.3.3",
+		"lint-staged": "15.2.10",
 		"shelljs": "0.8.5"
 	},
 	"lint-staged": {
