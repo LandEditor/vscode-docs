@@ -24,4 +24,4 @@ This will install:
 - VS Code
 - Java extension pack in VS Code
 
-![Java Installer](images/installers/java-installer.png)
+![`Java Installer`](images/installers/java-installer.png)

@@ -9,7 +9,7 @@ DateApproved: 10/03/2024
 ---
 # Set Docker Compose project name
 
-Visual Studio Code will respect the value you configure for the Docker Compose [project name](https://docs.docker.com/compose/project-name/).
+Visual Studio Code will respect the value you configure for the Docker Compose [`project name`](https://docs.docker.com/compose/project-name/).
 
 The top-level property `name` in the `docker-compose.yml` can be used to set the project name.
 

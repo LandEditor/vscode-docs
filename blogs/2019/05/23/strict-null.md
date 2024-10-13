@@ -10,7 +10,7 @@ Author: Matt Bierner
 ---
 # Strict null checking Visual Studio Code
 
-May 23, 2019 by Matt Bierner, [@mattbierner](https://hachyderm.io/@mattbierner)
+May 23, 2019 by Matt Bierner, [`@mattbierner`](https://hachyderm.io/@mattbierner)
 
 ## Safety permits speed
 
@@ -18,7 +18,7 @@ Moving fast is fun. It's fun to ship new features, make users happy, and improve
 
 Although moving fast and shipping stable code are often presented as being incompatible, that shouldn't be the case. Many times the same factors that make code fragile and buggy are also what slow down development. After all, how can we move fast if we're always worried about breaking things?
 
-In this post, I'd like to share a major engineering effort that the VS Code team recently completed: enabling TypeScript's [strict null checking](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-0.html#--strictNullChecks) in our codebase. We believe this work will allow us to both move faster and to ship a more stable product. Enabling strict null checking was motivated by understanding bugs not as isolated events but as symptoms of larger hazards in our source code. Using strict null checking as a case study, I'm going to discuss what motivated our work, how we came up with an incremental approach to addressing the problem, and how we went about implementing the fix. This same general approach to identifying and reducing hazards can be applied to any software project.
+In this post, I'd like to share a major engineering effort that the VS Code team recently completed: enabling TypeScript's [`strict null checking`](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-0.html#--strictNullChecks) in our codebase. We believe this work will allow us to both move faster and to ship a more stable product. Enabling strict null checking was motivated by understanding bugs not as isolated events but as symptoms of larger hazards in our source code. Using strict null checking as a case study, I'm going to discuss what motivated our work, how we came up with an incremental approach to addressing the problem, and how we went about implementing the fix. This same general approach to identifying and reducing hazards can be applied to any software project.
 
 ## An example
 
@@ -120,7 +120,7 @@ We realized that we needed to start understanding our bugs in a new way, not as 
 * Type oddities. `undefined` vs `null`. `undefined` vs `false`. `undefined` vs empty string.
 * Feeling that we could not trust the code or safely refactor it.
 
-Identifying the root causes was a good first step, but we wanted to go even deeper. What were [the hazards](https://arlobelshee.com/improving-testing-is-not-safe-a-parable/) in all these cases that allowed a well meaning engineer to introduce the bug in the first place? And we quickly identified a glaring hazard common to all these issues: the lack of strict null checking in the VS Code codebase.
+Identifying the root causes was a good first step, but we wanted to go even deeper. What were [`the hazards`](https://arlobelshee.com/improving-testing-is-not-safe-a-parable/) in all these cases that allowed a well meaning engineer to introduce the bug in the first place? And we quickly identified a glaring hazard common to all these issues: the lack of strict null checking in the VS Code codebase.
 
 To understand strict null checking, you have to remember that TypeScript's aim is to add typing to JavaScript. A consequence of TypeScript's JavaScript legacy is that, by default, TypeScript allows `undefined` and `null` to be used for any value:
 
@@ -134,7 +134,7 @@ getStatus({ id: undefined }); // Ok
 
 While this flexibility makes it simpler to migrate from JavaScript to TypeScript, the example library for our hypothetical website showed that it is also a hazard. This hazard was also central to the four root causes we had identified working on VS Code (plus many others).
 
-Thankfully though, TypeScript provides an option called [strict null checking](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-0.html#--strictNullChecks) that causes `undefined` and `null` to be treated as distinct types. When using strict null checking, any type that may be nullable must be annotated as such:
+Thankfully though, TypeScript provides an option called [`strict null checking`](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-0.html#--strictNullChecks) that causes `undefined` and `null` to be treated as distinct types. When using strict null checking, any type that may be nullable must be annotated as such:
 
 ```ts
 // With "strictNullCheck": true, all of these produce compile errors
@@ -171,7 +171,7 @@ To do this, we created a new TypeScript project file called `tsconfig.strictNull
 
 While this plan seemed reasonable, one issue was that engineers working in main would normally not be compiling the strict null checked subset of VS Code. To prevent accidental regressions to already strict null checked files, we added a continuous integration step that compiled `tsconfig.strictNullChecks.json`. This ensured that checkins that regressed strict null checking would break the build.
 
-We also put together [two simple scripts](https://github.com/mjbvz/vscode-strict-null-check-migration-tools) to automate some of the repetitive tasks related to adding files to the strict null checked project. The first script printed a list of files that were eligible to be strict null checked. A file is considered eligible if it only imports files that were themselves strict null checked. The second script tried to automatically add eligible files to the strict null project. If adding the file caused no compile errors, then it was committed to `tsconfig.strictNullChecks.json`.
+We also put together [`two simple scripts`](https://github.com/mjbvz/vscode-strict-null-check-migration-tools) to automate some of the repetitive tasks related to adding files to the strict null checked project. The first script printed a list of files that were eligible to be strict null checked. A file is considered eligible if it only imports files that were themselves strict null checked. The second script tried to automatically add eligible files to the strict null project. If adding the file caused no compile errors, then it was committed to `tsconfig.strictNullChecks.json`.
 
 We also considered automating some of the strict null fixes themselves but we ultimately opted against this. Strict null errors are often a good signal that source code should be refactored. Maybe there wasn't a good reason why a type was nullable. Maybe the callers should handle null instead of the implementors. Manually reviewing and fixing these errors gave us a chance to make our code better, instead of brute forcing it to be strict null compatible.
 
@@ -179,7 +179,7 @@ We also considered automating some of the strict null fixes themselves but we ul
 
 Over the next few months, we slowly expanded the number of strict null checked files. This was often tedious work. Most strict null errors were simple: just adding null annotations. For others, it was difficult to understand the intent of the code. Was a value purposefully left uninitialized or is there actually a programming mistake?
 
-In general, we tried to avoid using [TypeScript's not-null assertion](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-0.html#non-null-assertion-operator) in our main codebase as much as possible. We did use it more freely in our tests, reasoning that if the lack of null checking in the test code would cause an exception, then the test will fail anyway.
+In general, we tried to avoid using [`TypeScript's not-null assertion`](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-0.html#non-null-assertion-operator) in our main codebase as much as possible. We did use it more freely in our tests, reasoning that if the lack of null checking in the test code would cause an exception, then the test will fail anyway.
 
 One dispiriting aspect of the whole process was that the total number of strict null errors in the VS Code codebase never seemed to decrease. If anything, if you compiled all of VS Code with strict null checks enabled, all of our strict null work actually seemed to be causing the total number of errors to go up! This is because strict null fixes often have cascading effects. Correctly annotating that a function can return `undefined` may introduce strict null errors for all consumers of that function. Rather than worrying about the total number of remaining errors, we focused on the number of files that were already strict null checked and worked to ensure that we never regressed this total.
 
@@ -223,9 +223,9 @@ class Value {
 
 The point of this effort was never to eliminate 100% of the strict null errors in VS Code—which would be extremely difficult, if not impossible—but to prevent the vast majority of common strict null related errors. It also was a good chance to clean up our code and make it safer to refactor. Getting 95% of the way there was acceptable for us.
 
-You can find our entire strict null checking plan and its execution [on GitHub](https://github.com/microsoft/vscode/issues/60565). All members of the VS Code team along with many external contributors were involved in this effort. As the driver of this work, I made the most strict null related fixes, but it only took up around a quarter of my engineering time. There was certainly a bit of pain along the way, including some annoyance that many strict null regressions were only caught by continuous integration after checkin. The strict null work also introduced a few new bugs. However, considering the amount of code changed, things went remarkably smoothly.
+You can find our entire strict null checking plan and its execution [`on GitHub`](https://github.com/microsoft/vscode/issues/60565). All members of the VS Code team along with many external contributors were involved in this effort. As the driver of this work, I made the most strict null related fixes, but it only took up around a quarter of my engineering time. There was certainly a bit of pain along the way, including some annoyance that many strict null regressions were only caught by continuous integration after checkin. The strict null work also introduced a few new bugs. However, considering the amount of code changed, things went remarkably smoothly.
 
-The [change that finally enabled strict null checking](https://github.com/microsoft/vscode/commit/7d0e64f5ec69c1452bcf227692768db45b8d6334#diff-9f6a7f86a587bb89b022817ce9f353f5) for the whole VS Code codebase was rather anti-climactic: it fixed a few more code errors, deleted `tsconfig.strictNullChecks.json`, and set `"strictNullChecks": true` in our main `tsconfig`. The lack of drama was exactly as planned. And with that, VS Code was strict null checked!
+The [`change that finally enabled strict null checking`](https://github.com/microsoft/vscode/commit/7d0e64f5ec69c1452bcf227692768db45b8d6334#diff-9f6a7f86a587bb89b022817ce9f353f5) for the whole VS Code codebase was rather anti-climactic: it fixed a few more code errors, deleted `tsconfig.strictNullChecks.json`, and set `"strictNullChecks": true` in our main `tsconfig`. The lack of drama was exactly as planned. And with that, VS Code was strict null checked!
 
 ## Conclusion
 
@@ -242,4 +242,4 @@ We took this approach with strict null checking VS Code, and will apply it to ot
 Happy Coding,
 
 Matt Bierner, VS Code Team Member
-[@mattbierner](https://hachyderm.io/@mattbierner)
+[`@mattbierner`](https://hachyderm.io/@mattbierner)

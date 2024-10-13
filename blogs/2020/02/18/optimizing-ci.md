@@ -10,11 +10,11 @@ Author: Ethan Dennis, João Moreno
 ---
 # Improving CI Build Times
 
-February 18, 2020 by Ethan Dennis, [@erdennis13](https://twitter.com/erdennis13) and João Moreno, [@joaomoreno](https://twitter.com/joaomoreno)
+February 18, 2020 by Ethan Dennis, [`@erdennis13](https://twitter.com/erdennis13) and João Moreno, [@joaomoreno`](https://twitter.com/joaomoreno)
 
-Visual Studio Code is a large project with lots of moving parts and an active participant list. We have [shown](https://code.visualstudio.com/blogs/2018/09/12/engineering-with-azure-pipelines) how we actively use Azure Pipelines to keep up with good engineering practices by maintaining our build and continuous integration infrastructure. In this blog post, we’ll talk about how we used the [Azure Pipelines Artifact Caching Tasks](https://github.com/microsoft/azure-pipelines-artifact-caching-tasks) to dramatically reduce our CI build times.
+Visual Studio Code is a large project with lots of moving parts and an active participant list. We have [`shown](https://code.visualstudio.com/blogs/2018/09/12/engineering-with-azure-pipelines) how we actively use Azure Pipelines to keep up with good engineering practices by maintaining our build and continuous integration infrastructure. In this blog post, we’ll talk about how we used the [Azure Pipelines Artifact Caching Tasks`](https://github.com/microsoft/azure-pipelines-artifact-caching-tasks) to dramatically reduce our CI build times.
 
-We described in an [earlier blog post](https://medium.com/crawl-walk-sprint/reducing-vs-code-ci-build-times-by-33-dbb1715b5028) how we reduced CI build times by 33%. This was accomplished by using custom build tasks that cache the node modules that VS Code consumes instead of resolving the packages at build time. While we were happy with this performance boost, we wanted to see how much further we could push the caching tasks that we built.
+We described in an [`earlier blog post`](https://medium.com/crawl-walk-sprint/reducing-vs-code-ci-build-times-by-33-dbb1715b5028) how we reduced CI build times by 33%. This was accomplished by using custom build tasks that cache the node modules that VS Code consumes instead of resolving the packages at build time. While we were happy with this performance boost, we wanted to see how much further we could push the caching tasks that we built.
 
 When we last talked about our CI engineering, our target platforms spanned Windows, macOS, and Linux. As of today, VS Code targets a much more diverse set of platforms, such as Arm64 and Alpine Linux for its remote server components. In total, we have eight different targets that all share common build steps. This post outlines how we leveraged the caching tasks to reduce CI duplication and further improve our build times.
 
@@ -103,9 +103,9 @@ Once these changes were implemented, we saw drastic reductions in total build ti
 | Linux Arm    | 22 min     | 21 min    | 5%           |
 | Linux Alpine | 23 min     | 26 min    | -13%         |
 
-![VS Code before and after build times](chart.png)
+![`VS Code before and after build times`](chart.png)
 
-The Linux Arm and Linux Alpine targets only build the [VS Code remote server components](https://code.visualstudio.com/docs/remote/remote-overview), so their original build times were good enough. But since they share some common tasks with the standard VS Code client platforms, we decided to have them depend on the common build agent. This resulted in slightly increased build times due to the increased overhead in one case.
+The Linux Arm and Linux Alpine targets only build the [`VS Code remote server components`](https://code.visualstudio.com/docs/remote/remote-overview), so their original build times were good enough. But since they share some common tasks with the standard VS Code client platforms, we decided to have them depend on the common build agent. This resulted in slightly increased build times due to the increased overhead in one case.
 
 Build resubmissions saw a drastic improvement, since the shared agent tasks can be skipped altogether. Here are some numbers for macOS, for example:
 
@@ -113,12 +113,12 @@ Build resubmissions saw a drastic improvement, since the shared agent tasks can 
 |--------------|--------|-------|--------------|
 | macOS        | 68s     | 34s    | 50%          |
 
-In total, we were thrilled to see a combined ~50% reduction in VS Code’s CI build times! The best news is that you can draw inspiration from [our build definitions](https://github.com/microsoft/vscode/tree/main/build/azure-pipelines) to realize build time improvements of your own.
+In total, we were thrilled to see a combined ~50% reduction in VS Code’s CI build times! The best news is that you can draw inspiration from [`our build definitions`](https://github.com/microsoft/vscode/tree/main/build/azure-pipelines) to realize build time improvements of your own.
 
 Happy Caching,
 
 Ethan Dennis, Developer Services Senior Software Engineer
-[@erdennis13](https://twitter.com/erdennis13)
+[`@erdennis13`](https://twitter.com/erdennis13)
 
 João Moreno, VS Code Senior Software Engineer
-[@joaomoreno](https://twitter.com/joaomoreno)
+[`@joaomoreno`](https://twitter.com/joaomoreno)

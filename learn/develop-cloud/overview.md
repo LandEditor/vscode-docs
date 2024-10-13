@@ -11,7 +11,7 @@ MetaDescription: Learn to use custom development environments with Visual Studio
 
 ## What are custom development environments?
 
-Your development environment is where you do your coding. Visual Studio Code allows you to use a development environment different than your local computer through a container, a separate (or remote) machine, or the Windows Subsystem for Linux (WSL). These configurations are known as [remote development](/docs/remote/remote-overview.md).
+Your development environment is where you do your coding. Visual Studio Code allows you to use a development environment different than your local computer through a container, a separate (or remote) machine, or the Windows Subsystem for Linux (WSL). These configurations are known as [`remote development`](/docs/remote/remote-overview.md).
 
 Remote development has benefits such as:
 
@@ -29,14 +29,14 @@ Since you may be working with teammates using Linux or deploying to a Linux prod
 
 ## How do I get started with remote development?
 
-To get started with remote development in VS Code, you can download the [Remote Development extension pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack) from the Extension Marketplace.
+To get started with remote development in VS Code, you can download the [`Remote Development extension pack`](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack) from the Extension Marketplace.
 
-![Remote Development Extension Pack](images/overview/remote-dev-pack.png)
+![`Remote Development Extension Pack`](images/overview/remote-dev-pack.png)
 
 This extension pack includes three extensions (which can also be downloaded individually):
 
-- [Remote - SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh) - Connect to any location by opening folders on a remote computer or virtual machine (VM) using SSH.
-- [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) - Develop within a container, which is a piece of software that includes your app and any dependencies your app needs to run.
-- [WSL](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) - Get a Linux-powered development experience while on Windows using the Windows Subsystem for Linux (WSL).
+- [`Remote - SSH`](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh) - Connect to any location by opening folders on a remote computer or virtual machine (VM) using SSH.
+- [`Dev Containers`](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) - Develop within a container, which is a piece of software that includes your app and any dependencies your app needs to run.
+- [`WSL`](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) - Get a Linux-powered development experience while on Windows using the Windows Subsystem for Linux (WSL).
 
 Check out the topics in this section to learn more about each of the remote development extensions in Visual Studio Code.

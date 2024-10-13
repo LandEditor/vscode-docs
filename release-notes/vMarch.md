@@ -8,7 +8,7 @@ MetaDescription: See what is new in the Visual Studio Code March 2016 Release (1
 
 ## March 2016 (1.0)
 
-March was the end game milestone leading up to our [1.0 release](/blogs/2016/04/14/vscode-1.0.md).  We wanted the product to meet the high expectations of a 1.0 release and we focused on fundamentals like quality, accessibility, global reach and performance. We also added features you care about and streamlined some common tasks.
+March was the end game milestone leading up to our [`1.0 release`](/blogs/2016/04/14/vscode-1.0.md).  We wanted the product to meet the high expectations of a 1.0 release and we focused on fundamentals like quality, accessibility, global reach and performance. We also added features you care about and streamlined some common tasks.
 
 Here are a few highlights in this release:
 
@@ -18,18 +18,18 @@ Here are a few highlights in this release:
 * Support adding new file extensions to existing languages.
 * Implemented editor column text selection.
 
-Downloads: [Windows](https://az764295.vo.msecnd.net/stable/fa6d0f03813dfb9df4589c30121e9fcffa8a8ec8/VSCodeSetup-stable.exe) |
-[OS X](https://az764295.vo.msecnd.net/stable/fa6d0f03813dfb9df4589c30121e9fcffa8a8ec8/VSCode-darwin-stable.zip) | Linux 64-bit [.zip](https://az764295.vo.msecnd.net/stable/fa6d0f03813dfb9df4589c30121e9fcffa8a8ec8/VSCode-linux-x64-stable.zip) [.deb](https://az764295.vo.msecnd.net/stable/fa6d0f03813dfb9df4589c30121e9fcffa8a8ec8/vscode-amd64.deb) [.rpm](https://az764295.vo.msecnd.net/stable/fa6d0f03813dfb9df4589c30121e9fcffa8a8ec8/vscode-x86_64.rpm) | Linux 32-bit [.zip](https://az764295.vo.msecnd.net/stable/fa6d0f03813dfb9df4589c30121e9fcffa8a8ec8/VSCode-linux-ia32-stable.zip) [.deb](https://az764295.vo.msecnd.net/stable/fa6d0f03813dfb9df4589c30121e9fcffa8a8ec8/vscode-i386.deb) [.rpm](https://az764295.vo.msecnd.net/stable/fa6d0f03813dfb9df4589c30121e9fcffa8a8ec8/vscode-i386.rpm)
+Downloads: [`Windows`](https://az764295.vo.msecnd.net/stable/fa6d0f03813dfb9df4589c30121e9fcffa8a8ec8/VSCodeSetup-stable.exe) |
+[`OS X](https://az764295.vo.msecnd.net/stable/fa6d0f03813dfb9df4589c30121e9fcffa8a8ec8/VSCode-darwin-stable.zip) | Linux 64-bit [.zip](https://az764295.vo.msecnd.net/stable/fa6d0f03813dfb9df4589c30121e9fcffa8a8ec8/VSCode-linux-x64-stable.zip) [.deb](https://az764295.vo.msecnd.net/stable/fa6d0f03813dfb9df4589c30121e9fcffa8a8ec8/vscode-amd64.deb) [.rpm](https://az764295.vo.msecnd.net/stable/fa6d0f03813dfb9df4589c30121e9fcffa8a8ec8/vscode-x86_64.rpm) | Linux 32-bit [.zip](https://az764295.vo.msecnd.net/stable/fa6d0f03813dfb9df4589c30121e9fcffa8a8ec8/VSCode-linux-ia32-stable.zip) [.deb](https://az764295.vo.msecnd.net/stable/fa6d0f03813dfb9df4589c30121e9fcffa8a8ec8/vscode-i386.deb) [.rpm`](https://az764295.vo.msecnd.net/stable/fa6d0f03813dfb9df4589c30121e9fcffa8a8ec8/vscode-i386.rpm)
 
 Read on to get into the details...
 
 ## Languages - JavaScript
 
-**Please note**: If you have tested the [Salsa](https://github.com/microsoft/TypeScript/issues/4789) preview in the past and have configured the `typescript.tsdk` setting, then please make sure to remove it. Otherwise you might be using an older version of TypeScript. When you have `typescript.tsdk` set, then the TypeScript version is shown in the bottom right of the Status Bar.
+**Please note**: If you have tested the [`Salsa`](https://github.com/microsoft/TypeScript/issues/4789) preview in the past and have configured the `typescript.tsdk` setting, then please make sure to remove it. Otherwise you might be using an older version of TypeScript. When you have `typescript.tsdk` set, then the TypeScript version is shown in the bottom right of the Status Bar.
 
 ### Documentation
 
-We improved the [JavaScript documentation](/docs/languages/javascript.md) and added more information about the `jsconfig.json` and its attributes.
+We improved the [`JavaScript documentation`](/docs/languages/javascript.md) and added more information about the `jsconfig.json` and its attributes.
 
 ### Disable Syntax Validation when using ES7 constructs
 
@@ -39,17 +39,17 @@ Some users want to use syntax constructs like the proposed **ES7 Object Rest/Spr
 
 The JavaScript experience is much better when you have a `jsconfig.json` file in your workspace that defines the project context. Without a `jsconfig.json`, each JavaScript file is treated as an island. Only the file itself and the JavaScript files it references are considered for features like IntelliSense. By adding a `jsconfig.json` file, you can the define the root of your project, the folders to exclude, etc. For this reason we now provide a hint to create a `jsconfig.json` file.
 
-![The jsconfig hint is located towards the end of in the status bar](images/March/jsconfig-hint.png)
+![`The jsconfig hint is located towards the end of in the status bar`](images/March/jsconfig-hint.png)
 
 The hint creates a template for a `jsconfig.json`, with an exclusion list for you to edit:
 
-![The jsconfig.json file now accepts an exclude property which takes an array of folder names](images/March/jsconfig-template.png)
+![`The jsconfig.json file now accepts an exclude property which takes an array of folder names`](images/March/jsconfig-template.png)
 
 Similarly when your JavaScript project is growing too large, often because of library folders like _node_modules_, we will prompt you to edit the `exclude` list.
 
 ### Go To Symbol is back
 
-During the transition to Salsa, the support for **Go to Symbol** was lost ([TypeScript #7134](https://github.com/microsoft/TypeScript/issues/7134)) for some JavaScript coding patterns. Thanks to the TypeScript team this feature is now back.
+During the transition to Salsa, the support for **Go to Symbol** was lost ([`TypeScript #7134`](https://github.com/microsoft/TypeScript/issues/7134)) for some JavaScript coding patterns. Thanks to the TypeScript team this feature is now back.
 
 ### No more "Reload JavaScript Project"
 
@@ -59,11 +59,11 @@ Previously you often had to run the **Reload JavaScript Project** command to ens
 
 To make it easy to distinguish between diagnostics from external linters and the built-in syntax validation, errors and warnings from the built-in validator are now prefixed with `[js]`.
 
-![](images/March/diagnostics.png)
+![`](images/March/diagnostics.png)
 
 ### IntelliSense when using ES6 import statements in React Native
 
-Previously you did not get IntelliSense when using ES6 style import statements in **React Native** as used in the [getting started guide](https://reactnative.dev/docs/getting-started).
+Previously you did not get IntelliSense when using ES6 style import statements in **React Native** as used in the [`getting started guide`](https://reactnative.dev/docs/getting-started).
 
 In the snippet, below you get no IntelliSense for `React`:
 
@@ -71,7 +71,7 @@ In the snippet, below you get no IntelliSense for `React`:
 import React from 'react-native';
 ```
 
-The issue is that the `react-native` typings do not define a `default` export. By adding the new [compiler option](https://github.com/microsoft/TypeScript/wiki/What%27s-new-in-TypeScript#allow-captured-letconst-in-loops) `allowSyntheticDefaultImports` to the `jsconfig.json`, you tell the compiler to create synthetic default members and you get IntelliSense.
+The issue is that the `react-native` typings do not define a `default` export. By adding the new [`compiler option`](https://github.com/microsoft/TypeScript/wiki/What%27s-new-in-TypeScript#allow-captured-letconst-in-loops) `allowSyntheticDefaultImports` to the `jsconfig.json`, you tell the compiler to create synthetic default members and you get IntelliSense.
 
 In `jsconfig.json`:
 
@@ -87,7 +87,7 @@ This works since **React Native** is using `Babel` to create the run-time code w
 
 ### Support for mix & match of ES6 and CommonJS import/export
 
-Thanks to fix [microsoft/TypeScript#7249](https://github.com/microsoft/TypeScript/pull/7249) mixing & matching of ES6 and **CommonJS** import/export syntax across files is now supported.
+Thanks to fix [`microsoft/TypeScript#7249`](https://github.com/microsoft/TypeScript/pull/7249) mixing & matching of ES6 and **CommonJS** import/export syntax across files is now supported.
 
 ### Formatting options
 
@@ -126,7 +126,7 @@ The following formatter settings are now available for JavaScript:
 
 ### TypeScript Update
 
-VS Code now ships with TypeScript 1.8.9, which includes some fixes over [TypeScript 1.8.2](https://devblogs.microsoft.com/typescript/announcing-typescript-1-8-2/).
+VS Code now ships with TypeScript 1.8.9, which includes some fixes over [`TypeScript 1.8.2`](https://devblogs.microsoft.com/typescript/announcing-typescript-1-8-2/).
 
 ### Formatting options
 
@@ -176,7 +176,7 @@ The HTML formatter is based on the **beautifyjs** library. The formatting option
 
 VS Code is now translated to the following 9 languages: Simplified Chinese, Traditional Chinese, French, German, Italian, Japanese, Korean, Russian and Spanish. By default, VS Code picks up the operating system's language. If you want to configure a specific language, you can either use the command-line switch `--locale` to specify a locale when you launch VS Code or use the **Configure Display Language** action to specify a locale setting to use whenever VS Code is started. Examples are `de` for German or `zh-TW` for Traditional Chinese.
 
-![](images/March/language.png)
+![`](images/March/language.png)
 
 ## Editor
 
@@ -201,13 +201,13 @@ You can also configure full file paths to languages if needed. The following exa
 }
 ```
 
-Note that the pattern is a [glob pattern](https://en.wikipedia.org/wiki/Glob_%28programming%29) that will match on the full path of the file if it contains a `/` and will match on the file name otherwise.
+Note that the pattern is a [`glob pattern`](https://en.wikipedia.org/wiki/Glob_%28programming%29) that will match on the full path of the file if it contains a `/` and will match on the file name otherwise.
 
 ### Column Selection
 
 You can now select columns of text by pressing `kbstyle(Shift+Alt)` and clicking or dragging the mouse:
 
-![](images/March/column-select-mouse.gif)
+![`](images/March/column-select-mouse.gif)
 
 We have also added keyboard commands for column selection.  These are bound on Windows and OS X, but not on Linux, as we could not find any free default key bindings. You can edit your `keybindings.json` to bind them to something more familiar if you want.
 
@@ -251,7 +251,7 @@ We have improved our indentation handling in the editor. We have added a new set
 
 The indentation status shows the current file's settings. We have also added additional actions to the indentation status.
 
-![New actions include indent using spaces, indent using tabs and detect indentation from content](images/March/indentation.png)
+![`New actions include indent using spaces, indent using tabs and detect indentation from content`](images/March/indentation.png)
 
 ### Visual Studio style word navigation and word deletion
 
@@ -288,7 +288,7 @@ To save all new files with the UTF-8 BOM encoding, configure the `files.encoding
 
 The Status Bar now distinguishes between files with UTF-8 and UTF-8 with BOM. You can convert the encoding from there.
 
-![](images/March/statusbar_bom.png)
+![`](images/March/statusbar_bom.png)
 
 ## Workbench
 
@@ -296,11 +296,11 @@ The Status Bar now distinguishes between files with UTF-8 and UTF-8 with BOM. Yo
 
 There is now an Extensions icon in the bottom left corner of the workbench. This is not only a shortcut to reach into extension related actions but also the place for notifying extension errors. It is also used to report progress during an extension's installation.
 
-![](images/March/extension-widget.png)
+![`](images/March/extension-widget.png)
 
 Update notifications will also be notified in this widget:
 
-![](images/March/extension-widget-notification.png)
+![`](images/March/extension-widget-notification.png)
 
 ### Exclude files from watching
 
@@ -327,11 +327,11 @@ Large amounts of output were the cause of multiple user issues. We have now addr
 
 With this release, VS Code now supports 'Run' (in addition to 'Debug') of a program. The **Run** action is triggered with `kb(workbench.action.debug.run)` and uses the currently selected launch configuration. Many of the launch configuration attributes are supported in 'Run' mode. VS Code maintains a debug session while the program is running and pressing the **Stop** button terminates the program.
 
-Please note: The **Run** action is always available, but a debugger extension has to 'opt-in' in order to support 'Run'. If a debugger extension has not been updated, 'Run' will fall back to 'Debug' (the built-in Node Debug and [Mono Debug](https://marketplace.visualstudio.com/items?itemName=ms-vscode.mono-debug) already support 'Run').
+Please note: The **Run** action is always available, but a debugger extension has to 'opt-in' in order to support 'Run'. If a debugger extension has not been updated, 'Run' will fall back to 'Debug' (the built-in Node Debug and [`Mono Debug`](https://marketplace.visualstudio.com/items?itemName=ms-vscode.mono-debug) already support 'Run').
 
 ### Improved thread handling
 
-Thanks to this [pull request](https://github.com/microsoft/vscode/pull/3990), VS Code debugger UI now supports multiple stopped threads and the call stack for each thread is now requested lazily. This improves the debugger's stepping performance in multi-threaded programs.
+Thanks to this [`pull request`](https://github.com/microsoft/vscode/pull/3990), VS Code debugger UI now supports multiple stopped threads and the call stack for each thread is now requested lazily. This improves the debugger's stepping performance in multi-threaded programs.
 
 ## Tasks
 
@@ -339,13 +339,13 @@ Thanks to this [pull request](https://github.com/microsoft/vscode/pull/3990), VS
 
 Configuring the task runner now offers you a list of templates to choose from. Tasks defined for Gulp and Grunt are still auto detected.
 
-![](images/March/tasks.png)
+![`](images/March/tasks.png)
 
 ## Setup
 
 ### Linux packages
 
-.deb and .rpm packages are now being offered as the primary way to install and start using VS Code on Linux. The packages will install the program, a desktop entry, a bin command as well as integrating VS Code into the [Debian alternatives system](https://wiki.debian.org/DebianAlternatives).
+.deb and .rpm packages are now being offered as the primary way to install and start using VS Code on Linux. The packages will install the program, a desktop entry, a bin command as well as integrating VS Code into the [`Debian alternatives system`](https://wiki.debian.org/DebianAlternatives).
 
 Installing can be done through a package manager GUI by running the file through the file explorer or through the command line:
 
@@ -359,7 +359,7 @@ sudo yum install <file>.rpm
 
 ### Linux CLI
 
-The new bin command installed with the package files brings Linux in line with the other platforms that had their command line interfaces improved in the [February release](/updates/vFebruary.md#setup). Run `code --help` to see the command line arguments available for use.
+The new bin command installed with the package files brings Linux in line with the other platforms that had their command line interfaces improved in the [`February release`](/updates/vFebruary.md#setup). Run `code --help` to see the command line arguments available for use.
 
 ### Wait support and Git patch/diff mode
 
@@ -376,7 +376,7 @@ For example, Git allows you to configure an external editor and here are the ste
 
 Now you can run `git config --global -e` and use VS Code as editor for configuring Git.
 
-![](images/March/gitconfig.png)
+![`](images/March/gitconfig.png)
 
 Add the following to enable support for using VS Code as diff tool:
 
@@ -400,7 +400,7 @@ To summarize, here are some examples of where you can use Git with VS Code:
 
 We have added accessibility improvements to the suggestion widget, parameter hints widget and to the quick fix widget (Lightbulb), which now announce each suggestion, as they are selected, to screen readers.
 
-> Tip: If you use the [NVDA screen reader](https://www.nvaccess.org), it is possible to navigate suggestions using `kb(editor.action.moveLinesUpAction)` and `kb(editor.action.moveLinesDownAction)`, to dismiss the suggestions with `kb(hideSuggestWidget)` and if suggestions get in your way, you can disable the auto-popup of suggestions with the `editor.quickSuggestions` setting.
+> Tip: If you use the [`NVDA screen reader`](https://www.nvaccess.org), it is possible to navigate suggestions using `kb(editor.action.moveLinesUpAction)` and `kb(editor.action.moveLinesDownAction)`, to dismiss the suggestions with `kb(hideSuggestWidget)` and if suggestions get in your way, you can disable the auto-popup of suggestions with the `editor.quickSuggestions` setting.
 
 ## Extension Authoring
 
@@ -410,7 +410,7 @@ We have added accessibility improvements to the suggestion widget, parameter hin
 * Added `cursorStyle` to `TextEditorOptions` to set the cursor style (vertical line, block or underline) for a specific editor.
 * Added a `setContext` command for customizing key binding rules.  This command takes two arguments, a key and a value.
 * All typing in an editor now goes through a `type` command that can be overwritten by an extension to implement different editor emulation modes such as **Vim** emulation mode.
-* Added a [**Vim** emulation sample](https://github.com/alexandrudima/vscode-vim) that shows how a **Vim** emulation extension can use the VS Code API.
+* Added a [`**Vim** emulation sample`](https://github.com/alexandrudima/vscode-vim) that shows how a **Vim** emulation extension can use the VS Code API.
 
 ## Licensing Changes
 
@@ -420,7 +420,7 @@ For Stable 1.0, these are the differences:
 
 * The TIME-SENSITIVE SOFTWARE clause has been removed and the product will no longer stop running on 31/12/2016 (day/month/year).
 * The PRE-RELEASE SOFTWARE qualification has been removed.
-* The license no longer prohibits you from opting out of data collection. You can turn off [crash reporting](/docs/supporting/faq.md#how-to-disable-crash-reporting) and [usage reporting](/docs/supporting/faq.md#how-to-disable-telemetry-reporting).
+* The license no longer prohibits you from opting out of data collection. You can turn off [`crash reporting](/docs/supporting/faq.md#how-to-disable-crash-reporting) and [usage reporting`](/docs/supporting/faq.md#how-to-disable-telemetry-reporting).
 * The license clarifies that extensions downloaded are covered by the license provided by the extension author, not the VS Code license.
 
 You can view the Stable license at https://code.visualstudio.com/license?lang= where lang is the two or three character language code ('en', 'de', 'fr', 'zh-CN', 'zh-TW', 'ko', 'ja', 'ru', 'es', 'it').
@@ -435,20 +435,20 @@ You can view the Insiders license at https://code.visualstudio.com/license/insid
 
 ## Notable Bug Fixes
 
-- [2116](https://github.com/microsoft/vscode/issues/2116): Inconsistent de-indentation behavior while closing html tags using Autocomplete
-- [2808](https://github.com/microsoft/vscode/issues/2808): Make it easier to add more file extensions to an existing colorizer/language
-- [2912](https://github.com/microsoft/vscode/issues/2912) Html code returned from a TextDocumentContentProvider can now embed JavaScript code.
+- [`2116`](https://github.com/microsoft/vscode/issues/2116): Inconsistent de-indentation behavior while closing html tags using Autocomplete
+- [`2808`](https://github.com/microsoft/vscode/issues/2808): Make it easier to add more file extensions to an existing colorizer/language
+- [`2912`](https://github.com/microsoft/vscode/issues/2912) Html code returned from a TextDocumentContentProvider can now embed JavaScript code.
 
-Here are the [closed bugs](https://github.com/microsoft/vscode/issues?q=milestone%3A%22March+2016%22+is%3Aclosed) and the [closed feature requests](https://github.com/microsoft/vscode/issues?q=is%3Aissue+milestone%3A%22March+2016%22+is%3Aclosed+label%3Afeature-request) for the March update.
+Here are the [`closed bugs](https://github.com/microsoft/vscode/issues?q=milestone%3A%22March+2016%22+is%3Aclosed) and the [closed feature requests`](https://github.com/microsoft/vscode/issues?q=is%3Aissue+milestone%3A%22March+2016%22+is%3Aclosed+label%3Afeature-request) for the March update.
 
 ## Thank You
 
 Last but certainly not least, a big *__Thank You!__* to the following folks that helped to make VS Code even better:
 
-* [Joe Martella (@martellaj)](https://github.com/martellaj): Adds sort lines (ascending and descending) command [2796](https://github.com/microsoft/vscode/pull/2796).
-* [Ivan Enderlin (@Hywan)](https://github.com/Hywan): Improved PHP support [4323](https://github.com/microsoft/vscode/pull/4323) [4322](https://github.com/microsoft/vscode/pull/4322).
-- [Sanders Lauture (@golf1052)](https://github.com/golf1052): Fix markdown highlighting for C# [4225](https://github.com/microsoft/vscode/pull/4225).
-- [Phillip Johnsen (@phillipj)](https://github.com/phillipj): Multiple script enhancements  [3691](https://github.com/microsoft/vscode/pull/3691) [3649](https://github.com/microsoft/vscode/pull/3649) [3636](https://github.com/microsoft/vscode/pull/3636).
-- [Ed Muñoz (@edumunoz)](https://github.com/edumunoz): Support stop-all-threads mode debugging for multi-threaded debuggers [3990](https://github.com/microsoft/vscode/pull/3990).
-- [Pierson Lee (@pieandcakes)](https://github.com/pieandcakes): Added telemetry for debugging scenarios [3687](https://github.com/microsoft/vscode/pull/3687).
-- [Guillaume Jenkins (@guillaumejenkins)](https://github.com/guillaumejenkins): Adding descriptions of Ionic HTML tags [3734](https://github.com/microsoft/vscode/pull/3734).
+* [`Joe Martella (@martellaj)](https://github.com/martellaj): Adds sort lines (ascending and descending) command [2796`](https://github.com/microsoft/vscode/pull/2796).
+* [`Ivan Enderlin (@Hywan)](https://github.com/Hywan): Improved PHP support [4323](https://github.com/microsoft/vscode/pull/4323) [4322`](https://github.com/microsoft/vscode/pull/4322).
+- [`Sanders Lauture (@golf1052)](https://github.com/golf1052): Fix markdown highlighting for C# [4225`](https://github.com/microsoft/vscode/pull/4225).
+- [`Phillip Johnsen (@phillipj)](https://github.com/phillipj): Multiple script enhancements  [3691](https://github.com/microsoft/vscode/pull/3691) [3649](https://github.com/microsoft/vscode/pull/3649) [3636`](https://github.com/microsoft/vscode/pull/3636).
+- [`Ed Muñoz (@edumunoz)](https://github.com/edumunoz): Support stop-all-threads mode debugging for multi-threaded debuggers [3990`](https://github.com/microsoft/vscode/pull/3990).
+- [`Pierson Lee (@pieandcakes)](https://github.com/pieandcakes): Added telemetry for debugging scenarios [3687`](https://github.com/microsoft/vscode/pull/3687).
+- [`Guillaume Jenkins (@guillaumejenkins)](https://github.com/guillaumejenkins): Adding descriptions of Ionic HTML tags [3734`](https://github.com/microsoft/vscode/pull/3734).

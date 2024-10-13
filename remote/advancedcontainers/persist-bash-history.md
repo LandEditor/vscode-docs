@@ -20,7 +20,7 @@ RUN SNIPPET="export PROMPT_COMMAND='history -a' && export HISTFILE=/commandhisto
     && echo "$SNIPPET" >> "/root/.bashrc"
 ```
 
-If you have a non-root user, update your `Dockerfile` with the following. Replace `user-name-goes-here` with the name of a [non-root user](/remote/advancedcontainers/add-nonroot-user.md) in the container.
+If you have a non-root user, update your `Dockerfile` with the following. Replace `user-name-goes-here` with the name of a [`non-root user`](/remote/advancedcontainers/add-nonroot-user.md) in the container.
 
 ```docker
 ARG USERNAME=user-name-goes-here
@@ -42,7 +42,7 @@ Next, add a local volume to store the command history. This step varies dependin
       ]
     ```
 
-* **Docker Compose:** Update (or [extend](/docs/devcontainers/create-dev-container.md#extend-your-docker-compose-file-for-development)) your `docker-compose.yml` with the following for the appropriate service.
+* **Docker Compose:** Update (or [`extend`](/docs/devcontainers/create-dev-container.md#extend-your-docker-compose-file-for-development)) your `docker-compose.yml` with the following for the appropriate service.
 
     ```yaml
     version: '3'

@@ -11,17 +11,17 @@ MetaDescription: Learn to use development in the Windows Subsystem for Linux (WS
 
 ## What is WSL?
 
-The [Windows Subsystem for Linux](https://learn.microsoft.com/windows/wsl/about) (WSL) lets you run a Linux environment, including command-line tools and applications, directly on Windows, without the overhead of a traditional virtual machine or dual boot setup.
+The [`Windows Subsystem for Linux`](https://learn.microsoft.com/windows/wsl/about) (WSL) lets you run a Linux environment, including command-line tools and applications, directly on Windows, without the overhead of a traditional virtual machine or dual boot setup.
 
 WSL especially helps web developers and those working with Bash and Linux-first tools (for example, Ruby and Python) to use their tools on Windows and ensure consistency between development and production environments.
 
 ## Get started with WSL in VS Code
 
-To get started with using WSL in VS Code, you'll need to download the [WSL extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) from the Extension Marketplace.
+To get started with using WSL in VS Code, you'll need to download the [`WSL extension`](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) from the Extension Marketplace.
 
-![WSL extension](images/wsl/wsl-extension.png)
+![`WSL extension`](images/wsl/wsl-extension.png)
 
-You'll also need WSL and a Linux distribution installed. We recommend using WSL 2, which is the newest version of WSL, as you will benefit from significant [performance advantages](https://learn.microsoft.com/windows/wsl/compare-versions) over WSL 1.
+You'll also need WSL and a Linux distribution installed. We recommend using WSL 2, which is the newest version of WSL, as you will benefit from significant [`performance advantages`](https://learn.microsoft.com/windows/wsl/compare-versions) over WSL 1.
 
 Check out the WSL extension in action:
 
@@ -33,4 +33,4 @@ The typical flow is you'll open a Linux command prompt, navigate to a folder of 
 
 ## Next steps
 
-We highly recommend checking out the step-by-step [WSL tutorial](/docs/remote/wsl-tutorial.md) to learn more.
+We highly recommend checking out the step-by-step [`WSL tutorial`](/docs/remote/wsl-tutorial.md) to learn more.

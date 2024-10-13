@@ -9,7 +9,7 @@ Author: Matt Bierner
 
 # Introducing the Markdown Language Server
 
-August 16, 2022 by Matt Bierner, [@MattBierner](https://hachyderm.io/@mattbierner)
+August 16, 2022 by Matt Bierner, [`@MattBierner`](https://hachyderm.io/@mattbierner)
 
 Markdown support was the first feature I took ownership of when I joined Visual Studio Code back in 2016. Wow, has it really been six years? It was a great match though. I've worked with Markdown long enough that I often find myself hopefully typing backticks and asterisks into Twitter, Outlook, and just about every textbox my cursor lands in. It's been incredibly rewarding to grow VS Code's built-in Markdown support over the years and see how our Markdown extension has directly and indirectly shaped core features like webviews and notebooks.
 
@@ -59,21 +59,21 @@ I knew these new tools would make working with Markdown faster and safer. But as
 
 ## Are you being servered?
 
-By late spring 2022, all of VS Code's Markdown tooling was still running on the [normal extension APIs](https://code.visualstudio.com/api/references/vscode-api). While I wanted to explore moving all of these tools over to a proper language server, making the change would have a real engineering cost. I needed to make sure it was going to be worthwhile.
+By late spring 2022, all of VS Code's Markdown tooling was still running on the [`normal extension APIs`](https://code.visualstudio.com/api/references/vscode-api). While I wanted to explore moving all of these tools over to a proper language server, making the change would have a real engineering cost. I needed to make sure it was going to be worthwhile.
 
 I went back and forth on this for more than month. Even though the existing code was in decent shape, there were plenty of unknowns. What if I got part of the way through only to realize it wouldn't work? I'd never even seriously worked on a language server before.
 
 As I debated all this, I kept myself busy by refactoring the Markdown extension source code as if it were going to be moved to a language server. I tried to isolate dependencies on VS Code's extension APIs, I switched more logic to use service injection, and I made sure tests didn't rely on the filesystem. That way even if I never took the language server plunge, at least I was cleaning up the codebase.
 
-A few considerations ultimately convinced me that a Markdown language server was the right next step. First a rather mundane one: I was finding it very challenging to efficiently implement link diagnostics for Markdown files. On a large Markdown workspace such as [vscode-docs](https://github.com/Microsoft/vscode-docs), I kept accidentally blocking the extension host for a few hundred milliseconds. Not good. A language server on the other hand runs as its own process. Not only that, but language servers also now had a new pull model for diagnostics that I was excited to try out.
+A few considerations ultimately convinced me that a Markdown language server was the right next step. First a rather mundane one: I was finding it very challenging to efficiently implement link diagnostics for Markdown files. On a large Markdown workspace such as [`vscode-docs`](https://github.com/Microsoft/vscode-docs), I kept accidentally blocking the extension host for a few hundred milliseconds. Not good. A language server on the other hand runs as its own process. Not only that, but language servers also now had a new pull model for diagnostics that I was excited to try out.
 
-Then there were more noble reasons. For instance, a Markdown language server would be useful to other editors and tools. This includes the other editor that the VS Code team ships: [Monaco](https://github.com/microsoft/monaco-editor)! Not to mention the possibilities of something like a Markdown CLI tool. If I didn't have the time to build such a tool myself, perhaps someone else could, using the language server as a starting point. I'd put a lot of work into VS Code's Markdown tooling and it would be great if all this work could benefit others too.
+Then there were more noble reasons. For instance, a Markdown language server would be useful to other editors and tools. This includes the other editor that the VS Code team ships: [`Monaco`](https://github.com/microsoft/monaco-editor)! Not to mention the possibilities of something like a Markdown CLI tool. If I didn't have the time to build such a tool myself, perhaps someone else could, using the language server as a starting point. I'd put a lot of work into VS Code's Markdown tooling and it would be great if all this work could benefit others too.
 
 By making a new language server available, I might also be able to kickstart a shared effort around improving Markdown tooling. VS Code is both a prolific producer and user of open source software, and I'd seen the clear benefits these types of projects offer. An open source Markdown language server would help other editors, but in turn would also invite contributions that would ultimately help VS Code! Instead of each editor/tool duplicating effort implementing their own Markdown support, a language server could bring developers together to work on a larger project that would benefit everyone.
 
 All these grand musings were irrelevant without a plan of how to actually build the language server. Even after all my refactoring, moving the code to a language server was going to be a lot of work! It seemed overwhelming, until I realized that I didn't have to do it all in one go. I could build the server incrementally, moving over one feature at a time from the VS Code Markdown extension to the new Markdown language server. And if I did it right, I could check in each little incremental migration so that users would be testing out the new language server as it was being built. Ideally, users would never notice when a feature moved from the extension to the language server.
 
-Maybe this is obvious, but I've become a huge believer in this type of incremental approach to large code changes. No hundred thousand LOC PRs or massive feature branches that stick around for months (or years!). Instead make a bunch of small, safe changes to `main`. If everything goes as planned, the commit that caps off all this work should be anti-climatic. This is the approach we took to progressively using [strict null check in the entire VS Code codebase](https://code.visualstudio.com/blogs/2019/05/23/strict-null), and this is how I felt that I could move all of VS Code's Markdown tooling to a new language server quickly and with as little drama as possible.
+Maybe this is obvious, but I've become a huge believer in this type of incremental approach to large code changes. No hundred thousand LOC PRs or massive feature branches that stick around for months (or years!). Instead make a bunch of small, safe changes to `main`. If everything goes as planned, the commit that caps off all this work should be anti-climatic. This is the approach we took to progressively using [`strict null check in the entire VS Code codebase`](https://code.visualstudio.com/blogs/2019/05/23/strict-null), and this is how I felt that I could move all of VS Code's Markdown tooling to a new language server quickly and with as little drama as possible.
 
 **And spoiler alert**: it worked! I moved over language features one at a time. I learned as I went, and refactored when it became clear it was needed. Diagnostics were the last feature to move over, as not only was I moving them to the language server but I also rewrote them to use the language server's new pull diagnostics model. The last commit of the whole effort mostly deleted the now unused code from the Markdown extension. And so today, if you're on VS Code 1.70+, almost all Markdown language features use the new language server.
 
@@ -91,7 +91,7 @@ If you're interested in checking out the source code or contributing, you can fi
 
 Happy Coding!
 
-Matt Bierner, [@MattBierner](https://hachyderm.io/@mattbierner)
+Matt Bierner, [`@MattBierner`](https://hachyderm.io/@mattbierner)
 
 [ls]: https://microsoft.github.io/language-server-protocol/
 [server]: https://github.com/microsoft/vscode/tree/main/extensions/markdown-language-features/server

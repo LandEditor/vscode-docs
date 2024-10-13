@@ -15,7 +15,7 @@ The Dev Containers extension uses "bind mounts" to source code in your local fil
 
 Windows 10 2004 and up includes an improved version of the Windows Subsystem for Linux (WSL 2) that provides a full Linux kernel and has significantly improved performance over WSL 1. Docker Desktop 2.3+ includes a new WSL 2 Engine that runs Docker in WSL rather than in a VM. Therefore, if you store your source code in the WSL 2 filesystem, you will see improved performance along with better compatibility for things like setting permissions.
 
-See [Open a WSL 2 folder in a container on Windows](/docs/devcontainers/containers.md#open-a-wsl-2-folder-in-a-container-on-windows) for details on using this new engine from VS Code.
+See [`Open a WSL 2 folder in a container on Windows`](/docs/devcontainers/containers.md#open-a-wsl-2-folder-in-a-container-on-windows) for details on using this new engine from VS Code.
 
 ### Video: Speed up Dev Containers on Windows
 
@@ -25,7 +25,7 @@ See [Open a WSL 2 folder in a container on Windows](/docs/devcontainers/containe
 
 The **Dev Containers: Clone Repository in Container Volume...** command uses an isolated, local Docker named volume instead of binding to the local filesystem. In addition to not polluting your file tree, local volumes have the added benefit of improved performance on Windows and macOS.
 
-See [Open a Git repository or GitHub PR in an isolated container volume](/docs/devcontainers/containers.md#quick-start-open-a-git-repository-or-github-pr-in-an-isolated-container-volume) for details on using this approach.
+See [`Open a Git repository or GitHub PR in an isolated container volume`](/docs/devcontainers/containers.md#quick-start-open-a-git-repository-or-github-pr-in-an-isolated-container-volume) for details on using this approach.
 
 The next two sections will outline how to use a named volume in other scenarios.
 
@@ -35,7 +35,7 @@ Since macOS and Windows run containers in a VM, "bind" mounts are not as fast as
 
 **Dockerfile or image**:
 
-Let's use the [vscode-remote-try-node](https://github.com/microsoft/vscode-remote-try-node) repository to illustrate how to speed up `yarn install`.
+Let's use the [`vscode-remote-try-node`](https://github.com/microsoft/vscode-remote-try-node) repository to illustrate how to speed up `yarn install`.
 
 Follow these steps:
 
@@ -49,7 +49,7 @@ Follow these steps:
 
     > **Note**: You may use `${localWorkspaceFolderBasename}`, `${devcontainerId}`, or a hardcoded name in the `source`.
 
-2. Since this repository [runs VS Code as the non-root "node" user](/remote/advancedcontainers/add-nonroot-user.md), we need to add a `postCreateCommand` to be sure the user can access the folder.
+2. Since this repository [`runs VS Code as the non-root "node" user`](/remote/advancedcontainers/add-nonroot-user.md), we need to add a `postCreateCommand` to be sure the user can access the folder.
 
     ```json
     "remoteUser": "node",
@@ -73,7 +73,7 @@ Two notes on this approach:
 
 While vscode-remote-try-node does not use Docker Compose, the steps are similar, but the volume mount configuration is placed in a different file.
 
-1. In your Docker Compose file (or an [extended one](/docs/devcontainers/create-dev-container.md#extend-your-docker-compose-file-for-development)), add a named local volume mount to the `node_modules` sub-folder for the appropriate service(s). For example:
+1. In your Docker Compose file (or an [`extended one`](/docs/devcontainers/create-dev-container.md#extend-your-docker-compose-file-for-development)), add a named local volume mount to the `node_modules` sub-folder for the appropriate service(s). For example:
 
     ```yaml
     version: '3'
@@ -95,7 +95,7 @@ While vscode-remote-try-node does not use Docker Compose, the steps are similar,
     "workspaceFolder": "/workspace"
     ```
 
-3. If you're running in the container with a [user other than root](/remote/advancedcontainers/add-nonroot-user.md), add a `postCreateCommand` to update the owner of the folder you mount since it may have been mounted as root. Replace `user-name-goes-here` with the appropriate user.
+3. If you're running in the container with a [`user other than root`](/remote/advancedcontainers/add-nonroot-user.md), add a `postCreateCommand` to update the owner of the folder you mount since it may have been mounted as root. Replace `user-name-goes-here` with the appropriate user.
 
     ```json
     "remoteUser": "node",
@@ -122,7 +122,7 @@ Depending on what you reference in `devcontainer.json`:
     "workspaceFolder": "/workspace",
     ```
 
-* **Docker Compose**: Update (or [extend](/docs/devcontainers/create-dev-container.md#extend-your-docker-compose-file-for-development)) your `docker-compose.yml` with the following for the appropriate service(s):
+* **Docker Compose**: Update (or [`extend`](/docs/devcontainers/create-dev-container.md#extend-your-docker-compose-file-for-development)) your `docker-compose.yml` with the following for the appropriate service(s):
 
     ```yaml
     version: '3'

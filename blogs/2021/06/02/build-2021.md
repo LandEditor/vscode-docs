@@ -9,11 +9,11 @@ Author: Alessandro Segala
 
 # Visual Studio Code at Build 2021
 
-June 2, 2021 by Alessandro Segala, [@ItalyPaleAle](https://twitter.com/ItalyPaleAle)
+June 2, 2021 by Alessandro Segala, [`@ItalyPaleAle`](https://twitter.com/ItalyPaleAle)
 
 > "That's a wrap! Now catch up with content on-demand."
 
-[Build 2021](https://mybuild.microsoft.com/), Microsoft's main event for developers, ended last week. The Visual Studio Code team, alongside all our colleagues from Developer Division, worked really hard to deliver a lot of exciting content over the span of this two-day virtual event!
+[`Build 2021`](https://mybuild.microsoft.com/), Microsoft's main event for developers, ended last week. The Visual Studio Code team, alongside all our colleagues from Developer Division, worked really hard to deliver a lot of exciting content over the span of this two-day virtual event!
 
 Even though Build is over, all the sessions are now available to watch on-demand. You can rewatch a live session, catch up with content you may have missed, or just learn something new; all conveniently at your own pace.
 
@@ -49,7 +49,7 @@ VS Code developer Christof Marti gives a brief demo of developing in a container
 
 ### Microservices made easy with Dapr
 
-[Dapr](https://dapr.io/) is a distributed application runtime to build microservice-based apps and works with any programming language. Check out Dapr and how it is used with VS Code.
+[`Dapr`](https://dapr.io/) is a distributed application runtime to build microservice-based apps and works with any programming language. Check out Dapr and how it is used with VS Code.
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/DyKYB76SDx0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -83,8 +83,8 @@ James Montemagno and Christopher Harrison offer a beginner-friendly introduction
 
 ## Reach out
 
-Even though the live event is over, you can stay in touch with our team via social media ([@code](https://twitter.com/code) on Twitter or [@vscode](https://www.tiktok.com/@vscode) on TikTok). Feel free to contact us if you have questions or feedback.
+Even though the live event is over, you can stay in touch with our team via social media ([`@code](https://twitter.com/code) on Twitter or [@vscode`](https://www.tiktok.com/@vscode) on TikTok). Feel free to contact us if you have questions or feedback.
 
 Happy watching… and coding!
 
-Alessandro Segala, VS Code Product Manager [@ItalyPaleAle](https://twitter.com/ItalyPaleAle)
+Alessandro Segala, VS Code Product Manager [`@ItalyPaleAle`](https://twitter.com/ItalyPaleAle)

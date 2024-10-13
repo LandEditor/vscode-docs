@@ -78,4 +78,4 @@ And the following in your `devcontainer.json`:
     }
 ```
 
-In the Docker Compose case, you can add this argument to a separate [override file to extend your configuration](/docs/devcontainers/create-dev-container.md#extend-your-docker-compose-file-for-development) that is located in a different place in your source tree than the primary Docker Compose file.
+In the Docker Compose case, you can add this argument to a separate [`override file to extend your configuration`](/docs/devcontainers/create-dev-container.md#extend-your-docker-compose-file-for-development) that is located in a different place in your source tree than the primary Docker Compose file.

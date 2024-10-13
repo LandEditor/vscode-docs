@@ -9,35 +9,35 @@ Author: Johannes Rieken
 
 # Resolving extension issues with bisect
 
-February 16, 2021 by Johannes Rieken, [@johannesrieken](https://twitter.com/johannesrieken)
+February 16, 2021 by Johannes Rieken, [`@johannesrieken`](https://twitter.com/johannesrieken)
 
 > "Just like git-bisect, but for VS Code extensions."
 
-The true power of Visual Studio Code is its extensions: theme extensions add colors and icons, language extensions enable smart code completion (IntelliSense) and navigation, debugger extensions enable you to run your code and easily find bugs. There are extensions that play music, some that show stock tickers, and there are extensions that enable collaborative work across locations and time zones. The VS Code [Marketplace](https://marketplace.visualstudio.com/vscode) hosts more than 28,000 extensions and it is not uncommon that users have 50 or more extensions installed. With so many extensions out there, bugs are inevitable. Instead of denial, we want to make troubleshooting easy.
+The true power of Visual Studio Code is its extensions: theme extensions add colors and icons, language extensions enable smart code completion (IntelliSense) and navigation, debugger extensions enable you to run your code and easily find bugs. There are extensions that play music, some that show stock tickers, and there are extensions that enable collaborative work across locations and time zones. The VS Code [`Marketplace`](https://marketplace.visualstudio.com/vscode) hosts more than 28,000 extensions and it is not uncommon that users have 50 or more extensions installed. With so many extensions out there, bugs are inevitable. Instead of denial, we want to make troubleshooting easy.
 
 ## "Bad" extensions
 
-We love extensions and don't really think there are any "bad" extensions. However, like all software, extensions have bugs and feature gaps. So, for reading ease and artificial drama, let's use the term "bad extensions", which is an extension that might crash or simply show unwanted behavior. Fortunately, we designed VS Code with "bad" extensions in mind and therefore run them in a separate [process](https://code.visualstudio.com/api/advanced-topics/extension-host). This isolation guarantees that VS Code keeps running, the cursor always blinks, and that you can always save your work.
+We love extensions and don't really think there are any "bad" extensions. However, like all software, extensions have bugs and feature gaps. So, for reading ease and artificial drama, let's use the term "bad extensions", which is an extension that might crash or simply show unwanted behavior. Fortunately, we designed VS Code with "bad" extensions in mind and therefore run them in a separate [`process`](https://code.visualstudio.com/api/advanced-topics/extension-host). This isolation guarantees that VS Code keeps running, the cursor always blinks, and that you can always save your work.
 
-For fun, and to make it easier to demonstrate extension bisect, we have created and published the [Extension Bisect Demo](https://marketplace.visualstudio.com/items?itemName=jrieken.bisectdemo) extension. When installed, it will annoyingly reset your cursor whenever you reach the word "bisect". You can use this extension to follow along in this blog post.
+For fun, and to make it easier to demonstrate extension bisect, we have created and published the [`Extension Bisect Demo`](https://marketplace.visualstudio.com/items?itemName=jrieken.bisectdemo) extension. When installed, it will annoyingly reset your cursor whenever you reach the word "bisect". You can use this extension to follow along in this blog post.
 
 ## Finding a "bad" extension the hard way
 
-Today, finding a "bad" extension can be easy or hard.  Open the Extensions view (`kb(workbench.view.extensions)`), [disable an extension](/docs/editor/extension-marketplace.md#disable-an-extension), reload the window (**Developer: Reload Window**), and check to see if the problem still exists. If the problem is gone, that extension is "bad" and you are done. Otherwise, re-enable the extension and repeat the process with the next extension.
+Today, finding a "bad" extension can be easy or hard.  Open the Extensions view (`kb(workbench.view.extensions)`), [`disable an extension`](/docs/editor/extension-marketplace.md#disable-an-extension), reload the window (**Developer: Reload Window**), and check to see if the problem still exists. If the problem is gone, that extension is "bad" and you are done. Otherwise, re-enable the extension and repeat the process with the next extension.
 
-![Disabling an extension step by step](./disable_manually.png)
+![`Disabling an extension step by step`](./disable_manually.png)
 
 If you are lucky, the first extension is the "bad" one; if you are unlucky, it's the last extension. Using computer science language, this means with `N` extensions, you have a worst-case of repeating the process `O(N)` (order N), and an average-case of `O(N/2)`. Because this algorithm is operated by a human (you), even small values of `N` are laborious. This is where the **extension bisect** utility comes in handy. It is much better in the worst and average cases because it disables extensions by halves.
 
 ## Welcome extension bisect
 
-The Extension bisect utility in VS Code was inspired by the [git bisect](https://git-scm.com/docs/git-bisect) command. For those familiar with Git, this command is helpful for finding out which commit in the repository introduced an issue.
+The Extension bisect utility in VS Code was inspired by the [`git bisect`](https://git-scm.com/docs/git-bisect) command. For those familiar with Git, this command is helpful for finding out which commit in the repository introduced an issue.
 
 Let's use a sample: I have 24 extensions installed and the 8th extension is "bad". We know that the iterative approach requires 8 steps. What about bisect?
 
 The video below shows starting extension bisect via the **Help: Start Extension Bisect** command and then selecting either **Good now** or **This is bad** until the "bad" extension is identified. Once identified, you have the option to report an issue for that extension.
 
-![The extension bisect process](bisect.gif)
+![`The extension bisect process`](bisect.gif)
 
 Here's step by step how the "bad" extension was found:
 
@@ -62,4 +62,4 @@ That's it. We hope that you never need to use extension bisect. However, if you 
 
 Happy Coding,
 
-Johannes Rieken, VS Code Principal Software Engineer [@johannesrieken](https://twitter.com/johannesrieken)
+Johannes Rieken, VS Code Principal Software Engineer [`@johannesrieken`](https://twitter.com/johannesrieken)

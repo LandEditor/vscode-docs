@@ -22,9 +22,9 @@ Below is the current list of blocked extensions:
 
 ---
 
-November 26, 2018 Kai Maetzel, [@kaimaetzel](https://twitter.com/kaimaetzel)
+November 26, 2018 Kai Maetzel, [`@kaimaetzel`](https://twitter.com/kaimaetzel)
 
-You might already have heard that the popular event-stream NPM package includes a malicious dependency. The details can be found in the following GitHub issue: [https://github.com/dominictarr/event-stream/issues/116](https://github.com/dominictarr/event-stream/issues/116). This vulnerability has been in existence for about two months but was only recently discovered.
+You might already have heard that the popular event-stream NPM package includes a malicious dependency. The details can be found in the following GitHub issue: [`https://github.com/dominictarr/event-stream/issues/116`](https://github.com/dominictarr/event-stream/issues/116). This vulnerability has been in existence for about two months but was only recently discovered.
 
 >**TL;DR**: Visual Studio Code is not affected by the industry-wide NPM `event-stream` package security issue, and we've proactively protected our user base by temporarily removing extensions affected by this package from the VS Code Marketplace.
 
@@ -79,4 +79,4 @@ Extension authors needs to update the `vscode` module to `1.1.22`.
 
 We'll keep you posted.
 
-[Kai Maetzel (Microsoft)](https://twitter.com/kaimaetzel)
+[`Kai Maetzel (Microsoft)](https://twitter.com/kaimaetzel)

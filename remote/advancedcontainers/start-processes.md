@@ -53,7 +53,7 @@ These systems also include a `service` command that will use `systemctl` or `/et
 
 ## Adding startup commands to the Docker image instead
 
-While `postStartCommand` is convenient and allows you to execute commands in your source tree, you can also add these steps instead to a Dockerfile using a custom [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) or [CMD](https://docs.docker.com/engine/reference/builder/#cmd).
+While `postStartCommand` is convenient and allows you to execute commands in your source tree, you can also add these steps instead to a Dockerfile using a custom [`ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) or [CMD`](https://docs.docker.com/engine/reference/builder/#cmd).
 
 When referencing a Dockerfile in `devcontainer.json`, the default entrypoint and command is overridden. First, disable this behavior using the `overrideCommand` property.
 
@@ -92,4 +92,4 @@ exec "$@"
 
 Anything you execute in this file will then fire each time the container starts. However, it's important to include the last `exec "$@"` line since this is what will cause the command `sleep infinity` in our example to fire.
 
-Finally, if you are using Docker Compose, be sure that neither the [entrypoint](https://docs.docker.com/compose/compose-file/compose-file-v3/#entrypoint) nor [command](https://docs.docker.com/compose/compose-file/compose-file-v3/#command) properties are set for your container.
+Finally, if you are using Docker Compose, be sure that neither the [`entrypoint](https://docs.docker.com/compose/compose-file/compose-file-v3/#entrypoint) nor [command`](https://docs.docker.com/compose/compose-file/compose-file-v3/#command) properties are set for your container.
