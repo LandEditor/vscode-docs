@@ -22,7 +22,7 @@ Before diving into the details, a good start is to play with the [scope inspecto
 
 The tokenization of text is about breaking the text into segments and to classify each segment with a token type.
 
-VS Code's tokenization engine is powered by [TextMate grammars][tm-grammars]. TextMate grammars are a structured collection of regular expressions and are written as a plist (XML) or JSON files. VS Code extensions can contribute grammars through the `grammars` contribution point.
+VS Code's tokenization engine is powered by [`TextMate grammars`][tm-grammars]. TextMate grammars are a structured collection of regular expressions and are written as a plist (XML) or JSON files. VS Code extensions can contribute grammars through the `grammars` contribution point.
 
 The TextMate tokenization engine runs in the same process as the renderer and tokens are updated as the user types. Tokens are used for syntax highlighting, but also to classify the source code into areas of comments, strings, regex.
 
@@ -34,7 +34,7 @@ This article focuses on the TextMate-based tokenization. Semantic tokenization a
 
 ### TextMate grammars
 
-VS Code uses [TextMate grammars][tm-grammars] as the syntax tokenization engine. Invented for the TextMate editor, they have been adopted by many other editors and IDEs due to large number of language bundles created and maintained by the Open Source community.
+VS Code uses [`TextMate grammars`][tm-grammars] as the syntax tokenization engine. Invented for the TextMate editor, they have been adopted by many other editors and IDEs due to large number of language bundles created and maintained by the Open Source community.
 
 TextMate grammars rely on [Oniguruma regular expressions](https://macromates.com/manual/en/regular_expressions) and are typically written as a plist or JSON. You can find a good introduction to TextMate grammars [here](https://www.apeth.com/nonblog/stories/textmatebundle.html), and you can take a look at existing TextMate grammars to learn more about how they work.
 
@@ -44,7 +44,7 @@ Tokens are one or more characters that are part of the same program element. Exa
 
 Each token is associated with a scope that defines the context of the token. A scope is a dot separated list of identifiers that specify the context of the current token. The `+` operation in JavaScript, for example, has the scope `keyword.operator.arithmetic.js`.
 
-Themes map scopes to colors and styles to provide syntax highlighting. TextMate provides [list of common scopes][tm-grammars] that many themes target. In order to have your grammar as broadly supported as possible, try to build on existing scopes rather than defining new ones.
+Themes map scopes to colors and styles to provide syntax highlighting. TextMate provides [`list of common scopes`][tm-grammars] that many themes target. In order to have your grammar as broadly supported as possible, try to build on existing scopes rather than defining new ones.
 
 Scopes nest so that each token is also associated with a list of parent scopes. The example below uses the [scope inspector](#scope-inspector) to show the scope hierarchy for the `+` operator in a simple JavaScript function. The most specific scope is listed at the top, with more general parent scopes listed below:
 

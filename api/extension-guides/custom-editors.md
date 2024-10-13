@@ -20,11 +20,11 @@ This document provides an overview of the custom editor API and the basics of im
 
 Although custom editors are a powerful new extension point, implementing a basic custom editor is not actually that difficult! Still, if you are working on your first VS Code extension, you may want to consider holding off on diving into custom editors until you are more familiar with the basics of the VS Code API. Custom editors build on a lot of VS Code concepts—such as [webviews](/api/extension-guides/webview) and text documents—so it may be a bit overwhelming if you are learning all of these new ideas at the same time.
 
-But if you're feeling ready and are thinking about all the cool custom editors you are going to build, then let's get started! Be sure to download the [custom editor extension sample][sample] so you can follow along with the documentation and see how the custom editor API comes together.
+But if you're feeling ready and are thinking about all the cool custom editors you are going to build, then let's get started! Be sure to download the [`custom editor extension sample`][sample] so you can follow along with the documentation and see how the custom editor API comes together.
 
 ## Links
 
-- [Custom Editor sample][sample]
+- [`Custom Editor sample`][sample]
 
 ### VS Code API Usage
 
@@ -55,7 +55,7 @@ When trying to decide which type of custom editor to use, the decision is usuall
 
 The `customEditors` [contribution point](/api/references/contribution-points) is how your extension tells VS Code about the custom editors that it provides. For example, VS Code needs to know what types of files your custom editor works with as well as how to identify your custom editor in any UI.
 
-Here's a basic `customEditor` contribution for the [custom editor extension sample][sample]:
+Here's a basic `customEditor` contribution for the [`custom editor extension sample`][sample]:
 
 ```json
 "contributes": {
@@ -107,7 +107,7 @@ It's important to note that `onCustomEditor` is only called when VS Code needs t
 
 Custom text editors let you create custom editors for text files. This can be anything from plain unstructured text to [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) to JSON or XML. Custom text editors use VS Code's standard [TextDocument](/api/references/vscode-api#TextDocument) as their document model.
 
-The [custom editor extension sample][sample] includes a simple example custom text editor for cat scratch files (which are just JSON files that end with a `.cscratch` file extension). Let's take a look at some of the important bits of implementing a custom text editor.
+The [`custom editor extension sample`][sample] includes a simple example custom text editor for cat scratch files (which are just JSON files that end with a `.cscratch` file extension). Let's take a look at some of the important bits of implementing a custom text editor.
 
 ### Custom Text Editor lifecycle
 
@@ -117,7 +117,7 @@ To understand how this all works in practice, let's work through what happens fr
 
 **Opening a custom text editor**
 
-Using the [custom editor extension sample][sample], here's what happens when the user first opens a `.cscratch` file:
+Using the [`custom editor extension sample`][sample], here's what happens when the user first opens a `.cscratch` file:
 
 1. VS Code fires an `onCustomEditor:catCustoms.catScratch` activation event.
 
@@ -171,7 +171,7 @@ Finally, if updating your webviews is expensive, consider [debouncing](https://d
 
 `CustomEditorProvider` and `CustomReadonlyEditorProvider` let you create custom editors for binary file formats. This API gives your full control over the file is displayed to users, how edits are made to it, and lets your extension hook into `save` and other file operations. Again, if you are building an editor for a text based file format, strongly consider using a [`CustomTextEditor`](#custom-text-editor) instead as they are far simpler to implement.
 
-The [custom editor extension sample][sample] includes a simple example custom binary editor for paw draw files (which are just jpeg files that end with a `.pawdraw` file extension). Let's take a look at what goes into building a custom editor for binary files.
+The [`custom editor extension sample`][sample] includes a simple example custom binary editor for paw draw files (which are just jpeg files that end with a `.pawdraw` file extension). Let's take a look at what goes into building a custom editor for binary files.
 
 ### CustomDocument
 
@@ -188,7 +188,7 @@ By default, VS Code only allows there to be one editor for each custom document.
 If your extension can support it however, we recommend setting `supportsMultipleEditorsPerDocument: true` when registering your custom editor so that multiple editor instances can be opened for the same document. This will make your custom editors behave more like VS Code's normal text editors.
 
 **Opening Custom Editors**
-When the user opens a file that matches the `customEditor` contribution point, VS Code fires an `onCustomEditor` [activation event](/api/references/activation-events) and then invokes the provider registered for the provided view type. A `CustomEditorProvider` has two roles: providing the document for the custom editor and then providing the editor itself. Here's a ordered list of what happens for the `catCustoms.pawDraw` editor from the [custom editor extension sample][sample]:
+When the user opens a file that matches the `customEditor` contribution point, VS Code fires an `onCustomEditor` [activation event](/api/references/activation-events) and then invokes the provider registered for the provided view type. A `CustomEditorProvider` has two roles: providing the document for the custom editor and then providing the editor itself. Here's a ordered list of what happens for the `catCustoms.pawDraw` editor from the [`custom editor extension sample`][sample]:
 
 1. VS Code fires an `onCustomEditor:catCustoms.pawDraw` activation event.
 

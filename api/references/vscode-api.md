@@ -861,14 +861,14 @@ newly added and removed diagnostics.</p>
 
 
 
-<a name="languages.getDiagnostics"></a><span class="ts" id=3016 data-target="#details-3016" data-toggle="collapse"><span class="ident">getDiagnostics</span><span>(</span><span>)</span><span>: </span>[<a class="type-ref" href="#Uri">Uri</a>, <a class="type-ref" href="#Diagnostic">Diagnostic</a>[]][]</span>
+<a name="languages.getDiagnostics"></a><span class="ts" id=3016 data-target="#details-3016" data-toggle="collapse"><span class="ident">getDiagnostics</span><span>(</span><span>)</span><span>: </span>[<a class="type-ref" href="#Uri">Uri</a>, <a class="type-ref" href="#Diagnostic">Diagnostic</a>[`]`][]</span>
 <div class="details collapse" id="details-3016">
 <div class="comment"><p>Get all diagnostics.</p>
 </div>
 <div class="signature">
 <table class="table table-bordered">
 <tr><th>Returns</th><th>Description</th></tr>
-<tr><td><span class="ts">[<a class="type-ref" href="#Uri">Uri</a>, <a class="type-ref" href="#Diagnostic">Diagnostic</a>[]][]</span></td><td><div class="comment"><p>An array of uri-diagnostics tuples or an empty array.</p>
+<tr><td><span class="ts">[<a class="type-ref" href="#Uri">Uri</a>, <a class="type-ref" href="#Diagnostic">Diagnostic</a>[`]`][]</span></td><td><div class="comment"><p>An array of uri-diagnostics tuples or an empty array.</p>
 </div></td></tr>
 </table>
 </div>
@@ -10224,7 +10224,7 @@ remote extension host or ftp-servers.</p>
 
 
 
-<a name="FileSystem.readDirectory"></a><span class="ts" id=1834 data-target="#details-1834" data-toggle="collapse"><span class="ident">readDirectory</span><span>(</span><span class="ident">uri</span><span>: </span><a class="type-ref" href="#Uri">Uri</a><span>)</span><span>: </span><a class="type-ref" href="#Thenable">Thenable</a>&lt;[<a class="type-intrinsic">string</a>, <a class="type-ref" href="#FileType">FileType</a>][]&gt;</span>
+<a name="FileSystem.readDirectory"></a><span class="ts" id=1834 data-target="#details-1834" data-toggle="collapse"><span class="ident">readDirectory</span><span>(</span><span class="ident">uri</span><span>: </span><a class="type-ref" href="#Uri">Uri</a><span>)</span><span>: </span><a class="type-ref" href="#Thenable">Thenable</a>&lt;[`<a class="type-intrinsic">string</a>, <a class="type-ref" href="#FileType">FileType</a>`][]&gt;</span>
 <div class="details collapse" id="details-1834">
 <div class="comment"><p>Retrieve all entries of a <a href="#FileType.Directory">directory</a>.</p>
 </div>
@@ -10234,7 +10234,7 @@ remote extension host or ftp-servers.</p>
 <tr><td><a name="uri"></a><span class="ts" id=1835 data-target="#details-1835" data-toggle="collapse"><span class="ident">uri</span><span>: </span><a class="type-ref" href="#Uri">Uri</a></span></td><td><div class="comment"><p>The uri of the folder.</p>
 </div></td></tr>
 <tr><th>Returns</th><th>Description</th></tr>
-<tr><td><span class="ts"><a class="type-ref" href="#Thenable">Thenable</a>&lt;[<a class="type-intrinsic">string</a>, <a class="type-ref" href="#FileType">FileType</a>][]&gt;</span></td><td><div class="comment"><p>An array of name/type-tuples or a thenable that resolves to such.</p>
+<tr><td><span class="ts"><a class="type-ref" href="#Thenable">Thenable</a>&lt;[`<a class="type-intrinsic">string</a>, <a class="type-ref" href="#FileType">FileType</a>`][]&gt;</span></td><td><div class="comment"><p>An array of name/type-tuples or a thenable that resolves to such.</p>
 </div></td></tr>
 </table>
 </div>
@@ -10610,7 +10610,7 @@ the copy operation.</p>
 
 
 
-<a name="FileSystemProvider.readDirectory"></a><span class="ts" id=1793 data-target="#details-1793" data-toggle="collapse"><span class="ident">readDirectory</span><span>(</span><span class="ident">uri</span><span>: </span><a class="type-ref" href="#Uri">Uri</a><span>)</span><span>: </span>[<a class="type-intrinsic">string</a>, <a class="type-ref" href="#FileType">FileType</a>][] &#124; <a class="type-ref" href="#Thenable">Thenable</a>&lt;[<a class="type-intrinsic">string</a>, <a class="type-ref" href="#FileType">FileType</a>][]&gt;</span>
+<a name="FileSystemProvider.readDirectory"></a><span class="ts" id=1793 data-target="#details-1793" data-toggle="collapse"><span class="ident">readDirectory</span><span>(</span><span class="ident">uri</span><span>: </span><a class="type-ref" href="#Uri">Uri</a><span>)</span><span>: </span>[<a class="type-intrinsic">string</a>, <a class="type-ref" href="#FileType">FileType</a>][] &#124; <a class="type-ref" href="#Thenable">Thenable</a>&lt;[`<a class="type-intrinsic">string</a>, <a class="type-ref" href="#FileType">FileType</a>`][]&gt;</span>
 <div class="details collapse" id="details-1793">
 <div class="comment"><p>Retrieve all entries of a <a href="#FileType.Directory">directory</a>.</p>
 <ul>
@@ -10623,7 +10623,7 @@ the copy operation.</p>
 <tr><td><a name="uri"></a><span class="ts" id=1794 data-target="#details-1794" data-toggle="collapse"><span class="ident">uri</span><span>: </span><a class="type-ref" href="#Uri">Uri</a></span></td><td><div class="comment"><p>The uri of the folder.</p>
 </div></td></tr>
 <tr><th>Returns</th><th>Description</th></tr>
-<tr><td><span class="ts">[<a class="type-intrinsic">string</a>, <a class="type-ref" href="#FileType">FileType</a>][] &#124; <a class="type-ref" href="#Thenable">Thenable</a>&lt;[<a class="type-intrinsic">string</a>, <a class="type-ref" href="#FileType">FileType</a>][]&gt;</span></td><td><div class="comment"><p>An array of name/type-tuples or a thenable that resolves to such.</p>
+<tr><td><span class="ts">[<a class="type-intrinsic">string</a>, <a class="type-ref" href="#FileType">FileType</a>][] &#124; <a class="type-ref" href="#Thenable">Thenable</a>&lt;[`<a class="type-intrinsic">string</a>, <a class="type-ref" href="#FileType">FileType</a>`][]&gt;</span></td><td><div class="comment"><p>An array of name/type-tuples or a thenable that resolves to such.</p>
 </div></td></tr>
 </table>
 </div>
@@ -21059,14 +21059,14 @@ be applied successfully.</p>
 
 
 
-<a name="WorkspaceEdit.entries"></a><span class="ts" id=895 data-target="#details-895" data-toggle="collapse"><span class="ident">entries</span><span>(</span><span>)</span><span>: </span>[<a class="type-ref" href="#Uri">Uri</a>, <a class="type-ref" href="#TextEdit">TextEdit</a>[]][]</span>
+<a name="WorkspaceEdit.entries"></a><span class="ts" id=895 data-target="#details-895" data-toggle="collapse"><span class="ident">entries</span><span>(</span><span>)</span><span>: </span>[<a class="type-ref" href="#Uri">Uri</a>, <a class="type-ref" href="#TextEdit">TextEdit</a>[`]`][]</span>
 <div class="details collapse" id="details-895">
 <div class="comment"><p>Get all text edits grouped by resource.</p>
 </div>
 <div class="signature">
 <table class="table table-bordered">
 <tr><th>Returns</th><th>Description</th></tr>
-<tr><td><span class="ts">[<a class="type-ref" href="#Uri">Uri</a>, <a class="type-ref" href="#TextEdit">TextEdit</a>[]][]</span></td><td><div class="comment"><p>A shallow copy of <code>[Uri, TextEdit[]]</code>-tuples.</p>
+<tr><td><span class="ts">[<a class="type-ref" href="#Uri">Uri</a>, <a class="type-ref" href="#TextEdit">TextEdit</a>[`]`][]</span></td><td><div class="comment"><p>A shallow copy of <code>[Uri, TextEdit[]]</code>-tuples.</p>
 </div></td></tr>
 </table>
 </div>
@@ -21444,3 +21444,4 @@ An example from the VS Code API is `window.onDidChangeActiveTextEditor` which is
 ### Strict null
 
 The VS Code API uses the `undefined` and `null` TypeScript types where appropriate to support [strict null checking](https://github.com/microsoft/TypeScript/pull/7140).
+

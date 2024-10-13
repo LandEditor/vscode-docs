@@ -13,13 +13,13 @@ August 16, 2022 by Matt Bierner, [`@MattBierner`](https://hachyderm.io/@mattbier
 
 Markdown support was the first feature I took ownership of when I joined Visual Studio Code back in 2016. Wow, has it really been six years? It was a great match though. I've worked with Markdown long enough that I often find myself hopefully typing backticks and asterisks into Twitter, Outlook, and just about every textbox my cursor lands in. It's been incredibly rewarding to grow VS Code's built-in Markdown support over the years and see how our Markdown extension has directly and indirectly shaped core features like webviews and notebooks.
 
-That's why I'm excited to share a project I've been quietly working towards for the past half year, and a project that I think represents the next step for VS Code's Markdown tooling: a Markdown Language Server. With this [language server][ls], we're making most of VS Code's built-in Markdown language tooling—everything from document outlines, to smart folding, to path completions—available to other editors and tools. Our goal is to push Markdown tooling forward with the type of smarts more often associated with programming languages.
+That's why I'm excited to share a project I've been quietly working towards for the past half year, and a project that I think represents the next step for VS Code's Markdown tooling: a Markdown Language Server. With this [`language server`][ls], we're making most of VS Code's built-in Markdown language tooling—everything from document outlines, to smart folding, to path completions—available to other editors and tools. Our goal is to push Markdown tooling forward with the type of smarts more often associated with programming languages.
 
 The Markdown Language Server effort is split between two new (and similarly named!) open source libraries:
 
-- [Markdown Language Service][service] - A TypeScript library that provides tools for working with Markdown.
+- [`Markdown Language Service`][service] - A TypeScript library that provides tools for working with Markdown.
 
-- [Markdown Language Server][server] - A [language server][ls] for Markdown built using the language service.
+- [Markdown Language Server][server] - A [`language server`][ls] for Markdown built using the language service.
 
 While these libraries are still in early stages, they are already being used by VS Code 1.70+ (and hopefully you never even noticed :-)). We've even seen a few benefits from this switch, such as moving Markdown tooling to a separate process so it won't block other extensions.
 
@@ -85,9 +85,9 @@ What really gets me excited about the Markdown Language Server is that now the p
 
 If you're interested in checking out the source code or contributing, you can find the Markdown language service and server on GitHub and npm:
 
-- [Markdown Language Service][service] - A TypeScript library that provides tools for working with Markdown.
+- [`Markdown Language Service`][service] - A TypeScript library that provides tools for working with Markdown.
 
-- [Markdown Language Server][server] - A [language server][ls] for Markdown built using the language service.
+- [Markdown Language Server][server] - A [`language server`][ls] for Markdown built using the language service.
 
 Happy Coding!
 
