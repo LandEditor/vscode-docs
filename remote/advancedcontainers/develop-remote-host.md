@@ -192,7 +192,7 @@ To convert an existing or pre-defined, local `devcontainer.json` into a remote o
         # ...
     ```
 
-    See the [`Docker Compose documentation on `volumes``](https://docs.docker.com/compose/compose-file/#volumes) if you need to support a different scenario.
+    See the [`Docker Compose documentation on `volumes`](https://docs.docker.com/compose/compose-file/#volumes) if you need to support a different scenario.
 
 4. Run the **Dev Containers: Reopen in Container** command from the Command Palette (`kbstyle(F1)`) or **Dev Containers: Rebuild Container**.
 
@@ -205,7 +205,7 @@ Next time you want to connect to this same container, run **Dev Containers: Open
 If you store your source code on the remote host's filesystem instead of inside a Docker volume, there are several ways you can access the files locally:
 
 1. [`Mount the remote filesystem using SSHFS`](/docs/remote/troubleshooting.md#using-sshfs-to-access-files-on-your-remote-host).
-2. [`Sync files from the remote host to your local machine using `rsync``](/docs/remote/troubleshooting.md#using-rsync-to-maintain-a-local-copy-of-your-source-code).
+2. [`Sync files from the remote host to your local machine using `rsync`](/docs/remote/troubleshooting.md#using-rsync-to-maintain-a-local-copy-of-your-source-code).
 3. [`Use the mount command](https://docs.docker.com/machine/reference/mount/) if you are using [Docker Machine`](https://docs.docker.com/machine/).
 
 Using SSHFS or Docker Machine's mount command are the more convenient options and do not require any file sync'ing. However, performance will be significantly slower than working through VS Code, so they are best used for single file edits and uploading/downloading content. If you need to use an application that bulk reads/write to many files at once (like a local source control tool), rsync is a better choice.

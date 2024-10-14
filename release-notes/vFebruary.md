@@ -122,7 +122,7 @@ VS Code now ships with the latest [`TypeScript 1.8.2`](https://devblogs.microsof
 
 ### Migration Notes
 
->**Note:** With the move to TypeScript 1.8.2, you will need to have a `jsconfig.json` in your workspace for TypeScript definition files (for example [`node.d.ts``](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/node/node.d.ts)) to be picked up.
+>**Note:** With the move to TypeScript 1.8.2, you will need to have a `jsconfig.json` in your workspace for TypeScript definition files (for example [`node.d.ts`](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/node/node.d.ts)) to be picked up.
 
 If you don't already have a `jsconfig.json` file in your workspace, add a `jsconfig.json` file to the root with the `compilerOptions:module` attribute set:
 
@@ -348,7 +348,7 @@ Based on [`user feedback`](https://github.com/microsoft/vscode/issues/2108#issue
 
 ## Localization
 
-Support has been added to localize `package.json` files for extensions and CommonJS code. For localizing CommonJS code, we've published a new npm module [`vscode-nls``](https://www.npmjs.com/package/vscode-nls) which helps you with localizing strings in your VS Code extension.
+Support has been added to localize `package.json` files for extensions and CommonJS code. For localizing CommonJS code, we've published a new npm module [`vscode-nls`](https://www.npmjs.com/package/vscode-nls) which helps you with localizing strings in your VS Code extension.
 
 ## Extension Authoring
 

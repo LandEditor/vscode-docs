@@ -41,7 +41,7 @@ The first notebook experience the VS Code team created was the [`GitHub Issues N
 
 ![`A preview of the GitHub Issues Notebook we use on the team that's available in the vscode repo`](github-issues-notebook.png)
 
-You can find the specific notebooks we use for triaging in the [`VS Code repo under `.vscode/notebooks``](https://github.com/microsoft/vscode/tree/main/.vscode/notebooks). There's one called `inbox.github-issues` to triage new issues to their appropriate area and assignee.
+You can find the specific notebooks we use for triaging in the [`VS Code repo under `.vscode/notebooks`](https://github.com/microsoft/vscode/tree/main/.vscode/notebooks). There's one called `inbox.github-issues` to triage new issues to their appropriate area and assignee.
 
 [`GitHub Issues Notebook is available on the VS Code Marketplace`](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-github-issue-notebooks) for anyone to use. You can try it out by installing the extension, creating a file for your notebook with a `.github-issues` file extension such as `my-notebook.github-issues`, and then creating queries such as:
 

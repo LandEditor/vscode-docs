@@ -70,7 +70,7 @@ Added support for function keys `kbstyle(f13-f19)` and for the numeric keypad ke
 
 ## Improvements for non US standard keyboard layouts
 
-VS Code dispatches key bindings based on [`keyboard codes](https://msdn.microsoft.com/en-us/library/windows/desktop/dd375731). In `keybindings.json` and in all the UI, we used to render the key codes with the produced characters under the US standard keyboard layout. We received feedback that this was very confusing, therefore, we created a new Node.js module [`native-keymap``](https://www.npmjs.com/package/native-keymap) that is used in VS Code to render the key bindings using the system's current keyboard layout.
+VS Code dispatches key bindings based on [`keyboard codes](https://msdn.microsoft.com/en-us/library/windows/desktop/dd375731). In `keybindings.json` and in all the UI, we used to render the key codes with the produced characters under the US standard keyboard layout. We received feedback that this was very confusing, therefore, we created a new Node.js module [`native-keymap`](https://www.npmjs.com/package/native-keymap) that is used in VS Code to render the key bindings using the system's current keyboard layout.
 
 For example, `Split Editor` when using a French (France) keyboard layout is now rendered as `kbstyle(Ctrl+*)`:
 ![`render key binding`](images/December/render-key-binding.png)

@@ -48,7 +48,7 @@ world calculator {
 }
 ```
 
-The Rust tool [`wit-bindgen``](https://github.com/bytecodealliance/wit-bindgen) is utilized to generate a Rust binding for the calculator. There are two ways to use this tool:
+The Rust tool [`wit-bindgen`](https://github.com/bytecodealliance/wit-bindgen) is utilized to generate a Rust binding for the calculator. There are two ways to use this tool:
 
 - As a procedural macro that generates the bindings directly within the implementation file. This method is standard but has the disadvantage of not allowing the inspection of the generated bindings code.
 

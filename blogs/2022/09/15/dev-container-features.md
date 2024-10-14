@@ -104,7 +104,7 @@ The [`Features template](https://github.com/devcontainers/feature-template) repo
 If you'd like your contributions to appear in the VS Code [`Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) or [GitHub Codespaces`](https://github.com/features/codespaces) UI for dev container creation, you can do the following steps:
 
 * Go to [`devcontainers.github.io](https://github.com/devcontainers/devcontainers.github.io) (the GitHub repo backing [containers.dev`](https://containers.dev))
-* Open a PR to modify the [`collection-index.yml``](https://github.com/devcontainers/devcontainers.github.io/blob/gh-pages/_data/collection-index.yml) file
+* Open a PR to modify the [`collection-index.yml`](https://github.com/devcontainers/devcontainers.github.io/blob/gh-pages/_data/collection-index.yml) file
 
 Once merged, your change will appear at [`containers.dev/collections`](https://containers.dev/collections).
 
