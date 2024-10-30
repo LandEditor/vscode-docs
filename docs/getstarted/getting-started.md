@@ -4,7 +4,7 @@ Area: getstarted
 TOCTitle: Tutorial
 ContentId: 72ad9b70-5227-4032-81d7-6aec00a1e8f8
 PageTitle: Getting started with Visual Studio Code
-DateApproved: 10/03/2024
+DateApproved: 10/29/2024
 MetaDescription: This tutorial gives you an overview of the key features of Visual Studio Code to help you get started quickly.
 ---
 # Tutorial: Get started with Visual Studio Code
@@ -113,7 +113,7 @@ Many of the commands in VS Code are available through the Command Palette. For e
 
 1. Press `kb(workbench.action.quickOpen)` to use the Command Palette to navigate to a file in your workspace. Start typing to filter the list.
 
-    The **Quick Open** feature enables you to quickly open a file in your workspace, or search for symbols in files. Get more info the [Command Palette](/docs/getstarted/userinterface.md#command-palette) in the VS Code documentation.
+    The **Quick Open** feature enables you to quickly open a file in your workspace, or search for symbols in files. Get more info about the [Command Palette](/docs/getstarted/userinterface.md#command-palette) in the VS Code documentation.
 
     ![Screenshot that shows the Quick Open feature in the Command Palette.](images/getting-started/quick-open.png)
 
