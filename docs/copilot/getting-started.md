@@ -145,7 +145,7 @@ One such place is the Copilot coding actions in the editor, whenever there you h
 
 1. Select the sparkle to view the Copilot code actions, and then select **Fix using Copilot**.
 
-    ![Screenshot of VS Code editor, showing the Copilot code actions, hihglighting `Fix using Copilot`.](./images/getting-started/copilot-code-action-fix.png)
+    ![Screenshot of VS Code editor, showing the Copilot code actions, highlighting `Fix using Copilot`.](./images/getting-started/copilot-code-action-fix.png)
 
 1. Notice that the Copilot Inline Chat comes up, prepopulated with the error message, and a solution to fix the problem.
 
@@ -158,3 +158,7 @@ One such place is the Copilot coding actions in the editor, whenever there you h
 Congratulations, you've now used artificial intelligence to enhance your coding! In this tutorial, you successfully set up Copilot in VS Code, and used Copilot code completions, Copilot Chat, and code actions to help you code more efficiently.
 
 You've started experimenting with Copilot and there's a lot more you can do with it! To learn more about Copilot Chat, proceed to the [Copilot Chat Tutorial](/docs/copilot/getting-started-chat.md).
+
+## Related resources
+
+Check our [Advanced Features](https://www.youtube.com/watch?v=SLMfhuptCo8) video on YouTube for in-depth coverage of using Copilot for refactoring, context-based suggestions, unit tests, and more.
