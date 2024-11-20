@@ -1,16 +1,16 @@
 {
-	"devDependencies": {
-		"lint-staged": "15.2.10",
-		"shelljs": "0.8.5"
+	"name": "vscode-docs",
+	"scripts": {
+		"check-lfs": "node ./build/check-lfs.js",
+		"prepare": "husky install"
 	},
 	"lint-staged": {
 		"*.{gif,mp4,jpg,png,GIF,MP4,JPG,PNG}": [
 			"npm run check-lfs"
 		]
 	},
-	"name": "vscode-docs",
-	"scripts": {
-		"check-lfs": "node ./build/check-lfs.js",
-		"prepare": "husky install"
+	"devDependencies": {
+		"lint-staged": "15.2.10",
+		"shelljs": "0.8.5"
 	}
 }
