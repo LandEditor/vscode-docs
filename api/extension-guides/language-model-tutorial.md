@@ -17,9 +17,9 @@ In this tutorial, You'll learn how to create a VS Code extension to build an AI-
 
 You'll need the following tools and accounts to complete this tutorial:
 
-- [Visual Studio Code](https://code.visualstudio.com/download)
-- [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat)
-- [Node.js](https://nodejs.org/en/download/)
+- [Visual Studio Code](HTTPS://code.visualstudio.com/download)
+- [GitHub Copilot](HTTPS://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat)
+- [Node.js](HTTPS://nodejs.org/en/download/)
 
 ## Scaffold out the extension
 
@@ -317,7 +317,7 @@ To do this, modify the "contributes" portion of the `package.json` as follows:
 }
 ```
 
-This causes a button to appear in the navigation area (right-side) of the editor title bar. The "icon" comes from the [Product Icon Reference](https://code.visualstudio.com/api/references/icons-in-labels).
+This causes a button to appear in the navigation area (right-side) of the editor title bar. The "icon" comes from the [Product Icon Reference](HTTPS://code.visualstudio.com/api/references/icons-in-labels).
 
 Restart your extension with the green arrow or press `kbstyle(F5)` if the extension is not already running. You should now see a comment icon that will trigger the "Toggle Tutor Annotations" command.
 
@@ -329,7 +329,7 @@ In this tutorial, you learned how to create a VS Code extension that integrates 
 
 Next, you can extend your Code Tutor extension to [include a chat participant](/api/extension-guides/chat-tutorial) as well which will allow users to interact directly with your extension via the GitHub Copilot chat interface. You can also [explore the full range of API's in VS Code](/api/references/vscode-api) to explore new ways of building custom AI experiences your editor.
 
-You can find the complete source code for this tutorial in the [vscode-extensions-sample repository](https://github.com/microsoft/vscode-extension-samples/tree/main/lm-api-tutorial).
+You can find the complete source code for this tutorial in the [vscode-extensions-sample repository](HTTPS://github.com/microsoft/vscode-extension-samples/tree/main/lm-api-tutorial).
 
 ## Related content
 

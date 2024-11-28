@@ -31,6 +31,6 @@ MetaDescription: UX guidelines for editor actions in a Visual Studio Code extens
 
 * [Custom Editor extension guide](/api/extension-guides/custom-editors)
 * [Custom Editor API reference](/api/references/contribution-points#contributes.customEditors)
-* [Custom Editor extension sample](https://github.com/microsoft/vscode-extension-samples/tree/main/custom-editor-sample)
+* [Custom Editor extension sample](HTTPS://github.com/microsoft/vscode-extension-samples/tree/main/custom-editor-sample)
 * [Webview extension guide](/api/extension-guides/webview)
-* [Webview extension sample](https://github.com/microsoft/vscode-extension-samples/blob/main/webview-sample)
+* [Webview extension sample](HTTPS://github.com/microsoft/vscode-extension-samples/blob/main/webview-sample)

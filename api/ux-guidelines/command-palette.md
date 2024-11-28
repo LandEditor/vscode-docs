@@ -30,4 +30,4 @@ The [Command Palette](/api/references/contribution-points#contributes.commands) 
 
 * [Commands API reference](/api/references/contribution-points#contributes.commands)
 * [Commands extension guide](/api/extension-guides/command)
-* [Hello World extension sample](https://github.com/microsoft/vscode-extension-samples/tree/main/helloworld-sample)
+* [Hello World extension sample](HTTPS://github.com/microsoft/vscode-extension-samples/tree/main/helloworld-sample)

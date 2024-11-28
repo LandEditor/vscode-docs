@@ -9,7 +9,7 @@ MetaDescription: Learn how to publish Visual Studio Code extensions to the publi
 
 # Publishing Extensions
 
-Once you have made a high-quality extension, you can publish it to the [VS Code Extension Marketplace](https://marketplace.visualstudio.com/vscode) so others can find, download, and use your extension. Alternatively, you can [package](#packaging-extensions) an extension into the installable VSIX format and share it with other users.
+Once you have made a high-quality extension, you can publish it to the [VS Code Extension Marketplace](HTTPS://marketplace.visualstudio.com/vscode) so others can find, download, and use your extension. Alternatively, you can [package](#packaging-extensions) an extension into the installable VSIX format and share it with other users.
 
 This topic covers:
 
@@ -19,11 +19,11 @@ This topic covers:
 
 ## vsce
 
-[vsce](https://github.com/microsoft/vscode-vsce), short for "Visual Studio Code Extensions", is a command-line tool for packaging, publishing and managing VS Code extensions.
+[vsce](HTTPS://github.com/microsoft/vscode-vsce), short for "Visual Studio Code Extensions", is a command-line tool for packaging, publishing and managing VS Code extensions.
 
 ### Installation
 
-Make sure you have [Node.js](https://nodejs.org/) installed. Then run:
+Make sure you have [Node.js](HTTPS://nodejs.org/) installed. Then run:
 
 ```bash
 npm install -g @vscode/vsce
@@ -58,15 +58,15 @@ The publishing tool checks the following constraints:
 
 ---
 
-Visual Studio Code uses [Azure DevOps](https://azure.microsoft.com/services/devops/) for its Marketplace services. This means that authentication, hosting, and management of extensions are provided through Azure DevOps.
+Visual Studio Code uses [Azure DevOps](HTTPS://azure.microsoft.com/services/devops/) for its Marketplace services. This means that authentication, hosting, and management of extensions are provided through Azure DevOps.
 
-`vsce` can only publish extensions using [Personal Access Tokens](https://learn.microsoft.com/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate). You need to create at least one in order to publish an extension.
+`vsce` can only publish extensions using [Personal Access Tokens](HTTPS://learn.microsoft.com/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate). You need to create at least one in order to publish an extension.
 
 ### Get a Personal Access Token
 
-First off, follow the documentation to [create your own organization](https://learn.microsoft.com/azure/devops/organizations/accounts/create-organization) in Azure DevOps. In the following examples, the organization's name is `vscode`, you should use your new organization name as appropriate. Note that the organization's name doesn't necessarily have to be same as your publisher name.
+First off, follow the documentation to [create your own organization](HTTPS://learn.microsoft.com/azure/devops/organizations/accounts/create-organization) in Azure DevOps. In the following examples, the organization's name is `vscode`, you should use your new organization name as appropriate. Note that the organization's name doesn't necessarily have to be same as your publisher name.
 
-1. From your organization's home page (for example: `https://dev.azure.com/vscode`), open the User settings dropdown menu next to your profile image and select **Personal access tokens**:
+1. From your organization's home page (for example: `HTTPS://dev.azure.com/vscode`), open the User settings dropdown menu next to your profile image and select **Personal access tokens**:
 
     ![Personal settings menu](images/publishing-extension/menu-pat.png)
 
@@ -95,7 +95,7 @@ A **publisher** is an identity that can publish extensions to the Visual Studio 
 
 To create a publisher:
 
-1. Go to the [Visual Studio Marketplace publisher management page](https://marketplace.visualstudio.com/manage).
+1. Go to the [Visual Studio Marketplace publisher management page](HTTPS://marketplace.visualstudio.com/manage).
 1. Log in with the same Microsoft account you used to create the [Personal Access Token](#get-a-personal-access-token) in the previous section.
 1. Click **Create publisher** in the pane on the left.
 1. In the new page, specify the mandatory parameters for a new publisher - identifier and name (**ID** and **Name** fields respectively):
@@ -114,7 +114,7 @@ To create a publisher:
     ```bash
     vsce login <publisher id>
 
-    https://marketplace.visualstudio.com/manage/publishers/
+    HTTPS://marketplace.visualstudio.com/manage/publishers/
     Personal Access Token for publisher '<publisher id>': ****************************************************
 
     The Personal Access Token verification succeeded for the publisher '<publisher id>'.
@@ -134,19 +134,19 @@ You can publish an extension in two ways:
 
     If you haven't already provided your personal access token with the `vsce login` command above, `vsce` will ask for it.
 
-1. Manually, using `vsce package` to package the extension into the installable VSIX format and then uploading it to the [Visual Studio Marketplace publisher management page](https://marketplace.visualstudio.com/manage):
+1. Manually, using `vsce package` to package the extension into the installable VSIX format and then uploading it to the [Visual Studio Marketplace publisher management page](HTTPS://marketplace.visualstudio.com/manage):
 
     ![Add an extension through management page](images/publishing-extension/add-extension.png)
 
 ## Review extension installs and ratings
 
-The [Visual Studio Marketplace publisher management page](https://marketplace.visualstudio.com/manage) gives you access to each extension's Acquisition Trend over time, as well as Total Acquisition counts and Ratings & Reviews. To see the reports, click an extension or choose **More Actions > Reports**.
+The [Visual Studio Marketplace publisher management page](HTTPS://marketplace.visualstudio.com/manage) gives you access to each extension's Acquisition Trend over time, as well as Total Acquisition counts and Ratings & Reviews. To see the reports, click an extension or choose **More Actions > Reports**.
 
 ![Marketplace extension report](images/publishing-extension/extension-report.png)
 
 ## Auto-increment the extension version
 
-When publishing an extension, you can auto-increment its version number by specifying the [SemVer](https://semver.org/)-compatible number or version (`major`, `minor`, or `patch`) to increment. For example, to update an extension's version from 1.0.0 to 1.1.0, you would specify:
+When publishing an extension, you can auto-increment its version number by specifying the [SemVer](HTTPS://semver.org/)-compatible number or version (`major`, `minor`, or `patch`) to increment. For example, to update an extension's version from 1.0.0 to 1.1.0, you would specify:
 
 ```bash
 vsce publish minor
@@ -160,11 +160,11 @@ vsce publish 1.1.0
 
 Both commands will first modify the extension's `package.json` [version](/api/references/extension-manifest#fields) attribute and then publish it with the updated version.
 
-> **Note:** If you run `vsce publish` in a git repo, it will also create a version commit and tag via [npm-version](https://docs.npmjs.com/cli/version#description). The default commit message will be the extension's version, but you can supply a custom commit message using the `-m` flag. (The current version can be referenced from the commit message with `%s`).
+> **Note:** If you run `vsce publish` in a git repo, it will also create a version commit and tag via [npm-version](HTTPS://docs.npmjs.com/cli/version#description). The default commit message will be the extension's version, but you can supply a custom commit message using the `-m` flag. (The current version can be referenced from the commit message with `%s`).
 
 ## Unpublishing extensions
 
-You can unpublish an extension from the [Visual Studio Marketplace publisher management page](https://marketplace.visualstudio.com/manage) by clicking **More Actions > Unpublish**:
+You can unpublish an extension from the [Visual Studio Marketplace publisher management page](HTTPS://marketplace.visualstudio.com/manage) by clicking **More Actions > Unpublish**:
 
 ![Unpublish the extension via the Marketplace management page](images/publishing-extension/unpublish-extension.png)
 
@@ -184,7 +184,7 @@ You can remove an extension in two ways:
     vsce unpublish <publisher id>.<extension name>
     ```
 
-1. Manually, from the [Visual Studio Marketplace publisher management page](https://marketplace.visualstudio.com/manage) by clicking **More Actions > Remove**:
+1. Manually, from the [Visual Studio Marketplace publisher management page](HTTPS://marketplace.visualstudio.com/manage) by clicking **More Actions > Remove**:
 
     ![Remove the extension via the Marketplace management page](images/publishing-extension/remove-extension.png)
 
@@ -216,7 +216,7 @@ VS Code will not automatically migrate or uninstall already installed deprecated
 
 ![Deprecated extension with a migrate button](images/publishing-extension/deprecated-migrate-button.png)
 
-To mark your extension as deprecated, please leave a comment in the [Deprecated extensions](https://github.com/microsoft/vscode-discussions/discussions/1) discussion thread.
+To mark your extension as deprecated, please leave a comment in the [Deprecated extensions](HTTPS://github.com/microsoft/vscode-discussions/discussions/1) discussion thread.
 
 > **Note:** For now, extensions are not rendered as deprecated in the Marketplace. This functionality will be available later.
 
@@ -287,7 +287,7 @@ For example, imagine that the latest Stable version of VS Code is `1.8.0`. Durin
 
 ### Marketplace integration
 
-You can customize how your extension looks in the Visual Studio Marketplace. See the [Go extension](https://marketplace.visualstudio.com/items/golang.go) for an example.
+You can customize how your extension looks in the Visual Studio Marketplace. See the [Go extension](HTTPS://marketplace.visualstudio.com/items/golang.go) for an example.
 
 Here are some tips for making your extension look great on the Marketplace:
 
@@ -314,7 +314,7 @@ To become verified, a publisher must have one or more extensions on the VS Marke
 
 To verify a publisher:
 
-1. Go to the [Visual Studio Marketplace publisher management page](https://marketplace.visualstudio.com/manage).
+1. Go to the [Visual Studio Marketplace publisher management page](HTTPS://marketplace.visualstudio.com/manage).
 2. In the pane on the left, select or [create a publisher](#create-a-publisher) you wish to verify.
 3. In the main pane, select the **Details** tab.
 
@@ -347,7 +347,7 @@ If validation is passed, you will see the corresponding badge next to your publi
 
 > **Notes**:
 > - Any changes to the publisher display name will revoke the verified badge.
-> - Any future [Terms of Use](https://cdn.vsassets.io/v/M190_20210811.1/_content/Microsoft-Visual-Studio-Marketplace-Terms-of-Use.pdf) or above mentioned validation violations from the publisher will revoke the verified badge.
+> - Any future [Terms of Use](HTTPS://cdn.vsassets.io/v/M190_20210811.1/_content/Microsoft-Visual-Studio-Marketplace-Terms-of-Use.pdf) or above mentioned validation violations from the publisher will revoke the verified badge.
 
 ### Eligible domains
 
@@ -382,7 +382,7 @@ To show a sponsor link, add the `sponsor` property to your `package.json`. For e
 
 ```json
 "sponsor": {
-  "url": "https://github.com/sponsors/nvaccess"
+  "url": "HTTPS://github.com/sponsors/nvaccess"
 }
 ```
 
@@ -396,7 +396,7 @@ We hope this will allow our users to fund the extensions that they depend on to 
 
 ### Using .vscodeignore
 
-You can create a `.vscodeignore` file to prevent some files from being included in your extension's package. This file is a collection of [glob](https://github.com/isaacs/minimatch) patterns, one per line. For example:
+You can create a `.vscodeignore` file to prevent some files from being included in your extension's package. This file is a collection of [glob](HTTPS://github.com/isaacs/minimatch) patterns, one per line. For example:
 
 ```bash
 **/*.ts
@@ -410,7 +410,7 @@ You should ignore all files not needed at runtime. For example, if your extensio
 
 ### Pre-publish step
 
-You can add a pre-publish step to your manifest file, which will be called every time the extension is packaged. For example, you may want to invoke the [TypeScript](https://www.typescriptlang.org/) compiler at this stage:
+You can add a pre-publish step to your manifest file, which will be called every time the extension is packaged. For example, you may want to invoke the [TypeScript](HTTPS://www.typescriptlang.org/) compiler at this stage:
 
 ```json
 {
@@ -465,7 +465,7 @@ If you want a platform-specific extension to also support running in the browser
 
 #### Publishing
 
-Starting from version `1.99.0`, [vsce](https://github.com/microsoft/vscode-vsce) supports a `--target` parameter that allows you to specify the target platform while packaging and publishing a VSIX.
+Starting from version `1.99.0`, [vsce](HTTPS://github.com/microsoft/vscode-vsce) supports a `--target` parameter that allows you to specify the target platform while packaging and publishing a VSIX.
 
 Here's how you can publish a VSIX for the `win32-x64` and `win32-arm64` platforms:
 
@@ -482,7 +482,7 @@ vsce publish --packagePath PATH_TO_WIN32X64_VSIX
 
 #### Continuous integration
 
-Managing multiple platform-specific VSIXs might get overwhelming, so we suggest automating your extension's build process with [continuous integration](/api/working-with-extensions/continuous-integration) (CI) tooling. For example, you can use [GitHub Actions](https://github.com/features/actions) to build your extensions. Our [platform-specific extension sample](https://github.com/microsoft/vscode-platform-specific-sample) can be used as a starting point for learning: its [workflow](https://github.com/microsoft/vscode-platform-specific-sample/blob/main/.github/workflows/ci.yml) enables the common scenario of using platform-specific extension support to distribute native node modules as dependencies across all supported VS Code targets.
+Managing multiple platform-specific VSIXs might get overwhelming, so we suggest automating your extension's build process with [continuous integration](/api/working-with-extensions/continuous-integration) (CI) tooling. For example, you can use [GitHub Actions](HTTPS://github.com/features/actions) to build your extensions. Our [platform-specific extension sample](HTTPS://github.com/microsoft/vscode-platform-specific-sample) can be used as a starting point for learning: its [workflow](HTTPS://github.com/microsoft/vscode-platform-specific-sample/blob/main/.github/workflows/ci.yml) enables the common scenario of using platform-specific extension support to distribute native node modules as dependencies across all supported VS Code targets.
 
 ## Next steps
 
@@ -502,7 +502,7 @@ One easy mistake to make when creating the PAT (Personal Access Token) is to sel
 
 ### I can't unpublish my extension through the `vsce` tool?
 
-You may have changed your extension ID or publisher ID. You can also manage your extensions directly via the [Visual Studio Marketplace publisher management page](https://marketplace.visualstudio.com/manage). For example, update or [unpublish](#unpublishing-extensions).
+You may have changed your extension ID or publisher ID. You can also manage your extensions directly via the [Visual Studio Marketplace publisher management page](HTTPS://marketplace.visualstudio.com/manage). For example, update or [unpublish](#unpublishing-extensions).
 
 ### Why does vsce not preserve file attributes?
 
@@ -528,4 +528,4 @@ You can either use npm or yarn v1 to manage your extension's dependencies.
 
 ### I need help with my VS Marketplace account or support in publishing an extension?
 
-You can reach out to the VS Marketplace support team by signing in at [Manage Publishers & Extensions](https://marketplace.visualstudio.com/manage) and clicking on the ‘Contact Microsoft’ link at the top right.
+You can reach out to the VS Marketplace support team by signing in at [Manage Publishers & Extensions](HTTPS://marketplace.visualstudio.com/manage) and clicking on the ‘Contact Microsoft’ link at the top right.

@@ -10,9 +10,9 @@ Author: Amanda Silver
 ---
 # Visual Studio Live Share Public Preview
 
-May 7, 2018 Amanda Silver, [`@amandaksilver`](https://twitter.com/amandaksilver)
+May 7, 2018 Amanda Silver, [`@amandaksilver`](HTTPS://twitter.com/amandaksilver)
 
-We are excited to announce the public preview of Visual Studio Live Share! At [`Connect last November](https://code.visualstudio.com/blogs/2017/11/15/live-share), we showed how Live Share enables real-time collaborative editing and debugging from the comfort of your favorite tools. Since then, we’ve worked with thousands of developers worldwide, resolved hundreds of issues, and addressed top feature requests such as [adding support for Linux](https://github.com/MicrosoftDocs/live-share/issues/24). We’ve benefited greatly from all the feedback thus far, thank you! Today, we’re excited to announce that every developer using Visual Studio and Visual Studio Code can [get started with Live Share today`](https://aka.ms/vsls)!
+We are excited to announce the public preview of Visual Studio Live Share! At [`Connect last November](HTTPS://code.visualstudio.com/blogs/2017/11/15/live-share), we showed how Live Share enables real-time collaborative editing and debugging from the comfort of your favorite tools. Since then, we’ve worked with thousands of developers worldwide, resolved hundreds of issues, and addressed top feature requests such as [adding support for Linux](HTTPS://github.com/MicrosoftDocs/live-share/issues/24). We’ve benefited greatly from all the feedback thus far, thank you! Today, we’re excited to announce that every developer using Visual Studio and Visual Studio Code can [get started with Live Share today`](HTTPS://aka.ms/vsls)!
 
 ## Universal Collaboration
 
@@ -24,7 +24,7 @@ Whether you’re building a Python web app, a Go microservice, a React Native mo
 
 ## Shared Terminals
 
-Modern development commonly makes use of command-line tools to perform tasks such as build and running unit tests. Because the command line represents such a core component of the common developer workflow, it’s critical that participants within a Live Share session can use them, without requiring a separate tool. To further support your collaborative debugging sessions, and address one of our [`top feature requests`](https://github.com/MicrosoftDocs/live-share/issues/41), Live Share now allows hosts to share terminals with their guests.
+Modern development commonly makes use of command-line tools to perform tasks such as build and running unit tests. Because the command line represents such a core component of the common developer workflow, it’s critical that participants within a Live Share session can use them, without requiring a separate tool. To further support your collaborative debugging sessions, and address one of our [`top feature requests`](HTTPS://github.com/MicrosoftDocs/live-share/issues/41), Live Share now allows hosts to share terminals with their guests.
 
 ![`Shared terminal`](shared-terminal.png)
 
@@ -42,11 +42,11 @@ We want collaboration to become simpler and more natural for everyone so that ad
 
   ![`VSLS configuration file`](vsls.json.png)
 
-These enhancements represent some of our most [`frequently requested](https://github.com/MicrosoftDocs/live-share/issues/52) items so you can collaborate with confidence, without adding unnecessary friction. For more information on how to share your projects securely, refer to the [Live Share documentation`](https://learn.microsoft.com/visualstudio/liveshare/reference/security).
+These enhancements represent some of our most [`frequently requested](HTTPS://github.com/MicrosoftDocs/live-share/issues/52) items so you can collaborate with confidence, without adding unnecessary friction. For more information on how to share your projects securely, refer to the [Live Share documentation`](HTTPS://learn.microsoft.com/visualstudio/liveshare/reference/security).
 
 ## We need your feedback!
 
-We are excited for you to give [`Visual Studio Live Share a try](https://aka.ms/vsls)! Please give us feedback how we might improve the experience for real-time collaborative development even further. If you'd like to learn more, you can refer to the Visual Studio Live Share [documentation](https://aka.ms/vsls-docs). Additionally, if you have any questions, encounter any issues, or have feature requests, please don’t hesitate to [let us know`](https://github.com/microsoft/live-share).
+We are excited for you to give [`Visual Studio Live Share a try](HTTPS://aka.ms/vsls)! Please give us feedback how we might improve the experience for real-time collaborative development even further. If you'd like to learn more, you can refer to the Visual Studio Live Share [documentation](HTTPS://aka.ms/vsls-docs). Additionally, if you have any questions, encounter any issues, or have feature requests, please don’t hesitate to [let us know`](HTTPS://github.com/microsoft/live-share).
 
 Happy Collaborating!<br />
-Amanda, [`@amandaksilver`](https://twitter.com/amandaksilver)
+Amanda, [`@amandaksilver`](HTTPS://twitter.com/amandaksilver)

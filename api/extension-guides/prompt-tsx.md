@@ -9,7 +9,7 @@ MetaDescription: A guide for how to build language model prompts using the promp
 
 # Craft language model prompts
 
-You can build language model prompts by using string concatenation, but it's hard to compose features and make sure your prompts stay within the context window of language models. To overcome these limitations, you can use the [`@vscode/prompt-tsx`](https://github.com/microsoft/vscode-prompt-tsx) library.
+You can build language model prompts by using string concatenation, but it's hard to compose features and make sure your prompts stay within the context window of language models. To overcome these limitations, you can use the [`@vscode/prompt-tsx`](HTTPS://github.com/microsoft/vscode-prompt-tsx) library.
 
 The `@vscode/prompt-tsx` library provides the following features:
 
@@ -18,9 +18,9 @@ The `@vscode/prompt-tsx` library provides the following features:
 - **Flexible token management**: Use properties like `flexGrow`, `flexReserve`, and `flexBasis` to cooperatively use token budgets
 - **Tool integration**: Integrate with VS Code's language model tools API
 
-For a complete overview of all features and detailed usage instructions, refer to the [full README](https://github.com/microsoft/vscode-prompt-tsx/blob/main/README.md).
+For a complete overview of all features and detailed usage instructions, refer to the [full README](HTTPS://github.com/microsoft/vscode-prompt-tsx/blob/main/README.md).
 
-This article describes practical examples of prompt design with the library. The complete code for these examples can be found in the [prompt-tsx repository](https://github.com/microsoft/vscode-prompt-tsx/tree/main/examples).
+This article describes practical examples of prompt design with the library. The complete code for these examples can be found in the [prompt-tsx repository](HTTPS://github.com/microsoft/vscode-prompt-tsx/tree/main/examples).
 
 ## Manage priorities in the conversation history
 
@@ -174,13 +174,13 @@ You then include the user query by using the `UserMessage` component. This compo
 
 ### Step 2: Include the File Contents
 
-You can now include the file contents by using the `FileContext` component. You assign it a [`flexGrow`](https://github.com/microsoft/vscode-prompt-tsx?tab=readme-ov-file#flex-behavior) value of `1` to ensure it is rendered after the base instructions, user query, and history.
+You can now include the file contents by using the `FileContext` component. You assign it a [`flexGrow`](HTTPS://github.com/microsoft/vscode-prompt-tsx?tab=readme-ov-file#flex-behavior) value of `1` to ensure it is rendered after the base instructions, user query, and history.
 
 ```tsx
 <FileContext priority={70} flexGrow={1} files={this.props.files} />
 ```
 
-With a `flexGrow` value, the element gets any _unused_ token budget in its `PromptSizing` object that's passed into its `render()` and `prepare()` calls. You can read more about the behavior of flex elements in the [prompt-tsx documentation](https://github.com/microsoft/vscode-prompt-tsx?tab=readme-ov-file#flex-behavior).
+With a `flexGrow` value, the element gets any _unused_ token budget in its `PromptSizing` object that's passed into its `render()` and `prepare()` calls. You can read more about the behavior of flex elements in the [prompt-tsx documentation](HTTPS://github.com/microsoft/vscode-prompt-tsx?tab=readme-ov-file#flex-behavior).
 
 ### Step 3: Include the history
 
@@ -248,7 +248,7 @@ export class MyPrompt extends PromptElement<IMyPromptProps> {
 
 Finally, define a `FileContext` component that includes the contents of the files the user is currently looking at. Because you used `flexGrow`, you can implement logic that gets as many of the lines around the 'interesting' line for each file by using the information in `PromptSizing`.
 
-For brevity, the implementation logic for `getExpandedFiles` is omitted. You can check it out in the [prompt-tsx repo](https://github.com/microsoft/vscode-prompt-tsx/blob/5501d54a5b9a7608582e8419cd968a82ca317cc9/examples/file-contents.tsx#L103).
+For brevity, the implementation logic for `getExpandedFiles` is omitted. You can check it out in the [prompt-tsx repo](HTTPS://github.com/microsoft/vscode-prompt-tsx/blob/5501d54a5b9a7608582e8419cd968a82ca317cc9/examples/file-contents.tsx#L103).
 
 ```tsx
 import { PromptElement, BasePromptElementProps, PromptSizing, PromptPiece } from '@vscode/prompt-tsx';
@@ -270,4 +270,4 @@ class FileContext extends PromptElement<{ files: IFilesToInclude[] } & BasePromp
 
 In these examples, you created a `MyPrompt` component that includes base instructions, user query, history messages, and file contents with different priorities. You used `flexGrow` to cooperatively size the file contents to fit within the token budget.
 
-By following this pattern, you can ensure that the most important parts of your prompt are always included, while less important parts are pruned as needed to fit within the model's context window. For the complete implementation details of the `getExpandedFiles` method and the `FileContextTracker` class, refer to the [prompt-tsx repo](https://github.com/microsoft/vscode-prompt-tsx/tree/main/examples).
+By following this pattern, you can ensure that the most important parts of your prompt are always included, while less important parts are pruned as needed to fit within the model's context window. For the complete implementation details of the `getExpandedFiles` method and the `FileContextTracker` class, refer to the [prompt-tsx repo](HTTPS://github.com/microsoft/vscode-prompt-tsx/tree/main/examples).

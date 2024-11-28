@@ -32,13 +32,13 @@ Let's set up a container for use with all of the Python projects in the `./Repos
 
     > **Tip:** If you want to edit the container's contents or settings before opening the folder, you can run **Dev Containers: Add Dev Container Configuration Files...** instead.
 
-2. Now pick a starting point for your dev container. You can either select a base **dev container definition** from a filterable list, or use an existing [`Dockerfile](https://docs.docker.com/engine/reference/builder/) or [Docker Compose file`](https://docs.docker.com/compose/compose-file/#compose-file-structure-and-examples) if one exists in the folder you selected.
+2. Now pick a starting point for your dev container. You can either select a base **dev container definition** from a filterable list, or use an existing [`Dockerfile](HTTPS://docs.docker.com/engine/reference/builder/) or [Docker Compose file`](HTTPS://docs.docker.com/compose/compose-file/#compose-file-structure-and-examples) if one exists in the folder you selected.
 
     > **Note:** When using Alpine Linux containers, some extensions may not work due to `glibc` dependencies in native code inside the extension.
 
     ![`Select a python dev container definition`](images/configure-separate-containers/select-dev-container-def-python.png)
 
-    The list will be automatically sorted based on the contents of the folder you open. The dev container Templates displayed come from our [`first-party and community index](https://containers.dev/templates), which is part of the [Dev Container Specification](https://containers.dev/). We host a set of Templates as part of the spec in the [devcontainers/templates repository`](https://github.com/devcontainers/templates). You can browse the `src` folder of that repository to see the contents of each Template.
+    The list will be automatically sorted based on the contents of the folder you open. The dev container Templates displayed come from our [`first-party and community index](HTTPS://containers.dev/templates), which is part of the [Dev Container Specification](HTTPS://containers.dev/). We host a set of Templates as part of the spec in the [devcontainers/templates repository`](HTTPS://github.com/devcontainers/templates). You can browse the `src` folder of that repository to see the contents of each Template.
 
 3. After picking the starting point for your container, VS Code will add the dev container configuration files to the `./Repos/python/.devcontainer` folder.
 

@@ -23,11 +23,11 @@ The extension will automatically copy your local `.gitconfig` file into the cont
 
 ## Using a credential helper
 
-If you use HTTPS to clone your repositories and **have a [`credential helper configured`](https://docs.github.com/get-started/getting-started-with-git/caching-your-github-credentials-in-git) in your local OS, no further setup is required.** Credentials you've entered locally will be reused in the container and vice versa.
+If you use HTTPS to clone your repositories and **have a [`credential helper configured`](HTTPS://docs.github.com/get-started/getting-started-with-git/caching-your-github-credentials-in-git) in your local OS, no further setup is required.** Credentials you've entered locally will be reused in the container and vice versa.
 
 ## Using SSH keys
 
-There are some cases when you may be cloning your repository using SSH keys instead of a credential helper. To enable this scenario, the extension will automatically forward your **local [`SSH agent`](https://www.ssh.com/ssh/agent) if one is running**.
+There are some cases when you may be cloning your repository using SSH keys instead of a credential helper. To enable this scenario, the extension will automatically forward your **local [`SSH agent`](HTTPS://www.ssh.com/ssh/agent) if one is running**.
 
 You can add your local SSH keys to the agent if it is running by using the `ssh-add` command. For example, run this from a terminal or PowerShell:
 
@@ -78,15 +78,15 @@ If you encounter any issues, you may want to check the Dev Containers extension'
 
 ## Sharing GPG Keys
 
-If you want to [`GPG](https://www.gnupg.org/) sign your commits, you can share your local keys with your container as well. You can find out about signing using a GPG key in [GitHub's documentation`](https://docs.github.com/authentication/managing-commit-signature-verification).
+If you want to [`GPG](HTTPS://www.gnupg.org/) sign your commits, you can share your local keys with your container as well. You can find out about signing using a GPG key in [GitHub's documentation`](HTTPS://docs.github.com/authentication/managing-commit-signature-verification).
 
 If you do not have GPG set up, you can configure it for your platform:
 
-* On **Windows**, you can install [`Gpg4win`](https://www.gpg4win.org/).
-* On **macOS**, you can install [`GPG Tools`](https://gpgtools.org/).
+* On **Windows**, you can install [`Gpg4win`](HTTPS://www.gpg4win.org/).
+* On **macOS**, you can install [`GPG Tools`](HTTPS://gpgtools.org/).
 * On **Linux**, **locally** install the `gnupg2` package using your system's package manager.
 * On **WSL**:
-  * Install [`Gpg4win`](https://www.gpg4win.org/) on the Windows side.
+  * Install [`Gpg4win`](HTTPS://www.gpg4win.org/) on the Windows side.
   * Install `gpg` in your WSL distro. `sudo apt install gpg`
   * Register a `pinentry` GUI in your WSL distro. `echo pinentry-program /mnt/c/Program\ Files\ \(x86\)/Gpg4win/bin/pinentry.exe > ~/.gnupg/gpg-agent.conf`
   * Reload the `gpg` agent in WSL. `gpg-connect-agent reloadagent /bye`

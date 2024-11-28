@@ -21,13 +21,13 @@ In the classroom, you might SSH into lab machines to access computers with certa
 
 ## Get started with SSH in VS Code
 
-To get started with using SSH in VS Code, you'll need to download the [`Remote - SSH extension`](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh) from the Extension Marketplace.
+To get started with using SSH in VS Code, you'll need to download the [`Remote - SSH extension`](HTTPS://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh) from the Extension Marketplace.
 
 ![`Remote SSH extension`](images/ssh-lab-machines/remote-ssh.png)
 
 Check out the following video to see an example of using Remote - SSH in action:
 
-<iframe src="https://www.youtube-nocookie.com/embed/rh1Ag41J6IA?rel=0&amp;disablekb=0&amp;modestbranding=1&amp;showinfo=0" frameborder="0" allowfullscreen title="Visual Studio Code Remote - SSH"></iframe>
+<iframe src="HTTPS://www.youtube-nocookie.com/embed/rh1Ag41J6IA?rel=0&amp;disablekb=0&amp;modestbranding=1&amp;showinfo=0" frameborder="0" allowfullscreen title="Visual Studio Code Remote - SSH"></iframe>
 
 As demonstrated above, we can SSH into a more powerful virtual machine to greatly speed up the execution time of our programs.
 

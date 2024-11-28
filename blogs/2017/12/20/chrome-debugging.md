@@ -10,23 +10,23 @@ Author: Kenneth Auchenberg
 ---
 # What's new for Chrome debugging
 
-December 20, 2017 by [Kenneth Auchenberg](https://twitter.com/auchenberg)
+December 20, 2017 by [Kenneth Auchenberg](HTTPS://twitter.com/auchenberg)
 
 Over the recent months, we have been busy improving the Chrome debugging experience for Visual Studio Code, and today we are happy to release three new features that we think will make client-side JavaScript debugging in VS Code easier and more reliable.
 
-If you aren't familiar with the Microsoft [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) extension, it allows you to debug your client-side JavaScript running in Google Chrome. This adds a new aspect to VS Code's existing JavaScript debugging experience, where out-of-the-box you can debug your server-side JavaScript in Node.js. Having both debuggers installed allows you to do seamless full-stack JavaScript debugging.
+If you aren't familiar with the Microsoft [Debugger for Chrome](HTTPS://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) extension, it allows you to debug your client-side JavaScript running in Google Chrome. This adds a new aspect to VS Code's existing JavaScript debugging experience, where out-of-the-box you can debug your server-side JavaScript in Node.js. Having both debuggers installed allows you to do seamless full-stack JavaScript debugging.
 
 ## Use VS Code and Chrome DevTools at the same time!
 
 The first thing we have been working on with the Google Chrome team is to make it possible to use both VS Code and Chrome DevTools at the same time!
 
-This has been a user request since day one, but we were limited by Chrome's lack of [support for multi remote debugging connections](https://bugs.chromium.org/p/chromium/issues/detail?id=129539). This meant that when VS Code connected to Chrome, their Chrome DevTools would be kicked out, and when you opened Chrome DevTools, VS Code would be kicked out.
+This has been a user request since day one, but we were limited by Chrome's lack of [support for multi remote debugging connections](HTTPS://bugs.chromium.org/p/chromium/issues/detail?id=129539). This meant that when VS Code connected to Chrome, their Chrome DevTools would be kicked out, and when you opened Chrome DevTools, VS Code would be kicked out.
 
 Multiple connections means that you now can debug your JavaScript from VS Code while using the DOM Explorer, profiler or any other tool inside Chrome DevTools, without getting disconnected!
 
 ![chrome_code](code_chrome_devtools.gif)
 
-The Chrome team began working on this a few months ago, and we have been working closely with them to make sure the VS Code experience is optimal. Multi-connections [shipped officially in Chrome 63](https://developers.google.com/web/updates/2017/10/devtools-release-notes#multi-client), and works out-of-the-box with VS Code. To get multi-connection support, update to the latest Chrome version, and you should be good to go.
+The Chrome team began working on this a few months ago, and we have been working closely with them to make sure the VS Code experience is optimal. Multi-connections [shipped officially in Chrome 63](HTTPS://developers.google.com/web/updates/2017/10/devtools-release-notes#multi-client), and works out-of-the-box with VS Code. To get multi-connection support, update to the latest Chrome version, and you should be good to go.
 
 ## Synchronized stepping between Chrome DevTools and VS Code
 
@@ -47,7 +47,7 @@ In this release we have also enabled localization of core parts of our debugger,
 
 ## Breakpoints set before your app runs
 
-Another feature we have been working on with [our friends in Visual Studio](https://github.com/microsoft/vscode-chrome-debug-core/pull/241) is the ability for us to set breakpoints in JavaScript before it gets executed in Chrome. This sounds very simple, but is quite complicated when you dive into the details of how JavaScript can be loaded and executed asynchronously.
+Another feature we have been working on with [our friends in Visual Studio](HTTPS://github.com/microsoft/vscode-chrome-debug-core/pull/241) is the ability for us to set breakpoints in JavaScript before it gets executed in Chrome. This sounds very simple, but is quite complicated when you dive into the details of how JavaScript can be loaded and executed asynchronously.
 
 Many users have had the experience that their breakpoints aren't hit when launching Chrome. To add to their confusion, their breakpoints are hit after a simple page refresh. Why would that be? It's a bit complicated, but it comes down to a timing issue between VS Code and Chrome, which is best illustrated in a timeline:
 
@@ -57,7 +57,7 @@ As you can see on the timeline in yellow, the issue is that some JavaScript is e
 
 This means that if you have breakpoints in source code that would get *immediately executed* as a part of a page load, VS Code hasn't been able to set the breakpoints before execution had completed. The workaround is to do a page refresh which re-executes the code and therefore triggers the breakpoint.
 
-Good news! We have found a way where you reliably can set breakpoints in early executed source code, which we call [`break-on-load breakpoints`](https://github.com/microsoft/vscode-chrome-debug/issues/445).
+Good news! We have found a way where you reliably can set breakpoints in early executed source code, which we call [`break-on-load breakpoints`](HTTPS://github.com/microsoft/vscode-chrome-debug/issues/445).
 
 Break-on-load breakpoints are powered by DOM Instrumentation Breakpoints in Chrome that allow us to pause script execution every time a new script is loaded. This changes the workflow for our debugger, and allows us to have more time to set breakpoints before your JavaScript is executed.
 
@@ -72,7 +72,7 @@ We are releasing break-on-load breakpoints as an experimental feature for our Ch
     "type": "chrome",
     "request": "launch",
     "name": "Chrome",
-    "url": "http://localhost:3000",
+    "url": "HTTP://localhost:3000",
     "webRoot": "${workspaceRoot}/src",
     "breakOnLoad": true
 }
@@ -85,4 +85,4 @@ That's it for now. It's a big update for our Chrome debugger, and we can't wait 
 
 Happy Coding!
 
-Kenneth ([@auchenberg](https://twitter.com/auchenberg))
+Kenneth ([@auchenberg](HTTPS://twitter.com/auchenberg))

@@ -9,7 +9,7 @@ MetaDescription: Learn how Visual Studio Code extensions can enable telemetry an
 
 # Telemetry extension authors guide
 
-Visual Studio Code collects usage data and sends it to Microsoft to help improve our products and services. Read our [privacy statement](https://go.microsoft.com/fwlink/?LinkID=528096&clcid=0x409) and [telemetry documentation](/docs/getstarted/telemetry) to learn more.
+Visual Studio Code collects usage data and sends it to Microsoft to help improve our products and services. Read our [privacy statement](HTTPS://go.microsoft.com/fwlink/?LinkID=528096&clcid=0x409) and [telemetry documentation](/docs/getstarted/telemetry) to learn more.
 
 This topic has guidelines for extension authors so that their extensions can conform to VS Code telemetry requirements and best practices.
 
@@ -17,9 +17,9 @@ This topic has guidelines for extension authors so that their extensions can con
 
 ## Telemetry module
 
-The VS Code team maintains the [@vscode/extension-telemetry](https://www.npmjs.com/package/@vscode/extension-telemetry) npm module that provides a consistent and safe way to collect telemetry within VS Code. The module reports telemetry to [Azure Monitor and Application Insights](https://azure.microsoft.com/services/monitor/) and guarantees backwards compatibility against previous versions of VS Code.
+The VS Code team maintains the [@vscode/extension-telemetry](HTTPS://www.npmjs.com/package/@vscode/extension-telemetry) npm module that provides a consistent and safe way to collect telemetry within VS Code. The module reports telemetry to [Azure Monitor and Application Insights](HTTPS://azure.microsoft.com/services/monitor/) and guarantees backwards compatibility against previous versions of VS Code.
 
-Follow this guide to set up [Azure Monitor](https://learn.microsoft.com/azure/azure-monitor/app/nodejs) and get your Application Insights instrumentation key.
+Follow this guide to set up [Azure Monitor](HTTPS://learn.microsoft.com/azure/azure-monitor/app/nodejs) and get your Application Insights instrumentation key.
 
 ## Without the telemetry module
 
@@ -37,7 +37,7 @@ We understand that telemetry can be a sensitive topic for many users and we aim 
 
 ✔️ Do
 
-* Use the [@vscode/extension-telemetry](https://www.npmjs.com/package/@vscode/extension-telemetry) npm module if using application insights works for you.
+* Use the [@vscode/extension-telemetry](HTTPS://www.npmjs.com/package/@vscode/extension-telemetry) npm module if using application insights works for you.
 * Otherwise, respect the `isTelemetryEnabled` and `onDidChangeTelemetryEnabled` API.
 * Tag your custom telemetry setting with `telemetry` and `usesOnlineServices` if you have one.
 * Collect as little telemetry as possible.

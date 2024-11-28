@@ -13,7 +13,7 @@ Helping students understand a new codebase can be challenging and time consuming
 
 ## What is CodeTour?
 
-[`CodeTour`](https://marketplace.visualstudio.com/items?itemName=vsls-contrib.codetour) is a Visual Studio Code extension that allows you to create a step-by-step guide through your codebases. This can be helpful in your classroom to break up your assignments into steps for students to follow or to get them familiar with all parts of the assignment by pointing them to relevant pieces within the assignment.
+[`CodeTour`](HTTPS://marketplace.visualstudio.com/items?itemName=vsls-contrib.codetour) is a Visual Studio Code extension that allows you to create a step-by-step guide through your codebases. This can be helpful in your classroom to break up your assignments into steps for students to follow or to get them familiar with all parts of the assignment by pointing them to relevant pieces within the assignment.
 
 In the short video below, an instructor is removing existing instructions embedded in the source code and replacing them with CodeTour steps so students can jump from step to step in the large game development project:
 ![`CodeTour in a sample assignment`](images/codetour/codetour-example-lesson.gif)
@@ -22,19 +22,19 @@ Essentially, a "code tour" is simply a series of interactive steps, each of whic
 
 ## Case study
 
-We've used CodeTour in the Microsoft partnered Space Jam lessons: [`Use basketball stats to optimize game play with Visual Studio Code, inspired by SPACE JAM: A NEW LEGACY`](https://learn.microsoft.com/training/paths/optimize-basketball-games-with-machine-learning)
+We've used CodeTour in the Microsoft partnered Space Jam lessons: [`Use basketball stats to optimize game play with Visual Studio Code, inspired by SPACE JAM: A NEW LEGACY`](HTTPS://learn.microsoft.com/training/paths/optimize-basketball-games-with-machine-learning)
 
 ![`Microsoft partners Space Jam coding lessons`](images/codetour/space-jam-lessons-home.png)
 
-CodeTour helps guide the self-paced learners through [`module 2](https://learn.microsoft.com/training/modules/optimize-basketball-player-rest-breaks), where they are [creating a web app`](https://learn.microsoft.com/training/modules/optimize-basketball-player-rest-breaks/7-codetour) that uses basketball stats to make decisions on the basketball court.
+CodeTour helps guide the self-paced learners through [`module 2](HTTPS://learn.microsoft.com/training/modules/optimize-basketball-player-rest-breaks), where they are [creating a web app`](HTTPS://learn.microsoft.com/training/modules/optimize-basketball-player-rest-breaks/7-codetour) that uses basketball stats to make decisions on the basketball court.
 
 Here is a short clip of a student using CodeTour to start working on their basketball web app:
 ![`CodeTour in a Space Jam lesson`](images/codetour/codetour-space-jam.gif)
 
 ## Getting started with CodeTour
 
-To start using CodeTour, you'll need to download the CodeTour extension from the VS Code [`Marketplace`](https://marketplace.visualstudio.com/vscode).
+To start using CodeTour, you'll need to download the CodeTour extension from the VS Code [`Marketplace`](HTTPS://marketplace.visualstudio.com/vscode).
 
 ![`CodeTour extension in Extension Marketplace`](images/codetour/codetour-extension-marketplace.png)
 
-To use CodeTour effectively in your classroom, we recommend following the guidelines on the [`CodeTour repository`](https://github.com/microsoft/codetour#getting-started).
+To use CodeTour effectively in your classroom, we recommend following the guidelines on the [`CodeTour repository`](HTTPS://github.com/microsoft/codetour#getting-started).

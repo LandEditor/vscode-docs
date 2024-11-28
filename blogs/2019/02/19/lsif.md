@@ -15,9 +15,9 @@ February 19, 2019 by Dirk Bäumer
 
 As a developer, you spend a lot of your time reading and reviewing code and not necessarily authoring new source code. For example, you may want to browse an existing codebase in a repository like GitHub or you may want to review a colleague's Pull Request.
 
-Typically you would check out a branch or clone a repository pulling down the source code onto your local machine, open your preferred development tool, and then finally you can read and navigate the code. Wouldn't it be cool if you could do this without first cloning the repo? Imagine getting intelligent code features like hover information, Go to Definition, and Find All References without having to download source code. The blog post, [`First look at a rich code navigation experience`](https://code.visualstudio.com/blogs/2018/12/04/rich-navigation), illustrates this scenario for a Pull Request review.
+Typically you would check out a branch or clone a repository pulling down the source code onto your local machine, open your preferred development tool, and then finally you can read and navigate the code. Wouldn't it be cool if you could do this without first cloning the repo? Imagine getting intelligent code features like hover information, Go to Definition, and Find All References without having to download source code. The blog post, [`First look at a rich code navigation experience`](HTTPS://code.visualstudio.com/blogs/2018/12/04/rich-navigation), illustrates this scenario for a Pull Request review.
 
-The goal of the Language Server Index Format (LSIF, pronounced like "else if") is to support rich code navigation in development tools or a Web UI without needing a local copy of the source code. The format is similar in spirit to the [`Language Server Protocol`](https://microsoft.github.io/language-server-protocol/) (LSP), which simplifies the integration of rich code editing capabilities into a development tool.
+The goal of the Language Server Index Format (LSIF, pronounced like "else if") is to support rich code navigation in development tools or a Web UI without needing a local copy of the source code. The format is similar in spirit to the [`Language Server Protocol`](HTTPS://microsoft.github.io/language-server-protocol/) (LSP), which simplifies the integration of rich code editing capabilities into a development tool.
 
 Why not simply use an existing LSP language server? The LSP provides rich code authoring features like auto complete, format on type, and rich code navigation. To provide these features efficiently, a language server requires all source code files be available on a local disk. LSP language servers may also read parts or all of the files into memory and compute abstract syntax trees to power these features. The goal of the Language Server Index Format is to augment the LSP protocol to support rich code navigation features without these requirements. The LSIF defines a standard format for language servers or other programming tools to emit their knowledge about a code workspace. This persisted information can later be used to answer LSP requests for the same workspace without running a language server.
 
@@ -127,16 +127,16 @@ The folding range result for the document containing above function `bar` is emi
 
 ![`LSIF graph for a folding range result`](./foldingRange.png)
 
-These are only two examples of LSP requests supported by the LSIF. The current version of the [`LSIF specification`](https://github.com/microsoft/language-server-protocol/blob/main/indexFormat/specification.md) also supports document symbols, document links, Go to Definition, Go to Declaration, Go to Type Definition, Find All References, and Go to Implementation.
+These are only two examples of LSP requests supported by the LSIF. The current version of the [`LSIF specification`](HTTPS://github.com/microsoft/language-server-protocol/blob/main/indexFormat/specification.md) also supports document symbols, document links, Go to Definition, Go to Declaration, Go to Type Definition, Find All References, and Go to Implementation.
 
 ## We need your feedback!
 
-We have made good initial progress on the LSIF specification and we want to open the conversation to the community so you can learn what we're working on. For feedback, please comment on the issue [`Language Server Index Format`](https://github.com/microsoft/language-server-protocol/issues/623).
+We have made good initial progress on the LSIF specification and we want to open the conversation to the community so you can learn what we're working on. For feedback, please comment on the issue [`Language Server Index Format`](HTTPS://github.com/microsoft/language-server-protocol/issues/623).
 
 ## How to get started
 
 To get started with LSIF, you can have a look at the following resources:
 
-- The [`LSIF specification`](https://github.com/microsoft/language-server-protocol/blob/main/indexFormat/specification.md) - The document also describes some additional optimizations that have been done to keep the emitted data compact.
-- [`LSIF Index for TypeScript`](https://github.com/microsoft/lsif-typescript) - A tool that generates LSIF for TypeScript. The README provides instructions for using the tool.
-- [`Visual Studio Code extension for LSIF`](https://github.com/microsoft/vscode-lsif-extension) - An extension for VS Code that provides language comprehension features using an LSIF JSON dump. If you implement a new LSIF generator, you can use this extension to validate it with arbitrary source code.
+- The [`LSIF specification`](HTTPS://github.com/microsoft/language-server-protocol/blob/main/indexFormat/specification.md) - The document also describes some additional optimizations that have been done to keep the emitted data compact.
+- [`LSIF Index for TypeScript`](HTTPS://github.com/microsoft/lsif-typescript) - A tool that generates LSIF for TypeScript. The README provides instructions for using the tool.
+- [`Visual Studio Code extension for LSIF`](HTTPS://github.com/microsoft/vscode-lsif-extension) - An extension for VS Code that provides language comprehension features using an LSIF JSON dump. If you implement a new LSIF generator, you can use this extension to validate it with arbitrary source code.

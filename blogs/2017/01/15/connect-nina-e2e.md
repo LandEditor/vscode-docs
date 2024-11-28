@@ -9,11 +9,11 @@ Author: Jonathan Carter
 ---
 # Node.js Development with Visual Studio Code and Azure
 
-January, 4 2017 - Jonathan Carter, [@lostintangent](https://twitter.com/LostInTangent)
+January, 4 2017 - Jonathan Carter, [@lostintangent](HTTPS://twitter.com/LostInTangent)
 
 Between Visual Studio Code and Azure, we're trying to contribute to simplifying and improving the overall developer experience of building, debugging and deploying Node.js applications. At [Node Interactive North America 2016](events.linuxfoundation.org/events/node-interactive), I was excited to be able to demo some of the work we've been doing recently based on community feedback, and this article tries to capture that workflow for folks who are interested in trying it out and/or are looking for a little more detail than I was able to cover in my talk.
 
-The demo makes use of a simple todo app created by and published by [Scotch.io](https://scotch.io/tutorials/creating-a-single-page-todo-app-with-node-and-angular). It is a single-page MEAN application, and therefore, uses MongoDB as its database, Node/Express for the REST API/web server and Angular.js 1.x for the front-end UI. Use the following ToC to jump to particular sections of interest, otherwise, continue reading ahead.
+The demo makes use of a simple todo app created by and published by [Scotch.io](HTTPS://scotch.io/tutorials/creating-a-single-page-todo-app-with-node-and-angular). It is a single-page MEAN application, and therefore, uses MongoDB as its database, Node/Express for the REST API/web server and Angular.js 1.x for the front-end UI. Use the following ToC to jump to particular sections of interest, otherwise, continue reading ahead.
 
 * [Prerequisites](#prerequisites)
 * [Project Setup](#project-setup)
@@ -34,13 +34,13 @@ The demo makes use of a simple todo app created by and published by [Scotch.io](
 
 In order to effectively run through this demo, you'll need to have the following software installed:
 
-1. Visual Studio Code Insiders build, which you can download [here](https://code.visualstudio.com/insiders). You don't technically need the Insiders build, however, I would encourage everyone to use it since it provides access to the latest bug fixes/feature enhancements (just like Chrome Canary builds), and is the same build that the VS Code team uses.
+1. Visual Studio Code Insiders build, which you can download [here](HTTPS://code.visualstudio.com/insiders). You don't technically need the Insiders build, however, I would encourage everyone to use it since it provides access to the latest bug fixes/feature enhancements (just like Chrome Canary builds), and is the same build that the VS Code team uses.
 
-2. Docker, which can be downloaded [here](https://www.docker.com/products/docker). Additionally, you will need to have a [DockerHub](https://hub.docker.com/) account in order to publish the Docker images that will be created in the walkthrough.
+2. Docker, which can be downloaded [here](HTTPS://www.docker.com/products/docker). Additionally, you will need to have a [DockerHub](HTTPS://hub.docker.com/) account in order to publish the Docker images that will be created in the walkthrough.
 
-3. Azure CLI (>=`v0.1.0b11`), which provides installation instructions [here](https://github.com/Azure/azure-cli#interactive-install-script). Additionally, you will need an Azure account, and be logged in with the Azure CLI by running `az login` and following the interactive login.
+3. Azure CLI (>=`v0.1.0b11`), which provides installation instructions [here](HTTPS://github.com/Azure/azure-cli#interactive-install-script). Additionally, you will need an Azure account, and be logged in with the Azure CLI by running `az login` and following the interactive login.
 
-4. Yarn, which provides installation instructions [here](https://yarnpkg.com/en/docs/install). This isn't technically required, however, it's used in place of the NPM client below. I'd recommend it!
+4. Yarn, which provides installation instructions [here](HTTPS://yarnpkg.com/en/docs/install). This isn't technically required, however, it's used in place of the NPM client below. I'd recommend it!
 
 Additionally, since the demo app uses MongoDB, you need to have a locally running MongoDB instance, which is listening on the standard `27017` port. The simplest way to achieve this is by running the following command after Docker is installed: `docker run -it -p 27017:27017 mongo`.
 
@@ -56,7 +56,7 @@ To get started, we need to grab the todo sample project so we can start playing 
 
 > Note: The VS Code **Command Palette** supports "fuzzy search", which allows you to type fewer keystrokes to find commonly used commands.
 
-3. Enter `https://github.com/scotch-io/node-todo` into the prompt and hit `ENTER`.
+3. Enter `HTTPS://github.com/scotch-io/node-todo` into the prompt and hit `ENTER`.
 
 4. Select the folder you'd like to clone the project into, or create a new one (e.g. called `Todos`). At this point, VS Code will clone the repo, and launch a new workspace that is rooted at the newly cloned project.
 
@@ -66,7 +66,7 @@ Alternatively, you could use the Git CLI to clone the sample repo, however, this
 
 ## Integrated Terminal
 
-Since this is a Node.js project, the first thing we need to do is ensure that all of its dependencies are installed from NPM, since they weren't checked into the Git repo. You can perform this step from within your standard terminal (I would recommend [Hyper](https://hyper.is/)!), or, if you prefer, you can also bring up the VS Code integrated terminal by pressing `` CTRL+` `` and then running either `npm install` or `yarn`, depending on which NPM client you prefer. I like Yarn since it's very fast and provides some great workflow improvements, so I'd recommend checking it out if you haven't already.
+Since this is a Node.js project, the first thing we need to do is ensure that all of its dependencies are installed from NPM, since they weren't checked into the Git repo. You can perform this step from within your standard terminal (I would recommend [Hyper](HTTPS://hyper.is/)!), or, if you prefer, you can also bring up the VS Code integrated terminal by pressing `` CTRL+` `` and then running either `npm install` or `yarn`, depending on which NPM client you prefer. I like Yarn since it's very fast and provides some great workflow improvements, so I'd recommend checking it out if you haven't already.
 
 <img src="/assets/blogs/2017/01/15/Terminal.png" width="400px" />
 
@@ -106,7 +106,7 @@ In order to familiarize ourselves within the codebase, let's play around with so
 
     <img src="/assets/blogs/2017/01/15/CodePeek.png" width="550px" />
 
-Cloud-native, [twelve-factor apps](https://12factor.net/) don't hardcode configuration like this, and therefore, it would be better to set our MongoDB connection string via an environment variable, which can easily be changed per deployment/environment. Let's make that change!
+Cloud-native, [twelve-factor apps](HTTPS://12factor.net/) don't hardcode configuration like this, and therefore, it would be better to set our MongoDB connection string via an environment variable, which can easily be changed per deployment/environment. Let's make that change!
 
 ## Auto-completion
 
@@ -126,7 +126,7 @@ When typing `process.`, you should have noticed that VS Code displayed the avail
 
 <img src="/assets/blogs/2017/01/15/ProcessEnv.png" width="350px" />
 
-This works because VS Code uses TypeScript behind the scenes (even for JavaScript!) to provide type information, which can then be used to inform the completion list as you type. VS Code is able to detect that this is a Node.js project, and as a result, automatically downloaded the TypeScript typings file for [Node.js](https://www.npmjs.com/package/@types/node) from NPM. This allows you to get completion for other Node.js globals such as `Buffer` or `setTimeout`, as well as all of the built-in modules such as `fs` and `http`.
+This works because VS Code uses TypeScript behind the scenes (even for JavaScript!) to provide type information, which can then be used to inform the completion list as you type. VS Code is able to detect that this is a Node.js project, and as a result, automatically downloaded the TypeScript typings file for [Node.js](HTTPS://www.npmjs.com/package/@types/node) from NPM. This allows you to get completion for other Node.js globals such as `Buffer` or `setTimeout`, as well as all of the built-in modules such as `fs` and `http`.
 
 In addition to the built-in Node.js APIs, this auto-acquisition of typings also works for over 2,000 3rd party libraries, such as React, Underscore and Express. For example, in order to disable Mongoose from crashing the sample app if it can't connect to the configured MongoDB database instance, add the following line of code to line 13:
 
@@ -138,7 +138,7 @@ When typing that, you'll notice that you get completion, once again, without nee
 
 <img src="/assets/blogs/2017/01/15/Mongoose.png" width="300px" />
 
-You can see which libraries support this auto-complete capability by browsing the amazing [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped) project, which is the community-driven source of all TypeScript type definitions.
+You can see which libraries support this auto-complete capability by browsing the amazing [DefinitelyTyped](HTTPS://github.com/DefinitelyTyped/DefinitelyTyped) project, which is the community-driven source of all TypeScript type definitions.
 
 ## Running The App
 
@@ -160,7 +160,7 @@ Additionally, this console is actually attached to our newly running app, so you
 
 <img src="/assets/blogs/2017/01/15/ConsoleCode.png" width="450px" />
 
-If you open a browser, you can navigate to `http://localhost:8080` and see the running app. Type a message into the textbox and add/remove a few todos to get a feel for how the app works.
+If you open a browser, you can navigate to `HTTP://localhost:8080` and see the running app. Type a message into the textbox and add/remove a few todos to get a feel for how the app works.
 
 <img src="/assets/blogs/2017/01/15/Todo.png" width="350px" />
 
@@ -206,7 +206,7 @@ Type `CTRL+P`, enter/select `launch.json` and replace the contents of that file 
             "name": "Chrome",
             "type": "chrome",
             "request": "launch",
-            "url": "http://localhost:8080",
+            "url": "HTTP://localhost:8080",
             "port": 9222,
             "userDataDir": "${workspaceFolder}/.vscode/chrome",
             "webRoot": "${workspaceFolder}/public"
@@ -232,7 +232,7 @@ To see this in action, switch to the debug tab in VS Code, and change the select
 
 <img src="/assets/blogs/2017/01/15/FullStackProfile.png" width="250px" />
 
-This launches the Node.js app (as can be seen in the debug console output), as well as Chrome, which is configured to navigate to the Node.js app at `http://localhost:8080`.
+This launches the Node.js app (as can be seen in the debug console output), as well as Chrome, which is configured to navigate to the Node.js app at `HTTP://localhost:8080`.
 
 Type `CTRL+P` and enter/select `todos.js`, which is the main Angular controller for the app's front-end. Set a breakpoint on line 11, which is the entry-point for a new todo being created.
 
@@ -344,7 +344,7 @@ Yay! We just deployed our app. However, the spinning icon indicates that the app
 
 While we could setup a MongoDB server, or replica set, and manage that infrastructure ourselves, Azure provides another solution called DocumentDB. DocumentDB is a fully-managed, geo-replicable, high-performance, NoSQL database, which provides a MongoDB-compatibility layer. This means that you can point an existing MEAN app at it, without needing to change anything but the connection string! Let's take a look at how using it looks, using the Azure portal this time, instead of the CLI.
 
-1. Go to [portal.azure.com](https://portal.azure.com) and sign in to the same account you were using in the CLI.
+1. Go to [portal.azure.com](HTTPS://portal.azure.com) and sign in to the same account you were using in the CLI.
 
 <img src="/assets/blogs/2017/01/15/AzurePortal.png" width="350px" />
 

@@ -47,11 +47,11 @@ These fonts can later be referenced in the icon definitions. The font declared f
 
 Copy the font file into your extension and set the path accordingly.
 
-It is recommended that you use [WOFF](https://developer.mozilla.org/docs/Web/Guide/WOFF) fonts.
+It is recommended that you use [WOFF](HTTPS://developer.mozilla.org/docs/Web/Guide/WOFF) fonts.
 
 - Set 'woff' as the format.
-- The weight property values are defined [here](https://developer.mozilla.org/docs/Web/CSS/font-weight#Values).
-- The style property values are defined [here](https://developer.mozilla.org/docs/Web/CSS/@font-face/font-style#Values).
+- The weight property values are defined [here](HTTPS://developer.mozilla.org/docs/Web/CSS/font-weight#Values).
+- The style property values are defined [here](HTTPS://developer.mozilla.org/docs/Web/CSS/@font-face/font-style#Values).
 
 ```json
 {
@@ -110,4 +110,4 @@ To find out which icon is used at a certain location in the VS Code UI, open Dev
 
 ## Sample
 
-The [Product Color Theme sample](https://github.com/microsoft/vscode-extension-samples/tree/main/product-icon-theme-sample) can be used as a playground.
+The [Product Color Theme sample](HTTPS://github.com/microsoft/vscode-extension-samples/tree/main/product-icon-theme-sample) can be used as a playground.

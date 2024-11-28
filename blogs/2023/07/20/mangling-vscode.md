@@ -8,7 +8,7 @@ Author: Matt Bierner
 ---
 # Shrinking VS Code with name mangling
 
-July 20, 2023 by Matt Bierner, [`@mattbierner`](https://hachyderm.io/@mattbierner)
+July 20, 2023 by Matt Bierner, [`@mattbierner`](HTTPS://hachyderm.io/@mattbierner)
 
 We recently reduced the size of Visual Studio Code's shipped JavaScript by 20%. That works out to a little over 3.9 MB saved. Sure that's less than some of the individual gifs from our release notes, but that's still nothing to sniff at! Not only does this reduction mean less code you need to download and store on disk, it also improves startup time because less source code has to be scanned before the JavaScript is run. Not too shabby considering we got this reduction without deleting any code and without any major refactorings in our codebase. Instead all it took was a new build step: name mangling.
 
@@ -16,15 +16,15 @@ In this post, I want to share how we identified this optimization opportunity, e
 
 ## Identifying the problem
 
-The VS Code team is passionate about performance, be that optimizing hot code paths, reducing UI re-layouts, or speeding up startup time. This passion includes keeping the size of VS Code's JavaScript small. Code size has become even more of a focus with VS Code shipping on web (https://vscode.dev) in addition to the desktop application. Actively monitoring code size keeps members of the VS Code team aware when it changes.
+The VS Code team is passionate about performance, be that optimizing hot code paths, reducing UI re-layouts, or speeding up startup time. This passion includes keeping the size of VS Code's JavaScript small. Code size has become even more of a focus with VS Code shipping on web (HTTPS://vscode.dev) in addition to the desktop application. Actively monitoring code size keeps members of the VS Code team aware when it changes.
 
 Unfortunately, these changes have almost always been increases. Although we put a lot of thought into what features we build into VS Code, over the years adding new functionality has necessarily grown the amount of code we ship. For instance, one of VS Code's core JavaScript files (`workbench.js`) is now around four times the size it was eight years ago. Now when you consider that eight years ago VS Code lacked features many would consider essential today—such as editor tabs or the built-in terminal—that increase is not perhaps as awful as it sounds, but it's not nothing either.
 
 ![`The size of 'workbench.js' has slowly increased over the past eight years`](code-size-before.png)
 
-That 4x size increase is also after a lot of ongoing performance engineering work. Again this work largely happens because we keep track of our code size and really hate seeing it increase. We've already done many easy code size optimizations, including running our code through [`esbuild`](https://esbuild.github.io/) to minify it. Finding further savings has become increasingly challenging over the years. Many potential savings are also not worth the risks they introduce, or the extra engineering effort required to implement and maintain them. This means that we've had to watch the size of our JavaScript slowly tick upwards.
+That 4x size increase is also after a lot of ongoing performance engineering work. Again this work largely happens because we keep track of our code size and really hate seeing it increase. We've already done many easy code size optimizations, including running our code through [`esbuild`](HTTPS://esbuild.github.io/) to minify it. Finding further savings has become increasingly challenging over the years. Many potential savings are also not worth the risks they introduce, or the extra engineering effort required to implement and maintain them. This means that we've had to watch the size of our JavaScript slowly tick upwards.
 
-While debugging our minified source code on vscode.dev last year though, I noticed something surprising: our minified JavaScript still included tons of long identifier names, such as `extensionIgnoredRecommendationsService`. This surprised me. I assumed esbuild would have already shortened these identifiers. And it turns out esbuild actually does shorten identifiers in some cases through a process called "mangling" (a term JavaScript tools likely borrowed from an [`only roughly similar process for compiled languages`](https://en.wikipedia.org/wiki/Name_mangling)).
+While debugging our minified source code on vscode.dev last year though, I noticed something surprising: our minified JavaScript still included tons of long identifier names, such as `extensionIgnoredRecommendationsService`. This surprised me. I assumed esbuild would have already shortened these identifiers. And it turns out esbuild actually does shorten identifiers in some cases through a process called "mangling" (a term JavaScript tools likely borrowed from an [`only roughly similar process for compiled languages`](HTTPS://en.wikipedia.org/wiki/Name_mangling)).
 
 During minification, mangling shortens long identifier names, transforming code such as:
 
@@ -102,9 +102,9 @@ Hopefully your code isn't doing questionable things like this directly, but care
 
 Thankfully I realized that with VS Code I had one huge advantage: I was working with a (mostly) sane codebase. I could make many assumptions that esbuild couldn't, such as that there are no dynamic private properties accesses or bad `any` accesses. This further simplified the problem I was facing.
 
-So together Johannes Rieken ([`@johannesrieken`](https://twitter.com/johannesrieken)) and I started to explore private property mangling. Our first idea was to try adopting JavaScript's native `#private` fields everywhere in our codebase. Not only are private fields immune to all of the problems detailed above, they already get mangled automatically by esbuild. Moving closer to plain old JavaScript was also appealing.
+So together Johannes Rieken ([`@johannesrieken`](HTTPS://twitter.com/johannesrieken)) and I started to explore private property mangling. Our first idea was to try adopting JavaScript's native `#private` fields everywhere in our codebase. Not only are private fields immune to all of the problems detailed above, they already get mangled automatically by esbuild. Moving closer to plain old JavaScript was also appealing.
 
-However, we quickly dismissed this approach as it would require massive (meaning risky) code changes, including removing all of our uses of [`parameter properties](https://www.typescriptlang.org/docs/handbook/2/classes.html#parameter-properties). As a relatively new feature, private fields also haven't been optimized across all runtimes yet. Using them can introduce slowdowns ranging from negligible to [around 95%`](https://bugs.webkit.org/show_bug.cgi?id=258660)! Although this may be the correct change in the long run, it wasn't what we needed right now.
+However, we quickly dismissed this approach as it would require massive (meaning risky) code changes, including removing all of our uses of [`parameter properties](HTTPS://www.typescriptlang.org/docs/handbook/2/classes.html#parameter-properties). As a relatively new feature, private fields also haven't been optimized across all runtimes yet. Using them can introduce slowdowns ranging from negligible to [around 95%`](HTTPS://bugs.webkit.org/show_bug.cgi?id=258660)! Although this may be the correct change in the long run, it wasn't what we needed right now.
 
 Next we discovered that esbuild can selectively mangle properties that match a given regular expression. However, this regular expression only matches against the identifier name. While this meant that we couldn't know if the property was declared `private` in TypeScript, we could try mangling all properties starting with `_`, which we hoped would only include private and protected properties.
 
@@ -163,14 +163,14 @@ This chart shows the size of `workbench.js` over time. Notice the two drops on t
 
 ![`The size of 'workbench.js' over all VS Code releases, including the mangling work`](code-size-after.png)
 
-Our mangling implementation can doubtless be improved since our minified sources still contain plenty of long names. We may investigate these further if doing so seems worthwhile and if we can come up with a safe approach. Ideally, some day much of this work won't be necessary at all. Native private properties are already mangled automatically and our build tools will hopefully become better at optimizing code across our entire codebase. You can review our current [`mangling implementation`](https://github.com/microsoft/vscode/blob/48cd8e0c1b142a46f0956b593d8331145634658e/build/lib/mangle/index.ts).
+Our mangling implementation can doubtless be improved since our minified sources still contain plenty of long names. We may investigate these further if doing so seems worthwhile and if we can come up with a safe approach. Ideally, some day much of this work won't be necessary at all. Native private properties are already mangled automatically and our build tools will hopefully become better at optimizing code across our entire codebase. You can review our current [`mangling implementation`](HTTPS://github.com/microsoft/vscode/blob/48cd8e0c1b142a46f0956b593d8331145634658e/build/lib/mangle/index.ts).
 
 We're always striving to make VS Code and our codebase better, and I think the mangling work is a great demonstration of how we approach this. Optimization is an ongoing process, not a one time thing. By continually monitoring our code size, we were aware of how it has grown over time. This awareness has doubtless help keep our code size from expanding even more than it has, and also encourages us to always be looking for improvements. Although mangling was an attractive seeming technique, it was initially too risky to seriously consider. Only once we had worked to reduce this risk, create the right safety nets, and make the cost of adopting mangling almost zero, did we finally feel confident enough to enable it in our builds. I'm really proud of the end result and just as proud of how we went about achieving it.
 
 Happy Coding,
 
 Matt Bierner, VS Code Team Member
-[`@mattbierner`](https://hachyderm.io/@mattbierner)
+[`@mattbierner`](HTTPS://hachyderm.io/@mattbierner)
 
 ---
 

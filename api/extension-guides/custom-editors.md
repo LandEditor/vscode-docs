@@ -45,7 +45,7 @@ Custom editors have a single document model per resource but there may be multip
 
 There are two classes of custom editors: custom text editors and custom editors. The main difference between these is how they define their document model.
 
-A `CustomTextEditorProvider` uses VS Code's standard [`TextDocument`](https://code.visualstudio.com/api/references/vscode-api#TextDocument) as its data model. You can use a `CustomTextEditor` for any text based file types. `CustomTextEditor` are considerably easier to implement because VS Code already knows how to work with text files and can therefore implement operations such as save and backing up files for hot exit.
+A `CustomTextEditorProvider` uses VS Code's standard [`TextDocument`](HTTPS://code.visualstudio.com/api/references/vscode-api#TextDocument) as its data model. You can use a `CustomTextEditor` for any text based file types. `CustomTextEditor` are considerably easier to implement because VS Code already knows how to work with text files and can therefore implement operations such as save and backing up files for hot exit.
 
 With a `CustomEditorProvider` on the other hand, your extension brings its own document model. This means that you can use a `CustomEditor` for binary formats such as images, but it also means that your extension is responsible for a lot more, including implementing save and backing. You can skip over much of this complexity if your custom editor is readonly, such as custom editors for previews.
 
@@ -105,7 +105,7 @@ It's important to note that `onCustomEditor` is only called when VS Code needs t
 
 ## Custom Text Editor
 
-Custom text editors let you create custom editors for text files. This can be anything from plain unstructured text to [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) to JSON or XML. Custom text editors use VS Code's standard [TextDocument](/api/references/vscode-api#TextDocument) as their document model.
+Custom text editors let you create custom editors for text files. This can be anything from plain unstructured text to [CSV](HTTPS://en.wikipedia.org/wiki/Comma-separated_values) to JSON or XML. Custom text editors use VS Code's standard [TextDocument](/api/references/vscode-api#TextDocument) as their document model.
 
 The [`custom editor extension sample`][sample] includes a simple example custom text editor for cat scratch files (which are just JSON files that end with a `.cscratch` file extension). Let's take a look at some of the important bits of implementing a custom text editor.
 
@@ -165,7 +165,7 @@ It's important to remember that any file edits that a custom editor triggers wil
 
 Also remember that if you are working with a structured language such as JSON or XML, the document may not always be in a valid state. Your extension must either be able to gracefully handle errors or display an error message to the user so that they understand what is wrong and how to fix it.
 
-Finally, if updating your webviews is expensive, consider [debouncing](https://davidwalsh.name/javascript-debounce-function) the updates to your webview.
+Finally, if updating your webviews is expensive, consider [debouncing](HTTPS://davidwalsh.name/javascript-debounce-function) the updates to your webview.
 
 ## Custom Editor
 
@@ -293,7 +293,7 @@ The first step to saving is getting the data stream to write to disk. Common app
 
     Keep in mind though that custom editors can be saved even when they are not visible. For this reason, it is recommended that that your extension's implementation of `save` does not depend on a `WebviewPanel`. If this is not possible, you can use the `WebviewPanelOptions.retainContextWhenHidden` setting so that the webview stays alive even when it is hidden. `retainContextWhenHidden` does have significant memory overhead so be conservative about using it.
 
-After getting the data for the resource, you generally should use the [workspace FS api](https://code.visualstudio.com/api/references/vscode-api#FileSystem) to write it to disk. The FS APIs take a `UInt8Array` of data and can write out both binary and text based files. For binary file data, simply put the binary data into the `UInt8Array`. For text file data, use `Buffer` to convert a string into a `UInt8Array`:
+After getting the data for the resource, you generally should use the [workspace FS api](HTTPS://code.visualstudio.com/api/references/vscode-api#FileSystem) to write it to disk. The FS APIs take a `UInt8Array` of data and can write out both binary and text based files. For binary file data, simply put the binary data into the `UInt8Array`. For text file data, use `Buffer` to convert a string into a `UInt8Array`:
 
 ```ts
 const writeData = Buffer.from("my text data", 'utf8');
@@ -307,4 +307,4 @@ If you'd like to learn more about VS Code extensibility, try these topics:
 - [Extension API](/api) - Learn about the full VS Code Extension API.
 - [Extension Capabilities](/api/extension-capabilities/overview) - Take a look at other ways to extend VS Code.
 
-[sample]: https://github.com/microsoft/vscode-extension-samples/tree/main/custom-editor-sample
+[sample]: HTTPS://github.com/microsoft/vscode-extension-samples/tree/main/custom-editor-sample

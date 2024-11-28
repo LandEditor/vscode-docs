@@ -11,9 +11,9 @@ DateApproved: 10/29/2024
 
 If you add the `image` or `dockerFile` properties to `devcontainer.json`, VS Code will automatically "bind" mount your current workspace folder into the container.  If `git` is present on the host's `PATH` and the folder containing `.devcontainer/devcontainer.json` is within a `git` repository, the current workspace mounted will be the root of the repository.  If `git` is not present on the host's `PATH`, the current workspace mounted will be the folder containing `.devcontainer/devcontainer.json`.
 
-While this is convenient, you may want to change [`mount settings](https://docs.docker.com/engine/reference/commandline/service_create/#add-bind-mounts-volumes-or-memory-filesystems), alter the type of mount, location, or [run in a remote dev container`](/remote/advancedcontainers/develop-remote-host.md).
+While this is convenient, you may want to change [`mount settings](HTTPS://docs.docker.com/engine/reference/commandline/service_create/#add-bind-mounts-volumes-or-memory-filesystems), alter the type of mount, location, or [run in a remote dev container`](/remote/advancedcontainers/develop-remote-host.md).
 
-You can use the `workspaceMount` property in `devcontainer.json` to change the automatic mounting behavior. It expects the same value as the [`Docker CLI `--mount` flag`](https://docs.docker.com/engine/reference/commandline/run/#add-bind-mounts-or-volumes-using-the---mount-flag).
+You can use the `workspaceMount` property in `devcontainer.json` to change the automatic mounting behavior. It expects the same value as the [`Docker CLI `--mount` flag`](HTTPS://docs.docker.com/engine/reference/commandline/run/#add-bind-mounts-or-volumes-using-the---mount-flag).
 
 For example:
 
@@ -28,10 +28,10 @@ If you've already built the container and connected to it, run **Dev Containers:
 
 ### Video : Work with Monorepos in a dev container by changing default mount
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/o5coAL7oE0o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="HTTPS://www.youtube-nocookie.com/embed/o5coAL7oE0o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <br><br>
 
 ### Video : Change the default location of your project in a container
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/4zX2XWTmr3c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="HTTPS://www.youtube-nocookie.com/embed/4zX2XWTmr3c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

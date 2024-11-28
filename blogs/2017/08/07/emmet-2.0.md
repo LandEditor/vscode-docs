@@ -9,19 +9,19 @@ Author: Ramya Rao
 ---
 # Emmet 2.0 in Visual Studio Code
 
-August 7, 2017 Ramya Rao, [@ramyanexus](https://twitter.com/ramyanexus)
+August 7, 2017 Ramya Rao, [@ramyanexus](HTTPS://twitter.com/ramyanexus)
 
 In the July 2017 release of Visual Studio Code (version 1.15), we're shipping a better Emmet experience which has been in preview for the past 2 releases.
 
 Its features include:
 
 * Emmet abbreviation expansions in suggestion/auto-completion lists.
-* Multi-cursor support for most [Emmet actions](https://docs.emmet.io/actions/).
+* Multi-cursor support for most [Emmet actions](HTTPS://docs.emmet.io/actions/).
 * Updated support for custom Emmet snippets.
 
 ![Emmet in suggestion/auto-completion list](emmet.gif)
 
-As part of this update, we have re-written all of the Emmet actions using new npm modules from [@emmetio](https://www.npmjs.com/~emmetio).
+As part of this update, we have re-written all of the Emmet actions using new npm modules from [@emmetio](HTTPS://www.npmjs.com/~emmetio).
 
 An important change is that the `kbstyle(Tab)` key is no longer the default way to expand Emmet abbreviations. Instead, Emmet abbreviations will now appear in the suggestion list. They can be selected like any other smart completion and on selection, the abbreviation will be expanded.
 
@@ -31,16 +31,16 @@ Read on to learn about the Emmet 2.0 changes in Visual Studio Code.
 
 ## New modular approach to Emmet
 
-Previously, the [Emmet library](https://github.com/emmetio/emmet) was a single monolithic codebase that was used for every [Emmet action](https://docs.emmet.io/actions/). The author of Emmet, [Sergey Chikuyonok](https://github.com/sergeche), envisioned a new world for Emmet 2.0 with smaller, re-usable modules.
+Previously, the [Emmet library](HTTPS://github.com/emmetio/emmet) was a single monolithic codebase that was used for every [Emmet action](HTTPS://docs.emmet.io/actions/). The author of Emmet, [Sergey Chikuyonok](HTTPS://github.com/sergeche), envisioned a new world for Emmet 2.0 with smaller, re-usable modules.
 
-There are now separate npm modules from [@emmetio](https://github.com/emmetio) for the different parts of the pipeline required to expand an Emmet abbreviation. These include steps such as:
+There are now separate npm modules from [@emmetio](HTTPS://github.com/emmetio) for the different parts of the pipeline required to expand an Emmet abbreviation. These include steps such as:
 
 * Parsing an abbreviation
 * Resolving snippets and variables
 * Rendering output as per syntax
 * Applying transformations
 
-There are also separate modules for parsing HTML and CSS documents to aid in implementing the rest of the Emmet features. You can find these modules on npm under [emmetio](https://www.npmjs.com/~emmetio).
+There are also separate modules for parsing HTML and CSS documents to aid in implementing the rest of the Emmet features. You can find these modules on npm under [emmetio](HTTPS://www.npmjs.com/~emmetio).
 
 This modular approach was taken to allow editor plugins to use the editor specific APIs for better Emmet integration with the editor features. For example, this approach has allowed us to:
 
@@ -56,7 +56,7 @@ There were two issues with using the `kbstyle(Tab)` key as a keyboard shortcut f
 * Emmet expansions occurred when the user wanted to indent source code using the `kbstyle(Tab)` key.
 * Items from the suggestion list were inserted when the user wanted to expand an Emmet abbreviation.
 
-[Sergey Chikuyonok](https://github.com/sergeche) realized that having Emmet in the suggestion list would be a more pleasant experience. That it helped us solve the above two issues, was an added bonus.
+[Sergey Chikuyonok](HTTPS://github.com/sergeche) realized that having Emmet in the suggestion list would be a more pleasant experience. That it helped us solve the above two issues, was an added bonus.
 
 With Emmet abbreviations now easily accessible via suggestion list, we were able to remove the default association of `kbstyle(Tab)` key with the **Emmet: ExpandAbbreviation** command. The `kbstyle(Tab)` key is now free to do what it was meant to do: indent.
 
@@ -80,18 +80,18 @@ There are a few other changes that we have documented in the new Emmet [page](/d
 
 ## People who made Emmet 2.0 happen
 
-I want to thank [Sergey Chikuyonok](https://github.com/sergeche) for his amazing work on modularizing Emmet and helping us bring these improvements to VS Code.
+I want to thank [Sergey Chikuyonok](HTTPS://github.com/sergeche) for his amazing work on modularizing Emmet and helping us bring these improvements to VS Code.
 
 Thanks also goes to everyone who used the new Emmet in VS Code when it was in preview and provided great feedback through GitHub issues. The discussions in GitHub issues were very helpful in getting to the current user experience.
 
-Special thanks to [Steve Lombardi](https://github.com/smlombardi), [Jens Hausdorf](https://github.com/jens1o), [Vladimir Sizikov](https://github.com/vvs), [Niichie](https://github.com/Niichie), [Thomas Klepzig](https://github.com/tklepzig) and many more who used the VS Code Insiders builds to test my bug fixes and feature additions.
+Special thanks to [Steve Lombardi](HTTPS://github.com/smlombardi), [Jens Hausdorf](HTTPS://github.com/jens1o), [Vladimir Sizikov](HTTPS://github.com/vvs), [Niichie](HTTPS://github.com/Niichie), [Thomas Klepzig](HTTPS://github.com/tklepzig) and many more who used the VS Code Insiders builds to test my bug fixes and feature additions.
 
 ## Share your thoughts on the new Emmet
 
-Do you miss any features of the old Emmet? Having trouble using the new Emmet? Feel free to create an GitHub [issue](https://github.com/microsoft/vscode/issues) and we will do our best to help you out.
+Do you miss any features of the old Emmet? Having trouble using the new Emmet? Feel free to create an GitHub [issue](HTTPS://github.com/microsoft/vscode/issues) and we will do our best to help you out.
 
-It is also easier than ever to contribute to Emmet in VS Code as it is now an extension. The [emmet folder](https://github.com/microsoft/vscode/tree/main/extensions/emmet) in the VS Code GitHub repo has all the source code you need to get started.
+It is also easier than ever to contribute to Emmet in VS Code as it is now an extension. The [emmet folder](HTTPS://github.com/microsoft/vscode/tree/main/extensions/emmet) in the VS Code GitHub repo has all the source code you need to get started.
 
 Happy Coding!
 
-Ramya Rao, VS Code Team member [@ramyanexus](https://twitter.com/ramyanexus)
+Ramya Rao, VS Code Team member [@ramyanexus](HTTPS://twitter.com/ramyanexus)

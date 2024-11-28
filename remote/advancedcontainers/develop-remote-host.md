@@ -40,7 +40,7 @@ This model only requires that a Docker Engine be running on a remote host that y
 
 ### A basic remote example
 
-Setting up VS Code to attach to a container on a remote Docker host can be as easy as setting the [`Docker extension`](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker) `docker.environment` property in `settings.json` and restarting VS Code (or reloading the window).
+Setting up VS Code to attach to a container on a remote Docker host can be as easy as setting the [`Docker extension`](HTTPS://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker) `docker.environment` property in `settings.json` and restarting VS Code (or reloading the window).
 
 For example:
 
@@ -92,7 +92,7 @@ Recent versions of Docker (18.06+) have added support for the SSH protocol to co
 
 First, install a [`supported SSH client](/docs/remote/troubleshooting.md#installing-a-supported-ssh-client), configure [key based authentication](/docs/remote/troubleshooting.md#configuring-key-based-authentication)), and then **import your key into your local SSH agent** (which often is not running by default on Windows and Linux). See the article on [using SSH Keys with Git`](/docs/devcontainers/containers.md#using-ssh-keys) for details on configuring the agent and adding the key.
 
-Then, add the following [`Docker extension`](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker) `docker.environment` property to `settings.json` (replacing values as appropriate):
+Then, add the following [`Docker extension`](HTTPS://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker) `docker.environment` property to `settings.json` (replacing values as appropriate):
 
 ```json
 "docker.environment": {
@@ -106,7 +106,7 @@ After restarting VS Code (or reloading the window), you will now be able to [`at
 
 ### Using the TCP protocol
 
-While the SSH protocol has its own built-in authorization mechanism, using the TCP protocol often requires setting other [`Docker extension`](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker) properties in your `settings.json`. These are:
+While the SSH protocol has its own built-in authorization mechanism, using the TCP protocol often requires setting other [`Docker extension`](HTTPS://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker) properties in your `settings.json`. These are:
 
 ```json
 "docker.environment": {
@@ -129,11 +129,11 @@ If you'd prefer not to use `settings.json`, you can set **environment variables*
 
 ## Connect using Docker Contexts
 
-[`Docker Contexts`](https://docs.docker.com/engine/context/working-with-contexts/) allow you to interact with different hosts - you can set up contexts for each host and switch between them.
+[`Docker Contexts`](HTTPS://docs.docker.com/engine/context/working-with-contexts/) allow you to interact with different hosts - you can set up contexts for each host and switch between them.
 
 You create new contexts with `docker context create`. The current context can be changed using `docker context use <context>`.
 
-The [`Docker extension`](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker) comes with the `docker.environment` setting where environment variables like `DOCKER_HOST` or `DOCKER_CONTEXT` can be set that are also honored by the Dev Containers extension.
+The [`Docker extension`](HTTPS://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker) comes with the `docker.environment` setting where environment variables like `DOCKER_HOST` or `DOCKER_CONTEXT` can be set that are also honored by the Dev Containers extension.
 
 > **Note:** The above settings are only visible when the Docker extension is installed. Without the Docker extension, Dev Containers will use the current context.
 
@@ -163,7 +163,7 @@ To convert an existing or pre-defined, local `devcontainer.json` into a remote o
     "workspaceFolder": "/workspace",
     ```
 
-    The `workspaceMount` property supports the same values as the [`Docker CLI `--mount` flag`](https://docs.docker.com/engine/reference/commandline/run/#add-bind-mounts-or-volumes-using-the---mount-flag) if you have a different scenario in mind.
+    The `workspaceMount` property supports the same values as the [`Docker CLI `--mount` flag`](HTTPS://docs.docker.com/engine/reference/commandline/run/#add-bind-mounts-or-volumes-using-the---mount-flag) if you have a different scenario in mind.
 
     **Docker Compose**:
 
@@ -192,7 +192,7 @@ To convert an existing or pre-defined, local `devcontainer.json` into a remote o
         # ...
     ```
 
-    See the [`Docker Compose documentation on `volumes`](https://docs.docker.com/compose/compose-file/#volumes) if you need to support a different scenario.
+    See the [`Docker Compose documentation on `volumes`](HTTPS://docs.docker.com/compose/compose-file/#volumes) if you need to support a different scenario.
 
 4. Run the **Dev Containers: Reopen in Container** command from the Command Palette (`kbstyle(F1)`) or **Dev Containers: Rebuild Container**.
 
@@ -206,6 +206,6 @@ If you store your source code on the remote host's filesystem instead of inside 
 
 1. [`Mount the remote filesystem using SSHFS`](/docs/remote/troubleshooting.md#using-sshfs-to-access-files-on-your-remote-host).
 2. [`Sync files from the remote host to your local machine using `rsync`](/docs/remote/troubleshooting.md#using-rsync-to-maintain-a-local-copy-of-your-source-code).
-3. [`Use the mount command](https://docs.docker.com/machine/reference/mount/) if you are using [Docker Machine`](https://docs.docker.com/machine/).
+3. [`Use the mount command](HTTPS://docs.docker.com/machine/reference/mount/) if you are using [Docker Machine`](HTTPS://docs.docker.com/machine/).
 
 Using SSHFS or Docker Machine's mount command are the more convenient options and do not require any file sync'ing. However, performance will be significantly slower than working through VS Code, so they are best used for single file edits and uploading/downloading content. If you need to use an application that bulk reads/write to many files at once (like a local source control tool), rsync is a better choice.

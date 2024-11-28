@@ -42,7 +42,7 @@ There are five options for storing data:
 - [`ExtensionContext.globalState`](/api/references/vscode-api#ExtensionContext.globalState): A global storage where you can write key/value pairs. VS Code manages the storage and will restore it for each extension activation. You can selectively synchronize key/value pairs in global storage by setting the keys for sync using `setKeysForSync` method on `globalState`.
 - [`ExtensionContext.storageUri`](/api/references/vscode-api#ExtensionContext.storageUri): A workspace specific storage URI pointing to a local directory where your extension has read/write access. This is a good option if you need to store large files that are accessible only from the current workspace.
 - [`ExtensionContext.globalStorageUri`](/api/references/vscode-api#ExtensionContext.globalStorageUri): A global storage URI pointing to a local directory where your extension has read/write access. This is a good option if you need to store large files that are accessible from all workspaces.
-- [`ExtensionContext.secrets`](/api/references/vscode-api#ExtensionContext.secrets): A global storage for secrets (or any information that is sensitive) that will be encrypted. These are not synced across machines. For VS Code desktop, this leverages Electron's [safeStorage API](https://www.electronjs.org/docs/latest/api/safe-storage). For VS Code for the Web, this uses a Double Key Encryption (DKE) implementation.
+- [`ExtensionContext.secrets`](/api/references/vscode-api#ExtensionContext.secrets): A global storage for secrets (or any information that is sensitive) that will be encrypted. These are not synced across machines. For VS Code desktop, this leverages Electron's [safeStorage API](HTTPS://www.electronjs.org/docs/latest/api/safe-storage). For VS Code for the Web, this uses a Double Key Encryption (DKE) implementation.
 
 The extension context is available to the `activate` function in the [Extension Entry File](/api/get-started/extension-anatomy#extension-entry-file).
 
@@ -77,7 +77,7 @@ Almost all extensions need to present information to the user at some point. VS 
 
 ## Quick Pick
 
-With the [`vscode.QuickPick`](/api/references/vscode-api#QuickPick) API, you can easily collect user input or let the user make a selection from multiple options. The [QuickInput sample](https://github.com/microsoft/vscode-extension-samples/tree/main/quickinput-sample) illustrates the API.
+With the [`vscode.QuickPick`](/api/references/vscode-api#QuickPick) API, you can easily collect user input or let the user make a selection from multiple options. The [QuickInput sample](HTTPS://github.com/microsoft/vscode-extension-samples/tree/main/quickinput-sample) illustrates the API.
 
 ## File Picker
 
@@ -97,4 +97,4 @@ Progress can be shown in different locations using the [`ProgressLocation`](/api
 - In the Source Control view
 - General progress in the VS Code window
 
-The [Progress sample](https://github.com/microsoft/vscode-extension-samples/tree/main/progress-sample) illustrates this API.
+The [Progress sample](HTTPS://github.com/microsoft/vscode-extension-samples/tree/main/progress-sample) illustrates this API.

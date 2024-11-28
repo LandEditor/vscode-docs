@@ -17,8 +17,8 @@ The Testing API allows Visual Studio Code extensions to discover tests in the wo
 
 There are two test providers maintained by the VS Code team:
 
-- The [sample test extension](https://github.com/microsoft/vscode-extension-samples/tree/main/test-provider-sample), which provides tests in Markdown files.
-- The [selfhost test extension](https://github.com/microsoft/vscode-selfhost-test-provider), that we use for running tests in VS Code itself.
+- The [sample test extension](HTTPS://github.com/microsoft/vscode-extension-samples/tree/main/test-provider-sample), which provides tests in Markdown files.
+- The [selfhost test extension](HTTPS://github.com/microsoft/vscode-selfhost-test-provider), that we use for running tests in VS Code itself.
 
 ## Discovering tests
 
@@ -135,7 +135,7 @@ async function discoverAllFilesInWorkspace() {
 }
 ```
 
-The `TestItem` interface is simple and doesn't have room for custom data. If you need to associate extra information with a `TestItem`, you can use a [`WeakMap`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap):
+The `TestItem` interface is simple and doesn't have room for custom data. If you need to associate extra information with a `TestItem`, you can use a [`WeakMap`](HTTPS://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap):
 
 ```ts
 const testData = new WeakMap<vscode.TestItem, MyCustomData>();
@@ -243,7 +243,7 @@ In addition to the `runHandler`, you can set a `configureHandler` on the `TestRu
 
 In addition to the messages passed to `TestRun.failed` or `TestRun.errored`, you can append generic output using `run.appendOutput(str)`. This output can be displayed in a terminal using the **Test: Show Output** and through various buttons in the UI, such as the terminal icon in the Test Explorer view.
 
-Because the string is rendered in a terminal, you can use the full set of [ANSI codes](https://en.wikipedia.org/wiki/ANSI_escape_code), including the styles available in the [ansi-styles](https://www.npmjs.com/package/ansi-styles) npm package. Bear in mind that, because it is in a terminal, lines must be wrapped using CRLF (`\r\n`), not just LF (`\n`), which may be the default output from some tools.
+Because the string is rendered in a terminal, you can use the full set of [ANSI codes](HTTPS://en.wikipedia.org/wiki/ANSI_escape_code), including the styles available in the [ansi-styles](HTTPS://www.npmjs.com/package/ansi-styles) npm package. Bear in mind that, because it is in a terminal, lines must be wrapped using CRLF (`\r\n`), not just LF (`\n`), which may be the default output from some tools.
 
 ### Test Coverage
 
@@ -368,7 +368,7 @@ vscode.commands.registerCommand('myExtension.loadTestResultFile', async file => 
 
 ## Migrating from the Test Explorer UI
 
-If you have an existing extension using the Test Explorer UI, we suggest you migrate to the native experience for additional features and efficiency. We've put together a repo with an example migration of the Test Adapter sample in its [Git history](https://github.com/connor4312/test-controller-migration-example/commits/master). You can view each step by selecting the commit name, starting from  `[1] Create a native TestController`.
+If you have an existing extension using the Test Explorer UI, we suggest you migrate to the native experience for additional features and efficiency. We've put together a repo with an example migration of the Test Adapter sample in its [Git history](HTTPS://github.com/connor4312/test-controller-migration-example/commits/master). You can view each step by selecting the commit name, starting from  `[1] Create a native TestController`.
 
 In summary, the general steps are:
 

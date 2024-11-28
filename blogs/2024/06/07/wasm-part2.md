@@ -13,7 +13,7 @@ June 7, 2024 by Dirk Bäumer
 
 In the previous blog post about using [`WebAssembly for Extension Development](/blogs/2024/05/08/wasm.md), we demonstrated how the component model can be used to integrate WebAssembly code into your Visual Studio Code extension. In this blog post, we focus on two additional independent use cases: (a) running the WebAssembly code in a [worker](#executing-webassembly-code-in-a-worker) to avoid blocking the extension host's main thread, and (b) creating a [language server`](#a-webassembly-based-language-server) using a language that compiles to WebAssembly.
 
-To run the examples in this blog post, you need the following tools: VS Code, Node.js, the [`Rust compiler toolchain](https://www.rust-lang.org/), [wasm-tools](https://github.com/bytecodealliance/wasm-tools), and [wit-bindgen`](https://github.com/bytecodealliance/wit-bindgen).
+To run the examples in this blog post, you need the following tools: VS Code, Node.js, the [`Rust compiler toolchain](HTTPS://www.rust-lang.org/), [wasm-tools](HTTPS://github.com/bytecodealliance/wasm-tools), and [wit-bindgen`](HTTPS://github.com/bytecodealliance/wit-bindgen).
 
 ## Executing WebAssembly code in a worker
 
@@ -83,7 +83,7 @@ vscode.commands.registerCommand('vscode-samples.wasm-component-model-async.run',
 
 There are a couple of important things to note:
 
-- The WIT file used in this example is no different from the one used for the [`calculator example`](https://code.visualstudio.com/blogs/2024/05/08/wasm#_a-calculator-in-rust) in the previous blog post.
+- The WIT file used in this example is no different from the one used for the [`calculator example`](HTTPS://code.visualstudio.com/blogs/2024/05/08/wasm#_a-calculator-in-rust) in the previous blog post.
 - Since the execution of the WebAssembly code happens in a worker, the implementation of imported services (for example, the `log` function above) can return a `Promise`, but it doesn't have to.
 - WebAssembly currently only supports a synchronous execution model. As a result, every call from the worker that executes the WebAssembly code to the extension host main thread to call imported services requires the following steps:
   1. Post a message to the extension host main thread describing the service to be called (for example, call the `log` function).
@@ -93,15 +93,15 @@ There are a couple of important things to note:
 
 This synchronization adds measurable time overhead. Although all these steps are handled transparently by the component model, developers should be aware of them and consider this when designing the imported API surface.
 
-You can find the full source code for this example in the [`VS Code extension sample repository`](https://insiders.vscode.dev/github/microsoft/vscode-extension-samples/blob/main/wasm-component-model-async/src/extension.ts#L1).
+You can find the full source code for this example in the [`VS Code extension sample repository`](HTTPS://insiders.vscode.dev/github/microsoft/vscode-extension-samples/blob/main/wasm-component-model-async/src/extension.ts#L1).
 
 ## A WebAssembly based language server
 
-When we started working on [`WebAssembly support for VS Code for the Web](https://code.visualstudio.com/blogs/2023/06/05/vscode-wasm-wasi), one of our envisioned use cases was to execute language servers using WebAssembly. With the latest changes to [VS Code's LSP libraries`](https://github.com/Microsoft/vscode-languageserver-node) and the introduction of a new module to bridge WebAssembly and LSP, implementing a WebAssembly language server is now as straightforward as implementing it as an operating system process.
+When we started working on [`WebAssembly support for VS Code for the Web](HTTPS://code.visualstudio.com/blogs/2023/06/05/vscode-wasm-wasi), one of our envisioned use cases was to execute language servers using WebAssembly. With the latest changes to [VS Code's LSP libraries`](HTTPS://github.com/Microsoft/vscode-languageserver-node) and the introduction of a new module to bridge WebAssembly and LSP, implementing a WebAssembly language server is now as straightforward as implementing it as an operating system process.
 
-Additionally, WebAssembly language servers run on the [`WebAssembly Core Extension`](https://marketplace.visualstudio.com/items?itemName=ms-vscode.wasm-wasi-core), which fully supports WASI Preview 1. This means that language servers can access the files in the workspace using the regular filesystem API of their programming language, even if the files are stored remotely, such as in a GitHub repository.
+Additionally, WebAssembly language servers run on the [`WebAssembly Core Extension`](HTTPS://marketplace.visualstudio.com/items?itemName=ms-vscode.wasm-wasi-core), which fully supports WASI Preview 1. This means that language servers can access the files in the workspace using the regular filesystem API of their programming language, even if the files are stored remotely, such as in a GitHub repository.
 
-The following code snippet shows a Rust language server based on the [`example server`](https://insiders.vscode.dev/github.com/rust-lang/rust-analyzer/blob/master/lib/lsp-server/examples/goto_def.rs#L1) from the `lsp_server` crate. This language server doesn't perform any language analysis but simply returns a predefined result for a `GotoDefinition` request:
+The following code snippet shows a Rust language server based on the [`example server`](HTTPS://insiders.vscode.dev/github.com/rust-lang/rust-analyzer/blob/master/lib/lsp-server/examples/goto_def.rs#L1) from the `lsp_server` crate. This language server doesn't perform any language analysis but simply returns a predefined result for a `GotoDefinition` request:
 
 ```rust
 match cast::<GotoDefinition>(req) {
@@ -125,9 +125,9 @@ match cast::<GotoDefinition>(req) {
 };
 ```
 
-You can find the full source code of the language server in the [`VS Code example repository`](https://insiders.vscode.dev/github/microsoft/vscode-extension-samples/blob/main/wasm-language-server/server/src/main.rs#L1).
+You can find the full source code of the language server in the [`VS Code example repository`](HTTPS://insiders.vscode.dev/github/microsoft/vscode-extension-samples/blob/main/wasm-language-server/server/src/main.rs#L1).
 
-You can use the new `@vscode/wasm-wasi-lsp` npm module to create a WebAssembly language server within the extension's TypeScript code. Instantiate the WebAssembly code as a worker with WASI support by using the [`WebAssembly Core Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.wasm-wasi-core), which is described in detail in our [Run WebAssemblies in VS Code for the Web`](https://code.visualstudio.com/blogs/2023/06/05/vscode-wasm-wasi) blog post.
+You can use the new `@vscode/wasm-wasi-lsp` npm module to create a WebAssembly language server within the extension's TypeScript code. Instantiate the WebAssembly code as a worker with WASI support by using the [`WebAssembly Core Extension](HTTPS://marketplace.visualstudio.com/items?itemName=ms-vscode.wasm-wasi-core), which is described in detail in our [Run WebAssemblies in VS Code for the Web`](HTTPS://code.visualstudio.com/blogs/2023/06/05/vscode-wasm-wasi) blog post.
 
 The TypeScript code of the extension is straightforward as well. It registers the server for plain text files.
 
@@ -181,7 +181,7 @@ Running the code adds a `Goto Definition` entry to the context menu of plain tex
 
 It is important to note that the `@vscode/wasm-wasi-lsp` npm module automatically transforms document URIs from their workspace value to the one recognized in the WASI Preview 1 host. In the above example, the text document's URI inside VS Code is usually something like `vscode-vfs://github/dbaeumer/plaintext-sample/lorem.txt`, and this value gets transformed into `file:///workspace/lorem.txt`, which is recognized inside the WASI host. This transformation also happens automatically when the language server sends a URI back to VS Code.
 
-Most language server libraries support custom messages, making it easy to add features to a language server that are not already present in the [`Language Server Protocol Specification`](https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/). The following code snippet shows how to add a custom message handler for counting the files in a given workspace folder to the Rust language server we used previously:
+Most language server libraries support custom messages, making it easy to add features to a language server that are not already present in the [`Language Server Protocol Specification`](HTTPS://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/). The following code snippet shows how to add a custom message handler for counting the files in a given workspace folder to the Rust language server we used previously:
 
 ```rust
 #[derive(Debug, Eq, PartialEq, Clone, Deserialize, Serialize)]
@@ -239,7 +239,7 @@ Running this on the `vscode-languageserver` repository shows the following notif
 
 ![`Running count all files`](count-files.png)
 
-Please note that a language server doesn't necessarily need to implement any of the features specified in the [`Language Server Protocol`](https://microsoft.github.io/language-server-protocol/) specification. If an extension wants to integrate library code that can only be compiled to the WASI Preview 1 target, implementing a language server with custom messages might be a good choice until VS Code supports the WASI 0.2 preview in its component model implementation.
+Please note that a language server doesn't necessarily need to implement any of the features specified in the [`Language Server Protocol`](HTTPS://microsoft.github.io/language-server-protocol/) specification. If an extension wants to integrate library code that can only be compiled to the WASI Preview 1 target, implementing a language server with custom messages might be a good choice until VS Code supports the WASI 0.2 preview in its component model implementation.
 
 ## What Comes Next
 

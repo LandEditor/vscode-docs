@@ -15,9 +15,9 @@ In this tutorial, you'll learn how to create a Visual Studio Code extension that
 
 You'll need the following tools and accounts to complete this tutorial:
 
-- [Visual Studio Code](https://code.visualstudio.com/download)
-- [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat)
-- [Node.js](https://nodejs.org/en/download/)
+- [Visual Studio Code](HTTPS://code.visualstudio.com/download)
+- [GitHub Copilot](HTTPS://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat)
+- [Node.js](HTTPS://nodejs.org/en/download/)
 
 ## Step 1: Set up your project
 
@@ -82,7 +82,7 @@ Finally, setting `isSticky: true` will automatically prepend the participant nam
 
 Now that the participant is registered, you can start implementing the logic for the code tutor. In the `extension.ts` file, you will define a prompt for the requests.
 
-Crafting a good prompt is the key to getting the best response from your participant. Check out [this article](https://platform.openai.com/docs/guides/prompt-engineering) for tips on prompt engineering.
+Crafting a good prompt is the key to getting the best response from your participant. Check out [this article](HTTPS://platform.openai.com/docs/guides/prompt-engineering) for tips on prompt engineering.
 
 Your code tutor should emulate a real-world tutor by guiding the student to understand the concept instead of providing direct answers. Additionally, the tutor should remain focused on the topic and refrain from answering non-programming questions.
 
@@ -342,9 +342,9 @@ Now you can type `/exercise`, which will bring up your chat participant, and you
 
 ## Next steps
 
-Congratulations! You have successfully created a chat participant that can provide explanations and sample exercises for programming concepts. You can further extend your participant by fine-tuning the prompts, adding more slash commands, or leveraging other APIs like the [Language Model API](/api/extension-guides/language-model). Once ready, you can also publish your extension to the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/vscode).
+Congratulations! You have successfully created a chat participant that can provide explanations and sample exercises for programming concepts. You can further extend your participant by fine-tuning the prompts, adding more slash commands, or leveraging other APIs like the [Language Model API](/api/extension-guides/language-model). Once ready, you can also publish your extension to the [Visual Studio Code Marketplace](HTTPS://marketplace.visualstudio.com/vscode).
 
-You can find the complete source code for this tutorial in the [vscode-extensions-sample repository](https://github.com/microsoft/vscode-extension-samples/tree/main/chat-tutorial).
+You can find the complete source code for this tutorial in the [vscode-extensions-sample repository](HTTPS://github.com/microsoft/vscode-extension-samples/tree/main/chat-tutorial).
 
 ## Related content
 

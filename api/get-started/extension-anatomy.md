@@ -14,7 +14,7 @@ In the last topic, you were able to get a basic extension running. How does it w
 The `Hello World` extension does 3 things:
 
 - Registers the [`onCommand`](/api/references/activation-events#onCommand) [**Activation Event**](/api/references/activation-events): `onCommand:helloworld.helloWorld`, so the extension becomes activated when user runs the `Hello World` command.
-  > **Note:** Starting with [VS Code 1.74.0](https://code.visualstudio.com/updates/v1_74#_implicit-activation-events-for-declared-extension-contributions), commands declared in the `commands` section of `package.json` automatically activate the extension when invoked, without requiring an explicit `onCommand` entry in `activationEvents`.
+  > **Note:** Starting with [VS Code 1.74.0](HTTPS://code.visualstudio.com/updates/v1_74#_implicit-activation-events-for-declared-extension-contributions), commands declared in the `commands` section of `package.json` automatically activate the extension when invoked, without requiring an explicit `onCommand` entry in `activationEvents`.
 - Uses the [`contributes.commands`](/api/references/contribution-points#contributes.commands) [**Contribution Point**](/api/references/contribution-points) to make the command `Hello World` available in the Command Palette, and bind it to a command ID `helloworld.helloWorld`.
 - Uses the [`commands.registerCommand`](/api/references/vscode-api#commands.registerCommand) [**VS Code API**](/api/references/vscode-api) to bind a function to the registered command ID `helloworld.helloWorld`.
 
@@ -47,7 +47,7 @@ You can read more about the configuration files:
 
 - `launch.json` used to configure VS Code [Debugging](/docs/editor/debugging)
 - `tasks.json` for defining VS Code [Tasks](/docs/editor/tasks)
-- `tsconfig.json` consult the TypeScript [Handbook](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html)
+- `tsconfig.json` consult the TypeScript [Handbook](HTTPS://www.typescriptlang.org/docs/handbook/tsconfig-json.html)
 
 However, let's focus on `package.json` and `extension.ts`, which are essential to understanding the `Hello World` extension.
 
@@ -67,7 +67,7 @@ Each VS Code extension must have a `package.json` as its [Extension Manifest](/a
   "description": "HelloWorld example for VS Code",
   "version": "0.0.1",
   "publisher": "vscode-samples",
-  "repository": "https://github.com/microsoft/vscode-extension-samples/helloworld-sample",
+  "repository": "HTTPS://github.com/microsoft/vscode-extension-samples/helloworld-sample",
   "engines": {
     "vscode": "^1.51.0"
   },
@@ -102,7 +102,7 @@ Each VS Code extension must have a `package.json` as its [Extension Manifest](/a
 
 The extension entry file exports two functions, `activate` and `deactivate`. `activate` is executed when your registered **Activation Event** happens. `deactivate` gives you a chance to clean up before your extension becomes deactivated. For many extensions, explicit cleanup may not be required, and the `deactivate` method can be removed. However, if an extension needs to perform an operation when VS Code is shutting down or the extension is disabled or uninstalled, this is the method to do so.
 
-The VS Code extension API is declared in the [@types/vscode](https://www.npmjs.com/package/@types/vscode) type definitions. The version of the `vscode` type definitions is controlled by the value in the `engines.vscode` field in `package.json`. The `vscode` types give you IntelliSense, Go to Definition, and other TypeScript language features in your code.
+The VS Code extension API is declared in the [@types/vscode](HTTPS://www.npmjs.com/package/@types/vscode) type definitions. The version of the `vscode` type definitions is controlled by the value in the `engines.vscode` field in `package.json`. The `vscode` types give you IntelliSense, Go to Definition, and other TypeScript language features in your code.
 
 ```ts
 // The module 'vscode' contains the VS Code extensibility API

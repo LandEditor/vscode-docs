@@ -9,7 +9,7 @@ MetaDescription: A guide to creating an AI extension in Visual Studio Code
 
 # Chat extensions
 
-Visual Studio Code's Copilot Chat architecture enables extension authors to integrate with the [GitHub Copilot Chat](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat) experience. A chat extension is a VS Code extension that uses the Chat extension API by contributing a *Chat participant*.
+Visual Studio Code's Copilot Chat architecture enables extension authors to integrate with the [GitHub Copilot Chat](HTTPS://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat) experience. A chat extension is a VS Code extension that uses the Chat extension API by contributing a *Chat participant*.
 
 Chat participants are domain experts that can answer user queries within a specific domain. Participants can use different approaches to process a user query:
 
@@ -17,7 +17,7 @@ Chat participants are domain experts that can answer user queries within a speci
 - Forward the user request to a backend service
 - Use procedural logic and local resources
 
-Participants can use the language model in a wide range of ways. Some participants only make use of the language model to get answers to custom prompts, for example the [sample chat participant](https://github.com/microsoft/vscode-extension-samples/tree/main/chat-sample). Other participants are more advanced and act like autonomous agents that invoke multiple tools with the help of the language model. An example of such an advanced participant is the built-in `@workspace` that knows about your workspace and can answer questions about it. Internally, `@workspace` is powered by multiple tools: GitHub's knowledge graph, combined with semantic search, local code indexes, and VS Code's language services.
+Participants can use the language model in a wide range of ways. Some participants only make use of the language model to get answers to custom prompts, for example the [sample chat participant](HTTPS://github.com/microsoft/vscode-extension-samples/tree/main/chat-sample). Other participants are more advanced and act like autonomous agents that invoke multiple tools with the help of the language model. An example of such an advanced participant is the built-in `@workspace` that knows about your workspace and can answer questions about it. Internally, `@workspace` is powered by multiple tools: GitHub's knowledge graph, combined with semantic search, local code indexes, and VS Code's language services.
 
 When a user explicitly mentions a `@participant` in their chat prompt, that prompt is forwarded to the extension that contributed that specific chat participant. The participant then uses a `ResponseStream` to respond to the request. To provide a smooth user experience, the Chat API is streaming-based. A chat response can contain rich content, such as Markdown, file trees, command buttons, and more. Get more info about the [supported response output types](#supported-chat-response-output-types).
 
@@ -27,11 +27,11 @@ Participants can also contribute *commands*, which are a shorthand notation for 
 
 ## Extending GitHub Copilot via GitHub Apps
 
-Alternatively, it is possible to extend GitHub Copilot by creating a GitHub App that contributes a chat participant in the Chat view. A GitHub App is backed by a service and works across all GitHub Copilot surfaces, such as github.com, Visual Studio, or VS Code. On the other hand, GitHub Apps do not have full access to the VS Code API. To learn more about extending GitHub Copilot through a GitHub App see the [GitHub documentation](https://docs.github.com/en/copilot/building-copilot-extensions/about-building-copilot-extensions).
+Alternatively, it is possible to extend GitHub Copilot by creating a GitHub App that contributes a chat participant in the Chat view. A GitHub App is backed by a service and works across all GitHub Copilot surfaces, such as github.com, Visual Studio, or VS Code. On the other hand, GitHub Apps do not have full access to the VS Code API. To learn more about extending GitHub Copilot through a GitHub App see the [GitHub documentation](HTTPS://docs.github.com/en/copilot/building-copilot-extensions/about-building-copilot-extensions).
 
 ## Links
 
-- [Chat extension sample](https://github.com/microsoft/vscode-extension-samples/tree/main/chat-sample)
+- [Chat extension sample](HTTPS://github.com/microsoft/vscode-extension-samples/tree/main/chat-sample)
 - [ChatParticipant API](/api/references/vscode-api#chat)
 
 ## Parts of the chat user experience
@@ -52,7 +52,7 @@ The following screenshot shows the different chat concepts in the Visual Studio 
 
 ## Develop a chat extension
 
-A chat extension is an extension that contributes a chat participant to the [Chat](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat) view.
+A chat extension is an extension that contributes a chat participant to the [Chat](HTTPS://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat) view.
 
 The minimum functionality that is needed for implementing a chat extension is:
 
@@ -64,7 +64,7 @@ You can further expand the functionality of the chat extension with the followin
 - Register chat commands to provide users with a shorthand notation for common questions
 - Define suggested follow-up questions to help the user continue a conversation
 
-As a starting point for developing a chat extension, you can refer to our [chat extension sample](https://github.com/microsoft/vscode-extension-samples/tree/main/chat-sample). This sample implements a simple cat tutor that can explain computer science topics using cat metaphors.
+As a starting point for developing a chat extension, you can refer to our [chat extension sample](HTTPS://github.com/microsoft/vscode-extension-samples/tree/main/chat-sample). This sample implements a simple cat tutor that can explain computer science topics using cat metaphors.
 
 ![Diagram showing how extension can contribute to chat](images/chat/diagram.png)
 
@@ -328,7 +328,7 @@ The following list provides the output types for a chat response in the Chat vie
 
 - **Markdown**
 
-    Render a fragment of Markdown text simple text or images. You can use any Markdown syntax that is part of the [CommonMark](https://commonmark.org/) specification. Use the [`ChatResponseStream.markdown`](/api/references/vscode-api#ChatResponseStream.markdown) method and provide the Markdown text.
+    Render a fragment of Markdown text simple text or images. You can use any Markdown syntax that is part of the [CommonMark](HTTPS://commonmark.org/) specification. Use the [`ChatResponseStream.markdown`](/api/references/vscode-api#ChatResponseStream.markdown) method and provide the Markdown text.
 
     Example code snippet:
 
@@ -336,8 +336,8 @@ The following list provides the output types for a chat response in the Chat vie
     // Render Markdown text
     stream.markdown('# This is a title \n');
     stream.markdown('This is stylized text that uses _italics_ and **bold**. ');
-    stream.markdown('This is a [link](https://code.visualstudio.com).\n\n');
-    stream.markdown('![VS Code](https://code.visualstudio.com/assets/favicon.ico)');
+    stream.markdown('This is a [link](HTTPS://code.visualstudio.com).\n\n');
+    stream.markdown('![VS Code](HTTPS://code.visualstudio.com/assets/favicon.ico)');
     ```
 
 - **Code block**
@@ -436,7 +436,7 @@ The following list provides the output types for a chat response in the Chat vie
     ```typescript
     const fileUri: vscode.Uri = vscode.Uri.file('/path/to/workspace/app.js');  // On Windows, the path should be in the format of 'c:\\path\\to\\workspace\\app.js'
     const fileRange: vscode.Range = new vscode.Range(0, 0, 3, 0);
-    const externalUri: vscode.Uri = vscode.Uri.parse('https://code.visualstudio.com');
+    const externalUri: vscode.Uri = vscode.Uri.parse('HTTPS://code.visualstudio.com');
 
     // Add a reference to an entire file
     stream.reference(fileUri);
@@ -490,7 +490,7 @@ Any other user interaction with your chat response should be measured as a posit
 |----------|-------------|-------------------|
 | `id`  | Globally unique identifier for the chat participant | <ul><li>String value</li><li>Use the extension name as a prefix, followed by a unique ID for your extension</li><li>Example: `chat-sample.cat`, `code-visualizer.code-visualizer-participant`</li></ul>  |
 | `name`  | Name of the chat participant, referenced by users through the `@` symbol | <ul><li>String value consisting of alphanumeric characters, underscores, and hyphens</li><li>It's recommended to only use lowercase to ensure consistency with existing chat participants</li><li>Ensure the purpose of the participant is obvious from its name by referencing your company name or its functionality</li><li>Some participant names are reserved. If you use a reserved name, the fully qualified name is shown, including the extension ID</li><li>Examples: `vscode`, `terminal`, `code-visualizer`</li></ul>   |
-| `fullName` | (Optional) The full name of the participant, which is shown as the label for responses coming from the participant | <ul><li>String value</li><li>It's recommended to use [title case](https://en.wikipedia.org/wiki/Title_case)</li><li>Use your company name, brand name, or user-friendly name for your participant</li><li>Examples: `GitHub Copilot`, `VS Code`, `Math Tutor`</li></ul>   |
+| `fullName` | (Optional) The full name of the participant, which is shown as the label for responses coming from the participant | <ul><li>String value</li><li>It's recommended to use [title case](HTTPS://en.wikipedia.org/wiki/Title_case)</li><li>Use your company name, brand name, or user-friendly name for your participant</li><li>Examples: `GitHub Copilot`, `VS Code`, `Math Tutor`</li></ul>   |
 | `description` | (Optional) Short description of what the chat participant does, shown as placeholder text in the chat input field or in the list of participants | <ul><li>String value</li><li>It's recommended to use sentence case, without punctuation at the end</li><li>Keep the description short to avoid horizontal scrolling</li><li>Examples: `Ask questions about VS Code`, `Generate UML diagrams for your code`</li></ul>   |
 
 When referring to your chat participant in any of the user-facing elements, such as properties, chat responses, or chat user interface, it's recommended to not use the term *participant*, as it's the name of the API. For example, the `@cat` extension could be called "Cat extension for GitHub Copilot".
@@ -499,7 +499,7 @@ When referring to your chat participant in any of the user-facing elements, such
 
 | Property | Description | Naming guidelines |
 |----------|-------------|-------------------|
-| `name`  | Name of the slash command, referenced by users through the `/` symbol | <ul><li>String value</li><li>It's recommended to use [lower camel case](https://en.wikipedia.org/wiki/Camel_case) to align with existing slash commands</li><li>Ensure the purpose of the command is obvious from its name</li><li>Examples: `fix`, `explain`, `runCommand`</li></ul>   |
+| `name`  | Name of the slash command, referenced by users through the `/` symbol | <ul><li>String value</li><li>It's recommended to use [lower camel case](HTTPS://en.wikipedia.org/wiki/Camel_case) to align with existing slash commands</li><li>Ensure the purpose of the command is obvious from its name</li><li>Examples: `fix`, `explain`, `runCommand`</li></ul>   |
 | `description` | (Optional) Short description of what the slash command does, shown as placeholder text in the chat input field or in the list of participants and commands | <ul><li>String value</li><li>It's recommended to use sentence case, without punctuation at the end</li><li>Keep the description short to avoid horizontal scrolling</li><li>Examples: `Search for and execute a command in VS Code`, `Generate unit tests for the selected code`</li></ul>   |
 
 ## Guidelines
@@ -519,13 +519,13 @@ Chat extensions should explicitly ask for user consent if they are about to do a
 
 Once you have created your AI extension, you can publish your extension to the Visual Studio Marketplace:
 
-- Before publishing to the VS Marketplace we recommend that you read the [Microsoft AI tools and practices guidelines](https://www.microsoft.com/en-us/ai/tools-practices). These guidelines provide best practices for the responsible development and use of AI technologies.
-- By publishing to the VS Marketplace, your extension is adhering to the [GitHub Copilot extensibility acceptable development and use policy](https://docs.github.com/en/early-access/copilot/github-copilot-extensibility-platform-partnership-plugin-acceptable-development-and-use-policy).
-- Upload to the Marketplace as described in [Publishing Extension](https://code.visualstudio.com/api/working-with-extensions/publishing-extension).
+- Before publishing to the VS Marketplace we recommend that you read the [Microsoft AI tools and practices guidelines](HTTPS://www.microsoft.com/en-us/ai/tools-practices). These guidelines provide best practices for the responsible development and use of AI technologies.
+- By publishing to the VS Marketplace, your extension is adhering to the [GitHub Copilot extensibility acceptable development and use policy](HTTPS://docs.github.com/en/early-access/copilot/github-copilot-extensibility-platform-partnership-plugin-acceptable-development-and-use-policy).
+- Upload to the Marketplace as described in [Publishing Extension](HTTPS://code.visualstudio.com/api/working-with-extensions/publishing-extension).
 - If your extension already contributes functionality other than chat, we recommend that you do not introduce an extension dependency on GitHub Copilot in the [extension manifest](/api/references/extension-manifest). This ensures that extension users that do not use GitHub Copilot can use the non-chat functionality without having to install GitHub Copilot.
 
 ## Related content
 
-- [Video: Enhancing VS Code extensions with GitHub Copilot](https://build.microsoft.com/sessions/57efc1aa-83c0-45c5-b8c3-ad095478bb0a?source=sessions)
+- [Video: Enhancing VS Code extensions with GitHub Copilot](HTTPS://build.microsoft.com/sessions/57efc1aa-83c0-45c5-b8c3-ad095478bb0a?source=sessions)
 - [Use the Language Model API](/api/extension-guides/language-model) in your extension
-- [GitHub Copilot Trust Center](https://resources.github.com/copilot-trust-center/)
+- [GitHub Copilot Trust Center](HTTPS://resources.github.com/copilot-trust-center/)

@@ -21,7 +21,7 @@ This guide teaches you how to write an extension that contributes Tree Views and
 
 ## Tree View API Basics
 
-To explain the Tree View API, we are going to build a sample extension called **Node Dependencies**. This extension will use a treeview to display all Node.js dependencies in the current folder. The steps for adding a treeview are to contribute the treeview in your `package.json`, create a `TreeDataProvider`, and register the `TreeDataProvider`. You can find the complete source code of this sample extension in the `tree-view-sample` in the [vscode-extension-samples](https://github.com/microsoft/vscode-extension-samples/tree/main/tree-view-sample/README.md) GitHub repository.
+To explain the Tree View API, we are going to build a sample extension called **Node Dependencies**. This extension will use a treeview to display all Node.js dependencies in the current folder. The steps for adding a treeview are to contribute the treeview in your `package.json`, create a `TreeDataProvider`, and register the `TreeDataProvider`. You can find the complete source code of this sample extension in the `tree-view-sample` in the [vscode-extension-samples](HTTPS://github.com/microsoft/vscode-extension-samples/tree/main/tree-view-sample/README.md) GitHub repository.
 
 ### package.json Contribution
 
@@ -445,7 +445,7 @@ If your view can be empty, or if you want to add Welcome content to another exte
   "viewsWelcome": [
     {
       "view": "nodeDependencies",
-      "contents": "No node dependencies found [learn more](https://www.npmjs.com/).\n[Add Dependency](command:nodeDependencies.addEntry)"
+      "contents": "No node dependencies found [learn more](HTTPS://www.npmjs.com/).\n[Add Dependency](command:nodeDependencies.addEntry)"
     }
   ]
 }
@@ -453,7 +453,7 @@ If your view can be empty, or if you want to add Welcome content to another exte
 
 ![Welcome Content](images/tree-view/welcome-content.png)
 
-Links are supported in Welcome content. By convention, a link on a line by itself is a button. Each Welcome content can also contain a `when` clause. For more examples, see the [built-in Git extension](https://github.com/microsoft/vscode/tree/main/extensions/git).
+Links are supported in Welcome content. By convention, a link on a line by itself is a button. Each Welcome content can also contain a `when` clause. For more examples, see the [built-in Git extension](HTTPS://github.com/microsoft/vscode/tree/main/extensions/git).
 
 ## TreeDataProvider
 
@@ -463,7 +463,7 @@ Extension writers should register a [TreeDataProvider](/api/references/vscode-ap
 vscode.window.registerTreeDataProvider('nodeDependencies', new DepNodeProvider());
 ```
 
-See [nodeDependencies.ts](https://github.com/microsoft/vscode-extension-samples/tree/main/tree-view-sample/src/nodeDependencies.ts) in the `tree-view-sample` for the implementation.
+See [nodeDependencies.ts](HTTPS://github.com/microsoft/vscode-extension-samples/tree/main/tree-view-sample/src/nodeDependencies.ts) in the `tree-view-sample` for the implementation.
 
 ## TreeView
 
@@ -475,4 +475,4 @@ vscode.window.createTreeView('ftpExplorer', {
 });
 ```
 
-See [ftpExplorer.ts](https://github.com/microsoft/vscode-extension-samples/tree/main/tree-view-sample/src/ftpExplorer.ts) in the `tree-view-sample` for the implementation.
+See [ftpExplorer.ts](HTTPS://github.com/microsoft/vscode-extension-samples/tree/main/tree-view-sample/src/ftpExplorer.ts) in the `tree-view-sample` for the implementation.

@@ -23,9 +23,9 @@ The following sections provide more details on how to implement these steps in y
 
 ## Links
 
-- [Chat extension sample](https://github.com/microsoft/vscode-extension-samples/tree/main/chat-sample)
+- [Chat extension sample](HTTPS://github.com/microsoft/vscode-extension-samples/tree/main/chat-sample)
 - [LanguageModels API](/api/references/vscode-api#lm)
-- [@vscode/prompt-tsx npm package](https://www.npmjs.com/package/@vscode/prompt-tsx)
+- [@vscode/prompt-tsx npm package](HTTPS://www.npmjs.com/package/@vscode/prompt-tsx)
 
 ## Build the language model prompt
 
@@ -41,11 +41,11 @@ The Language Model API supports two types of messages when building the language
 You can use two approaches for building the language model prompt:
 
 - `LanguageModelChatMessage` - create the prompt by providing one or more messages as strings. You might use this approach if you're just getting started with the Language Model API.
-- [`@vscode/prompt-tsx`](https://www.npmjs.com/package/@vscode/prompt-tsx) - declare the prompt by using the TSX syntax.
+- [`@vscode/prompt-tsx`](HTTPS://www.npmjs.com/package/@vscode/prompt-tsx) - declare the prompt by using the TSX syntax.
 
-You can use the `prompt-tsx` library if you want more control over how the language model prompt is composed. For example, the library can help with dynamically adapting the length of the prompt to each language model's context window size. Learn more about [`@vscode/prompt-tsx`](https://www.npmjs.com/package/@vscode/prompt-tsx) or explore the [chat extension sample](https://github.com/microsoft/vscode-extension-samples/tree/main/chat-sample) to get started.
+You can use the `prompt-tsx` library if you want more control over how the language model prompt is composed. For example, the library can help with dynamically adapting the length of the prompt to each language model's context window size. Learn more about [`@vscode/prompt-tsx`](HTTPS://www.npmjs.com/package/@vscode/prompt-tsx) or explore the [chat extension sample](HTTPS://github.com/microsoft/vscode-extension-samples/tree/main/chat-sample) to get started.
 
-To learn more about the concepts of prompt engineering, we suggest reading OpenAI's excellent [Prompt engineering guidelines](https://platform.openai.com/docs/guides/prompt-engineering).
+To learn more about the concepts of prompt engineering, we suggest reading OpenAI's excellent [Prompt engineering guidelines](HTTPS://platform.openai.com/docs/guides/prompt-engineering).
 
 >**Tip:** take advantage of the rich VS Code extension API to get the most relevant context and include it in your prompt. For example, to include the contents of the active file in the editor.
 
@@ -212,14 +212,14 @@ The part of the extension for building prompts and interpreting language model r
 
 Once you have created your AI extension, you can publish your extension to the Visual Studio Marketplace:
 
-- Before publishing to the VS Marketplace we recommend that you read the [Microsoft AI tools and practices guidelines](https://www.microsoft.com/en-us/ai/tools-practices). These guidelines provide best practices for the responsible development and use of AI technologies.
-- By publishing to the VS Marketplace, your extension is adhering to the [GitHub Copilot extensibility acceptable development and use policy](https://docs.github.com/en/early-access/copilot/github-copilot-extensibility-platform-partnership-plugin-acceptable-development-and-use-policy).
+- Before publishing to the VS Marketplace we recommend that you read the [Microsoft AI tools and practices guidelines](HTTPS://www.microsoft.com/en-us/ai/tools-practices). These guidelines provide best practices for the responsible development and use of AI technologies.
+- By publishing to the VS Marketplace, your extension is adhering to the [GitHub Copilot extensibility acceptable development and use policy](HTTPS://docs.github.com/en/early-access/copilot/github-copilot-extensibility-platform-partnership-plugin-acceptable-development-and-use-policy).
 - If your extension already contributes functionality other than using the Language Model API, we recommend that you do not introduce an extension dependency on GitHub Copilot in the [extension manifest](/api/references/extension-manifest). This ensures that extension users that do not use GitHub Copilot can use the non language model functionality without having to install GitHub Copilot. Make sure to have appropriate error handling when accessing language models for this case.
-- Upload to the Marketplace as described in [Publishing Extension](https://code.visualstudio.com/api/working-with-extensions/publishing-extension).
+- Upload to the Marketplace as described in [Publishing Extension](HTTPS://code.visualstudio.com/api/working-with-extensions/publishing-extension).
 
 ## Related content
 
 - [Build a VS Code chat extension](/api/extension-guides/chat)
-- [Learn more about @vscode/prompt-tsx](https://www.npmjs.com/package/@vscode/prompt-tsx)
-- [Chat extension sample](https://github.com/microsoft/vscode-extension-samples/tree/main/chat-sample)
-- [GitHub Copilot Trust Center](https://resources.github.com/copilot-trust-center/)
+- [Learn more about @vscode/prompt-tsx](HTTPS://www.npmjs.com/package/@vscode/prompt-tsx)
+- [Chat extension sample](HTTPS://github.com/microsoft/vscode-extension-samples/tree/main/chat-sample)
+- [GitHub Copilot Trust Center](HTTPS://resources.github.com/copilot-trust-center/)

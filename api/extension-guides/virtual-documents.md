@@ -9,7 +9,7 @@ MetaDescription: A guide to using Virtual Documents in Visual Studio Code extens
 
 # Virtual Documents
 
-The text document content provider API allows you to create readonly documents in Visual Studio Code from arbitrary sources. You can find a sample extension with source code at: [https://github.com/microsoft/vscode-extension-samples/blob/main/virtual-document-sample/README.md](https://github.com/microsoft/vscode-extension-samples/blob/main/virtual-document-sample/README.md).
+The text document content provider API allows you to create readonly documents in Visual Studio Code from arbitrary sources. You can find a sample extension with source code at: [HTTPS://github.com/microsoft/vscode-extension-samples/blob/main/virtual-document-sample/README.md](HTTPS://github.com/microsoft/vscode-extension-samples/blob/main/virtual-document-sample/README.md).
 
 ## TextDocumentContentProvider
 
@@ -67,7 +67,7 @@ const myProvider = new class implements vscode.TextDocumentContentProvider {
 
 The event emitter has a `fire` method which can be used to notify VS Code when a change has happened in a document. The document which has changed is identified by its uri given as argument to the `fire` method. The provider will then be called again to provide the updated content, assuming the document is still open.
 
-That's all what's needed to make VS Code listen for changes of virtual document. To see a more complex example making use of this feature, look at: [https://github.com/microsoft/vscode-extension-samples/blob/main/contentprovider-sample/README.md](https://github.com/microsoft/vscode-extension-samples/blob/main/contentprovider-sample/README.md).
+That's all what's needed to make VS Code listen for changes of virtual document. To see a more complex example making use of this feature, look at: [HTTPS://github.com/microsoft/vscode-extension-samples/blob/main/contentprovider-sample/README.md](HTTPS://github.com/microsoft/vscode-extension-samples/blob/main/contentprovider-sample/README.md).
 
 ### Add Editor Commands
 
@@ -124,7 +124,7 @@ Document providers are first class citizens in VS Code, their contents appears i
 
 If you need more flexibility and power take a look at the [`FileSystemProvider`](/api/references/vscode-api#FileSystemProvider) API. It allows to implement a full file system, having files, folders, binary data, file-deletion, creation and more.
 
-You can find a sample extension with source code at: [https://github.com/microsoft/vscode-extension-samples/tree/main/fsprovider-sample/README.md](https://github.com/microsoft/vscode-extension-samples/tree/main/fsprovider-sample/README.md).
+You can find a sample extension with source code at: [HTTPS://github.com/microsoft/vscode-extension-samples/tree/main/fsprovider-sample/README.md](HTTPS://github.com/microsoft/vscode-extension-samples/tree/main/fsprovider-sample/README.md).
 
 
 When VS Code is opened on a folder or workspace of a such a file system we call it a virtual workspace. When a virtual workspace is open in a VS Code window, this is shown by a label in the remote indicator in the lower left corner, similar to remote windows. See the [Virtual Workspace Guide](/api/extension-guides/virtual-workspaces) how extensions can support that setup.

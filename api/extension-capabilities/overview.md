@@ -55,7 +55,7 @@ Some of these capabilities include:
 
 ## Programmatic Language Features
 
-[Programmatic Language Features](/api/language-extensions/overview#programmatic-language-features) add rich programming language support such as Hovers, Go to Definition, diagnostic errors, IntelliSense and CodeLens. These language features are exposed through the [`vscode.languages.*`](/api/references/vscode-api#languages) API. An extension can either use these API directly, or write a Language Server and adapt it to VS Code using the VS Code [Language Server library](https://github.com/microsoft/vscode-languageserver-node).
+[Programmatic Language Features](/api/language-extensions/overview#programmatic-language-features) add rich programming language support such as Hovers, Go to Definition, diagnostic errors, IntelliSense and CodeLens. These language features are exposed through the [`vscode.languages.*`](/api/references/vscode-api#languages) API. An extension can either use these API directly, or write a Language Server and adapt it to VS Code using the VS Code [Language Server library](HTTPS://github.com/microsoft/vscode-languageserver-node).
 
 Although we provide a listing of [language features](/api/language-extensions/programmatic-language-features) and their intended usage, nothing prevents you from using these API creatively. For example, CodeLens and Hovers are a great way to present additional information inline, while diagnostic errors can be used to highlight spelling or code style errors.
 
@@ -86,7 +86,7 @@ You can take advantage of VS Code's [Debugging](/docs/editor/debugging) function
 
 **Extension Ideas**
 
-- Connect VS Code's debugging UI to a debugger or runtime by contributing a [Debug Adapter implementation](https://microsoft.github.io/debug-adapter-protocol/implementors/adapters/).
+- Connect VS Code's debugging UI to a debugger or runtime by contributing a [Debug Adapter implementation](HTTPS://microsoft.github.io/debug-adapter-protocol/implementors/adapters/).
 - Specify the languages supported by a debugger extension.
 - Provide rich IntelliSense and hover information for the debug configuration attributes used by the debugger.
 - Provide debug configuration snippets.

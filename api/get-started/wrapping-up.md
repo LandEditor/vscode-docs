@@ -17,7 +17,7 @@ In this section, we split the [VS Code API](/api/references/vscode-api) and [Con
 
 ## Guides & Samples
 
-We have a great collection of sample extensions that you can adapt from, and some of them include a detailed guide that explains the source code. You can find all samples and guides in the [Extension Guide Listing](/api/extension-guides/overview) or the [vscode-extension-samples](https://github.com/microsoft/vscode-extension-samples) repository.
+We have a great collection of sample extensions that you can adapt from, and some of them include a detailed guide that explains the source code. You can find all samples and guides in the [Extension Guide Listing](/api/extension-guides/overview) or the [vscode-extension-samples](HTTPS://github.com/microsoft/vscode-extension-samples) repository.
 
 ## UX Guidelines
 
@@ -57,5 +57,5 @@ We ask extensions that previously contributed a `workbench.action.openIssueRepor
 This section includes topics that help you develop high-quality VS Code extensions. For example, you can learn
 
 - How to add [integration tests](/api/working-with-extensions/testing-extension) for your extension
-- How to [publish your extension](/api/working-with-extensions/publishing-extension) to the VS Code [Marketplace](https://marketplace.visualstudio.com/)
+- How to [publish your extension](/api/working-with-extensions/publishing-extension) to the VS Code [Marketplace](HTTPS://marketplace.visualstudio.com/)
 - How to set up [Continuous Integration](/api/working-with-extensions/continuous-integration) for your extension

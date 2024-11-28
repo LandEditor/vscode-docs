@@ -31,7 +31,7 @@ For example:
 
 ```docker
 # (OUT=$(apt-key add - 2>&1) || echo $OUT) will only print the output with non-zero exit code is hit
-curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | (OUT=$(apt-key add - 2>&1) || echo $OUT)
+curl -sS HTTPS://dl.yarnpkg.com/debian/pubkey.gpg | (OUT=$(apt-key add - 2>&1) || echo $OUT)
 ```
 
 You can also set the `APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE` environment variable to suppress the warning, but it looks a bit scary so be sure to add comments in your Dockerfile if you use it:

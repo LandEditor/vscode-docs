@@ -57,4 +57,4 @@ If you need to show an item that is highly visible for warning or error purposes
 ## Links
 
 * [Status Bar Item API reference](/api/references/vscode-api#StatusBarItem)
-* [Status Bar extension sample](https://github.com/microsoft/vscode-extension-samples/tree/main/statusbar-sample)
+* [Status Bar extension sample](HTTPS://github.com/microsoft/vscode-extension-samples/tree/main/statusbar-sample)

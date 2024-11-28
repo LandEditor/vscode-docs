@@ -145,7 +145,7 @@ hand, shows disabled items but doesn't show the category label.
 }
 ```
 
-See the [Commands Extension Guide](https://code.visualstudio.com/api/extension-guides/command) to learn more about using commands in VS Code extensions.
+See the [Commands Extension Guide](HTTPS://code.visualstudio.com/api/extension-guides/command) to learn more about using commands in VS Code extensions.
 
 ![commands extension point example](images/contribution-points/commands.png)
 
@@ -243,7 +243,7 @@ As an example, for settings ID `css.completion.completePropertyWithSemicolon` an
 ### Configuration property schema
 
 Configuration keys are defined using a superset of [JSON
-Schema](https://json-schema.org/overview/what-is-jsonschema).
+Schema](HTTPS://json-schema.org/overview/what-is-jsonschema).
 
 #### description / markdownDescription
 
@@ -262,7 +262,7 @@ If you use `markdownDescription` instead of `description`, your setting descript
 ```json
 {
   "gitMagic.blame.dateFormat": {
-    "markdownDescription": "Specifies how to format absolute dates (e.g. using the `${date}` token) in gutter blame annotations. See the [Moment.js docs](https://momentjs.com/docs/#/displaying/format/) for valid formats"
+    "markdownDescription": "Specifies how to format absolute dates (e.g. using the `${date}` token) in gutter blame annotations. See the [Moment.js docs](HTTPS://momentjs.com/docs/#/displaying/format/) for valid formats"
   }
 }
 ```
@@ -372,7 +372,7 @@ Not supported in the configuration section are:
 
 - `$ref` and `definition`: The configuration schemas needs to be self-contained and cannot make assumptions how the aggregated settings JSON schema document looks like.
 
-For more details on these and other features, see the [JSON Schema Reference](https://json-schema.org/overview/what-is-jsonschema).
+For more details on these and other features, see the [JSON Schema Reference](HTTPS://json-schema.org/overview/what-is-jsonschema).
 
 #### scope
 
@@ -482,7 +482,7 @@ You can also contribute default editor configurations for the provided language.
 
 The `customEditors` contribution point is how your extension tells VS Code about the custom editors that it provides. For example, VS Code needs to know what types of files your custom editor works with as well as how to identify your custom editor in any UI.
 
-Here's a basic `customEditor` contribution for the [custom editor extension sample](https://github.com/microsoft/vscode-extension-samples/tree/main/custom-editor-sample):
+Here's a basic `customEditor` contribution for the [custom editor extension sample](HTTPS://github.com/microsoft/vscode-extension-samples/tree/main/custom-editor-sample):
 
 ```json
 "contributes": {
@@ -684,7 +684,7 @@ See the [File Icon Theme Guide](/api/extension-guides/file-icon-theme) on how to
 
 ## contributes.jsonValidation
 
-Contribute a validation schema for a specific type of `json` file. The `url` value can be either a local path to a schema file included in the extension or a remote server URL such as a [json schema store](https://www.schemastore.org/json).
+Contribute a validation schema for a specific type of `json` file. The `url` value can be either a local path to a schema file included in the extension or a remote server URL such as a [json schema store](HTTPS://www.schemastore.org/json).
 
 ```json
 {
@@ -692,7 +692,7 @@ Contribute a validation schema for a specific type of `json` file. The `url` val
     "jsonValidation": [
       {
         "fileMatch": ".jshintrc",
-        "url": "https://json.schemastore.org/jshintrc"
+        "url": "HTTPS://json.schemastore.org/jshintrc"
       }
     ]
   }
@@ -1290,7 +1290,7 @@ See the [Color Theme Guide](/api/extension-guides/color-theme) on how to create 
 
 ## contributes.typescriptServerPlugins
 
-Contributes [TypeScript server plugins](https://github.com/microsoft/TypeScript/wiki/Writing-a-Language-Service-Plugin) that augment VS Code's JavaScript and TypeScript support:
+Contributes [TypeScript server plugins](HTTPS://github.com/microsoft/TypeScript/wiki/Writing-a-Language-Service-Plugin) that augment VS Code's JavaScript and TypeScript support:
 
 ```json
 {
@@ -1304,7 +1304,7 @@ Contributes [TypeScript server plugins](https://github.com/microsoft/TypeScript/
 }
 ```
 
-The above example extension contributes the [`typescript-styled-plugin`](https://github.com/microsoft/typescript-styled-plugin) which adds styled-component IntelliSense for JavaScript and TypeScript. This plugin will be loaded from the extension and must be installed as a normal NPM `dependency` in the extension:
+The above example extension contributes the [`typescript-styled-plugin`](HTTPS://github.com/microsoft/typescript-styled-plugin) which adds styled-component IntelliSense for JavaScript and TypeScript. This plugin will be loaded from the extension and must be installed as a normal NPM `dependency` in the extension:
 
 ```json
 {
@@ -1381,7 +1381,7 @@ export = function init({ typescript }: { typescript: typeof ts_module }) {
 };
 ```
 
-This API allows VS Code extensions to synchronize VS Code settings with a TypeScript server plugin, or dynamically change the behavior of a plugin. Take a look at the [TypeScript TSLint plugin](https://github.com/microsoft/vscode-typescript-tslint-plugin/blob/main/src/index.ts) and [lit-html](https://github.com/mjbvz/vscode-lit-html/blob/master/src/index.ts) extensions to see how this API is used in practice.
+This API allows VS Code extensions to synchronize VS Code settings with a TypeScript server plugin, or dynamically change the behavior of a plugin. Take a look at the [TypeScript TSLint plugin](HTTPS://github.com/microsoft/vscode-typescript-tslint-plugin/blob/main/src/index.ts) and [lit-html](HTTPS://github.com/mjbvz/vscode-lit-html/blob/master/src/index.ts) extensions to see how this API is used in practice.
 
 ## contributes.views
 
@@ -1417,8 +1417,8 @@ When the user opens the view, VS Code will then emit an activationEvent `onView:
 
 The content of a view can be populated in two ways:
 
-- With a [TreeView](/api/references/vscode-api#TreeView) by providing a [data provider](/api/references/vscode-api#TreeDataProvider) through `createTreeView` API or register the [data provider](/api/references/vscode-api#TreeDataProvider) directly through `registerTreeDataProvider` API to populate data. TreeViews are ideal for showing hierarchical data and lists. Refer to the [tree-view-sample](https://github.com/microsoft/vscode-extension-samples/tree/main/tree-view-sample).
-- With a [WebviewView](/api/references/vscode-api#WebviewView) by registering a [provider](/api/references/vscode-api#WebviewViewProvider) with `registerWebviewViewProvider`. Webview views allow rendering arbitrary HTML in the view. See the [webview view sample extension](https://github.com/microsoft/vscode-extension-samples/tree/main/webview-view-sample) for more details.
+- With a [TreeView](/api/references/vscode-api#TreeView) by providing a [data provider](/api/references/vscode-api#TreeDataProvider) through `createTreeView` API or register the [data provider](/api/references/vscode-api#TreeDataProvider) directly through `registerTreeDataProvider` API to populate data. TreeViews are ideal for showing hierarchical data and lists. Refer to the [tree-view-sample](HTTPS://github.com/microsoft/vscode-extension-samples/tree/main/tree-view-sample).
+- With a [WebviewView](/api/references/vscode-api#WebviewView) by registering a [provider](/api/references/vscode-api#WebviewViewProvider) with `registerWebviewViewProvider`. Webview views allow rendering arbitrary HTML in the view. See the [webview view sample extension](HTTPS://github.com/microsoft/vscode-extension-samples/tree/main/webview-view-sample) for more details.
 
 ## contributes.viewsContainers
 
@@ -1477,7 +1477,7 @@ Contribute welcome content to [Custom views](#contributes.views). Welcome conten
     "viewsWelcome": [
       {
         "view": "scm",
-        "contents": "In order to use git features, you can open a folder containing a git repository or clone from a URL.\n[Open Folder](command:vscode.openFolder)\n[Clone Repository](command:git.clone)\nTo learn more about how to use git and source control in VS Code [read our docs](https://aka.ms/vscode-scm).",
+        "contents": "In order to use git features, you can open a folder containing a git repository or clone from a URL.\n[Open Folder](command:vscode.openFolder)\n[Clone Repository](command:git.clone)\nTo learn more about how to use git and source control in VS Code [read our docs](HTTPS://aka.ms/vscode-scm).",
         "when": "config.git.enabled && git.state == initialized && workbenchState == empty"
       }
     ]
@@ -1491,7 +1491,7 @@ Multiple welcome content items can be contributed to one view. When this happens
 
 ## contributes.walkthroughs
 
-[Sample extension](https://github.com/microsoft/vscode-extension-samples/tree/main/getting-started-sample)
+[Sample extension](HTTPS://github.com/microsoft/vscode-extension-samples/tree/main/getting-started-sample)
 
 Contribute walkthroughs to appear on the Getting Started page. Walkthroughs are automatically opened on install of your extension and provide a convenient way to introduce users to features of your extension.
 
@@ -1499,7 +1499,7 @@ Walkthroughs consist of a title, description, id, and a series of steps. Additio
 
 Each step in a walkthrough has a title, description, id, and media element (either an image or Markdown content), along with an optional set of events that will cause the step to be checked (shown in the example below). Step descriptions are Markdown content, and support `**bold**`, `__underlined__`, and ``` ``code`` ``` rendering, as well as links. Similar to walkthroughs, steps can be given when conditions to hide or show them based on context keys.
 
-SVGs are recommended for images given their ability to scale and their support for VS Code's theme colors. Use the [Visual Studio Code Color Mapper](https://www.figma.com/community/plugin/1218260433851630449) Figma plugin to easily reference theme colors in the SVGs.
+SVGs are recommended for images given their ability to scale and their support for VS Code's theme colors. Use the [Visual Studio Code Color Mapper](HTTPS://www.figma.com/community/plugin/1218260433851630449) Figma plugin to easily reference theme colors in the SVGs.
 
 ```json
 {
@@ -1544,6 +1544,6 @@ Available completion events include:
 - `onContext:contextKeyExpression`: Check off step when a context key expression evaluates true.
 - `extensionInstalled:myExt.id`: Check off step if the given extension is installed.
 - `onView:myView.id`: Check off step once a given view becomes visible.
-- `onLink:https://...`: Check off step once a given link has been opened via a Walkthrough.
+- `onLink:HTTPS://...`: Check off step once a given link has been opened via a Walkthrough.
 
 Once a step has been checked off, it will remain checked off until the user explicitly unchecks the step or resets their progress (via the **Getting Started: Reset Progress** command).

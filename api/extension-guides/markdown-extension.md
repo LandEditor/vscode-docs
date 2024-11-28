@@ -27,11 +27,11 @@ Extensions can contribute CSS to change the look or layout of the Markdown previ
 
 Contributed styles are added after the built-in Markdown preview styles but before a user's `"markdown.styles"`.
 
-The [Markdown Preview GitHub Styling](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-preview-github-styles) extension is a good example that demonstrates using a stylesheet to make the Markdown preview look like GitHub's rendered Markdown. You can review the extension's source code on [GitHub](https://github.com/mjbvz/vscode-github-markdown-preview-style).
+The [Markdown Preview GitHub Styling](HTTPS://marketplace.visualstudio.com/items?itemName=bierner.markdown-preview-github-styles) extension is a good example that demonstrates using a stylesheet to make the Markdown preview look like GitHub's rendered Markdown. You can review the extension's source code on [GitHub](HTTPS://github.com/mjbvz/vscode-github-markdown-preview-style).
 
 ## Adding support for new syntax with markdown-it plugins
 
-The VS Code Markdown preview supports the [CommonMark specification](https://spec.commonmark.org). Extensions can add support for additional Markdown syntax by contributing a [markdown-it plugin.](https://github.com/markdown-it/markdown-it#syntax-extensions)
+The VS Code Markdown preview supports the [CommonMark specification](HTTPS://spec.commonmark.org). Extensions can add support for additional Markdown syntax by contributing a [markdown-it plugin.](HTTPS://github.com/markdown-it/markdown-it#syntax-extensions)
 
 To contribute a markdown-it plugin, first add a `"markdown.markdownItPlugins"` contribution in your extension's `package.json`:
 
@@ -63,12 +63,12 @@ return md.use(require('markdown-it-emoji')).use(require('markdown-it-hashtag'));
 
 Extensions that contribute markdown-it plugins are activated lazily, when a Markdown preview is shown for the first time.
 
-The [markdown-emoji](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-emoji) extension demonstrates using a markdown-it plugin to add emoji support to the markdown preview. You can review the Emoji extension's source code on [GitHub](https://github.com/mjbvz/vscode-markdown-emoji).
+The [markdown-emoji](HTTPS://marketplace.visualstudio.com/items?itemName=bierner.markdown-emoji) extension demonstrates using a markdown-it plugin to add emoji support to the markdown preview. You can review the Emoji extension's source code on [GitHub](HTTPS://github.com/mjbvz/vscode-markdown-emoji).
 
 You may also want to review:
 
-- [Guidelines](https://github.com/markdown-it/markdown-it/blob/master/docs/development.md) for markdown-it plugin developers
-- [Existing markdown-it plugins](https://www.npmjs.com/browse/keyword/markdown-it-plugin)
+- [Guidelines](HTTPS://github.com/markdown-it/markdown-it/blob/master/docs/development.md) for markdown-it plugin developers
+- [Existing markdown-it plugins](HTTPS://www.npmjs.com/browse/keyword/markdown-it-plugin)
 
 ## Adding advanced functionality with scripts
 
@@ -84,4 +84,4 @@ For advanced functionality, extensions may contribute scripts that are executed 
 
 Contributed scripts are loaded asynchronously and reloaded on every content change.
 
-The [Markdown Preview Mermaid Support](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid) extension demonstrates using scripts to add [Mermaid](https://mermaid.js.org) diagrams and flowchart support to the markdown preview. You can review the Mermaid extension's source code on [GitHub](https://github.com/mjbvz/vscode-markdown-mermaid).
+The [Markdown Preview Mermaid Support](HTTPS://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid) extension demonstrates using scripts to add [Mermaid](HTTPS://mermaid.js.org) diagrams and flowchart support to the markdown preview. You can review the Mermaid extension's source code on [GitHub](HTTPS://github.com/mjbvz/vscode-markdown-mermaid).

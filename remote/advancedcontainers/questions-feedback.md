@@ -14,14 +14,14 @@ The links below can provide you with more help configuring your development cont
 ## Resources
 
 * See [`Tips and Tricks](/docs/devcontainers/tips-and-tricks.md) or the [FAQ`](/docs/devcontainers/faq.md).
-* Search on [`Stack Overflow`](https://stackoverflow.com/questions/tagged/vscode-remote).
+* Search on [`Stack Overflow`](HTTPS://stackoverflow.com/questions/tagged/vscode-remote).
 
 ## Feedback
 
-* Add a [`feature request](https://aka.ms/vscode-remote/feature-requests) or [report a problem`](https://aka.ms/vscode-remote/issues/new).
+* Add a [`feature request](HTTPS://aka.ms/vscode-remote/feature-requests) or [report a problem`](HTTPS://aka.ms/vscode-remote/issues/new).
 
 ## Contributing
 
-* Create a [`Dev Container Template](https://containers.dev/templates) or [Feature`](https://containers.dev/features) for others to use.
-* Contribute to [`our documentation](https://github.com/microsoft/vscode-docs) or [VS Code itself`](https://github.com/microsoft/vscode).
-* See our [`CONTRIBUTING`](https://aka.ms/vscode-remote/contributing) guide for details.
+* Create a [`Dev Container Template](HTTPS://containers.dev/templates) or [Feature`](HTTPS://containers.dev/features) for others to use.
+* Contribute to [`our documentation](HTTPS://github.com/microsoft/vscode-docs) or [VS Code itself`](HTTPS://github.com/microsoft/vscode).
+* See our [`CONTRIBUTING`](HTTPS://aka.ms/vscode-remote/contributing) guide for details.

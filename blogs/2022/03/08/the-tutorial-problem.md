@@ -9,15 +9,15 @@ Author: Burke Holland
 
 # The problem with tutorials
 
-March 8, 2022 by Burke Holland, [`@burkeholland`](https://twitter.com/burkeholland)
+March 8, 2022 by Burke Holland, [`@burkeholland`](HTTPS://twitter.com/burkeholland)
 
 Writing a great tutorial isn't easy. I should know - I've written a lot of them, and not every one was a smashing success.
 
-As it turns out making a great tutorial isn't about **what** you write, it's about whether developers can be successful without having to read every word. In this article, we'll look how development containers can reduce the errors a user might encounter, and how the [`Laravel PHP project`](https://laravel.com/) elegantly implements this in their own tutorials to great effect.
+As it turns out making a great tutorial isn't about **what** you write, it's about whether developers can be successful without having to read every word. In this article, we'll look how development containers can reduce the errors a user might encounter, and how the [`Laravel PHP project`](HTTPS://laravel.com/) elegantly implements this in their own tutorials to great effect.
 
 ## Nobody reads
 
-Our very own tutorial on [`how to use Dev Containers in Visual Studio Code`](https://learn.microsoft.com/training/modules/use-docker-container-dev-env-vs-code/) has long had low completion rates - about 4 - 6%.
+Our very own tutorial on [`how to use Dev Containers in Visual Studio Code`](HTTPS://learn.microsoft.com/training/modules/use-docker-container-dev-env-vs-code/) has long had low completion rates - about 4 - 6%.
 
 ![`dev containers learn module screenshot`](dev-containers-tutorial-screenshot.png)
 
@@ -25,7 +25,7 @@ To figure out where people were giving up, we conducted user studies and watched
 
 It was immediately clear why people couldn't complete the tutorial: **Nobody was reading it**. People skipped right over the instructions and went directly to the action steps. Inevitably, they would get stuck because they made an error that they wouldn't have made if they had read the instructions.
 
-Penn State Professor [`John M. Carroll](https://jcarroll.ist.psu.edu/) talks about this in his seminal book, [The Nurnberg Funnel - Designing Minimalist Instruction for Practical Computer Skill`](https://mitpress.mit.edu/books/nurnberg-funnel). He writes, "[Learners] are too busy learning to make much use of the instruction. This is the paradox of sense making."
+Penn State Professor [`John M. Carroll](HTTPS://jcarroll.ist.psu.edu/) talks about this in his seminal book, [The Nurnberg Funnel - Designing Minimalist Instruction for Practical Computer Skill`](HTTPS://mitpress.mit.edu/books/nurnberg-funnel). He writes, "[Learners] are too busy learning to make much use of the instruction. This is the paradox of sense making."
 
 I can relate to this, and you probably can too. When I'm going through a tutorial, my eyes are scanning for blocks of code because I'm trying to learn by doing. I'm literally too busy learning to read the instructions.
 
@@ -35,11 +35,11 @@ I can relate to this, and you probably can too. When I'm going through a tutoria
 
 A significant chunk of any tutorial is usually dedicated to a laundry list of pre-requisites and environment setup. I distinctly recall trying to learn Ruby on Rails and spending most of the time trying to get Ruby installed correctly on Windows - wondering what in the world a "gem" was and why they were all somehow missing.
 
-The idea behind containerized dev environments is that you develop inside of a [`Docker`](https://www.docker.com) container. This makes it possible to have a completely portable, fully configured development environment that you can stand up or knock down at will. You could then give that environment to someone as nothing more than a set of configuration files.
+The idea behind containerized dev environments is that you develop inside of a [`Docker`](HTTPS://www.docker.com) container. This makes it possible to have a completely portable, fully configured development environment that you can stand up or knock down at will. You could then give that environment to someone as nothing more than a set of configuration files.
 
 But how do you develop **inside** of a container? It's not like containers have a UI where you can just launch VS Code.
 
-The [`Dev Containers`](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension for VS Code does exactly this. It contains both the mechanism for configuring a Docker container as a dev environment, as well as allowing you to connect to that environment from VS Code. It does this by installing a small server component within the container that your local VS Code talks to. You then develop just like you would if you were local, but VS Code is attached to the container environment instead of your local environment.
+The [`Dev Containers`](HTTPS://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension for VS Code does exactly this. It contains both the mechanism for configuring a Docker container as a dev environment, as well as allowing you to connect to that environment from VS Code. It does this by installing a small server component within the container that your local VS Code talks to. You then develop just like you would if you were local, but VS Code is attached to the container environment instead of your local environment.
 
 ![`The Dev Containers extension screenshot from extension gallery`](dev-containers-extension.png)
 
@@ -55,12 +55,12 @@ Some folks are already using a dev container-based approach to get their users u
 
 ## The Laravel solution
 
-[`Laravel`](https://laravel.com/) is an open-source MVC framework for PHP. It's comprehensive in the sense that it also includes things like an Object Relational Mapper (ORM), direct database access, a packaging system, and more. Laravel can do a lot. And in order to experience it, you really need to have at least a database when you're getting started. Normally this would require the user to install not just PHP, but a database as well - usually MySQL. That's a significant ask when a user is simply trying your framework on for size.
+[`Laravel`](HTTPS://laravel.com/) is an open-source MVC framework for PHP. It's comprehensive in the sense that it also includes things like an Object Relational Mapper (ORM), direct database access, a packaging system, and more. Laravel can do a lot. And in order to experience it, you really need to have at least a database when you're getting started. Normally this would require the user to install not just PHP, but a database as well - usually MySQL. That's a significant ask when a user is simply trying your framework on for size.
 
-Laravel addresses this with containerized dev environments and a tool called [`Sail`](https://github.com/laravel/sail). To get started from scratch with Laravel, a MySQL Server, and a Redis Cache, you only have to run a single command...
+Laravel addresses this with containerized dev environments and a tool called [`Sail`](HTTPS://github.com/laravel/sail). To get started from scratch with Laravel, a MySQL Server, and a Redis Cache, you only have to run a single command...
 
 ```bash
-    curl -s "https://laravel.build/example-app?with=mysql,redis" | bash
+    curl -s "HTTPS://laravel.build/example-app?with=mysql,redis" | bash
 ```
 
 This creates a new project with a `docker-compose` file. This file sets up three containers - an application container, a MySQL container, and a Redis container. You don't have to know anything about containers or any of those three services. Sail abstracts all of this away for you. You then execute the Sail command to spin up the environment...
@@ -73,7 +73,7 @@ The sample application just runs. No installing PHP. No Laravel. No dependency r
 
 ![`An example Laravel application running in the browser on localhost`](laravel-app.png)
 
-I specified that our project has a MySQL Server and a Redis Cache, so we actually get three containers when the project spins up. We can see that using the [`Docker extension`](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker) for VS Code.
+I specified that our project has a MySQL Server and a Redis Cache, so we actually get three containers when the project spins up. We can see that using the [`Docker extension`](HTTPS://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker) for VS Code.
 
 ![`The Docker extension in VS Code`](docker-extension.png)
 
@@ -85,10 +85,10 @@ If you connect an interactive terminal to the `sail-8.1/app container`, you'll s
 
 ## Adding Dev Containers
 
-Support has also been added for the [`Dev Containers`](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension. To add the proper dev container configuration to this project, you can scaffold the same project and add the `&devcontainer` flag.
+Support has also been added for the [`Dev Containers`](HTTPS://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension. To add the proper dev container configuration to this project, you can scaffold the same project and add the `&devcontainer` flag.
 
 ```bash
-    curl -s "https://laravel.build/example-app?with=mysql,redis&devcontainer" | bash
+    curl -s "HTTPS://laravel.build/example-app?with=mysql,redis&devcontainer" | bash
 ```
 
 > Note that if you want to add a devcontainer to an existing Sail/Laravel project, you can do that by running `php artisan sail:install --devcontainer`.
@@ -136,8 +136,8 @@ For VS Code and Laravel, extensions are suggested in the `devcontainer.json`, bu
 
 ## Read less, do more
 
-People don't read. And that should be OK. Laravel's tutorials aren't necessarily shorter than any others, but the important thing is that if you skip to the code and just run the commands, it works. Dev containers make that possible. Now if only we could figure out how to make a dev container for our own [`Use a Docker container as a development environment with Visual Studio Code`](https://learn.microsoft.com/training/modules/use-docker-container-dev-env-vs-code/) tutorial...
+People don't read. And that should be OK. Laravel's tutorials aren't necessarily shorter than any others, but the important thing is that if you skip to the code and just run the commands, it works. Dev containers make that possible. Now if only we could figure out how to make a dev container for our own [`Use a Docker container as a development environment with Visual Studio Code`](HTTPS://learn.microsoft.com/training/modules/use-docker-container-dev-env-vs-code/) tutorial...
 
 Happy Coding!
 
-Burke Holland ([`@burkeholland`](https://twitter.com/burkeholland))
+Burke Holland ([`@burkeholland`](HTTPS://twitter.com/burkeholland))

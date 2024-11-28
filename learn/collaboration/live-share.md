@@ -11,13 +11,13 @@ MetaDescription: Use Microsoft Live Share to collaborate with Visual Studio Code
 
 ## What is Live Share?
 
-[`Live Share`](https://learn.microsoft.com/visualstudio/liveshare) enables you to quickly collaborate with a friend, classmate, or professor on the same code without the need to sync code or to configure the same development tools, settings, or environment.
+[`Live Share`](HTTPS://learn.microsoft.com/visualstudio/liveshare) enables you to quickly collaborate with a friend, classmate, or professor on the same code without the need to sync code or to configure the same development tools, settings, or environment.
 
 When it comes to Live Share, seeing is believing. Check out this video to see Live Share in action:
 
-<iframe src="https://www.youtube-nocookie.com/embed/A2ceblXTBBc?rel=0&amp;disablekb=0&amp;modestbranding=1&amp;showinfo=0" frameborder="0" allowfullscreen title="Collaborate with Live Share"></iframe>
+<iframe src="HTTPS://www.youtube-nocookie.com/embed/A2ceblXTBBc?rel=0&amp;disablekb=0&amp;modestbranding=1&amp;showinfo=0" frameborder="0" allowfullscreen title="Collaborate with Live Share"></iframe>
 
->**Note**: The video above mentions the deprecated Live Share Extension Pack and Live Share Audio extension. To follow along with the video, you only need to install the [`Live Share`](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare) extension.
+>**Note**: The video above mentions the deprecated Live Share Extension Pack and Live Share Audio extension. To follow along with the video, you only need to install the [`Live Share`](HTTPS://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare) extension.
 
 When you share a collaborative session, the person you're working with sees the context of the workspace in their editor. This means your classmate can read the code you shared without having to clone a repo or install any dependencies your code relies on. They can help you with your code in the Visual Studio Code environment that's familiar to them.
 
@@ -25,11 +25,11 @@ Each of you can open files, navigate, edit code, or highlight - and changes are 
 
 You can also debug together using VS Code's debugging features, like hovers, locals and watches, the stack trace or the debug console. You are both able to set breakpoints and advance the debug cursor to step through the session.
 
-For more details about what you can do with Live Share, visit the [`how-to-guide`](https://learn.microsoft.com/visualstudio/liveshare/use/install-live-share-visual-studio-code) or read the quick-start below.
+For more details about what you can do with Live Share, visit the [`how-to-guide`](HTTPS://learn.microsoft.com/visualstudio/liveshare/use/install-live-share-visual-studio-code) or read the quick-start below.
 
 ## Get started with Live Share
 
-To get started with using Live Share in VS Code, you'll need to download the [`Live Share`](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare) extension from the VS Code Marketplace.
+To get started with using Live Share in VS Code, you'll need to download the [`Live Share`](HTTPS://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare) extension from the VS Code Marketplace.
 
 ![`Live Share extension`](images/live-share/live-share-extension.png)
 

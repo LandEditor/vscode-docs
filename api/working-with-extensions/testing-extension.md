@@ -13,18 +13,18 @@ Visual Studio Code supports running and debugging tests for your extension. Thes
 
 ## Overview
 
-If you are using the [Yeoman Generator](https://code.visualstudio.com/api/get-started/your-first-extension) to scaffold an extension, integration tests are already created for you.
+If you are using the [Yeoman Generator](HTTPS://code.visualstudio.com/api/get-started/your-first-extension) to scaffold an extension, integration tests are already created for you.
 
 In the generated extension, you can use `npm run test` or `yarn test` to run the integration tests that:
 
 - Downloads and unzips latest version of VS Code.
-- Runs the [Mocha](https://mochajs.org) tests specified by the extension test runner script.
+- Runs the [Mocha](HTTPS://mochajs.org) tests specified by the extension test runner script.
 
 ## Quick Setup: The test CLI
 
-The VS Code team publishes a command-line tool to run extension tests. You can find an example in the [extensions sample repo](https://github.com/microsoft/vscode-extension-samples/tree/main/helloworld-test-cli-sample).
+The VS Code team publishes a command-line tool to run extension tests. You can find an example in the [extensions sample repo](HTTPS://github.com/microsoft/vscode-extension-samples/tree/main/helloworld-test-cli-sample).
 
-The test CLI provides quick setup, and also allows you to easily run and debug tests of the VS Code UI using the [Extension Test Runner](https://marketplace.visualstudio.com/items?itemName=ms-vscode.extension-test-runner). The CLI exclusively uses [Mocha](https://mochajs.org) under the hood.
+The test CLI provides quick setup, and also allows you to easily run and debug tests of the VS Code UI using the [Extension Test Runner](HTTPS://marketplace.visualstudio.com/items?itemName=ms-vscode.extension-test-runner). The CLI exclusively uses [Mocha](HTTPS://mochajs.org) under the hood.
 
 To get started, you'll want to first install the `@vscode/test-cli` module, as well as `@vscode/test-electron` module that enables tests to be run in VS Code Desktop:
 
@@ -41,7 +41,7 @@ After installing the modules, you'll have the `vscode-test` command line, which 
 +   "test": "vscode-test"
 ```
 
-`vscode-test` looks for a [`.vscode-test.js/mjs/cjs`](https://github.com/microsoft/vscode-extension-samples/blob/main/helloworld-test-cli-sample/.vscode-test.mjs) file relative to the current working directory. This file provides the configuration for the test runner, and you can find the entire definition [here](https://github.com/microsoft/vscode-test-cli/blob/main/src/config.cts).
+`vscode-test` looks for a [`.vscode-test.js/mjs/cjs`](HTTPS://github.com/microsoft/vscode-extension-samples/blob/main/helloworld-test-cli-sample/.vscode-test.mjs) file relative to the current working directory. This file provides the configuration for the test runner, and you can find the entire definition [here](HTTPS://github.com/microsoft/vscode-test-cli/blob/main/src/config.cts).
 
 Common options include:
 
@@ -49,7 +49,7 @@ Common options include:
 - `version` - The version of VS Code to use for running tests (defaults to `stable`).
 - `workspaceFolder` - The path to a workspace to open during tests.
 - `extensionDevelopmentPath` - The path to your extension folder (defaults to the directory of the config file).
-- `mocha` - An object containing additional [options](https://mochajs.org/api/mocha#Mocha) to pass to Mocha.
+- `mocha` - An object containing additional [options](HTTPS://mochajs.org/api/mocha#Mocha) to pass to Mocha.
 
 The configuration might be as simple as:
 
@@ -85,7 +85,7 @@ If you define multiple configurations by passing an array, they'll be run sequen
 
 ### Test scripts
 
-Once the CLI is set up, you can write and run your tests. Test scripts have access to the VS Code API, and are run under Mocha. Here's a sample ([src/test/suite/extension.test.ts](https://github.com/microsoft/vscode-extension-samples/blob/main/helloworld-test-sample/src/test/suite/extension.test.ts)):
+Once the CLI is set up, you can write and run your tests. Test scripts have access to the VS Code API, and are run under Mocha. Here's a sample ([src/test/suite/extension.test.ts](HTTPS://github.com/microsoft/vscode-extension-samples/blob/main/helloworld-test-sample/src/test/suite/extension.test.ts)):
 
 ```ts
 import * as assert from 'assert';
@@ -107,14 +107,14 @@ suite('Extension Test Suite', () => {
 });
 ```
 
-You can run this test with the `npm test` command, or by using the **Test: Run All Tests** command in VS Code after you install the [Extension Test Runner](https://marketplace.visualstudio.com/items?itemName=ms-vscode.extension-test-runner). You can also debug the test using **Test: Debug All Tests** command.
+You can run this test with the `npm test` command, or by using the **Test: Run All Tests** command in VS Code after you install the [Extension Test Runner](HTTPS://marketplace.visualstudio.com/items?itemName=ms-vscode.extension-test-runner). You can also debug the test using **Test: Debug All Tests** command.
 
 ## Advanced setup: Your own runner
 
-You can find the configuration for this guide in the [helloworld-test-sample](https://github.com/microsoft/vscode-extension-samples/tree/main/helloworld-test-sample). The rest of this document explains these files in the context of the sample:
+You can find the configuration for this guide in the [helloworld-test-sample](HTTPS://github.com/microsoft/vscode-extension-samples/tree/main/helloworld-test-sample). The rest of this document explains these files in the context of the sample:
 
-- The **test script** ([`src/test/runTest.ts`](https://github.com/microsoft/vscode-extension-samples/blob/main/helloworld-test-sample/src/test/runTest.ts))
-- The **test runner script** ([`src/test/suite/index.ts`](https://github.com/microsoft/vscode-extension-samples/blob/main/helloworld-test-sample/src/test/suite/index.ts))
+- The **test script** ([`src/test/runTest.ts`](HTTPS://github.com/microsoft/vscode-extension-samples/blob/main/helloworld-test-sample/src/test/runTest.ts))
+- The **test runner script** ([`src/test/suite/index.ts`](HTTPS://github.com/microsoft/vscode-extension-samples/blob/main/helloworld-test-sample/src/test/suite/index.ts))
 
 VS Code provides two CLI parameters for running extension tests, `--extensionDevelopmentPath` and `--extensionTestsPath`.
 
@@ -129,7 +129,7 @@ code \
 --extensionTestsPath=<TEST-RUNNER-SCRIPT-PATH>
 ```
 
-The **test script** ([`src/test/runTest.ts`](https://github.com/microsoft/vscode-extension-samples/blob/main/helloworld-test-sample/src/test/runTest.ts)) uses the `@vscode/test-electron` API to simplify the process of downloading, unzipping, and launching VS Code with extension test parameters:
+The **test script** ([`src/test/runTest.ts`](HTTPS://github.com/microsoft/vscode-extension-samples/blob/main/helloworld-test-sample/src/test/runTest.ts)) uses the `@vscode/test-electron` API to simplify the process of downloading, unzipping, and launching VS Code with extension test parameters:
 
 ```ts
 import * as path from 'path';
@@ -164,11 +164,11 @@ The `@vscode/test-electron` API also allows:
 - Downloading a different version of VS Code rather than the latest stable release.
 - Launching VS Code with additional CLI parameters.
 
-You can find more API usage examples at [microsoft/vscode-test](https://github.com/microsoft/vscode-test).
+You can find more API usage examples at [microsoft/vscode-test](HTTPS://github.com/microsoft/vscode-test).
 
 ### The test runner script
 
-When running the extension integration test, `--extensionTestsPath` points to the **test runner script** ([`src/test/suite/index.ts`](https://github.com/microsoft/vscode-extension-samples/blob/main/helloworld-test-sample/src/test/suite/index.ts)) that programmatically runs the test suite. Below is the [test runner script](https://github.com/microsoft/vscode-extension-samples/blob/main/helloworld-test-sample/src/test/suite/index.ts) of `helloworld-test-sample` that uses Mocha to run the test suite. You can use this as a starting point and customize your setup with [Mocha's API](https://mochajs.org/api/mocha). You can also replace Mocha with any other test framework that can be run programmatically.
+When running the extension integration test, `--extensionTestsPath` points to the **test runner script** ([`src/test/suite/index.ts`](HTTPS://github.com/microsoft/vscode-extension-samples/blob/main/helloworld-test-sample/src/test/suite/index.ts)) that programmatically runs the test suite. Below is the [test runner script](HTTPS://github.com/microsoft/vscode-extension-samples/blob/main/helloworld-test-sample/src/test/suite/index.ts) of `helloworld-test-sample` that uses Mocha to run the test suite. You can use this as a starting point and customize your setup with [Mocha's API](HTTPS://mochajs.org/api/mocha). You can also replace Mocha with any other test framework that can be run programmatically.
 
 ```ts
 import * as path from 'path';
@@ -210,7 +210,7 @@ export function run(): Promise<void> {
 
 Both the test runner script and the `*.test.js` files have access to the VS Code API.
 
-Here is a sample test ([src/test/suite/extension.test.ts](https://github.com/microsoft/vscode-extension-samples/blob/main/helloworld-test-sample/src/test/suite/extension.test.ts)):
+Here is a sample test ([src/test/suite/extension.test.ts](HTTPS://github.com/microsoft/vscode-extension-samples/blob/main/helloworld-test-sample/src/test/suite/extension.test.ts)):
 
 ```ts
 import * as assert from 'assert';
@@ -273,7 +273,7 @@ Running extension tests from the command line is currently only supported if no 
 ```
 
 In general if you run extension tests from CLI, the version the tests run with cannot be running already. As a workaround, you can run the tests
-in VS Code Stable and use [VS Code Insiders](https://code.visualstudio.com/insiders/) for development. As long as you are not running the tests
+in VS Code Stable and use [VS Code Insiders](HTTPS://code.visualstudio.com/insiders/) for development. As long as you are not running the tests
 from CLI in VS Code Insiders but in VS Code Stable, this setup will work fine.
 
 An alternative is to run the extension tests from the debug launch configuration from within VS Code itself. This has the additional advantage

@@ -10,7 +10,7 @@ Author: Kenneth Auchenberg
 ---
 # Introducing Logpoints and auto-attach
 
-July 12, 2018 Kenneth Auchenberg, [`@auchenberg`](https://twitter.com/auchenberg)
+July 12, 2018 Kenneth Auchenberg, [`@auchenberg`](HTTPS://twitter.com/auchenberg)
 
 Over the past few months we have been busy improving the debugging experience in Visual Studio Code, and in this post, I'm going to talk about how we think about debugging, present the feedback we heard from our users, and explain the steps we are taking to make debugging easier and simpler in VS Code.
 
@@ -70,13 +70,13 @@ Logging for debugging isn't a new concept but the observation was important:
 
 **Observation**: Traditional debugging workflows are most focused around slowing down execution to inspect program logic, while logging workflows usually involve inspecting program state and how it changes during the normal execution of an application. The fundamental observation here is that the two techniques are used for different debugging purposes.
 
-This observation is especially relevant for JavaScript developers, who mostly deal with the complexity of managing state, and this might explain why [`most JavaScript developers still prefer to add console.log's`](https://christianheilmann.com/2017/07/08/debugging-javascript-console-loggerheads/) to their source code instead of using a script debugger.
+This observation is especially relevant for JavaScript developers, who mostly deal with the complexity of managing state, and this might explain why [`most JavaScript developers still prefer to add console.log's`](HTTPS://christianheilmann.com/2017/07/08/debugging-javascript-console-loggerheads/) to their source code instead of using a script debugger.
 
 ## Auto-attaching to Node processes
 
 When reflecting on how some developers are using the Integrated Terminal to launch their debugging session, we saw a unique opportunity emerge. By leveraging the contextual information we have inside VS Code from your editor and Integrated Terminal, we could detect your context and reason about your intent to debug, and this could provide a much simpler debugging experience for Node.js developers.
 
-So in [`our March iteration`](https://code.visualstudio.com/updates/v1_22#_node-debugging) of VS Code, we released a new feature that called **Auto Attach for Node**, that enables the Node debugger to automatically attach to Node.js processes that have been launched in debug mode from VS Code's Integrated Terminal.
+So in [`our March iteration`](HTTPS://code.visualstudio.com/updates/v1_22#_node-debugging) of VS Code, we released a new feature that called **Auto Attach for Node**, that enables the Node debugger to automatically attach to Node.js processes that have been launched in debug mode from VS Code's Integrated Terminal.
 
 You enable auto attach by running **Debug: Toggle Auto Attach** command from the Command Palette, and once activated you can toggle auto attach from the Status Bar as well.
 
@@ -90,9 +90,9 @@ This feature completely eliminates any debug configuration, as we interpret any 
 
 ## NPM scripts and debugging
 
-Many Node.js developers rely on [`npm scripts`](https://docs.npmjs.com/misc/scripts) to launch applications or start debugging sessions, and we have some great news on that front too: Auto-attach also works with npm scripts. If you run `npm run debug` and the `"debug"` script is `"node --inspect"` or any other command that includes `--inspect`, then auto attach will detect that and attach the debugger 🎉
+Many Node.js developers rely on [`npm scripts`](HTTPS://docs.npmjs.com/misc/scripts) to launch applications or start debugging sessions, and we have some great news on that front too: Auto-attach also works with npm scripts. If you run `npm run debug` and the `"debug"` script is `"node --inspect"` or any other command that includes `--inspect`, then auto attach will detect that and attach the debugger 🎉
 
-We also recognized that some developers wanted a more visual way to find and run their npm scripts, so in [`our April 2018 iteration`](https://code.visualstudio.com/updates/v1_23#_npm-script-running), we added a new NPM scripts explorer that allows you to browse and run your NPM scripts directly from the UI. As a part of our work to simplify debug configuration, we also made it possible to start Node.js debugging directly from the explorer, without having to create a debug configuration.
+We also recognized that some developers wanted a more visual way to find and run their npm scripts, so in [`our April 2018 iteration`](HTTPS://code.visualstudio.com/updates/v1_23#_npm-script-running), we added a new NPM scripts explorer that allows you to browse and run your NPM scripts directly from the UI. As a part of our work to simplify debug configuration, we also made it possible to start Node.js debugging directly from the explorer, without having to create a debug configuration.
 
 If you have a npm script that includes a debugging argument like `--inspect`, we'll automatically detect this and provide a debug action that launches the debugger, as seen here:
 
@@ -100,13 +100,13 @@ If you have a npm script that includes a debugging argument like `--inspect`, we
 
 ## Introducing Logpoints
 
-Based on the learning that logging is an important debugging technique, we saw an opportunity to add state inspection to our existing debugging experience. In [`the March iteration`](https://code.visualstudio.com/updates/v1_22#_logpoints) of VS Code, we released the first implementation of a debugging feature that we call Logpoints.
+Based on the learning that logging is an important debugging technique, we saw an opportunity to add state inspection to our existing debugging experience. In [`the March iteration`](HTTPS://code.visualstudio.com/updates/v1_22#_logpoints) of VS Code, we released the first implementation of a debugging feature that we call Logpoints.
 
 A Logpoint is a breakpoint variant that does not "break" into the debugger but instead logs a message to the console.
 
 ![`Logpoints`](logpoints.gif)
 
-The concept for Logpoints isn't new, and over the past few years, we have seen different flavors of this concept in tools like [`Visual Studio](https://codewala.net/2018/01/25/tracepoint-an-awsome-feature-of-visual-studio/), [Edge DevTools](https://learn.microsoft.com/microsoft-edge/devtools-guide-chromium/landing/) and [GDB](https://sourceware.org/gdb/onlinedocs/gdb/Tracepoints.html) under several names such as Tracepoints and [Logpoints`](https://devblogs.microsoft.com/visualstudio/debug-live-apps-in-azure-with-the-snappoints-and-logpoints-preview).
+The concept for Logpoints isn't new, and over the past few years, we have seen different flavors of this concept in tools like [`Visual Studio](HTTPS://codewala.net/2018/01/25/tracepoint-an-awsome-feature-of-visual-studio/), [Edge DevTools](HTTPS://learn.microsoft.com/microsoft-edge/devtools-guide-chromium/landing/) and [GDB](HTTPS://sourceware.org/gdb/onlinedocs/gdb/Tracepoints.html) under several names such as Tracepoints and [Logpoints`](HTTPS://devblogs.microsoft.com/visualstudio/debug-live-apps-in-azure-with-the-snappoints-and-logpoints-preview).
 
 ### Why and when to use Logpoints?
 
@@ -120,33 +120,33 @@ For JavaScript developers, this means that you don't have to worry about leaving
 
 Logpoints are particular useful in cloud contexts (or any remote context really), as they enable you to inject logging into remote environments without having to redeploy your applications. Equally important, you don't halt script execution with Logpoints, so your users aren't affected unlike halting the running application on a regular breakpoint.
 
-You can read more about how to use [`Logpoints for Node.js on Azure here`](https://medium.com/@auchenberg/introducing-remote-debugging-of-node-js-apps-on-azure-app-service-from-vs-code-in-public-preview-9b8d83a6e1f0).
+You can read more about how to use [`Logpoints for Node.js on Azure here`](HTTPS://medium.com/@auchenberg/introducing-remote-debugging-of-node-js-apps-on-azure-app-service-from-vs-code-in-public-preview-9b8d83a6e1f0).
 
 ### Supported languages
 
 Since the first release of Logpoints in VS Code, we have seen a growing adoption by VS Code Debug Adapters, and today there is Logpoint support for the following languages:
 
-- [`Node.js debugger`](https://github.com/microsoft/vscode-node-debug2/)
-- [`Chrome debugger`](https://github.com/microsoft/vscode-chrome-debug/)
-- [`Firefox debugger`](https://github.com/hbenl/vscode-firefox-debug/commit/0c90a695e304bb54402ada129f8fafae462718f5)
-- [`Microsoft Edge debugger`](https://github.com/microsoft/vscode-edge-debug2)
-- [`React Native Debugger`](https://github.com/microsoft/vscode-react-native)
-- [`Python Debugger`](https://github.com/microsoft/vscode-python)
-- [`Dart debugger`](https://github.com/Dart-Code/Dart-Code)
-- [`Lua debugger`](https://github.com/actboy168/vscode-lua-debug)
-- [`Java Debugger`](https://github.com/microsoft/java-debug/pull/184)
-- [`Debugger for Mainframe`](https://marketplace.visualstudio.com/items?itemName=broadcomMFD.debugger-for-mainframe)
+- [`Node.js debugger`](HTTPS://github.com/microsoft/vscode-node-debug2/)
+- [`Chrome debugger`](HTTPS://github.com/microsoft/vscode-chrome-debug/)
+- [`Firefox debugger`](HTTPS://github.com/hbenl/vscode-firefox-debug/commit/0c90a695e304bb54402ada129f8fafae462718f5)
+- [`Microsoft Edge debugger`](HTTPS://github.com/microsoft/vscode-edge-debug2)
+- [`React Native Debugger`](HTTPS://github.com/microsoft/vscode-react-native)
+- [`Python Debugger`](HTTPS://github.com/microsoft/vscode-python)
+- [`Dart debugger`](HTTPS://github.com/Dart-Code/Dart-Code)
+- [`Lua debugger`](HTTPS://github.com/actboy168/vscode-lua-debug)
+- [`Java Debugger`](HTTPS://github.com/microsoft/java-debug/pull/184)
+- [`Debugger for Mainframe`](HTTPS://marketplace.visualstudio.com/items?itemName=broadcomMFD.debugger-for-mainframe)
 
 ### Logpoints in the VS Code
 
-If you are interested in adding Logpoint support in your Debug Adapter for VS Code, please take a look at [`these changes`](https://github.com/microsoft/vscode-debugadapter-node/commit/aeda2ba8ae526906585a5ccb7d8346a71b83ed10) in the protocol. You can also look at the above debug adapters to see how each runtime has chosen to implement Logpoints.
+If you are interested in adding Logpoint support in your Debug Adapter for VS Code, please take a look at [`these changes`](HTTPS://github.com/microsoft/vscode-debugadapter-node/commit/aeda2ba8ae526906585a5ccb7d8346a71b83ed10) in the protocol. You can also look at the above debug adapters to see how each runtime has chosen to implement Logpoints.
 
 ## Next steps
 
-That's it for now, but we aren't finished. In our [`July iteration](https://github.com/microsoft/vscode/issues/53850), we are making improvements to auto-attach in order to aid discoverability ([#53640`](https://github.com/microsoft/vscode/issues/53640)), based on user feedback.
+That's it for now, but we aren't finished. In our [`July iteration](HTTPS://github.com/microsoft/vscode/issues/53850), we are making improvements to auto-attach in order to aid discoverability ([#53640`](HTTPS://github.com/microsoft/vscode/issues/53640)), based on user feedback.
 
-We hope the introduction of auto-attach, NPM scripts explorer, and Logpoints are going to make it easier to debug with VS Code. As always, we are eager to hear your feedback, so reach out to us at [`GitHub](https://github.com/microsoft/vscode) or [@code on Twitter`](https://twitter.com/code).
+We hope the introduction of auto-attach, NPM scripts explorer, and Logpoints are going to make it easier to debug with VS Code. As always, we are eager to hear your feedback, so reach out to us at [`GitHub](HTTPS://github.com/microsoft/vscode) or [@code on Twitter`](HTTPS://twitter.com/code).
 
 On behalf of the VS Code team: Happy Coding!
 
-/Kenneth Auchenberg - [`@auchenberg on Twitter`](https://twitter.com/auchenberg)
+/Kenneth Auchenberg - [`@auchenberg on Twitter`](HTTPS://twitter.com/auchenberg)

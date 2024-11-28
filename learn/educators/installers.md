@@ -15,8 +15,8 @@ As educators, we know it's frustrating to install all the different software to 
 
 This coding pack includes everything you need to start coding in Java.
 
-<a class="install-extension-btn" onclick="pushCodingPackEvent('java', 'win')" href="https://aka.ms/vscode-java-installer-win">Download - Windows</a>
-<a class="install-extension-btn" onclick="pushCodingPackEvent('java', 'mac')" href="https://aka.ms/vscode-java-installer-mac">Download - macOS</a>
+<a class="install-extension-btn" onclick="pushCodingPackEvent('java', 'win')" href="HTTPS://aka.ms/vscode-java-installer-win">Download - Windows</a>
+<a class="install-extension-btn" onclick="pushCodingPackEvent('java', 'mac')" href="HTTPS://aka.ms/vscode-java-installer-mac">Download - macOS</a>
 
 This will install:
 

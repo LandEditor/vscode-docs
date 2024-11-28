@@ -9,21 +9,21 @@ MetaDescription: Use Continuous Integration for testing Visual Studio Code exten
 
 # Continuous Integration
 
-Extension integration tests can be run on CI services. The [`@vscode/test-electron`](https://github.com/microsoft/vscode-test) library helps you set up extension tests on CI providers and contains a [sample extension](https://github.com/microsoft/vscode-test/tree/main/sample) setup on Azure Pipelines. You can check out the [build pipeline](https://dev.azure.com/vscode/vscode-test/_build?definitionId=15) or jump directly to the [`azure-pipelines.yml` file](https://github.com/microsoft/vscode-test/blob/main/sample/azure-pipelines.yml).
+Extension integration tests can be run on CI services. The [`@vscode/test-electron`](HTTPS://github.com/microsoft/vscode-test) library helps you set up extension tests on CI providers and contains a [sample extension](HTTPS://github.com/microsoft/vscode-test/tree/main/sample) setup on Azure Pipelines. You can check out the [build pipeline](HTTPS://dev.azure.com/vscode/vscode-test/_build?definitionId=15) or jump directly to the [`azure-pipelines.yml` file](HTTPS://github.com/microsoft/vscode-test/blob/main/sample/azure-pipelines.yml).
 
 ## Automated publishing
 
 You can also configure the CI to publish a new version of the extension automatically.
 
-The publish command is similar to publishing from a local environment using [`vsce`](https://github.com/microsoft/vscode-vsce), but you must somehow provide the Personal Access Token (PAT) in a secure way. By storing the PAT as a `VSCE_PAT` **secret variable**, `vsce` will be able to use it. Secret variables are never exposed, so they are safe to use in a CI pipeline.
+The publish command is similar to publishing from a local environment using [`vsce`](HTTPS://github.com/microsoft/vscode-vsce), but you must somehow provide the Personal Access Token (PAT) in a secure way. By storing the PAT as a `VSCE_PAT` **secret variable**, `vsce` will be able to use it. Secret variables are never exposed, so they are safe to use in a CI pipeline.
 
 ## Azure Pipelines
 
-<a href="https://azure.microsoft.com/services/devops/"><img alt="Azure Pipelines" src="/assets/api/working-with-extensions/continuous-integration/pipelines-logo.png" width="318" /></a>
+<a href="HTTPS://azure.microsoft.com/services/devops/"><img alt="Azure Pipelines" src="/assets/api/working-with-extensions/continuous-integration/pipelines-logo.png" width="318" /></a>
 
-[Azure Pipelines](https://azure.microsoft.com/services/devops/pipelines/) is great for running VS Code extension tests as it supports running the tests on Windows, macOS, and Linux. For Open Source projects, you get unlimited minutes and 10 free parallel jobs. This section explains how to set up an Azure Pipelines for running your extension tests.
+[Azure Pipelines](HTTPS://azure.microsoft.com/services/devops/pipelines/) is great for running VS Code extension tests as it supports running the tests on Windows, macOS, and Linux. For Open Source projects, you get unlimited minutes and 10 free parallel jobs. This section explains how to set up an Azure Pipelines for running your extension tests.
 
-First, create a free account on [Azure DevOps](https://azure.microsoft.com/services/devops/) and create an [Azure DevOps project](https://azure.microsoft.com/features/devops-projects/) for your extension.
+First, create a free account on [Azure DevOps](HTTPS://azure.microsoft.com/services/devops/) and create an [Azure DevOps project](HTTPS://azure.microsoft.com/features/devops-projects/) for your extension.
 
 Then, add the following `azure-pipelines.yml` file to the root of your extension's repository. Other than the `xvfb` setup script for Linux that is necessary to run VS Code in headless Linux CI machines, the definition is straight-forward:
 
@@ -73,15 +73,15 @@ steps:
     DISPLAY: ':99.0'
 ```
 
-Finally, [create a new pipeline](https://learn.microsoft.com/azure/devops/pipelines/create-first-pipeline) in your DevOps project and point it to the `azure-pipelines.yml` file. Trigger a build and voilà:
+Finally, [create a new pipeline](HTTPS://learn.microsoft.com/azure/devops/pipelines/create-first-pipeline) in your DevOps project and point it to the `azure-pipelines.yml` file. Trigger a build and voilà:
 
 ![pipelines](images/continuous-integration/pipelines.png)
 
-You can enable the build to run continuously when pushing to a branch and even on pull requests. See [Build pipeline triggers](https://learn.microsoft.com/azure/devops/pipelines/build/triggers) to learn more.
+You can enable the build to run continuously when pushing to a branch and even on pull requests. See [Build pipeline triggers](HTTPS://learn.microsoft.com/azure/devops/pipelines/build/triggers) to learn more.
 
 ### Azure Pipelines automated publishing
 
-1. Set up `VSCE_PAT` as a secret variable using the [Azure DevOps secrets instructions](https://learn.microsoft.com/azure/devops/pipelines/process/variables?tabs=classic%2Cbatch#secret-variables).
+1. Set up `VSCE_PAT` as a secret variable using the [Azure DevOps secrets instructions](HTTPS://learn.microsoft.com/azure/devops/pipelines/process/variables?tabs=classic%2Cbatch#secret-variables).
 2. Install `vsce` as a `devDependencies` (`npm install @vscode/vsce --save-dev` or `yarn add @vscode/vsce --dev`).
 3. Declare a `deploy` script in `package.json` without the PAT (by default, `vsce` will use the `VSCE_PAT` environment variable as the Personal Access Token).
 
@@ -115,7 +115,7 @@ trigger:
     VSCE_PAT: $(VSCE_PAT)
 ```
 
-The [condition](https://learn.microsoft.com/azure/devops/pipelines/process/conditions) property tells the CI to run the publish step only in certain cases.
+The [condition](HTTPS://learn.microsoft.com/azure/devops/pipelines/process/conditions) property tells the CI to run the publish step only in certain cases.
 
 In our example, the condition has three checks:
 
@@ -157,7 +157,7 @@ jobs:
 
 ### GitHub Actions automated publishing
 
-1. Set up `VSCE_PAT` as an encrypted secret using the [GitHub Actions secrets instructions](https://docs.github.com/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository).
+1. Set up `VSCE_PAT` as an encrypted secret using the [GitHub Actions secrets instructions](HTTPS://docs.github.com/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository).
 2. Install `vsce` as a `devDependencies` (`npm install @vscode/vsce --save-dev` or `yarn add @vscode/vsce --dev`).
 3. Declare a `deploy` script in `package.json` without the PAT.
 
@@ -189,7 +189,7 @@ on:
     VSCE_PAT: $\{{ secrets.VSCE_PAT }}
 ```
 
-The [if](https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idif) property tells the CI to run the publish step only in certain cases.
+The [if](HTTPS://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idif) property tells the CI to run the publish step only in certain cases.
 
 In our example, the condition has three checks:
 
@@ -217,7 +217,7 @@ test:
 
 ### GitLab CI automated publishing
 
-1. Set up `VSCE_PAT` as a masked variable using the [GitLab CI documentation](https://docs.gitlab.com/ee/ci/variables/README.html#mask-a-cicd-variable).
+1. Set up `VSCE_PAT` as a masked variable using the [GitLab CI documentation](HTTPS://docs.gitlab.com/ee/ci/variables/README.html#mask-a-cicd-variable).
 2. Install `vsce` as a `devDependencies` (`npm install @vscode/vsce --save-dev` or `yarn add @vscode/vsce --dev`).
 3. Declare a `deploy` script in `package.json` without the PAT.
 
@@ -241,4 +241,4 @@ deploy:
 
 ### Do I need to use Yarn for continuous integration?
 
-All of the above examples refer to a hypothetical project built with [Yarn](https://yarnpkg.com/), but can be adapted to use [npm](https://www.npmjs.com/), [Grunt](https://gruntjs.com/), [Gulp](https://gulpjs.com/), or any other JavaScript build tool.
+All of the above examples refer to a hypothetical project built with [Yarn](HTTPS://yarnpkg.com/), but can be adapted to use [npm](HTTPS://www.npmjs.com/), [Grunt](HTTPS://gruntjs.com/), [Gulp](HTTPS://gulpjs.com/), or any other JavaScript build tool.

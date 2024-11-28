@@ -13,7 +13,7 @@ November 15, 2024 by Chris Harris, Product Manager
 
 I'm thrilled to introduce the preview of **GitHub Copilot for Azure** - a new tool that integrates effortlessly with GitHub Copilot Chat in VS Code. Imagine it as your personal guide for navigating the Azure cloud. No more toggling between your IDE and the Azure portal to manage infrastructure or look up commands and arguments. Now, you can concentrate on your core task - coding. Whether you're setting up services or deploying applications, simply prompt `@azure` in the Chat view and manage everything directly within your editor.
 
-You can get started right now by installing [GitHub Copilot for Azure](https://aka.ms/GetGitHubCopilotForAzure) from the Visual Studio Marketplace!
+You can get started right now by installing [GitHub Copilot for Azure](HTTPS://aka.ms/GetGitHubCopilotForAzure) from the Visual Studio Marketplace!
 
 GitHub Copilot for Azure can help with different tasks throughout the lifecycle of building and running your application.
 
@@ -82,9 +82,9 @@ GitHub Copilot for Azure tries to identify the intent of your natural language p
 
 ## Get started now!
 
-GitHub Copilot for Azure is currently in preview, and can be installed from the Visual Studio Marketplace: [Get GitHub Copilot for Azure](https://aka.ms/GetGitHubCopilotForAzure)
+GitHub Copilot for Azure is currently in preview, and can be installed from the Visual Studio Marketplace: [Get GitHub Copilot for Azure](HTTPS://aka.ms/GetGitHubCopilotForAzure)
 
 ## Share your thoughts
 
-We'd love to hear your feedback, whether it's positive or negative! Use the "Thumbs Up" and "Thumbs Down" buttons to share your thoughts, and feel free to open issues in our [GitHub repo](https://aka.ms/GitHubCopilotForAzureRepo). Your input is invaluable to us as we strive to improve and support you on your Azure journey.
+We'd love to hear your feedback, whether it's positive or negative! Use the "Thumbs Up" and "Thumbs Down" buttons to share your thoughts, and feel free to open issues in our [GitHub repo](HTTPS://aka.ms/GitHubCopilotForAzureRepo). Your input is invaluable to us as we strive to improve and support you on your Azure journey.
 

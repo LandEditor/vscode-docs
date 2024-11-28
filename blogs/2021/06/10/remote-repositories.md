@@ -8,13 +8,13 @@ Author: Brigit Murtaugh, Eric Amodio
 ---
 # Remote Repositories
 
-June 10, 2021 by Brigit Murtaugh, [`@BrigitMurtaugh](https://twitter.com/BrigitMurtaugh), Eric Amodio, [@eamodio`](https://twitter.com/eamodio)
+June 10, 2021 by Brigit Murtaugh, [`@BrigitMurtaugh](HTTPS://twitter.com/BrigitMurtaugh), Eric Amodio, [@eamodio`](HTTPS://twitter.com/eamodio)
 
->**Note**: The Remote Repositories extension has been renamed to [`GitHub Repositories](https://marketplace.visualstudio.com/items?itemName=github.remotehub) since this blog post was published. You can also check out the [latest documentation`](/docs/sourcecontrol/github.md#github-repositories-extension), which will have the most updated information on the extension.
+>**Note**: The Remote Repositories extension has been renamed to [`GitHub Repositories](HTTPS://marketplace.visualstudio.com/items?itemName=github.remotehub) since this blog post was published. You can also check out the [latest documentation`](/docs/sourcecontrol/github.md#github-repositories-extension), which will have the most updated information on the extension.
 
-We're excited to present the new [`Remote Repositories`](https://marketplace.visualstudio.com/items?itemName=github.remotehub) extension for Visual Studio Code! This is a new experience that we've been building in partnership with our friends at GitHub to enable working with source code repositories quickly and safely inside VS Code.
+We're excited to present the new [`Remote Repositories`](HTTPS://marketplace.visualstudio.com/items?itemName=github.remotehub) extension for Visual Studio Code! This is a new experience that we've been building in partnership with our friends at GitHub to enable working with source code repositories quickly and safely inside VS Code.
 
-[![Remote Repositories extension](remote-repositories-banner.png)](https://marketplace.visualstudio.com/items?itemName=github.remotehub)
+[![Remote Repositories extension](remote-repositories-banner.png)](HTTPS://marketplace.visualstudio.com/items?itemName=github.remotehub)
 
 ## A quicker way to open source code repositories
 
@@ -22,7 +22,7 @@ In VS Code, we've offered integrated support for Git from the very beginning, an
 
 However, a large part of what developers do every day involves reading other people's code: reviewing pull requests, browsing open-source repositories, experimenting with new technologies or projects, inspecting upstream dependencies to debug applications, etc. What all of these have in common is that as a first step, you usually clone the repository locally and then open the code in your favorite code editor (which we hope is VS Code!). Yet, cloning a repository takes time, may lead you to review an outdated version of the repo if you forget to pull, and can sometimes be a security risk if you're unfamiliar with the code.
 
-The new [`Remote Repositories`](https://marketplace.visualstudio.com/items?itemName=github.remotehub) extension, published by GitHub, makes the experience of opening source code repositories in VS Code instant and safe. With this, you can quickly browse, search, edit, and commit to any remote GitHub repository (and soon, Azure Repos) directly from within VS Code, no clone necessary!
+The new [`Remote Repositories`](HTTPS://marketplace.visualstudio.com/items?itemName=github.remotehub) extension, published by GitHub, makes the experience of opening source code repositories in VS Code instant and safe. With this, you can quickly browse, search, edit, and commit to any remote GitHub repository (and soon, Azure Repos) directly from within VS Code, no clone necessary!
 
 You can work on as many repos as you like without having to save any source code on your machine. Remote Repositories saves you time and local disk space and empowers you to stay entirely within VS Code for all your source control tasks.
 
@@ -30,11 +30,11 @@ In this blog post, we'll explore just how easy it is to get started with Remote 
 
 ## Open your first remote repo in VS Code
 
-Let's open a remote repo in VS Code. First, make sure you have installed the [`Remote Repositories`](https://marketplace.visualstudio.com/items?itemName=github.remotehub) extension.
+Let's open a remote repo in VS Code. First, make sure you have installed the [`Remote Repositories`](HTTPS://marketplace.visualstudio.com/items?itemName=github.remotehub) extension.
 
-Currently, Remote Repositories supports GitHub repos, with support for Azure Repos coming soon. In this blog post, we'll start by opening the VS Code repository [`(microsoft/vscode)](https://github.com/microsoft/vscode).
+Currently, Remote Repositories supports GitHub repos, with support for Azure Repos coming soon. In this blog post, we'll start by opening the VS Code repository [`(microsoft/vscode)](HTTPS://github.com/microsoft/vscode).
 
-After installing the Remote Repositories extension, we get instant access to its **Open Remote Repository** command by clicking on the remote indicator in the lower left of VS Code (along with commands from any other [`Remote Development extensions`](https://code.visualstudio.com/docs/remote/remote-overview) you have installed):
+After installing the Remote Repositories extension, we get instant access to its **Open Remote Repository** command by clicking on the remote indicator in the lower left of VS Code (along with commands from any other [`Remote Development extensions`](HTTPS://code.visualstudio.com/docs/remote/remote-overview) you have installed):
 
 ![`Remote indicator in VS Code`](remote-indicator.png)
 
@@ -84,13 +84,13 @@ When you commit changes, they'll automatically show up on GitHub – you don't n
 
 ### Create or check out pull requests
 
-Remote Repositories works well with the [`GitHub Pull Requests and Issues extension`](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github), which allows you to review and manage pull requests and issues from GitHub directly in VS Code. Use the two extensions in parallel to quickly check out PRs and work on issues without ever having to clone code locally or leave VS Code.
+Remote Repositories works well with the [`GitHub Pull Requests and Issues extension`](HTTPS://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github), which allows you to review and manage pull requests and issues from GitHub directly in VS Code. Use the two extensions in parallel to quickly check out PRs and work on issues without ever having to clone code locally or leave VS Code.
 
 You can make a change to your code, create a new branch and a pull request (PR) based on that change, and then check out the PR, all in a few clicks.
 
 ![`Gif using GitHub Pull Request extension to create branch and PR, and check out that PR`](remote-repositories3.gif)
 
-You can learn more about the GitHub Pull Requests and Issues extension in our [`Working with GitHub`](https://code.visualstudio.com/docs/sourcecontrol/github) article.
+You can learn more about the GitHub Pull Requests and Issues extension in our [`Working with GitHub`](HTTPS://code.visualstudio.com/docs/sourcecontrol/github) article.
 
 ### Keep changes isolated to branches
 
@@ -141,8 +141,8 @@ Click the remote indicator in the lower left, then select **Continue Working on.
 You'll be presented with three options:
 
 * **Clone Repository Locally**: Clone the current repo to your local machine. A local file explorer will pop up, allowing you to select a location on disk to clone the remote repo.
-* **Clone Repository in Container Volume**: Clone the current repo in a Docker [`container volume](/docs/devcontainers/containers.md#quick-start-open-a-git-repository-or-github-pr-in-an-isolated-container-volume) using the Dev Containers extension (you'll need the [Dev Containers`](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension and Docker installed). VS Code will reload and connect using Dev Containers, and the remote indicator will now read **Dev Container: {image name}**.
-* **Open in Codespaces**: Continue your work in a [`GitHub Codespace`](https://github.com/features/codespaces). When you select this option, a browser will open and direct you to your list of Codespaces for this repository.
+* **Clone Repository in Container Volume**: Clone the current repo in a Docker [`container volume](/docs/devcontainers/containers.md#quick-start-open-a-git-repository-or-github-pr-in-an-isolated-container-volume) using the Dev Containers extension (you'll need the [Dev Containers`](HTTPS://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension and Docker installed). VS Code will reload and connect using Dev Containers, and the remote indicator will now read **Dev Container: {image name}**.
+* **Open in Codespaces**: Continue your work in a [`GitHub Codespace`](HTTPS://github.com/features/codespaces). When you select this option, a browser will open and direct you to your list of Codespaces for this repository.
 
 ![`VS Code Command Palette with options to continue locally, in a volume, or in Codespaces`](continue-options.png)
 
@@ -170,23 +170,23 @@ When an extension has no code but is a pure color theme, keybinding, snippets, o
 
 Extensions that run actual code, meaning it defines a main entry point, require inspection and possibly adoption.
 
-The [`API support`](https://github.com/microsoft/vscode/blob/dc8bd9cd7e5231745549ac6218266c63271f48cd/src/vs/vscode.d.ts#L7038) for virtual file systems is through the `FileSystemProvider` interface. A file system provider is registered for a new URI scheme (for example, `vscode-vfs`), and resources on that file system will be represented by URIs using that schema (`vscode-vfs://github/microsoft/vscode/package.json`).
+The [`API support`](HTTPS://github.com/microsoft/vscode/blob/dc8bd9cd7e5231745549ac6218266c63271f48cd/src/vs/vscode.d.ts#L7038) for virtual file systems is through the `FileSystemProvider` interface. A file system provider is registered for a new URI scheme (for example, `vscode-vfs`), and resources on that file system will be represented by URIs using that schema (`vscode-vfs://github/microsoft/vscode/package.json`).
 
 There is a `capabilities` property in the extension's `package.json`, and the `virtualWorkspaces` sub-property is used to signal whether an extension works with virtual workspaces or not.
 
-You can learn more about virtual file systems, workspaces, and how to implement them for extensions in the [`virtual workspaces extension authors guide`](https://github.com/microsoft/vscode/wiki/Virtual-Workspaces).
+You can learn more about virtual file systems, workspaces, and how to implement them for extensions in the [`virtual workspaces extension authors guide`](HTTPS://github.com/microsoft/vscode/wiki/Virtual-Workspaces).
 
 ## Feedback & further reading
 
 We are very excited for you to try out Remote Repositories and can't wait for your feedback.
 
-Please install the [`Remote Repositories](https://marketplace.visualstudio.com/items?itemName=github.remotehub) extension. You can file any [issues or feature requests](https://github.com/microsoft/vscode-remote-repositories-github) or Tweet us your thoughts [@code`](https://twitter.com/code).
+Please install the [`Remote Repositories](HTTPS://marketplace.visualstudio.com/items?itemName=github.remotehub) extension. You can file any [issues or feature requests](HTTPS://github.com/microsoft/vscode-remote-repositories-github) or Tweet us your thoughts [@code`](HTTPS://twitter.com/code).
 
-You can also check out our new [`YouTube video`](https://www.youtube.com/watch?v=wHsmaXoGIXI) about how to use the Remote Repositories extension.
+You can also check out our new [`YouTube video`](HTTPS://www.youtube.com/watch?v=wHsmaXoGIXI) about how to use the Remote Repositories extension.
 
-If you're an extension author, check out the [`Virtual Workspace Support for Extension Authors guide](https://github.com/microsoft/vscode/wiki/Virtual-Workspaces) and share any questions or feedback in our [tracking issue](https://github.com/microsoft/vscode/issues/123115). You can also join the Extension Authors community [Slack group`](https://vscode-dev-community.slack.com/join/shared_invite/zt-ggynfxra-KAozfLTWe03w_PwRxwtfvA#/shared-invite/email).
+If you're an extension author, check out the [`Virtual Workspace Support for Extension Authors guide](HTTPS://github.com/microsoft/vscode/wiki/Virtual-Workspaces) and share any questions or feedback in our [tracking issue](HTTPS://github.com/microsoft/vscode/issues/123115). You can also join the Extension Authors community [Slack group`](HTTPS://vscode-dev-community.slack.com/join/shared_invite/zt-ggynfxra-KAozfLTWe03w_PwRxwtfvA#/shared-invite/email).
 
 Happy Coding!
 
-Brigit Murtaugh, VS Code Program Manager [`@BrigitMurtaugh`](https://twitter.com/BrigitMurtaugh)<br>
-Eric Amodio, VS Code Principal Software Engineer [`@eamodio`](https://twitter.com/eamodio)
+Brigit Murtaugh, VS Code Program Manager [`@BrigitMurtaugh`](HTTPS://twitter.com/BrigitMurtaugh)<br>
+Eric Amodio, VS Code Principal Software Engineer [`@eamodio`](HTTPS://twitter.com/eamodio)

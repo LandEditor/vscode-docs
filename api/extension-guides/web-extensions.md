@@ -32,7 +32,7 @@ The example below shows the `package.json` for a simple hello world extension, t
   "description": "HelloWorld example for VS Code in the browser",
   "version": "0.0.1",
   "publisher": "vscode-samples",
-  "repository": "https://github.com/microsoft/vscode-extension-samples/helloworld-web-sample",
+  "repository": "HTTPS://github.com/microsoft/vscode-extension-samples/helloworld-web-sample",
   "engines": {
     "vscode": "^1.74.0"
   },
@@ -78,26 +78,26 @@ The [web extension enablement](#web-extension-enablement) section lists the rule
 
 ### Web extension main file
 
-The web extension's main file is defined by the `browser` property. The script runs in the web extension host in a [Browser WebWorker](https://developer.mozilla.org/docs/Web/API/Web_Workers_API) environment. It is restricted by the browser worker sandbox and has limitations compared to normal extensions running in a Node.js runtime.
+The web extension's main file is defined by the `browser` property. The script runs in the web extension host in a [Browser WebWorker](HTTPS://developer.mozilla.org/docs/Web/API/Web_Workers_API) environment. It is restricted by the browser worker sandbox and has limitations compared to normal extensions running in a Node.js runtime.
 
 * Importing or requiring other modules is not supported. `importScripts` is not available as well. As a consequence, the code must be packaged to a single file.
 * The [VS Code API](/api/references/vscode-api) can be loaded via the pattern `require('vscode')`. This will work because there is a shim for `require`, but this shim cannot be used to load additional extension files or additional node modules. It only works with `require('vscode')`.
 * Node.js globals and libraries such as `process`, `os`, `setImmediate`, `path`, `util`, `url` are not available at runtime. They can, however, be added with tools like webpack. The [webpack configuration](#webpack-configuration) section explains how this is done.
 * The opened workspace or folder is on a virtual file system. Access to workspace files needs to go through the VS Code [file system](/api/references/vscode-api#FileSystem) API accessible at `vscode.workspace.fs`.
 * [Extension context](/api/references/vscode-api#ExtensionContext) locations (`ExtensionContext.extensionUri`) and  storage locations (`ExtensionContext.storageUri`, `globalStorageUri`) are also on a virtual file system and need to go through `vscode.workspace.fs`.
-* For accessing web resources, the [Fetch](https://developer.mozilla.org/docs/Web/API/Fetch_API) API must be used. Accessed resources need to support [Cross-Origin Resource Sharing](https://developer.mozilla.org/docs/Web/HTTP/CORS) (CORS)
-* Creating child processes or running executables is not possible. However, web workers can be created through the [Worker](https://developer.mozilla.org/en-US/docs/Web/API/Worker) API. This is used for running language servers as described in the [Language Server Protocol in web extensions](#language-server-protocol-in-web-extensions) section.
+* For accessing web resources, the [Fetch](HTTPS://developer.mozilla.org/docs/Web/API/Fetch_API) API must be used. Accessed resources need to support [Cross-Origin Resource Sharing](HTTPS://developer.mozilla.org/docs/Web/HTTP/CORS) (CORS)
+* Creating child processes or running executables is not possible. However, web workers can be created through the [Worker](HTTPS://developer.mozilla.org/en-US/docs/Web/API/Worker) API. This is used for running language servers as described in the [Language Server Protocol in web extensions](#language-server-protocol-in-web-extensions) section.
 * As with regular extensions, the extension's `activate/deactivate` functions need to be exported via the pattern `exports.activate = ...`.
 
 ## Develop a web extension
 
 Thankfully, tools like TypeScript and webpack can hide many of the browser runtime constraints and allow you to write web extensions the same way as regular extensions. Both a web extension and a regular extension can often be generated from the same source code.
 
-For example, the `Hello Web Extension` created by the `yo code` [generator](https://www.npmjs.com/package/generator-code) only differs in the build scripts. You can run and debug the generated extension just like traditional Node.js extensions by using the provided launch configurations accessible using the **Debug: Select and Start Debugging** command.
+For example, the `Hello Web Extension` created by the `yo code` [generator](HTTPS://www.npmjs.com/package/generator-code) only differs in the build scripts. You can run and debug the generated extension just like traditional Node.js extensions by using the provided launch configurations accessible using the **Debug: Select and Start Debugging** command.
 
 ## Create a web extension
 
-To scaffold a new web extension, use `yo code` and pick **New Web Extension**. Make sure to have the latest version of [generator-code](https://www.npmjs.com/package/generator-code) (>= generator-code@1.6) installed. To update the generator and yo, run `npm i -g yo generator-code`.
+To scaffold a new web extension, use `yo code` and pick **New Web Extension**. Make sure to have the latest version of [generator-code](HTTPS://www.npmjs.com/package/generator-code) (>= generator-code@1.6) installed. To update the generator and yo, run `npm i -g yo generator-code`.
 
 The extension that is created consists of the extension's source code (a command showing a hello world notification), the `package.json` manifest file, and a webpack or esbuild configuration file.
 
@@ -113,7 +113,7 @@ To keep things simpler, we assume you use `webpack` as the bundler. At the end o
 * `.vscode/extensions.json` contains the extensions that provide the problem matchers. These extensions need to be installed for the launch configurations to work.
 * `tsconfig.json` defines the compile options matching the `webworker` runtime.
 
-The source code in the [helloworld-web-sample](https://github.com/microsoft/vscode-extension-samples/tree/main/helloworld-web-sample) is similar to what's created by the generator.
+The source code in the [helloworld-web-sample](HTTPS://github.com/microsoft/vscode-extension-samples/tree/main/helloworld-web-sample) is similar to what's created by the generator.
 
 ### Webpack configuration
 
@@ -121,7 +121,7 @@ The webpack configuration file is automatically generated by `yo code`. It bundl
 
 Later we explain how to use esbuild as bundler, but for now we start with webpack.
 
-[webpack.config.js](https://github.com/microsoft/vscode-extension-samples/blob/main/helloworld-web-sample/webpack.config.js)
+[webpack.config.js](HTTPS://github.com/microsoft/vscode-extension-samples/blob/main/helloworld-web-sample/webpack.config.js)
 
 ```js
 const path = require('path');
@@ -150,7 +150,7 @@ const webExtensionConfig = {
     },
     fallback: {
       // Webpack 5 no longer polyfills Node.js core modules automatically.
-      // see https://webpack.js.org/configuration/resolve/#resolvefallback
+      // see HTTPS://webpack.js.org/configuration/resolve/#resolvefallback
       // for the list of Node.js core module polyfills.
       'assert': require.resolve('assert')
     }
@@ -191,16 +191,16 @@ Some important fields of `webpack.config.js` are:
 * The `target` field indicates which type of environment the compiled JavaScript file will run. For web extensions, you want this to be `webworker`.
 * The `resolve` field contains the ability to add aliases and fallbacks for node libraries that don't work in the browser.
   * If you're using a library like `path`, you can specify how to resolve `path` in a web compiled context. For instance, you can point to a file in the project that defines `path` with `path: path.resolve(__dirname, 'src/my-path-implementation-for-web.js')`. Or you can use the Browserify node packaged version of the library called `path-browserify` and specify `path: require.resolve('path-browserify')`.
-  * See [webpack resolve.fallback](https://webpack.js.org/configuration/resolve/#resolvefallback) for the list of Node.js core module polyfills.
-* The `plugins` section uses the [DefinePlugin plugin](https://webpack.js.org/plugins/define-plugin/) to polyfill globals such as the `process` Node.js global.
+  * See [webpack resolve.fallback](HTTPS://webpack.js.org/configuration/resolve/#resolvefallback) for the list of Node.js core module polyfills.
+* The `plugins` section uses the [DefinePlugin plugin](HTTPS://webpack.js.org/plugins/define-plugin/) to polyfill globals such as the `process` Node.js global.
 
 ## Test your web extension
 
 There are currently three ways to test a web extension before publishing it to the Marketplace.
 
 * Use VS Code running on the desktop with the `--extensionDevelopmentKind=web` option to run your web extension in a web extension host running in VS Code.
-* Use the [@vscode/test-web](https://github.com/microsoft/vscode-test-web) node module to open a browser containing VS Code for the Web including your extension, served from a local server.
-* [Sideload](#test-your-web-extension-in-vscode.dev) your extension onto [vscode.dev](https://vscode.dev) to see your extension in the actual environment.
+* Use the [@vscode/test-web](HTTPS://github.com/microsoft/vscode-test-web) node module to open a browser containing VS Code for the Web including your extension, served from a local server.
+* [Sideload](#test-your-web-extension-in-vscode.dev) your extension onto [vscode.dev](HTTPS://vscode.dev) to see your extension in the actual environment.
 
 ### Test your web extension in VS Code running on desktop
 
@@ -249,7 +249,7 @@ It uses the task `npm: watch-web` to compile the extension by calling `npm run w
 }
 ```
 
-`$ts-webpack-watch` is a problem matcher that can parse the output from the webpack tool. It is provided by the [TypeScript + Webpack Problem Matchers](https://marketplace.visualstudio.com/items?itemName=eamodio.tsl-problem-matcher) extension.
+`$ts-webpack-watch` is a problem matcher that can parse the output from the webpack tool. It is provided by the [TypeScript + Webpack Problem Matchers](HTTPS://marketplace.visualstudio.com/items?itemName=eamodio.tsl-problem-matcher) extension.
 
 In the **Extension Development Host** instance that launches, the web extension will be available and running in a web extension host. Run the `Hello World` command to activate the extension.
 
@@ -257,7 +257,7 @@ Open the **Running Extensions** view (command: **Developer: Show Running Extensi
 
 ### Test your web extension in a browser using @vscode/test-web
 
-The [@vscode/test-web](https://github.com/microsoft/vscode-test-web) node module offers a CLI and API to test a web extension in a browser.
+The [@vscode/test-web](HTTPS://github.com/microsoft/vscode-test-web) node module offers a CLI and API to test a web extension in a browser.
 
 The node module contributes an npm binary `vscode-test-web` that can open VS Code for the Web from the command line:
 
@@ -282,14 +282,14 @@ Or better, add `@vscode/test-web` as a development dependency to your extension 
   }
 ```
 
-Check the [@vscode/test-web README](https://www.npmjs.com/package/@vscode/test-web) for more CLI options:
+Check the [@vscode/test-web README](HTTPS://www.npmjs.com/package/@vscode/test-web) for more CLI options:
 
 |Option|Argument Description|
 |-----|-----|
 | --browserType | The browser to launch: `chromium` (default), `firefox` or `webkit` |
 | --extensionDevelopmentPath | A path pointing to an extension under development to include. |
 | --extensionTestsPath |  A path to a test module to run. |
-| --permission|  Permission granted to the opened browser: e.g. `clipboard-read`, `clipboard-write`.<br>See [full list of options](https://playwright.dev/docs/api/class-browsercontext#browser-context-grant-permissions). Argument can be provided multiple times.  |
+| --permission|  Permission granted to the opened browser: e.g. `clipboard-read`, `clipboard-write`.<br>See [full list of options](HTTPS://playwright.dev/docs/api/class-browsercontext#browser-context-grant-permissions). Argument can be provided multiple times.  |
 | --folder-uri | URI of the workspace to open VS Code on. Ignored when `folderPath` is provided |
 | --extensionPath | A path pointing to a folder containing additional extensions to include.<br>Argument can be provided multiple times. |
 | folderPath |  A local folder to open VS Code on.<br>The folder content will be available as a virtual file system and opened as workspace. |
@@ -298,11 +298,11 @@ The web bits of VS Code are downloaded to a folder `.vscode-test-web`. You want 
 
 ### Test your web extension in vscode.dev
 
-Before you publish your extension for everyone to use on VS Code for the Web, you can verify how your extension behaves in the actual [vscode.dev](https://vscode.dev) environment.
+Before you publish your extension for everyone to use on VS Code for the Web, you can verify how your extension behaves in the actual [vscode.dev](HTTPS://vscode.dev) environment.
 
 To see your extension on vscode.dev, you first need to host it from your machine for vscode.dev to download and run.
 
-First, you'll need to [install `mkcert`](https://github.com/FiloSottile/mkcert#installation).
+First, you'll need to [install `mkcert`](HTTPS://github.com/FiloSottile/mkcert#installation).
 
 Then, generate the `localhost.pem` and `localhost-key.pem` files into a location you won't lose them (for example `$HOME/certs`):
 
@@ -323,15 +323,15 @@ npx: installed 78 in 2.196s
    │                                                    │
    │   Serving!                                         │
    │                                                    │
-   │   - Local:            https://localhost:5000       │
-   │   - On Your Network:  https://172.19.255.26:5000   │
+   │   - Local:            HTTPS://localhost:5000       │
+   │   - On Your Network:  HTTPS://172.19.255.26:5000   │
    │                                                    │
    │   Copied local address to clipboard!               │
    │                                                    │
    └────────────────────────────────────────────────────┘
 ```
 
-Finally, open [vscode.dev](https://vscode.dev), run **Developer: Install Extension From Location...** from the Command Palette (`kb(workbench.action.showCommands)`), paste the URL from above, `https://localhost:5000` in the example, and select **Install**.
+Finally, open [vscode.dev](HTTPS://vscode.dev), run **Developer: Install Extension From Location...** from the Command Palette (`kb(workbench.action.showCommands)`), paste the URL from above, `HTTPS://localhost:5000` in the example, and select **Install**.
 
 **Check the logs**
 
@@ -343,7 +343,7 @@ You may see other logs from vscode.dev itself. In addition, you can't easily set
 
 Web extension tests are supported and can be implemented similar to regular extension tests. See the [Testing Extensions](/api/working-with-extensions/testing-extension) article to learn the basic structure of extension tests.
 
-The [@vscode/test-web](https://github.com/microsoft/vscode-test-web) node module is the equivalent to [@vscode/test-electron](https://github.com/microsoft/vscode-test) (previously named `vscode-test`). It allows you to run extension tests from the command line on Chromium, Firefox, and Safari.
+The [@vscode/test-web](HTTPS://github.com/microsoft/vscode-test-web) node module is the equivalent to [@vscode/test-electron](HTTPS://github.com/microsoft/vscode-test) (previously named `vscode-test`). It allows you to run extension tests from the command line on Chromium, Firefox, and Safari.
 
 The utility does the following steps:
 
@@ -358,7 +358,7 @@ The test runner script is running on the web extension host with the same restri
 * All files are bundled into a single file. It should contain the test runner (for example, Mocha) and all tests (typically `*.test.ts`).
 * Only `require('vscode')` is supported.
 
-The [webpack config](https://github.com/microsoft/vscode-extension-samples/blob/main/helloworld-web-sample/webpack.config.js) that is created by the `yo code` web extension generator has a section for tests. It expects the test runner script at `./src/web/test/suite/index.ts`. The provided [test runner script](https://github.com/microsoft/vscode-extension-samples/blob/main/helloworld-web-sample/src/web/test/suite/index.ts) uses the web version of Mocha and contains webpack-specific syntax to import all test files.
+The [webpack config](HTTPS://github.com/microsoft/vscode-extension-samples/blob/main/helloworld-web-sample/webpack.config.js) that is created by the `yo code` web extension generator has a section for tests. It expects the test runner script at `./src/web/test/suite/index.ts`. The provided [test runner script](HTTPS://github.com/microsoft/vscode-extension-samples/blob/main/helloworld-web-sample/src/web/test/suite/index.ts) uses the web version of Mocha and contains webpack-specific syntax to import all test files.
 
 ```ts
 require('mocha/mocha'); // import the mocha web build
@@ -432,7 +432,7 @@ To run (and debug) extension tests in VS Code (Insiders) desktop, use the `Exten
 
 ## Publish a web extension
 
-Web extensions are hosted on the [Marketplace](https://marketplace.visualstudio.com/vscode) along with other extensions.
+Web extensions are hosted on the [Marketplace](HTTPS://marketplace.visualstudio.com/vscode) along with other extensions.
 
 Make sure to use the latest version of `vsce` to publish your extension. `vsce` tags all extensions that are web extension. For that `vsce` is using the rules listed in the [web extension enablement](#web-extension-enablement) section.
 
@@ -450,7 +450,7 @@ Extensions with source code (defined by the `main` property) need to provide a [
 
 Use these steps to recompile your extension code for the browser environment:
 
-* Add a webpack config file as shown in the [webpack configuration](#webpack-configuration) section. If you already have a webpack file for your Node.js extension code, you can add a new section for web. Check out the [vscode-css-formatter](https://github.com/aeschli/vscode-css-formatter/blob/master/webpack.config.js) as an example.
+* Add a webpack config file as shown in the [webpack configuration](#webpack-configuration) section. If you already have a webpack file for your Node.js extension code, you can add a new section for web. Check out the [vscode-css-formatter](HTTPS://github.com/aeschli/vscode-css-formatter/blob/master/webpack.config.js) as an example.
 * Add the `launch.json` and `tasks.json` files as shown in the [Test your web extension](#test-your-web-extension) section.
 * In the webpack config file, set the input file to the existing Node.js main file or create a new main file for the web extension.
 * In `package.json`, add a `browser` and the `scripts` properties as shown in the [Web extension anatomy](#web-extension-anatomy) section.
@@ -458,12 +458,12 @@ Use these steps to recompile your extension code for the browser environment:
 
 To make sure as much source code as possible can be reused, here are a few techniques:
 
-* To polyfill a Node.js core module such as `path`, add an entry to [resolve.fallback](https://webpack.js.org/configuration/resolve/#resolvefallback).
-* To provide a Node.js global such as `process` use the [DefinePlugin plugin](https://webpack.js.org/plugins/define-plugin).
-* Use node modules that work in both browser and node runtime. Node modules can do that by defining both `browser` and `main` entry points. Webpack will automatically use the one matching its target. Examples of node modules that do this are [request-light](https://github.com/microsoft/node-request-light) and [vscode-nls](https://github.com/Microsoft/vscode-nls).
-* To provide an alternate implementation for a node module or source file, use [resolve.alias](https://webpack.js.org/configuration/resolve/#resolvealias).
+* To polyfill a Node.js core module such as `path`, add an entry to [resolve.fallback](HTTPS://webpack.js.org/configuration/resolve/#resolvefallback).
+* To provide a Node.js global such as `process` use the [DefinePlugin plugin](HTTPS://webpack.js.org/plugins/define-plugin).
+* Use node modules that work in both browser and node runtime. Node modules can do that by defining both `browser` and `main` entry points. Webpack will automatically use the one matching its target. Examples of node modules that do this are [request-light](HTTPS://github.com/microsoft/node-request-light) and [vscode-nls](HTTPS://github.com/Microsoft/vscode-nls).
+* To provide an alternate implementation for a node module or source file, use [resolve.alias](HTTPS://webpack.js.org/configuration/resolve/#resolvealias).
 * Separate your code in a browser part, Node.js part, and common part. In common, only use code that works in both the browser and Node.js runtime. Create abstractions for functionality that has different implementations in Node.js and the browser.
-* Look out for usages of `path`, `URI.file`, `context.extensionPath`, `rootPath`. `uri.fsPath`. These will not work with virtual workspaces (non-file system) as they are used in VS Code for the Web. Instead use URIs with `URI.parse`, `context.extensionUri`. The [vscode-uri](https://www.npmjs.com/package/vscode-uri) node module provides `joinPath`, `dirName`, `baseName`, `extName`, `resolvePath`.
+* Look out for usages of `path`, `URI.file`, `context.extensionPath`, `rootPath`. `uri.fsPath`. These will not work with virtual workspaces (non-file system) as they are used in VS Code for the Web. Instead use URIs with `URI.parse`, `context.extensionUri`. The [vscode-uri](HTTPS://www.npmjs.com/package/vscode-uri) node module provides `joinPath`, `dirName`, `baseName`, `extName`, `resolvePath`.
 * Look out for usages of `fs`. Replace by using vscode `workspace.fs`.
 
 It is fine to provide less functionality when your extension is running in the web. Use [when clause contexts](/api/references/when-clause-contexts) to control which commands, views, and tasks are available or hidden with running in a virtual workspace on the web.
@@ -473,13 +473,13 @@ It is fine to provide less functionality when your extension is running in the w
 * Use `shellExecutionSupported` if there is a platform shell present.
 * Implement alternative command handlers that show a dialog to explain why the command is not applicable.
 
-WebWorkers can be used as an alternative to forking processes. We have updated several language servers to run as web extensions, including the built-in [JSON](https://github.com/microsoft/vscode/tree/main/extensions/json-language-features), [CSS](https://github.com/microsoft/vscode/tree/main/extensions/css-language-features), and [HTML](https://github.com/microsoft/vscode/tree/main/extensions/html-language-features) language servers. The [Language Server Protocol](#language-server-protocol-in-web-extensions) section below gives more details.
+WebWorkers can be used as an alternative to forking processes. We have updated several language servers to run as web extensions, including the built-in [JSON](HTTPS://github.com/microsoft/vscode/tree/main/extensions/json-language-features), [CSS](HTTPS://github.com/microsoft/vscode/tree/main/extensions/css-language-features), and [HTML](HTTPS://github.com/microsoft/vscode/tree/main/extensions/html-language-features) language servers. The [Language Server Protocol](#language-server-protocol-in-web-extensions) section below gives more details.
 
-The browser runtime environment only supports the execution of JavaScript and [WebAssembly](https://webassembly.org/). Libraries written in other programming languages need to be cross-compiled, for instance there is tooling to compile [C/C++](https://developer.mozilla.org/en-US/docs/WebAssembly/C_to_wasm) and [Rust](https://developer.mozilla.org/en-US/docs/WebAssembly/Rust_to_wasm) to WebAssembly. The [vscode-anycode](https://github.com/microsoft/vscode-anycode) extension, for example, uses [tree-sitter](https://www.npmjs.com/package/tree-sitter), which is C/C++ code compiled to WebAssembly.
+The browser runtime environment only supports the execution of JavaScript and [WebAssembly](HTTPS://webassembly.org/). Libraries written in other programming languages need to be cross-compiled, for instance there is tooling to compile [C/C++](HTTPS://developer.mozilla.org/en-US/docs/WebAssembly/C_to_wasm) and [Rust](HTTPS://developer.mozilla.org/en-US/docs/WebAssembly/Rust_to_wasm) to WebAssembly. The [vscode-anycode](HTTPS://github.com/microsoft/vscode-anycode) extension, for example, uses [tree-sitter](HTTPS://www.npmjs.com/package/tree-sitter), which is C/C++ code compiled to WebAssembly.
 
 ### Language Server Protocol in web extensions
 
-[vscode-languageserver-node](https://github.com/Microsoft/vscode-languageserver-node) is an implementation of the [Language Server Protocol](https://microsoft.github.io/language-server-protocol) (LSP) that is used as a foundation to language server implementations such as [JSON](https://github.com/microsoft/vscode/tree/main/extensions/json-language-features), [CSS](https://github.com/microsoft/vscode/tree/main/extensions/css-language-features), and [HTML](https://github.com/microsoft/vscode/tree/main/extensions/html-language-features).
+[vscode-languageserver-node](HTTPS://github.com/Microsoft/vscode-languageserver-node) is an implementation of the [Language Server Protocol](HTTPS://microsoft.github.io/language-server-protocol) (LSP) that is used as a foundation to language server implementations such as [JSON](HTTPS://github.com/microsoft/vscode/tree/main/extensions/json-language-features), [CSS](HTTPS://github.com/microsoft/vscode/tree/main/extensions/css-language-features), and [HTML](HTTPS://github.com/microsoft/vscode/tree/main/extensions/html-language-features).
 
 Since 3.16.0, the client and server now also provide a browser implementation. The server can run in a web worker and the connection is based on the webworkers `postMessage` protocol.
 
@@ -491,7 +491,7 @@ import { LanguageClient } from `vscode-languageclient/browser`
 
 The server at `vscode-languageserver/browser`.
 
-The [lsp-web-extension-sample](https://github.com/microsoft/vscode-extension-samples/tree/main/lsp-web-extension-sample) shows how this works.
+The [lsp-web-extension-sample](HTTPS://github.com/microsoft/vscode-extension-samples/tree/main/lsp-web-extension-sample) shows how this works.
 
 ## Web extension enablement
 
@@ -736,5 +736,5 @@ export function run(): Promise<void> {
 
 ## Samples
 
-* [helloworld-web-sample](https://github.com/microsoft/vscode-extension-samples/tree/main/helloworld-web-sample)
-* [lsp-web-extension-sample](https://github.com/microsoft/vscode-extension-samples/tree/main/lsp-web-extension-sample)
+* [helloworld-web-sample](HTTPS://github.com/microsoft/vscode-extension-samples/tree/main/helloworld-web-sample)
+* [lsp-web-extension-sample](HTTPS://github.com/microsoft/vscode-extension-samples/tree/main/lsp-web-extension-sample)

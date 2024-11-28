@@ -9,15 +9,15 @@ Author: Wade Anderson
 ---
 # Sublime Text Extension Roundup
 
-April 10, 2017 Wade Anderson, [@waderyan_](https://twitter.com/waderyan_)
+April 10, 2017 Wade Anderson, [@waderyan_](HTTPS://twitter.com/waderyan_)
 
-I'm a big fan of Sublime Text. It was my [go to editor](https://www.youtube.com/watch?v=OnkYnm-WiVo&t=15s) for my first few years of programming. Naturally, I now like VS Code more, but sometimes I miss things from Sublime Text.
+I'm a big fan of Sublime Text. It was my [go to editor](HTTPS://www.youtube.com/watch?v=OnkYnm-WiVo&t=15s) for my first few years of programming. Naturally, I now like VS Code more, but sometimes I miss things from Sublime Text.
 
-We wrote an [extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.sublime-keybindings) to help alleviate some of the pain I felt (for example, keyboard muscle memory). There is still more work to do (see this [GitHub issue](https://github.com/microsoft/vscode/issues/3776)), but the gaps are closing fast. You can find other extensions to cover almost all of the features you are missing.
+We wrote an [extension](HTTPS://marketplace.visualstudio.com/items?itemName=ms-vscode.sublime-keybindings) to help alleviate some of the pain I felt (for example, keyboard muscle memory). There is still more work to do (see this [GitHub issue](HTTPS://github.com/microsoft/vscode/issues/3776)), but the gaps are closing fast. You can find other extensions to cover almost all of the features you are missing.
 
 In this blog, I'll present some existing VS Code features and suggested extensions to help you if you are coming from Sublime Text.
 
->**Tip:** To install all of the extensions mentioned in this blog post, check out this [extension pack](https://marketplace.visualstudio.com/items?itemName=waderyan.sublime-text-pack).
+>**Tip:** To install all of the extensions mentioned in this blog post, check out this [extension pack](HTTPS://marketplace.visualstudio.com/items?itemName=waderyan.sublime-text-pack).
 
 ## VS Code features
 
@@ -53,9 +53,9 @@ To ease moving from Sublime Text, I recommend using the following extensions:
 
 ## Sublime Text Keymap
 
-Marketplace - [Sublime Text Keymap](https://marketplace.visualstudio.com/items?itemName=ms-vscode.sublime-keybindings)
+Marketplace - [Sublime Text Keymap](HTTPS://marketplace.visualstudio.com/items?itemName=ms-vscode.sublime-keybindings)
 
-Author - [Microsoft](https://marketplace.visualstudio.com/search?term=publisher%3A%22Microsoft%22&target=VSCode)
+Author - [Microsoft](HTTPS://marketplace.visualstudio.com/search?term=publisher%3A%22Microsoft%22&target=VSCode)
 
 You have memorized the keyboard shortcuts and you won't need to change your muscle memory to move to VS Code. This extension ports the most popular keyboard shortcuts from Sublime Text to VS Code.
 
@@ -65,9 +65,9 @@ You have memorized the keyboard shortcuts and you won't need to change your musc
 
 ## Expand Selection To Scope
 
-Marketplace - [Expand Selection To Scope](https://marketplace.visualstudio.com/items?itemName=vittorioromeo.expand-selection-to-scope)
+Marketplace - [Expand Selection To Scope](HTTPS://marketplace.visualstudio.com/items?itemName=vittorioromeo.expand-selection-to-scope)
 
-Author - [Vittorio Romeo](https://marketplace.visualstudio.com/search?term=publisher%3A%22Vittorio%20Romeo%22&target=VSCode)
+Author - [Vittorio Romeo](HTTPS://marketplace.visualstudio.com/search?term=publisher%3A%22Vittorio%20Romeo%22&target=VSCode)
 
 VS Code has existing support for expanding text selection, but this extension hits a nice sweet spot. Expand your selection to the scope incrementally, including for multiple cursors.
 
@@ -75,9 +75,9 @@ VS Code has existing support for expanding text selection, but this extension hi
 
 ## Close HTML / XML Tag
 
-Marketplace - [Close HTML / XML tag](https://marketplace.visualstudio.com/items?itemName=Compulim.compulim-vscode-closetag)
+Marketplace - [Close HTML / XML tag](HTTPS://marketplace.visualstudio.com/items?itemName=Compulim.compulim-vscode-closetag)
 
-Author - [Compulim](https://marketplace.visualstudio.com/search?term=publisher%3A%22Compulim%22&target=VSCode)
+Author - [Compulim](HTTPS://marketplace.visualstudio.com/search?term=publisher%3A%22Compulim%22&target=VSCode)
 
 Adds a keyboard shortcut to add the closing tag for XML and HTML.
 
@@ -85,11 +85,11 @@ Adds a keyboard shortcut to add the closing tag for XML and HTML.
 
 ## Sublime Commands
 
-Marketplace - [Sublime Commands](https://marketplace.visualstudio.com/items?itemName=Zarel.sublime-commands)
+Marketplace - [Sublime Commands](HTTPS://marketplace.visualstudio.com/items?itemName=Zarel.sublime-commands)
 
-Author - [Zarel](https://marketplace.visualstudio.com/search?term=publisher%3A%22Zarel%22&target=VSCode)
+Author - [Zarel](HTTPS://marketplace.visualstudio.com/search?term=publisher%3A%22Zarel%22&target=VSCode)
 
 Ports the **Transpose**, **Expand Selection to Line**, and **Split into Lines** commands to VS Code.
 
 Wade Anderson, VS Code Team Member
-[@waderyan_](https://twitter.com/waderyan_)
+[@waderyan_](HTTPS://twitter.com/waderyan_)

@@ -10,9 +10,9 @@ Author: Sana Ajani
 ---
 # Remote SSH: Tips and Tricks
 
-October 3, 2019 by Sana Ajani, [`@sana_ajani`](https://twitter.com/sana_ajani)
+October 3, 2019 by Sana Ajani, [`@sana_ajani`](HTTPS://twitter.com/sana_ajani)
 
-In a previous [`Remote SSH blog post](/blogs/2019/07/25/remote-ssh.md), we went over how to set up a Linux virtual machine and connect to the VM using the [Remote - SSH extension`](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh) in Visual Studio Code. In this blog post, we'll go into some tips and tricks that you can use to get the most out of your remote setup.
+In a previous [`Remote SSH blog post](/blogs/2019/07/25/remote-ssh.md), we went over how to set up a Linux virtual machine and connect to the VM using the [Remote - SSH extension`](HTTPS://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh) in Visual Studio Code. In this blog post, we'll go into some tips and tricks that you can use to get the most out of your remote setup.
 
 ## Connect using Remote SSH
 
@@ -28,14 +28,14 @@ After you install the extension, you'll notice an indicator on the bottom-left c
 
 In the earlier Remote SSH blog post, we only connected to a single machine and did so by entering the "user@host" when prompted. If you log in to multiple remote servers or local virtual machines on a regular basis, there's a better way to connect without having to remember all the usernames, addresses, and additional configuration options.
 
-[`OpenSSH](https://www.openssh.com/) supports using a [configuration file`](https://linuxize.com/post/using-the-ssh-config-file) to store all your different SSH connections. To use an SSH config file, click on the remote indicator to bring up the remote commands, choose **Open Configuration File**, and select the file that follows the path "Users/{yourusername}/.ssh/config".
+[`OpenSSH](HTTPS://www.openssh.com/) supports using a [configuration file`](HTTPS://linuxize.com/post/using-the-ssh-config-file) to store all your different SSH connections. To use an SSH config file, click on the remote indicator to bring up the remote commands, choose **Open Configuration File**, and select the file that follows the path "Users/{yourusername}/.ssh/config".
 
 ![`Open Configuration File command`](open-configuration-file.png)
 
 Here's an example of an SSH config file:
 
 ```yaml
-# Read more about SSH config files: https://linux.die.net/man/5/ssh_config
+# Read more about SSH config files: HTTPS://linux.die.net/man/5/ssh_config
 Host python-linux-vm
     HostName <vm address>
     User sana
@@ -48,7 +48,7 @@ Host node-vm
     IdentityFile ~/.ssh/id_node_vm
 ```
 
-There are many more [`configuration options`](https://linux.die.net/man/5/ssh_config) you can specify in the SSH config file format. You'll get completions and colorizations in this file and you can press (`kb(editor.action.triggerSuggest)`) for IntelliSense to learn more about the config options.
+There are many more [`configuration options`](HTTPS://linux.die.net/man/5/ssh_config) you can specify in the SSH config file format. You'll get completions and colorizations in this file and you can press (`kb(editor.action.triggerSuggest)`) for IntelliSense to learn more about the config options.
 
 The options used above are:
 
@@ -66,7 +66,7 @@ You can add the information for all the hosts you have. Once you've saved the co
 
 ## ProxyCommand
 
-Sometimes you may need to connect from your desktop or laptop to a remote machine over your company's Intranet or behind a firewall. In this case, you may be using an intermediate server or [`jump box`](https://en.wikipedia.org/wiki/Jump_server). This kind of setup is useful if you are working within a secure system that is configured to only accept SSH connections from a fixed set of hosts.
+Sometimes you may need to connect from your desktop or laptop to a remote machine over your company's Intranet or behind a firewall. In this case, you may be using an intermediate server or [`jump box`](HTTPS://en.wikipedia.org/wiki/Jump_server). This kind of setup is useful if you are working within a secure system that is configured to only accept SSH connections from a fixed set of hosts.
 
 To use a jump-box setup with the Remote - SSH extension, you can use the `ProxyCommand` config option. This configuration will open a background SSH connection to the jump box, and then connect via a private IP address to the target.
 
@@ -112,13 +112,13 @@ However, you can now solve this issue by a new user [`setting`](/docs/getstarted
 
 ## Remote - SSH Nightly extension
 
-If you're interested in testing new updates and experimental features as soon as they are available, install the [`Remote - SSH Nightly extension`](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh-nightly) (uninstall the Remote-SSH stable extension first). This is the nightly build of the extension where we experiment with new features and settings before releasing them into the stable version.
+If you're interested in testing new updates and experimental features as soon as they are available, install the [`Remote - SSH Nightly extension`](HTTPS://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh-nightly) (uninstall the Remote-SSH stable extension first). This is the nightly build of the extension where we experiment with new features and settings before releasing them into the stable version.
 
 ## We'd like your feedback
 
-Thanks for trying out the Remote - SSH extension! If you run into any issues or would like to suggest new features or scenarios for us, please open an issue on our [`GitHub repo](https://github.com/microsoft/vscode-remote-release/issues). If you want to see what features we're currently working on or are upcoming, take a look at our Remote Development [release notes](https://github.com/microsoft/vscode-docs/blob/main/remote-release-notes) and [iteration plans](https://github.com/microsoft/vscode-remote-release/issues?q=is%3Aopen+is%3Aissue+label%3Aiteration-plan). You can also try out the introductory [Remote development over SSH tutorial](https://code.visualstudio.com/docs/remote/ssh-tutorial), which walk you through using the other remote extensions to work inside Docker containers and the [Window Subsystem for Linux`](https://learn.microsoft.com/windows/wsl) (WSL).
+Thanks for trying out the Remote - SSH extension! If you run into any issues or would like to suggest new features or scenarios for us, please open an issue on our [`GitHub repo](HTTPS://github.com/microsoft/vscode-remote-release/issues). If you want to see what features we're currently working on or are upcoming, take a look at our Remote Development [release notes](HTTPS://github.com/microsoft/vscode-docs/blob/main/remote-release-notes) and [iteration plans](HTTPS://github.com/microsoft/vscode-remote-release/issues?q=is%3Aopen+is%3Aissue+label%3Aiteration-plan). You can also try out the introductory [Remote development over SSH tutorial](HTTPS://code.visualstudio.com/docs/remote/ssh-tutorial), which walk you through using the other remote extensions to work inside Docker containers and the [Window Subsystem for Linux`](HTTPS://learn.microsoft.com/windows/wsl) (WSL).
 
 Happy Remote Coding,
 
 Sana Ajani, VS Code Program Manager
-[`@sana_ajani`](https://twitter.com/sana_ajani)
+[`@sana_ajani`](HTTPS://twitter.com/sana_ajani)

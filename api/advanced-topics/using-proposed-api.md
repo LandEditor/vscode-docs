@@ -19,19 +19,19 @@ These are the steps for testing a proposed API in local extension development:
 
 - Use [Insiders](/insiders) release of VS Code.
 - To your `package.json`, add `"enabledApiProposals": ["<proposalName>"]`.
-- Copy the corresponding [vscode.proposed.\<proposalName\>.d.ts](https://github.com/microsoft/vscode/blob/main/src/vscode-dts) files into your project's source location.
+- Copy the corresponding [vscode.proposed.\<proposalName\>.d.ts](HTTPS://github.com/microsoft/vscode/blob/main/src/vscode-dts) files into your project's source location.
 
-The [@vscode/dts](https://github.com/microsoft/vscode-dts) CLI utility allows you to quickly download the latest `vscode.proposed.<proposalName>.d.ts` for extension development. It downloads definition files by the proposals listed in your `package.json` file.
+The [@vscode/dts](HTTPS://github.com/microsoft/vscode-dts) CLI utility allows you to quickly download the latest `vscode.proposed.<proposalName>.d.ts` for extension development. It downloads definition files by the proposals listed in your `package.json` file.
 
 ```bash
 > npx @vscode/dts dev
 Downloading vscode.proposed.languageStatus.d.ts
 To:   /Users/Me/Code/MyExtension/vscode.proposed.languageStatus.d.ts
-From: https://raw.githubusercontent.com/microsoft/vscode/main/src/vscode-dts/vscode.proposed.languageStatus.d.ts
-Read more about proposed API at: https://code.visualstudio.com/api/advanced-topics/using-proposed-api
+From: HTTPS://raw.githubusercontent.com/microsoft/vscode/main/src/vscode-dts/vscode.proposed.languageStatus.d.ts
+Read more about proposed API at: HTTPS://code.visualstudio.com/api/advanced-topics/using-proposed-api
 ```
 
-There is a sample using proposed APIs: [proposed-api-sample](https://github.com/microsoft/vscode-extension-samples/tree/main/proposed-api-sample).
+There is a sample using proposed APIs: [proposed-api-sample](HTTPS://github.com/microsoft/vscode-extension-samples/tree/main/proposed-api-sample).
 
 ## Proposed API incompatibility
 

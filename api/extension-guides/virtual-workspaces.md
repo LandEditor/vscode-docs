@@ -9,7 +9,7 @@ MetaDescription: Learn how to support virtual workspaces in extensions
 
 # Virtual Workspaces
 
-Extensions like the [GitHub Repositories](https://marketplace.visualstudio.com/items?itemName=GitHub.remotehub) extension open VS Code on one or more folders backed by a [file system provider](/api/extension-guides/virtual-documents#file-system-api). When an extension implements a file system provider, workspace resources may not be located on the local disk, but be **virtual**, located on a server or the cloud, and editing operations happen there.
+Extensions like the [GitHub Repositories](HTTPS://marketplace.visualstudio.com/items?itemName=GitHub.remotehub) extension open VS Code on one or more folders backed by a [file system provider](/api/extension-guides/virtual-documents#file-system-api). When an extension implements a file system provider, workspace resources may not be located on the local disk, but be **virtual**, located on a server or the cloud, and editing operations happen there.
 
 This configuration is called a **virtual workspace**. When a virtual workspace is open in a VS Code window, this is indicated by a label in the remote indicator in the lower left corner, similar to other [remote development](/docs/remote/remote-overview) windows.
 
@@ -29,7 +29,7 @@ Extensions with code, meaning extensions that define a `main` entry point, requi
 
 ## Run your extension against a virtual workspace
 
-Install the [GitHub Repositories](https://marketplace.visualstudio.com/items?itemName=GitHub.remotehub) extension and run the **Open GitHub Repository...** command from the Command Palette. The command shows a Quick Pick dropdown and you can paste in any GitHub URL, or choose to search for a specific repository or pull request.
+Install the [GitHub Repositories](HTTPS://marketplace.visualstudio.com/items?itemName=GitHub.remotehub) extension and run the **Open GitHub Repository...** command from the Command Palette. The command shows a Quick Pick dropdown and you can paste in any GitHub URL, or choose to search for a specific repository or pull request.
 
 This opens a VS Code window for a virtual workspace where all resources are virtual.
 
@@ -101,7 +101,7 @@ The extension should then disable the features that are not supported in a virtu
 `"virtualWorkspaces": true` is the default for all extensions that have not yet filled in the `virtualWorkspaces` capability.
 
 However, while testing virtual workspaces, we came up list of extensions that we think should be disabled in virtual workspaces.
-The list can be found in [issue #122836](https://github.com/microsoft/vscode/issues/122836). These extensions have `"virtualWorkspaces": false` as default.
+The list can be found in [issue #122836](HTTPS://github.com/microsoft/vscode/issues/122836). These extensions have `"virtualWorkspaces": false` as default.
 
 Of course, extension authors are in a better position to make this decision. The `virtualWorkspaces` capability in an extension's `package.json` will override our default and we will eventually retire our list.
 
@@ -206,4 +206,4 @@ return vscode.languages.registerCompletionItemProvider({ language: 'typescript',
 
 ### What about support in the Language Server Protocol (LSP) for accessing virtual resources?
 
-Work is under way that will add file system provider support to LSP. Tracked in Language Server Protocol [issue #1264](https://github.com/microsoft/language-server-protocol/issues/1264).
+Work is under way that will add file system provider support to LSP. Tracked in Language Server Protocol [issue #1264](HTTPS://github.com/microsoft/language-server-protocol/issues/1264).

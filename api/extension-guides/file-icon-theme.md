@@ -13,7 +13,7 @@ Visual Studio Code displays icons next to filenames throughout its UI, and exten
 
 ## Adding a new File Icon Theme
 
-You can create your own file icon theme from icons (preferably SVG) and from icon fonts. As example, check out the two built-in themes: [Minimal](https://github.com/microsoft/vscode/tree/main/extensions/theme-defaults) and [Seti](https://github.com/microsoft/vscode/tree/main/extensions/theme-seti).
+You can create your own file icon theme from icons (preferably SVG) and from icon fonts. As example, check out the two built-in themes: [Minimal](HTTPS://github.com/microsoft/vscode/tree/main/extensions/theme-defaults) and [Seti](HTTPS://github.com/microsoft/vscode/tree/main/extensions/theme-seti).
 
 To begin, create a VS Code extension and add the `iconTheme` contribution point.
 
@@ -144,11 +144,11 @@ The `fonts` section lets you declare any number of glyph fonts that you want to 
 You can later reference these fonts in the icon definitions. The font declared first will be used as the default if an icon definition does not specify a font id.
 
 Copy the font file into your extension and set the path accordingly.
-It is recommended to use [WOFF](https://developer.mozilla.org/docs/Web/Guide/WOFF) fonts.
+It is recommended to use [WOFF](HTTPS://developer.mozilla.org/docs/Web/Guide/WOFF) fonts.
 
 - Set 'woff' as the format.
-- the weight property values are defined [here](https://developer.mozilla.org/docs/Web/CSS/font-weight#Values).
-- the style property values are defined [here](https://developer.mozilla.org/docs/Web/CSS/@font-face/font-style#Values).
+- the weight property values are defined [here](HTTPS://developer.mozilla.org/docs/Web/CSS/font-weight#Values).
+- the style property values are defined [here](HTTPS://developer.mozilla.org/docs/Web/CSS/@font-face/font-style#Values).
 - the size should be relative to the font size where the icon is used. Therefore, always use percentage.
 
 ```json

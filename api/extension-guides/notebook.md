@@ -23,18 +23,18 @@ Visually:
 
 ## Serializer
 
-[NotebookSerializer API Reference](https://github.com/microsoft/vscode/blob/e1a8566a298dcced016d8e16db95c33c270274b4/src/vs/vscode.d.ts#L11865-L11884)
+[NotebookSerializer API Reference](HTTPS://github.com/microsoft/vscode/blob/e1a8566a298dcced016d8e16db95c33c270274b4/src/vs/vscode.d.ts#L11865-L11884)
 
 A `NotebookSerializer` is responsible for taking the serialized bytes of a notebook and deserializing those bytes into `NotebookData`, which contains list of Markdown and code cells. It is responsible for the opposite conversion as well: taking `NotebookData` and converting the data into serialized bytes to be saved.
 
 Samples:
 
-* [JSON Notebook Serializer](https://github.com/microsoft/notebook-extension-samples/tree/main/notebook-serializer): Simple example notebook that takes JSON input and outputs prettified JSON in a custom `NotebookRenderer`.
-* [Markdown Serializer](https://github.com/microsoft/vscode-markdown-notebook): Open and edit Markdown files as a notebook.
+* [JSON Notebook Serializer](HTTPS://github.com/microsoft/notebook-extension-samples/tree/main/notebook-serializer): Simple example notebook that takes JSON input and outputs prettified JSON in a custom `NotebookRenderer`.
+* [Markdown Serializer](HTTPS://github.com/microsoft/vscode-markdown-notebook): Open and edit Markdown files as a notebook.
 
 ### Example
 
-In this example, we build a simplified notebook provider extension for viewing files in the [Jupyter Notebook format](https://nbformat.readthedocs.io/en/latest/format_description.html) with a `.notebook` extension (instead of its traditional file extension `.ipynb`).
+In this example, we build a simplified notebook provider extension for viewing files in the [Jupyter Notebook format](HTTPS://nbformat.readthedocs.io/en/latest/format_description.html) with a `.notebook` extension (instead of its traditional file extension `.ipynb`).
 
 A notebook serializer is declared in `package.json` under the `contributes.notebooks` section as follows:
 
@@ -126,7 +126,7 @@ To run a cell, you will need to implement a `NotebookController`.
 
 ## Controller
 
-[NotebookController API Reference](https://github.com/microsoft/vscode/blob/e1a8566a298dcced016d8e16db95c33c270274b4/src/vs/vscode.d.ts#L11941)
+[NotebookController API Reference](HTTPS://github.com/microsoft/vscode/blob/e1a8566a298dcced016d8e16db95c33c270274b4/src/vs/vscode.d.ts#L11941)
 
 A `NotebookController` is responsible for taking a **code cell** and executing the code to produce some or no outputs.
 
@@ -177,9 +177,9 @@ If you're publishing a `NotebookController`-providing extension separately from 
 
 Samples:
 
-* [GitHub Issues Notebook](https://github.com/microsoft/vscode-github-issue-notebooks/blob/93359d842cd01dfaef0a78b620c5a3b4cf5c2e38/src/extension/notebookProvider.ts#L29): Controller to execute queries for GitHub Issues
-* [REST Book](https://github.com/tanhakabir/rest-book/blob/main/src/extension/notebookKernel.ts): Controller to run REST queries.
-* [Regexper notebooks](https://github.com/jrieken/vscode-regex-notebook/blob/master/src/extension/extension.ts#L56): Controller to visualize regular expressions.
+* [GitHub Issues Notebook](HTTPS://github.com/microsoft/vscode-github-issue-notebooks/blob/93359d842cd01dfaef0a78b620c5a3b4cf5c2e38/src/extension/notebookProvider.ts#L29): Controller to execute queries for GitHub Issues
+* [REST Book](HTTPS://github.com/tanhakabir/rest-book/blob/main/src/extension/notebookKernel.ts): Controller to run REST queries.
+* [Regexper notebooks](HTTPS://github.com/jrieken/vscode-regex-notebook/blob/master/src/extension/extension.ts#L56): Controller to visualize regular expressions.
 
 ## Output types
 
@@ -307,7 +307,7 @@ export const activate: ActivationFunction = (context) => ({
 })
 ```
 
-You can [refer to the complete API definition here](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/vscode-notebook-renderer/index.d.ts). If you're using TypeScript, you can install `@types/vscode-notebook-renderer` and then add `vscode-notebook-renderer` to the `types` array in your `tsconfig.json` to make these types available in your code.
+You can [refer to the complete API definition here](HTTPS://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/vscode-notebook-renderer/index.d.ts). If you're using TypeScript, you can install `@types/vscode-notebook-renderer` and then add `vscode-notebook-renderer` to the `types` array in your `tsconfig.json` to make these types available in your code.
 
 To create richer content, you could manually create DOM elements, or use a framework like Preact and render it into the output element, for example:
 
@@ -319,7 +319,7 @@ const Issue: FunctionComponent<{ issue: GithubIssue }> = ({ issue }) => (
   <div key={issue.number}>
     <h2>
       {issue.title}
-      (<a href={`https://github.com/${issue.repo}/issues/${issue.number}`}>#{issue.number}</a>)
+      (<a href={`HTTPS://github.com/${issue.repo}/issues/${issue.number}`}>#{issue.number}</a>)
     </h2>
     <img src={issue.user.avatar_url} style={{ float: 'left', width: 32, borderRadius: '50%', marginRight: 20 }} />
     <i>@{issue.user.login}</i> Opened: <div style="margin-top: 10px">{issue.body}</div>
@@ -377,7 +377,7 @@ const Issue: FunctionComponent<{ issue: GithubIssueWithComments }> = ({ issue })
     <div key={issue.number}>
       <h2>
         {issue.title}
-        (<a href={`https://github.com/${issue.repo}/issues/${issue.number}`}>#{issue.number}</a>)
+        (<a href={`HTTPS://github.com/${issue.repo}/issues/${issue.number}`}>#{issue.number}</a>)
       </h2>
       <img src={issue.user.avatar_url} style={{ float: 'left', width: 32, borderRadius: '50%', marginRight: 20 }} />
       <i>@{issue.user.login}</i> Opened: <div style="margin-top: 10px">{issue.body}</div>
@@ -465,7 +465,7 @@ const Issue: FunctionComponent<{ issue: GithubIssue }> = ({ issue }) => {
     <div key={issue.number}>
       <h2>
         {issue.title}
-        (<a href={`https://github.com/${issue.repo}/issues/${issue.number}`}>#{issue.number}</a>)
+        (<a href={`HTTPS://github.com/${issue.repo}/issues/${issue.number}`}>#{issue.number}</a>)
       </h2>
       <img src={issue.user.avatar_url} style={{ float: 'left', width: 32, borderRadius: '50%', marginRight: 20 }} />
       <i>@{issue.user.login}</i> Opened: <div style="margin-top: 10px">{issue.body}</div>
@@ -578,9 +578,9 @@ Note:
 
 ## Supporting debugging
 
-For some controllers, such as those that implement a programming language, it can be desirable to allow debugging a cell's execution. To add debugging support, a notebook kernel can implement a [debug adapter](/api/extension-guides/debugger-extension), either by directly implementing the [debug adapter protocol](https://microsoft.github.io/debug-adapter-protocol/) (DAP), or by delegating and transforming the protocol to an existing notebook debugger (as done in the 'vscode-simple-jupyter-notebook' sample). A much simpler approach is to use an existing unmodified debug extension and transform the DAP for notebook needs on the fly (as done in 'vscode-nodebook').
+For some controllers, such as those that implement a programming language, it can be desirable to allow debugging a cell's execution. To add debugging support, a notebook kernel can implement a [debug adapter](/api/extension-guides/debugger-extension), either by directly implementing the [debug adapter protocol](HTTPS://microsoft.github.io/debug-adapter-protocol/) (DAP), or by delegating and transforming the protocol to an existing notebook debugger (as done in the 'vscode-simple-jupyter-notebook' sample). A much simpler approach is to use an existing unmodified debug extension and transform the DAP for notebook needs on the fly (as done in 'vscode-nodebook').
 
 Samples:
 
-* [vscode-nodebook](https://github.com/microsoft/vscode-nodebook): Node.js notebook with debugging support provided by VS Code's built-in JavaScript debugger and some simple protocol transformations
-* [vscode-simple-jupyter-notebook](https://github.com/microsoft/vscode-simple-jupyter-notebook): Jupyter notebook with debugging support provided by the existing Xeus debugger
+* [vscode-nodebook](HTTPS://github.com/microsoft/vscode-nodebook): Node.js notebook with debugging support provided by VS Code's built-in JavaScript debugger and some simple protocol transformations
+* [vscode-simple-jupyter-notebook](HTTPS://github.com/microsoft/vscode-simple-jupyter-notebook): Jupyter notebook with debugging support provided by the existing Xeus debugger

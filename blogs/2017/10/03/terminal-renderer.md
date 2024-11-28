@@ -9,9 +9,9 @@ Author: Daniel Imms
 ---
 # Integrated Terminal Performance Improvements
 
-October 3, 2017 Daniel Imms, [@Tyriar](https://twitter.com/Tyriar)
+October 3, 2017 Daniel Imms, [@Tyriar](HTTPS://twitter.com/Tyriar)
 
-The rendering engine of the Integrated Terminal has been completely re-written with performance in mind for the upcoming version 1.17 of Visual Studio Code. In this version, we move away from a DOM-based rendering system to using the HTML [canvas](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas) element.
+The rendering engine of the Integrated Terminal has been completely re-written with performance in mind for the upcoming version 1.17 of Visual Studio Code. In this version, we move away from a DOM-based rendering system to using the HTML [canvas](HTTPS://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas) element.
 
 ## DOM Rendering
 
@@ -33,7 +33,7 @@ A workaround for this would be to wrap all Unicode characters in fixed width spa
 
 In some cases, composing elements and doing a layout could take longer than a frame (16.6ms) all by itself, which is unacceptable if we want to maintain a smooth 60 frames per second (FPS) in the terminal. The solution for this was a new canvas-based rendering engine.
 
-The [`<canvas>` HTML element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas) allows drawing graphics and text using a JavaScript API.
+The [`<canvas>` HTML element](HTTPS://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas) allows drawing graphics and text using a JavaScript API.
 
 ## Render Layers
 
@@ -60,9 +60,9 @@ This is compared to the previous rendering engine where the entire line would be
 
 ## The Texture Atlas
 
-A texture atlas is used to boost rendering time even further. There is an [`ImageBitmap`](https://developer.mozilla.org/en-US/docs/Web/API/ImageBitmap) behind the scenes which contains all ASCII characters in the most common styles on the default background color.
+A texture atlas is used to boost rendering time even further. There is an [`ImageBitmap`](HTTPS://developer.mozilla.org/en-US/docs/Web/API/ImageBitmap) behind the scenes which contains all ASCII characters in the most common styles on the default background color.
 
-When drawing these styles of text, the texture atlas is used instead of a regular call to [`CanvasRenderingContext2D.fillText`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fillText). As the `ImageBitmap` is co-located on the GPU, the speed of drawing is improved considerably.
+When drawing these styles of text, the texture atlas is used instead of a regular call to [`CanvasRenderingContext2D.fillText`](HTTPS://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fillText). As the `ImageBitmap` is co-located on the GPU, the speed of drawing is improved considerably.
 
 ![Behind the scenes an image is maintained containing the most common characters](texture-atlas.png)
 
@@ -76,10 +76,10 @@ With the new renderer, this restriction has been removed and you can now enjoy u
 
 ## The Results
 
-Our benchmarks have measured that the Integrated Terminal now renders approximately **5 to 45 times faster than before**, depending on the situation. Even if you don't notice the increased responsiveness and frame rate, faster rendering also means less battery usage! We hope you enjoy the performance improvements, they are coming to version 1.17 of VS Code in a few days and are available to test in the [Insiders build](https://code.visualstudio.com/insiders) right now.
+Our benchmarks have measured that the Integrated Terminal now renders approximately **5 to 45 times faster than before**, depending on the situation. Even if you don't notice the increased responsiveness and frame rate, faster rendering also means less battery usage! We hope you enjoy the performance improvements, they are coming to version 1.17 of VS Code in a few days and are available to test in the [Insiders build](HTTPS://code.visualstudio.com/insiders) right now.
 
-You can also jump into the [original xterm.js pull request](https://github.com/sourcelair/xterm.js/pull/938) that added the feature for a more detailed look.
+You can also jump into the [original xterm.js pull request](HTTPS://github.com/sourcelair/xterm.js/pull/938) that added the feature for a more detailed look.
 
 Happy Coding!
 
-Daniel Imms, VS Code Team member [@Tyriar](https://twitter.com/Tyriar)
+Daniel Imms, VS Code Team member [@Tyriar](HTTPS://twitter.com/Tyriar)

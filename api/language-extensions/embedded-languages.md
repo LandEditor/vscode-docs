@@ -25,8 +25,8 @@ This guide includes two samples that illustrate two approaches to build such a l
 
 Source code for both samples can be found at:
 
-- [Language Server for Embedded Language with Language Services](https://github.com/microsoft/vscode-extension-samples/tree/main/lsp-embedded-language-service)
-- [Language Server for Embedded Language with Request Forwarding](https://github.com/microsoft/vscode-extension-samples/tree/main/lsp-embedded-request-forwarding)
+- [Language Server for Embedded Language with Language Services](HTTPS://github.com/microsoft/vscode-extension-samples/tree/main/lsp-embedded-language-service)
+- [Language Server for Embedded Language with Request Forwarding](HTTPS://github.com/microsoft/vscode-extension-samples/tree/main/lsp-embedded-request-forwarding)
 
 Here's the embedded language server we'll be building:
 
@@ -44,10 +44,10 @@ A **language service** is a library that implements [programmatic language featu
 
 Here's an outline of VS Code's HTML support:
 
-- The built-in [html extension](https://github.com/microsoft/vscode/tree/main/extensions/html) only provides syntax highlighting and language configuration for HTML.
-- The built-in [html-language-features extension](https://github.com/microsoft/vscode/tree/main/extensions/html-language-features) includes an HTML Language Server to offer programmatic language features for HTML.
-- The HTML Language Server uses [vscode-html-languageservice](https://github.com/microsoft/vscode-html-languageservice) to support HTML.
-- The CSS Language Server uses [vscode-css-languageservice](https://github.com/microsoft/vscode-css-languageservice) to support CSS in HTML.
+- The built-in [html extension](HTTPS://github.com/microsoft/vscode/tree/main/extensions/html) only provides syntax highlighting and language configuration for HTML.
+- The built-in [html-language-features extension](HTTPS://github.com/microsoft/vscode/tree/main/extensions/html-language-features) includes an HTML Language Server to offer programmatic language features for HTML.
+- The HTML Language Server uses [vscode-html-languageservice](HTTPS://github.com/microsoft/vscode-html-languageservice) to support HTML.
+- The CSS Language Server uses [vscode-css-languageservice](HTTPS://github.com/microsoft/vscode-css-languageservice) to support CSS in HTML.
 
 The HTML language server analyzes an HTML document, breaks it down into language regions, and uses the corresponding language service to handle language server requests.
 
@@ -56,15 +56,15 @@ For example:
 - For auto-completion request at `<|`, the HTML language server uses the HTML language service to provide HTML completions.
 - For auto-completion request at `<style>.foo { | }</style>`, the HTML language server uses the CSS language service to provide CSS completions.
 
-Let's examine the [lsp-embedded-language-service](https://github.com/microsoft/vscode-extension-samples/tree/main/lsp-embedded-language-service) sample, a simplified version of the HTML language server that implements auto-completion for HTML and CSS, and diagnostic errors for CSS.
+Let's examine the [lsp-embedded-language-service](HTTPS://github.com/microsoft/vscode-extension-samples/tree/main/lsp-embedded-language-service) sample, a simplified version of the HTML language server that implements auto-completion for HTML and CSS, and diagnostic errors for CSS.
 
 ### Language Services sample
 
->**Note**: This sample assumes knowledge of the [Programmatic Language Features topic](/api/language-extensions/programmatic-language-features) and the [Language Server extension guide](/api/language-extensions/language-server-extension-guide). The code builds on top of [lsp-sample](https://github.com/microsoft/vscode-extension-samples/tree/main/lsp-sample).
+>**Note**: This sample assumes knowledge of the [Programmatic Language Features topic](/api/language-extensions/programmatic-language-features) and the [Language Server extension guide](/api/language-extensions/language-server-extension-guide). The code builds on top of [lsp-sample](HTTPS://github.com/microsoft/vscode-extension-samples/tree/main/lsp-sample).
 
-The source code is available at [microsoft/vscode-extension-samples](https://github.com/microsoft/vscode-extension-samples/tree/main/lsp-embedded-language-service).
+The source code is available at [microsoft/vscode-extension-samples](HTTPS://github.com/microsoft/vscode-extension-samples/tree/main/lsp-embedded-language-service).
 
-Compared to the [lsp-sample](https://github.com/microsoft/vscode-extension-samples/tree/main/lsp-sample), the client-side code is the same.
+Compared to the [lsp-sample](HTTPS://github.com/microsoft/vscode-extension-samples/tree/main/lsp-sample), the client-side code is the same.
 
 As mentioned above, the server breaks down the document into different language regions to handle the embedded content.
 
@@ -178,9 +178,9 @@ Let's now review the sample code.
 
 ### Request Forwarding sample
 
->**Note**: This sample assumes knowledge of the [Programmatic Language Features topic](/api/language-extensions/programmatic-language-features) and the [Language Server extension guide](/api/language-extensions/language-server-extension-guide). The code builds on top of [lsp-sample](https://github.com/microsoft/vscode-extension-samples/tree/main/lsp-sample).
+>**Note**: This sample assumes knowledge of the [Programmatic Language Features topic](/api/language-extensions/programmatic-language-features) and the [Language Server extension guide](/api/language-extensions/language-server-extension-guide). The code builds on top of [lsp-sample](HTTPS://github.com/microsoft/vscode-extension-samples/tree/main/lsp-sample).
 
-The source code is available at [microsoft/vscode-extension-samples](https://github.com/microsoft/vscode-extension-samples/tree/main/lsp-embedded-request-forwarding).
+The source code is available at [microsoft/vscode-extension-samples](HTTPS://github.com/microsoft/vscode-extension-samples/tree/main/lsp-embedded-request-forwarding).
 
 Keeping a map between document's URI and their virtual documents, and provide them for corresponding requests:
 
@@ -241,7 +241,7 @@ VS Code's HTML support provides HTML, CSS, and JavaScript language features. Alt
 
 ### Encoding and decoding
 
-The main language of a document might have a different encoding or escaping rules than its embedded language. For example, this HTML document is invalid according to the [HTML spec](https://www.w3.org/TR/html401/appendix/notes.html#h-B.3.2):
+The main language of a document might have a different encoding or escaping rules than its embedded language. For example, this HTML document is invalid according to the [HTML spec](HTTPS://www.w3.org/TR/html401/appendix/notes.html#h-B.3.2):
 
 ```html
 <SCRIPT type="text/javascript">
@@ -259,7 +259,7 @@ Language Service:
 
 - \+ Full control of the language server and the user experience.
 - \+ No dependencies on other language servers. All code is in one repository.
-- \+ The language server can be reused in all [LSP-compliant code editors](https://microsoft.github.io/language-server-protocol/implementors/tools/).
+- \+ The language server can be reused in all [LSP-compliant code editors](HTTPS://microsoft.github.io/language-server-protocol/implementors/tools/).
 - \- Might be hard to embed language services written in other languages.
 - \- Needs continued maintenance to get new features from language service dependencies.
 

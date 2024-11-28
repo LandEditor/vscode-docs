@@ -36,7 +36,7 @@ This article focuses on the TextMate-based tokenization. Semantic tokenization a
 
 VS Code uses [`TextMate grammars`][tm-grammars] as the syntax tokenization engine. Invented for the TextMate editor, they have been adopted by many other editors and IDEs due to large number of language bundles created and maintained by the Open Source community.
 
-TextMate grammars rely on [Oniguruma regular expressions](https://macromates.com/manual/en/regular_expressions) and are typically written as a plist or JSON. You can find a good introduction to TextMate grammars [here](https://www.apeth.com/nonblog/stories/textmatebundle.html), and you can take a look at existing TextMate grammars to learn more about how they work.
+TextMate grammars rely on [Oniguruma regular expressions](HTTPS://macromates.com/manual/en/regular_expressions) and are typically written as a plist or JSON. You can find a good introduction to TextMate grammars [here](HTTPS://www.apeth.com/nonblog/stories/textmatebundle.html), and you can take a look at existing TextMate grammars to learn more about how they work.
 
 ### TextMate tokens and scopes
 
@@ -208,7 +208,7 @@ Yaml grammars have the exact same structure as a json based grammar but allow yo
 
 ![A yaml grammar using multiline strings and comments](images/syntax-highlighting/yaml-grammar.png)
 
-VS Code can only load json grammars, so yaml based grammars must be converted to json. The [`js-yaml` package](https://www.npmjs.com/package/js-yaml) and command-line tool makes this easy.
+VS Code can only load json grammars, so yaml based grammars must be converted to json. The [`js-yaml` package](HTTPS://www.npmjs.com/package/js-yaml) and command-line tool makes this easy.
 
 ```bash
 # Install js-yaml as a development only dependency in your extension
@@ -351,4 +351,4 @@ The scope inspector displays the following information:
 1. The semantic token section is shown when a semantic token provider is available for the current language and when the current theme supports semantic highlighting. It shows the current semantic token type and modifiers along with the theme rules that match the semantic token type and modifiers.
 1. The TextMate section shows the scope list for the current TextMate token, with the most specific scope at the top. It also shows the most specific theme rules that match the scopes. This only shows the theme rules that are responsible for the token's current style, it does not show overridden rules. If semantic tokens are present, the theme rules are only shown when they differ from the rule matching the semantic token.
 
-[tm-grammars]: https://macromates.com/manual/en/language_grammars
+[tm-grammars]: HTTPS://macromates.com/manual/en/language_grammars

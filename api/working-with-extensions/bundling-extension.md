@@ -9,11 +9,11 @@ MetaDescription: Bundling Visual Studio Code extensions (plug-ins) with webpack.
 
 # Bundling Extensions
 
-The first reason to bundle your Visual Studio Code extension is to make sure it works for everyone using VS Code on any platform. Only bundled extensions can be used in VS Code for Web environments like [github.dev](https://github.dev/) and [vscode.dev](https://vscode.dev/). When VS Code is running in the browser, it can only load one file for your extension so the extension code needs to be bundled into one single web-friendly JavaScript file. This also applies to [Notebook Output Renderers](/api/extension-guides/notebook#notebook-renderer), where VS Code will also only load one file for your renderer extension.
+The first reason to bundle your Visual Studio Code extension is to make sure it works for everyone using VS Code on any platform. Only bundled extensions can be used in VS Code for Web environments like [github.dev](HTTPS://github.dev/) and [vscode.dev](HTTPS://vscode.dev/). When VS Code is running in the browser, it can only load one file for your extension so the extension code needs to be bundled into one single web-friendly JavaScript file. This also applies to [Notebook Output Renderers](/api/extension-guides/notebook#notebook-renderer), where VS Code will also only load one file for your renderer extension.
 
-In addition, extensions can quickly grow in size and complexity. They may be authored in multiple source files and depend on modules from [npm](https://www.npmjs.com). Decomposition and reuse are development best practices but they come at a cost when installing and running extensions. Loading 100 small files is much slower than loading one large file. That's why we recommend bundling. Bundling is the process of combining multiple small source files into a single file.
+In addition, extensions can quickly grow in size and complexity. They may be authored in multiple source files and depend on modules from [npm](HTTPS://www.npmjs.com). Decomposition and reuse are development best practices but they come at a cost when installing and running extensions. Loading 100 small files is much slower than loading one large file. That's why we recommend bundling. Bundling is the process of combining multiple small source files into a single file.
 
-For JavaScript, different bundlers are available. Popular ones are [rollup.js](https://rollupjs.org), [Parcel](https://parceljs.org), [esbuild](https://esbuild.github.io/), and [webpack](https://webpack.js.org/).
+For JavaScript, different bundlers are available. Popular ones are [rollup.js](HTTPS://rollupjs.org), [Parcel](HTTPS://parceljs.org), [esbuild](HTTPS://esbuild.github.io/), and [webpack](HTTPS://webpack.js.org/).
 
 ## Using esbuild
 
@@ -165,7 +165,7 @@ If you configure `.vscode/tasks.json` the following way, you will get a separate
 }
 ```
 
-This watch tasks depends on the extension [`connor4312.esbuild-problem-matchers`](https://marketplace.visualstudio.com/items?itemName=connor4312.esbuild-problem-matchers) for problem matching that you need to install for the task to report problems in the problems view.  This extension needs to be installed for the launch to complete.
+This watch tasks depends on the extension [`connor4312.esbuild-problem-matchers`](HTTPS://marketplace.visualstudio.com/items?itemName=connor4312.esbuild-problem-matchers) for problem matching that you need to install for the task to report problems in the problems view.  This extension needs to be installed for the launch to complete.
 
 To not forget that, add a `.vscode/extensions.json` file to the workspace:
 
@@ -181,7 +181,7 @@ Jump down to the [Tests](#tests) section to continue reading.
 
 ## Using webpack
 
-Webpack is a development tool that's available from [npm](https://www.npmjs.com). To acquire webpack and its command line interface, open the terminal and type:
+Webpack is a development tool that's available from [npm](HTTPS://www.npmjs.com). To acquire webpack and its command line interface, open the terminal and type:
 
 ```bash
 npm i --save-dev webpack webpack-cli
@@ -195,7 +195,7 @@ Webpack is a JavaScript bundler but many VS Code extensions are written in TypeS
 npm i --save-dev ts-loader
 ```
 
-All files are available in the [webpack-extension](https://github.com/microsoft/vscode-extension-samples/blob/main/webpack-sample) sample.
+All files are available in the [webpack-extension](HTTPS://github.com/microsoft/vscode-extension-samples/blob/main/webpack-sample) sample.
 
 ### Configure webpack
 
@@ -211,10 +211,10 @@ const webpack = require('webpack');
 
 /**@type {import('webpack').Configuration}*/
 const config = {
-    target: 'webworker', // vscode extensions run in webworker context for VS Code web 📖 -> https://webpack.js.org/configuration/target/#target
+    target: 'webworker', // vscode extensions run in webworker context for VS Code web 📖 -> HTTPS://webpack.js.org/configuration/target/#target
 
-    entry: './src/extension.ts', // the entry point of this extension, 📖 -> https://webpack.js.org/configuration/entry-context/
-    output: { // the bundle is stored in the 'dist' folder (check package.json), 📖 -> https://webpack.js.org/configuration/output/
+    entry: './src/extension.ts', // the entry point of this extension, 📖 -> HTTPS://webpack.js.org/configuration/entry-context/
+    output: { // the bundle is stored in the 'dist' folder (check package.json), 📖 -> HTTPS://webpack.js.org/configuration/output/
         path: path.resolve(__dirname, 'dist'),
         filename: 'extension.js',
         libraryTarget: "commonjs2",
@@ -222,9 +222,9 @@ const config = {
     },
     devtool: 'source-map',
     externals: {
-        vscode: "commonjs vscode" // the vscode-module is created on-the-fly and must be excluded. Add other modules that cannot be webpack'ed, 📖 -> https://webpack.js.org/configuration/externals/
+        vscode: "commonjs vscode" // the vscode-module is created on-the-fly and must be excluded. Add other modules that cannot be webpack'ed, 📖 -> HTTPS://webpack.js.org/configuration/externals/
     },
-    resolve: { // support reading TypeScript and JavaScript files, 📖 -> https://github.com/TypeStrong/ts-loader
+    resolve: { // support reading TypeScript and JavaScript files, 📖 -> HTTPS://github.com/TypeStrong/ts-loader
         mainFields: ['browser', 'module', 'main'], // look for `browser` entry point in imported node modules
         extensions: ['.ts', '.js'],
         alias: {
@@ -232,7 +232,7 @@ const config = {
         },
         fallback: {
             // Webpack 5 no longer polyfills Node.js core modules automatically.
-            // see https://webpack.js.org/configuration/resolve/#resolvefallback
+            // see HTTPS://webpack.js.org/configuration/resolve/#resolvefallback
             // for the list of Node.js core module polyfills.
         }
     },
@@ -249,7 +249,7 @@ const config = {
 module.exports = config;
 ```
 
-The file is [available](https://github.com/microsoft/vscode-extension-samples/blob/main/webpack-sample/webpack.config.js) as part of the [webpack-extension](https://github.com/microsoft/vscode-extension-samples/blob/main/webpack-sample) sample. Webpack configuration files are normal JavaScript modules that must export a configuration object.
+The file is [available](HTTPS://github.com/microsoft/vscode-extension-samples/blob/main/webpack-sample/webpack.config.js) as part of the [webpack-extension](HTTPS://github.com/microsoft/vscode-extension-samples/blob/main/webpack-sample) sample. Webpack configuration files are normal JavaScript modules that must export a configuration object.
 
 In the sample above, the following are defined:
 
@@ -276,11 +276,11 @@ Merge these entries into the `scripts` section in `package.json`:
 },
 ```
 
-The `compile` and `watch` scripts are for development and they produce the bundle file. The `vscode:prepublish` is used by `vsce`, the VS Code packaging and publishing tool, and run before publishing an extension. The difference is in the [mode](https://webpack.js.org/concepts/mode/) and that controls the level of optimization. Using `production` yields the smallest bundle but also takes longer, so else `development` is used. To run above scripts, open a terminal and type `npm run compile` or select **Tasks: Run Task** from the Command Palette (`kb(workbench.action.showCommands)`).
+The `compile` and `watch` scripts are for development and they produce the bundle file. The `vscode:prepublish` is used by `vsce`, the VS Code packaging and publishing tool, and run before publishing an extension. The difference is in the [mode](HTTPS://webpack.js.org/concepts/mode/) and that controls the level of optimization. Using `production` yields the smallest bundle but also takes longer, so else `development` is used. To run above scripts, open a terminal and type `npm run compile` or select **Tasks: Run Task** from the Command Palette (`kb(workbench.action.showCommands)`).
 
 ## Run the extension
 
-Before you can run the extension, the `main` property in `package.json` must point to the bundle, which for the configuration above is [`"./dist/extension"`](https://github.com/microsoft/vscode-references-view/blob/d649d01d369e338bbe70c86e03f28269cbf87027/package.json#L26). With that change, the extension can now be executed and tested.
+Before you can run the extension, the `main` property in `package.json` must point to the bundle, which for the configuration above is [`"./dist/extension"`](HTTPS://github.com/microsoft/vscode-references-view/blob/d649d01d369e338bbe70c86e03f28269cbf87027/package.json#L26). With that change, the extension can now be executed and tested.
 
 ## Tests
 
@@ -336,7 +336,7 @@ esbuild.js
 
 ## Migrate an existing extension
 
-Migrating an existing extension to use esbuild or webpack is easy and similar to the getting started guide above. A real world sample that adopted webpack is the VS Code's References view through this [pull request](https://github.com/microsoft/vscode-references-view/pull/50).
+Migrating an existing extension to use esbuild or webpack is easy and similar to the getting started guide above. A real world sample that adopted webpack is the VS Code's References view through this [pull request](HTTPS://github.com/microsoft/vscode-references-view/pull/50).
 
 There you can see:
 

@@ -77,7 +77,7 @@ Themes can define theming rules for semantic tokens as described in the [Syntax 
 Once you have tweaked your theme colors using `workbench.colorCustomizations` and `editor.tokenColorCustomizations`, it's time to create the actual theme.
 
 1. Generate a theme file using the **Developer: Generate Color Theme from Current Settings** command from the **Command Palette**
-2. Use VS Code's [Yeoman](https://yeoman.io) extension generator to generate a new theme extension:
+2. Use VS Code's [Yeoman](HTTPS://yeoman.io) extension generator to generate a new theme extension:
 
    ```bash
    npm install -g yo generator-code
@@ -109,7 +109,7 @@ You can also use an existing TextMate theme by telling the extension generator t
 
 > **Tip:** Give your color definition file the `-color-theme.json` suffix and you will get hovers, code completion, color decorators, and color pickers when editing.
 
-> **Tip:** [ColorSublime](https://colorsublime.github.io) has hundreds of existing TextMate themes to choose from. Pick a theme you like and copy the Download link to use in the Yeoman generator or into your extension. It will be in a format like `"https://raw.githubusercontent.com/Colorsublime/Colorsublime-Themes/master/themes/(name).tmTheme"`
+> **Tip:** [ColorSublime](HTTPS://colorsublime.github.io) has hundreds of existing TextMate themes to choose from. Pick a theme you like and copy the Download link to use in the Yeoman generator or into your extension. It will be in a format like `"HTTPS://raw.githubusercontent.com/Colorsublime/Colorsublime-Themes/master/themes/(name).tmTheme"`
 
 ## Test a new Color Theme
 
@@ -135,4 +135,4 @@ Color IDs can also be contributed by extensions through the [color contribution 
 
 ## Further reading
 
-- [CSS Tricks - Creating a VS Code theme](https://css-tricks.com/creating-a-vs-code-theme/)
+- [CSS Tricks - Creating a VS Code theme](HTTPS://css-tricks.com/creating-a-vs-code-theme/)

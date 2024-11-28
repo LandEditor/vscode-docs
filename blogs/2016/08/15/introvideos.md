@@ -10,7 +10,7 @@ Author: Wade Anderson
 
 # Announcing Intro Videos
 
-August 15, 2016 by Wade Anderson, [`@waderyan_`](https://twitter.com/waderyan_)
+August 15, 2016 by Wade Anderson, [`@waderyan_`](HTTPS://twitter.com/waderyan_)
 
 On the product team, we're constantly trying to make Visual Studio Code better. We spend hours in interviews, usability studies, and interacting with you online.
 
@@ -24,9 +24,9 @@ Navigate to [`Intro Videos - Overview`](/docs/getstarted/introvideos.md) to get 
 
 Below is the first video covering downloading, installing, and the basics of using VS Code:
 
-<iframe src="https://www.youtube-nocookie.com/embed/LUl_WXt8ohA?rel=0&amp;disablekb=0&amp;modestbranding=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+<iframe src="HTTPS://www.youtube-nocookie.com/embed/LUl_WXt8ohA?rel=0&amp;disablekb=0&amp;modestbranding=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 
 You can see the video outline [`here`](/docs/introvideos/basics.md) as well as additional introductory learning resources.
 
 Wade Anderson, VS Code Team Member <br>
-[`@waderyan_`](https://twitter.com/waderyan_)
+[`@waderyan_`](HTTPS://twitter.com/waderyan_)

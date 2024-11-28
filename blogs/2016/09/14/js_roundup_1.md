@@ -10,7 +10,7 @@ Author: Wade Anderson
 
 # JavaScript Extensions Part 1
 
-September 14, 2016 by Wade Anderson, [`@waderyan_`](https://twitter.com/waderyan_)
+September 14, 2016 by Wade Anderson, [`@waderyan_`](HTTPS://twitter.com/waderyan_)
 
 > This is part one in a series on JavaScript extensions.
 
@@ -24,11 +24,11 @@ Below are some of the essential JavaScript extensions that I and many of you are
 
 ## ESLint
 
-Marketplace - [`ESLint`](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+Marketplace - [`ESLint`](HTTPS://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
-Publisher - [`Dirk Baeumer`](https://marketplace.visualstudio.com/search?term=publisher%3A%22Dirk%20Baeumer%22&target=VSCode)
+Publisher - [`Dirk Baeumer`](HTTPS://marketplace.visualstudio.com/search?term=publisher%3A%22Dirk%20Baeumer%22&target=VSCode)
 
-Easily integrate [`ESLint](https://eslint.org/) into your project. Dirk is a member of the VS Code team and he maintains this extension and just released an update. If ESLint isn't your favorite linter, choose among a variety of other linter extensions, including [JSHint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.jshint), [JSCS](https://marketplace.visualstudio.com/items?itemName=ms-vscode.jscs), and [JS Standard`](https://marketplace.visualstudio.com/items?itemName=shinnn.standard).
+Easily integrate [`ESLint](HTTPS://eslint.org/) into your project. Dirk is a member of the VS Code team and he maintains this extension and just released an update. If ESLint isn't your favorite linter, choose among a variety of other linter extensions, including [JSHint](HTTPS://marketplace.visualstudio.com/items?itemName=dbaeumer.jshint), [JSCS](HTTPS://marketplace.visualstudio.com/items?itemName=ms-vscode.jscs), and [JS Standard`](HTTPS://marketplace.visualstudio.com/items?itemName=shinnn.standard).
 
 Read more about setting up JavaScript linters in the VS Code [`documentation`](/docs/languages/javascript.md#linters).
 
@@ -36,21 +36,21 @@ Read more about setting up JavaScript linters in the VS Code [`documentation`](/
 
 ## JavaScript (ES6) code snippets
 
-Marketplace - [`JavaScript (ES6) code snippets`](https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets)
+Marketplace - [`JavaScript (ES6) code snippets`](HTTPS://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets)
 
-Publisher - [`charalampos karypidis`](https://marketplace.visualstudio.com/search?term=publisher%3A%22charalampos%20karypidis%22&target=VSCode)
+Publisher - [`charalampos karypidis`](HTTPS://marketplace.visualstudio.com/search?term=publisher%3A%22charalampos%20karypidis%22&target=VSCode)
 
-VS Code comes with many built-in code snippets. The **JavaScript (ES6) code snippets** extension adds snippets for ES6 (ECMAScript 6) syntax. Here is a small sampling of the snippets provided by this extension. See the extension's [`README`](https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets) to see the dozens of snippets this pack gives you.
+VS Code comes with many built-in code snippets. The **JavaScript (ES6) code snippets** extension adds snippets for ES6 (ECMAScript 6) syntax. Here is a small sampling of the snippets provided by this extension. See the extension's [`README`](HTTPS://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets) to see the dozens of snippets this pack gives you.
 
 ![`javascript snippets`](javascript_snippets.png)
 
-You can read more about JavaScript snippets in the VS Code [`documentation](/docs/languages/javascript.md#snippets). For additional snippet packs, including [Angular 1](https://marketplace.visualstudio.com/items?itemName=johnpapa.Angular1), [Angular 2](https://marketplace.visualstudio.com/items?itemName=johnpapa.Angular2), [Bootstrap 3](https://marketplace.visualstudio.com/items?itemName=wcwhitehead.bootstrap-3-snippets), [ReactJs](https://marketplace.visualstudio.com/items?itemName=xabikos.ReactSnippets), and [jQuery](https://marketplace.visualstudio.com/items?itemName=donjayamanne.jquerysnippets), check out the Marketplace's [Snippets category`](https://marketplace.visualstudio.com/vscode/Snippets?sortBy=Downloads).
+You can read more about JavaScript snippets in the VS Code [`documentation](/docs/languages/javascript.md#snippets). For additional snippet packs, including [Angular 1](HTTPS://marketplace.visualstudio.com/items?itemName=johnpapa.Angular1), [Angular 2](HTTPS://marketplace.visualstudio.com/items?itemName=johnpapa.Angular2), [Bootstrap 3](HTTPS://marketplace.visualstudio.com/items?itemName=wcwhitehead.bootstrap-3-snippets), [ReactJs](HTTPS://marketplace.visualstudio.com/items?itemName=xabikos.ReactSnippets), and [jQuery](HTTPS://marketplace.visualstudio.com/items?itemName=donjayamanne.jquerysnippets), check out the Marketplace's [Snippets category`](HTTPS://marketplace.visualstudio.com/vscode/Snippets?sortBy=Downloads).
 
 ## Path IntelliSense
 
-Marketplace - [`Path IntelliSense`](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
+Marketplace - [`Path IntelliSense`](HTTPS://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
 
-Publisher - [`Christian Kohler`](https://marketplace.visualstudio.com/search?term=publisher%3A%22Christian%20Kohler%22&target=VSCode)
+Publisher - [`Christian Kohler`](HTTPS://marketplace.visualstudio.com/search?term=publisher%3A%22Christian%20Kohler%22&target=VSCode)
 
 This extension autocompletes file paths in your source code. Use this in JavaScript, HTML, CSS files and more.
 
@@ -58,13 +58,13 @@ This extension autocompletes file paths in your source code. Use this in JavaScr
 
 ## npm IntelliSense
 
-Marketplace - [`npm IntelliSense`](https://marketplace.visualstudio.com/items?itemName=christian-kohler.npm-intellisense)
+Marketplace - [`npm IntelliSense`](HTTPS://marketplace.visualstudio.com/items?itemName=christian-kohler.npm-intellisense)
 
-Publisher - [`Christian Kohler`](https://marketplace.visualstudio.com/search?term=publisher%3A%22Christian%20Kohler%22&target=VSCode)
+Publisher - [`Christian Kohler`](HTTPS://marketplace.visualstudio.com/search?term=publisher%3A%22Christian%20Kohler%22&target=VSCode)
 
 A second incredibly useful extension from Christian Kohler. This extension provides IntelliSense for npm modules.
 
 ![`npm intellisense`](npm_intellisense.gif)
 
 Wade Anderson, VS Code Team Member <br>
-[`@waderyan_`](https://twitter.com/waderyan_)
+[`@waderyan_`](HTTPS://twitter.com/waderyan_)

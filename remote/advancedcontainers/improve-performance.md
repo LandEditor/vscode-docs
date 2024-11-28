@@ -19,7 +19,7 @@ See [`Open a WSL 2 folder in a container on Windows`](/docs/devcontainers/contai
 
 ### Video: Speed up Dev Containers on Windows
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/MUsROtVmPJM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="HTTPS://www.youtube-nocookie.com/embed/MUsROtVmPJM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Use Clone Repository in Container Volume
 
@@ -35,7 +35,7 @@ Since macOS and Windows run containers in a VM, "bind" mounts are not as fast as
 
 **Dockerfile or image**:
 
-Let's use the [`vscode-remote-try-node`](https://github.com/microsoft/vscode-remote-try-node) repository to illustrate how to speed up `yarn install`.
+Let's use the [`vscode-remote-try-node`](HTTPS://github.com/microsoft/vscode-remote-try-node) repository to illustrate how to speed up `yarn install`.
 
 Follow these steps:
 
@@ -107,7 +107,7 @@ If you've already built the container and connected to it, run **Dev Containers:
 
 ### Video: Speed up npm install in a dev container
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/iDdJWIPRUx4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="HTTPS://www.youtube-nocookie.com/embed/iDdJWIPRUx4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Use a named volume for your entire source tree
 

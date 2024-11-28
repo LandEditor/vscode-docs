@@ -10,7 +10,7 @@ Author: Bowden Kelly
 ---
 # Inspecting Containers with VS Code
 
-October 31, 2019 by Bowden Kelly, [`@bowdenk7`](https://twitter.com/bowdenk7)
+October 31, 2019 by Bowden Kelly, [`@bowdenk7`](HTTPS://twitter.com/bowdenk7)
 
 When developing containerized applications, it is common to try to debug build and runtime issues by attaching a shell to the running container using `docker exec --it {containerID} /bin/sh`.
 
@@ -20,20 +20,20 @@ This technique allows you to inspect the container environment via the command l
 
 In this post, we'll look at how you can attach Visual Studio Code to your container so that you can use the full power of VS Code, including debugging, to inspect the container, figure out what is going wrong, and fix it.
 
-The [`Dev Containers`](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension, which launched in May of this year, allows you to connect your local VS Code to a container host while maintaining all of your personalized settings, themes, and key bindings.
+The [`Dev Containers`](HTTPS://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension, which launched in May of this year, allows you to connect your local VS Code to a container host while maintaining all of your personalized settings, themes, and key bindings.
 
 ## Prerequisites
 
-This blog post presumes you have [`Docker Desktop](https://www.docker.com/products/docker-desktop) and [Visual Studio Code](https://code.visualstudio.com/download) installed. You will also need the [Dev Containers`](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension. To install the Dev Containers extension, open the Extensions view (`kb(workbench.view.extensions)`), search for "Dev Containers", select **Install**, and restart VS Code if prompted.
+This blog post presumes you have [`Docker Desktop](HTTPS://www.docker.com/products/docker-desktop) and [Visual Studio Code](HTTPS://code.visualstudio.com/download) installed. You will also need the [Dev Containers`](HTTPS://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension. To install the Dev Containers extension, open the Extensions view (`kb(workbench.view.extensions)`), search for "Dev Containers", select **Install**, and restart VS Code if prompted.
 
 ## The application
 
-The first thing we need is an application that we can run in a container. If you've got one, great! You can skip this step. If not, you can clone this simple Node.js [`Express`](https://expressjs.com) application.
+The first thing we need is an application that we can run in a container. If you've got one, great! You can skip this step. If not, you can clone this simple Node.js [`Express`](HTTPS://expressjs.com) application.
 
 >**Note**: You do not need Node.js installed locally, we will run this application in the container!
 
 ```bash
-git clone https://github.com/microsoft/vscode-express-sample.git
+git clone HTTPS://github.com/microsoft/vscode-express-sample.git
 ```
 
 This application has a simple Dockerfile that is based off the Node 10 image, as well as a `docker-compose.yml` file that we will use to run the image, expose the appropriate ports, and map in the local file system. We are running Node with the `–inspect` flag so that we can debug the app as we would when running locally. In a real application, you would probably want a separate Docker Compose file for your production deployment.
@@ -52,7 +52,7 @@ If everything worked, you should see output like this:
 
 ![`docker-compose up output`](docker-compose-output.png)
 
-And, you should be able to navigate to [`http://localhost:3000`](http://localhost:3000) and see the following:
+And, you should be able to navigate to [`HTTP://localhost:3000`](HTTP://localhost:3000) and see the following:
 
 ![`Welcome to Express web page`](welcome-express.png)
 
@@ -108,7 +108,7 @@ Next, open `index.js` and place a breakpoint on line 6 by clicking on the gutter
 res.render('index', { title: 'Express' });
 ```
 
-Now go to [`http://localhost:3000`](http://localhost:3000) in your browser and see the breakpoint trigger as expected!
+Now go to [`HTTP://localhost:3000`](HTTP://localhost:3000) in your browser and see the breakpoint trigger as expected!
 
 ## Install extensions
 
@@ -120,7 +120,7 @@ If you open the Extensions view (`kb(workbench.view.extensions)`), you will see 
 
 ![`Remote Extensions view`](remote-extensions-view.png)
 
-Let's install the [`GitLens`](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) extension by typing 'gitlens' in the Extensions view and then selecting **Install in Attached Container**.
+Let's install the [`GitLens`](HTTPS://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) extension by typing 'gitlens' in the Extensions view and then selecting **Install in Attached Container**.
 
 ![`Search for GitLens`](search-for-gitlens.png)
 
@@ -164,4 +164,4 @@ Other useful resources include the full [`Developing inside a Container](/docs/d
 Happy Remote Coding,
 
 Bowden Kelly, VS Code Program Manager
-[`@bowdenk7`](https://twitter.com/bowdenk7)
+[`@bowdenk7`](HTTPS://twitter.com/bowdenk7)

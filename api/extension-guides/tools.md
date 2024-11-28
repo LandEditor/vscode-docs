@@ -19,7 +19,7 @@ A language model tool is a function that can be invoked as part of language mode
 
 The LLM never actually executes the tool itself, instead the LLM generates the parameters that can be used to call your tool, which your code can then choose how to handle by calling the indicated function. Your extension is always in full control of the tool calling process.
 
-Read more about [function calling](https://platform.openai.com/docs/guides/function-calling) in the OpenAI documentation.
+Read more about [function calling](HTTPS://platform.openai.com/docs/guides/function-calling) in the OpenAI documentation.
 
 ## Why use tool calling?
 
@@ -44,7 +44,7 @@ The tool-calling flow in a chat extension is as follows:
 
 ### Implement tool calling with the chat extension library
 
-You can use the [`@vscode/chat-extension-utils` library](https://www.npmjs.com/package/@vscode/chat-extension-utils) to simplify the process of calling tools in a chat extension.
+You can use the [`@vscode/chat-extension-utils` library](HTTPS://www.npmjs.com/package/@vscode/chat-extension-utils) to simplify the process of calling tools in a chat extension.
 
 Implement tool calling in the `vscode.ChatRequestHandler` function of your [chat participant](/api/extension-guides/chat).
 
@@ -90,13 +90,13 @@ Implement tool calling in the `vscode.ChatRequestHandler` function of your [chat
     return await libResult.result;
     ```
 
-The full source code of this [tool-calling sample](https://github.com/microsoft/vscode-extension-samples/blob/main/chat-sample/src/chatUtilsSample.ts) is available in the VS Code Extension Samples repository.
+The full source code of this [tool-calling sample](HTTPS://github.com/microsoft/vscode-extension-samples/blob/main/chat-sample/src/chatUtilsSample.ts) is available in the VS Code Extension Samples repository.
 
 ### Implement tool calling yourself
 
 For more advanced scenarios, you can also implement tool calling yourself. Optionally, you can use the `@vscode/prompt-tsx` library for crafting the LLM prompts. By implementing tool calling yourself, you have more control over the tool-calling process. For example, to perform additional validation or to handle tool responses in a specific way before sending them to the LLM.
 
-View the full source code for implementing [tool calling by using prompt-tsx](https://github.com/microsoft/vscode-extension-samples/blob/main/chat-sample/src/toolParticipant.ts) in the VS Code Extension Samples repository.
+View the full source code for implementing [tool calling by using prompt-tsx](HTTPS://github.com/microsoft/vscode-extension-samples/blob/main/chat-sample/src/toolParticipant.ts) in the VS Code Extension Samples repository.
 
 ## Create a language model tool
 
@@ -238,15 +238,15 @@ To implement a language model tool:
         }
         ```
 
-View the full source code for implementing a [language model tool](https://github.com/microsoft/vscode-extension-samples/blob/main/chat-sample/src/tools.ts) in the VS Code Extension Samples repository.
+View the full source code for implementing a [language model tool](HTTPS://github.com/microsoft/vscode-extension-samples/blob/main/chat-sample/src/tools.ts) in the VS Code Extension Samples repository.
 
 ## Getting started
 
-- [Chat extension sample](https://github.com/microsoft/vscode-extension-samples/tree/main/chat-sample)
+- [Chat extension sample](HTTPS://github.com/microsoft/vscode-extension-samples/tree/main/chat-sample)
 
 ## Related content
 
 - [Get started with the Language Model API](/api/extension-guides/language-model)
 - [Build a chat extension](/api/extension-guides/chat)
 - [Use Prompt-tsx](/api/extension-guides/prompt-tsx)
-- [@vscode/vscode-chat-extension-utils library](https://github.com/microsoft/vscode-chat-extension-utils)
+- [@vscode/vscode-chat-extension-utils library](HTTPS://github.com/microsoft/vscode-chat-extension-utils)

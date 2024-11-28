@@ -9,25 +9,25 @@ HasLaTeX: true
 ---
 # Bracket pair colorization 10,000x faster
 
-September 29, 2021 by Henning Dieterichs, [`@hediet_dev`](https://twitter.com/hediet_dev)
+September 29, 2021 by Henning Dieterichs, [`@hediet_dev`](HTTPS://twitter.com/hediet_dev)
 
 When dealing with deeply nested brackets in Visual Studio Code, it can be hard to figure out which brackets match and which do not.
 
-To make this easier, in 2016, a user named CoenraadS developed the awesome [`Bracket Pair Colorizer`](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer) extension to colorize matching brackets and published it to the VS Code Marketplace. This extension became very popular and now is one of the 10 most downloaded extensions on the Marketplace, with over 6 million installs.
+To make this easier, in 2016, a user named CoenraadS developed the awesome [`Bracket Pair Colorizer`](HTTPS://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer) extension to colorize matching brackets and published it to the VS Code Marketplace. This extension became very popular and now is one of the 10 most downloaded extensions on the Marketplace, with over 6 million installs.
 
-To address performance and accuracy problems, in 2018, CoenraadS followed up with [`Bracket Pair Colorizer 2`](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2), which now also has over 3 millions of installs.
+To address performance and accuracy problems, in 2018, CoenraadS followed up with [`Bracket Pair Colorizer 2`](HTTPS://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2), which now also has over 3 millions of installs.
 
-The Bracket Pair Colorizer extension is a good example of the power of VS Code's extensibility and makes heavy use of the [`Decoration API`](https://code.visualstudio.com/api/references/vscode-api#TextEditor.setDecorations) to colorize brackets.
+The Bracket Pair Colorizer extension is a good example of the power of VS Code's extensibility and makes heavy use of the [`Decoration API`](HTTPS://code.visualstudio.com/api/references/vscode-api#TextEditor.setDecorations) to colorize brackets.
 
 ![`Two screenshots of the same code opened in VS Code. In the first screenshot, bracket pair colorization is disabled, in the second screenshot, it is enabled`](./on-off-comparison.drawio.svg)
 
-We are pleased to see that the VS Code Marketplace offers many more such community-provided extensions, all of which help identify matching bracket pairs in very creative ways, including: [`Rainbow Brackets](https://marketplace.visualstudio.com/items?itemName=2gua.rainbow-brackets), [Subtle Match Brackets](https://marketplace.visualstudio.com/items?itemName=rafamel.subtle-brackets), [Bracket Highlighter](https://marketplace.visualstudio.com/items?itemName=Durzn.brackethighlighter), [Blockman](https://marketplace.visualstudio.com/items?itemName=leodevbro.blockman), and [Bracket Lens`](https://marketplace.visualstudio.com/items?itemName=wraith13.bracket-lens).
+We are pleased to see that the VS Code Marketplace offers many more such community-provided extensions, all of which help identify matching bracket pairs in very creative ways, including: [`Rainbow Brackets](HTTPS://marketplace.visualstudio.com/items?itemName=2gua.rainbow-brackets), [Subtle Match Brackets](HTTPS://marketplace.visualstudio.com/items?itemName=rafamel.subtle-brackets), [Bracket Highlighter](HTTPS://marketplace.visualstudio.com/items?itemName=Durzn.brackethighlighter), [Blockman](HTTPS://marketplace.visualstudio.com/items?itemName=leodevbro.blockman), and [Bracket Lens`](HTTPS://marketplace.visualstudio.com/items?itemName=wraith13.bracket-lens).
 This variety of extensions shows that there is a real desire by VS Code users to get better support for brackets.
 
 ### The performance problem
 
-Unfortunately, the non-incremental nature of the Decoration API and missing access to VS Code's token information causes the Bracket Pair Colorizer extension to be slow on large files: when inserting a single bracket at the beginning of the [`checker.ts`](https://github.com/microsoft/TypeScript/blob/8362a0f929d74ff46828016ec67c05744a8dbb3c/src/compiler/checker.ts) file of the TypeScript project, which has more than 42k lines of code, it takes about 10 seconds until the colors of all bracket pairs update.
-During these 10 seconds of processing, the extension host process burns at 100% CPU and all features that are powered by extensions, such as auto-completion or diagnostics, stop functioning. Luckily, [`VS Code's architecture`](https://code.visualstudio.com/api/advanced-topics/extension-host#stability-and-performance)
+Unfortunately, the non-incremental nature of the Decoration API and missing access to VS Code's token information causes the Bracket Pair Colorizer extension to be slow on large files: when inserting a single bracket at the beginning of the [`checker.ts`](HTTPS://github.com/microsoft/TypeScript/blob/8362a0f929d74ff46828016ec67c05744a8dbb3c/src/compiler/checker.ts) file of the TypeScript project, which has more than 42k lines of code, it takes about 10 seconds until the colors of all bracket pairs update.
+During these 10 seconds of processing, the extension host process burns at 100% CPU and all features that are powered by extensions, such as auto-completion or diagnostics, stop functioning. Luckily, [`VS Code's architecture`](HTTPS://code.visualstudio.com/api/advanced-topics/extension-host#stability-and-performance)
 ensures that the UI remains responsive and documents can still be saved to disk.
 
 CoenraadS was aware of this performance issue and spent a great amount of effort on increasing speed and accuracy in version 2 of the extension, by reusing the token and bracket parsing engine from VS Code. However, VS Code's API and extension architecture was not designed to allow for high performance bracket pair colorization when hundreds of thousands of bracket pairs are involved. Thus, even in Bracket Pair Colorizer 2, it takes some time until the colors reflect the new nesting levels after inserting `{` at the beginning of the file:
@@ -35,11 +35,11 @@ CoenraadS was aware of this performance issue and spent a great amount of effort
 ![`A video of VS Code showing that the extension needs more than 10 seconds to process the text change in checker.ts`](./checker_ts-extension.gif)
 
 While we would have loved to just improve the performance of the extension (which certainly would have required introducing more advanced APIs, optimized for high-performance scenarios), the asynchronous communication between the renderer and the extension-host severely limits how fast bracket pair colorization can be when implemented as an extension. This limit cannot be overcome.
-In particular, bracket pair colors should not be requested asynchronously as soon as they appear in the viewport, as this would have caused visible flickering when scrolling through large files. A discussion of this can be found in [`issue #128465`](https://github.com/microsoft/vscode/issues/128465#issuecomment-879089188).
+In particular, bracket pair colors should not be requested asynchronously as soon as they appear in the viewport, as this would have caused visible flickering when scrolling through large files. A discussion of this can be found in [`issue #128465`](HTTPS://github.com/microsoft/vscode/issues/128465#issuecomment-879089188).
 
 ### What we did
 
-Instead, [`in the 1.60 update`](https://code.visualstudio.com/updates/v1_60#_high-performance-bracket-pair-colorization), we reimplemented the extension in the core of VS Code and brought this time down to less than a millisecond - in this particular example, that is more than 10,000 times faster.
+Instead, [`in the 1.60 update`](HTTPS://code.visualstudio.com/updates/v1_60#_high-performance-bracket-pair-colorization), we reimplemented the extension in the core of VS Code and brought this time down to less than a millisecond - in this particular example, that is more than 10,000 times faster.
 
 The feature can be enabled by adding the setting `"editor.bracketPairColorization.enabled": true`.
 
@@ -49,15 +49,15 @@ Now, updates are no longer noticeable, even for files with hundreds of thousands
 
 Once we decided we move it into core, we also took the opportunity to look into how to make it as fast as we can. Who wouldn’t love an algorithmic challenge?
 
-Without being limited by public API design, we could use (2,3)-trees, recursion-free tree-traversal, bit-arithmetic, incremental parsing, and other techniques to reduce the extension's worst-case update [`time-complexity`](https://en.wikipedia.org/wiki/Time_complexity) (that is the time required to process user-input when a document already has been opened) from $\mathcal{O}(N + E)$ to $\mathcal{O}(\mathrm{log}^3 N + E)$ with $N$ being the document size and $E$ the edit size, assuming the nesting level of bracket pairs is bounded by $\mathcal{O}(\mathrm{log} N)$.
+Without being limited by public API design, we could use (2,3)-trees, recursion-free tree-traversal, bit-arithmetic, incremental parsing, and other techniques to reduce the extension's worst-case update [`time-complexity`](HTTPS://en.wikipedia.org/wiki/Time_complexity) (that is the time required to process user-input when a document already has been opened) from $\mathcal{O}(N + E)$ to $\mathcal{O}(\mathrm{log}^3 N + E)$ with $N$ being the document size and $E$ the edit size, assuming the nesting level of bracket pairs is bounded by $\mathcal{O}(\mathrm{log} N)$.
 
 Additionally, by reusing the existing tokens from the renderer and its incremental token update mechanism, we gained another massive (but constant) speedup.
 
 ### VS Code for the Web
 
-Besides being more performant, the new implementation is also supported in [`VS Code for the Web](https://code.visualstudio.com/docs/editor/vscode-web), which you can see in action with [vscode.dev](https://vscode.dev) and  [github.dev](https://docs.github.com/codespaces/the-githubdev-web-based-editor). Due to the way Bracket Pair Colorizer 2 reuses the VS Code token engine, it was not possible to migrate the extension to be what we call a [web extension`](https://code.visualstudio.com/api/extension-guides/web-extensions).
+Besides being more performant, the new implementation is also supported in [`VS Code for the Web](HTTPS://code.visualstudio.com/docs/editor/vscode-web), which you can see in action with [vscode.dev](HTTPS://vscode.dev) and  [github.dev](HTTPS://docs.github.com/codespaces/the-githubdev-web-based-editor). Due to the way Bracket Pair Colorizer 2 reuses the VS Code token engine, it was not possible to migrate the extension to be what we call a [web extension`](HTTPS://code.visualstudio.com/api/extension-guides/web-extensions).
 
-Not only does our new implementation work in VS Code for the Web, but also directly in the [`Monaco Editor`](https://microsoft.github.io/monaco-editor/)!
+Not only does our new implementation work in VS Code for the Web, but also directly in the [`Monaco Editor`](HTTPS://microsoft.github.io/monaco-editor/)!
 
 ## The challenge of bracket pair colorization
 
@@ -69,11 +69,11 @@ Thus, when initially colorizing brackets at the very end of a document, every si
 
 ![`A diagram that indicates that changing a single character influences the nesting level of all subsequent brackets`](./level-depends-on-all-previous-characters.dio.svg)
 
-The implementation in the bracket pair colorizer extension addresses this challenge by processing the entire document again whenever a single bracket is inserted or removed (which is very reasonable to do for small documents). The colors then have to be removed and reapplied using the VS Code [`Decoration API`](https://code.visualstudio.com/api/references/vscode-api#TextEditor.setDecorations), which sends all color decorations to the renderer.
+The implementation in the bracket pair colorizer extension addresses this challenge by processing the entire document again whenever a single bracket is inserted or removed (which is very reasonable to do for small documents). The colors then have to be removed and reapplied using the VS Code [`Decoration API`](HTTPS://code.visualstudio.com/api/references/vscode-api#TextEditor.setDecorations), which sends all color decorations to the renderer.
 
-As demonstrated earlier, this is slow for large documents with hundreds of thousands of bracket pairs and thus equally many color decorations. Because extensions cannot update decorations incrementally and have to replace them all at once, the bracket pair colorizer extension cannot even do much better. Still, the renderer organizes all these decorations in a clever way (by using a so called [`interval tree`](https://github.com/microsoft/vscode/blob/534c529c292a96eb775c74dfcee2d733380ed629/src/vs/editor/common/model/intervalTree.ts)), so rendering is always fast after (potentially hundreds of thousands of) decorations have been received.
+As demonstrated earlier, this is slow for large documents with hundreds of thousands of bracket pairs and thus equally many color decorations. Because extensions cannot update decorations incrementally and have to replace them all at once, the bracket pair colorizer extension cannot even do much better. Still, the renderer organizes all these decorations in a clever way (by using a so called [`interval tree`](HTTPS://github.com/microsoft/vscode/blob/534c529c292a96eb775c74dfcee2d733380ed629/src/vs/editor/common/model/intervalTree.ts)), so rendering is always fast after (potentially hundreds of thousands of) decorations have been received.
 
-Our goal is not having to reprocess the entire document on each key-stroke. Instead, the time required to process a single text edit should only grow ([`poly`](https://en.wikipedia.org/wiki/Polylogarithmic_function)) logarithmically with the document length.
+Our goal is not having to reprocess the entire document on each key-stroke. Instead, the time required to process a single text edit should only grow ([`poly`](HTTPS://en.wikipedia.org/wiki/Polylogarithmic_function)) logarithmically with the document length.
 
 However, we still want to be able to query all brackets and their nesting level in the viewport in (poly) logarithmic time, as it would be the case when using VS Code's decoration API (which uses the mentioned interval tree).
 
@@ -111,13 +111,13 @@ As it turns out, just ignoring brackets in comments and strings as identified by
 
 VS Code already has an efficient and synchronous mechanism to maintain token information used for syntax highlighting and we can reuse that to identify opening and closing brackets.
 
-This is another challenge of the Bracket Pair Colorization extension that affects performance negatively: it does not have access to these tokens and has to recompute them on its own. [`We thought long`](https://github.com/microsoft/vscode/issues/128465#issuecomment-879089188) about how we could efficiently and reliably expose token information to extensions, but came to the conclusion that we cannot do this without a lot of implementation details leaking into the extension API. Because the extension still has to send over a list of color decorations for each bracket in the document, such an API alone would not even solve the performance problem.
+This is another challenge of the Bracket Pair Colorization extension that affects performance negatively: it does not have access to these tokens and has to recompute them on its own. [`We thought long`](HTTPS://github.com/microsoft/vscode/issues/128465#issuecomment-879089188) about how we could efficiently and reliably expose token information to extensions, but came to the conclusion that we cannot do this without a lot of implementation details leaking into the extension API. Because the extension still has to send over a list of color decorations for each bracket in the document, such an API alone would not even solve the performance problem.
 
 As a side note, when applying an edit at the beginning of a document that changes all following tokens (such as inserting `/*` for C-like languages), VS Code does not retokenize long documents all at once, but in chunks over time. This ensures that the UI does not freeze, even though tokenization happens synchronously in the renderer.
 
 ## The basic algorithm
 
-The core idea is to use a [`recursive descent parser](https://en.wikipedia.org/wiki/Recursive_descent_parser) to build an [abstract syntax tree (AST)](https://en.wikipedia.org/wiki/Abstract_syntax_tree) that describes the structure of all bracket pairs. When a bracket is found, check the token information and skip the bracket if it is in a comment or string. A tokenizer allows the parser to peek and read such bracket or text tokens.
+The core idea is to use a [`recursive descent parser](HTTPS://en.wikipedia.org/wiki/Recursive_descent_parser) to build an [abstract syntax tree (AST)](HTTPS://en.wikipedia.org/wiki/Abstract_syntax_tree) that describes the structure of all bracket pairs. When a bracket is found, check the token information and skip the bracket if it is in a comment or string. A tokenizer allows the parser to peek and read such bracket or text tokens.
 
 The trick is now to only store the length of each node (and also to have text-nodes for everything that is not a bracket to cover the gaps), instead of storing absolute start/end positions. With only lengths available, a bracket node at a given position can still be located efficiently in the AST.
 
@@ -211,7 +211,7 @@ If we can ensure that each list only has a bounded number of children and resemb
 
 ### Keeping list trees balanced
 
-We use [`(2,3)-trees`](https://en.wikipedia.org/wiki/2%E2%80%933_tree) to enforce that these lists are balanced: every list must have at least 2 and at most 3 children, and all children of a list must have the same height in the balanced list tree. Note that a bracket pair is considered a leaf of height 0 in the balanced tree, but it might have children in the AST.
+We use [`(2,3)-trees`](HTTPS://en.wikipedia.org/wiki/2%E2%80%933_tree) to enforce that these lists are balanced: every list must have at least 2 and at most 3 children, and all children of a list must have the same height in the balanced list tree. Note that a bracket pair is considered a leaf of height 0 in the balanced tree, but it might have children in the AST.
 
 When constructing the AST from scratch during initialization, we first collect all children and then convert them to such a balanced tree. This can be done in linear time.
 
@@ -334,11 +334,11 @@ Because concatenating two nodes of different height has time-complexity $\mathca
 
 We have two data structures for this task: the *before edit position mapper* and the *node reader*.
 
-The [`position mapper`](https://github.com/microsoft/vscode/blob/f8e9f87b6554b527c61ba963d0c96c7687cbaae9/src/vs/editor/common/model/bracketPairColorizer/beforeEditPositionMapper.ts#L17) maps a position in the new document (after applying the edit) to the old document (before applying the edit), if possible. It also tells us the length between the current position and the next edit (or 0, if we are in an edit). This is done in $\mathcal{O}(1)$.
+The [`position mapper`](HTTPS://github.com/microsoft/vscode/blob/f8e9f87b6554b527c61ba963d0c96c7687cbaae9/src/vs/editor/common/model/bracketPairColorizer/beforeEditPositionMapper.ts#L17) maps a position in the new document (after applying the edit) to the old document (before applying the edit), if possible. It also tells us the length between the current position and the next edit (or 0, if we are in an edit). This is done in $\mathcal{O}(1)$.
 
 When processing a text edit and parsing a node, this component gives us the position of a node that we can potentially reuse and the maximum length this node can have - clearly, the node we want to reuse must be shorter than the distance to the next edit.
 
-The [`node reader`](https://github.com/microsoft/vscode/blob/f8e9f87b6554b527c61ba963d0c96c7687cbaae9/src/vs/editor/common/model/bracketPairColorizer/nodeReader.ts#L13) can quickly find the longest node that satisfies a given predicate at a given position in an AST. To find a node we can reuse, we use the position mapper to look up its old position and its maximum allowed length and then use the node reader to find this node. If we found such a node, we know that it did not change and can reuse it and skip its length.
+The [`node reader`](HTTPS://github.com/microsoft/vscode/blob/f8e9f87b6554b527c61ba963d0c96c7687cbaae9/src/vs/editor/common/model/bracketPairColorizer/nodeReader.ts#L13) can quickly find the longest node that satisfies a given predicate at a given position in an AST. To find a node we can reuse, we use the position mapper to look up its old position and its maximum allowed length and then use the node reader to find this node. If we found such a node, we know that it did not change and can reuse it and skip its length.
 
 Because the node reader is queried with monotonously increasing positions, it does not have to start searching from scratch every time, but can do so from the end of the last reused node. Key to this is a recursion-free tree-traversal algorithm that can dive into nodes, but also skip them or go back to parent nodes. When a reusable node is found, traversal stops and continues with the next request to the node reader.
 
@@ -376,7 +376,7 @@ Adding two such lengths is easy, but requires a case distinction: while the line
 
 Surprisingly, most of the code does not need to be aware of how lengths are represented. Only the position mapper got significantly more complex, since care had to be taken that a single line can contain multiple text edits.
 
-As an implementation detail, we encode such lengths in a single number to reduce memory pressure. JavaScript supports integers up to $2^{53} - 1$, so we can use up to 26 bits each for the number of lines and columns. Unfortunately, v8 stores numbers larger than $2^{31}$ [`in the heap`](https://v8.dev/blog/react-cliff#smi-heapnumber-mutableheapnumber), so this encoding trick did not turn out as effective as we thought.
+As an implementation detail, we encode such lengths in a single number to reduce memory pressure. JavaScript supports integers up to $2^{53} - 1$, so we can use up to 26 bits each for the number of lines and columns. Unfortunately, v8 stores numbers larger than $2^{31}$ [`in the heap`](HTTPS://v8.dev/blog/react-cliff#smi-heapnumber-mutableheapnumber), so this encoding trick did not turn out as effective as we thought.
 
 ## Further difficulties: Unclosed bracket pairs
 
@@ -422,10 +422,10 @@ This needs to be considered when reusing nodes: the pair `( } )` cannot be reuse
 
 ## Going forward
 
-Efficient bracket pair colorization was a fun challenge. With the new data structures, we can also solve other problems related to bracket pairs more efficiently, such as [`general bracket matching](https://code.visualstudio.com/docs/editor/editingevolved#_bracket-matching) or [showing colored line scopes`](https://github.com/microsoft/vscode/issues/131001).
+Efficient bracket pair colorization was a fun challenge. With the new data structures, we can also solve other problems related to bracket pairs more efficiently, such as [`general bracket matching](HTTPS://code.visualstudio.com/docs/editor/editingevolved#_bracket-matching) or [showing colored line scopes`](HTTPS://github.com/microsoft/vscode/issues/131001).
 
 Even though JavaScript might not be the best language to write high performance code, a lot of speed can be gained by reducing asymptotic algorithmic complexity, especially when dealing with large inputs.
 
 Happy Coding!
 
-Henning Dieterichs, VS Code Team member [`@hediet_dev`](https://twitter.com/hediet_dev)
+Henning Dieterichs, VS Code Team member [`@hediet_dev`](HTTPS://twitter.com/hediet_dev)

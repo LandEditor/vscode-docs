@@ -10,9 +10,9 @@ Author: Amanda Silver
 ---
 # Introducing Visual Studio Live Share
 
-November 15, 2017 Amanda Silver, [@amandaksilver](https://twitter.com/amandaksilver)
+November 15, 2017 Amanda Silver, [@amandaksilver](HTTPS://twitter.com/amandaksilver)
 
->**Update (May 7, 2018):** Visual Studio Live Share is now publicly available. You can [get started using Live Share](https://visualstudio.microsoft.com/services/live-share) today!
+>**Update (May 7, 2018):** Visual Studio Live Share is now publicly available. You can [get started using Live Share](HTTPS://visualstudio.microsoft.com/services/live-share) today!
 
 We are excited to announce that we’re working on "Visual Studio Live Share", which enables developers using Visual Studio 2017 or Visual Studio Code to collaborate in real-time! Learn more about Live Share and the upcoming limited private preview [here](/visual-studio-live-share).
 
@@ -21,7 +21,7 @@ Live Share enables your team to quickly collaborate on the same codebase without
 
 When it comes to Live Share, seeing is believing.  Watch the following video to get an idea of what we are working on:
 
-<iframe src="https://aka.ms/vsls-video" allowFullScreen frameBorder="0" title="Introducing Visual Studio Live Share"></iframe>
+<iframe src="HTTPS://aka.ms/vsls-video" allowFullScreen frameBorder="0" title="Introducing Visual Studio Live Share"></iframe>
 
 When you share a collaborative session, your teammate sees the context of the workspace in their editor. This means your teammate can read the code you shared without having to clone a repo or install any dependencies your code relies on. They can use rich language features to navigate within the code; not only just opening other files as text but using semantic analysis-based navigation like Go to Definition or Peek.
 
@@ -43,10 +43,10 @@ Live Share allows you to share the context of the code, so you get instant, bidi
 
 
 ## Find out more
-We are excited to give you an early glimpse into Live Share today. Although we are only sharing it as a demo today, we will be releasing a limited private preview soon. If you want to learn more and keep up with the project,  you can sign up by clicking [here](https://aka.ms/vsls-signup).
+We are excited to give you an early glimpse into Live Share today. Although we are only sharing it as a demo today, we will be releasing a limited private preview soon. If you want to learn more and keep up with the project,  you can sign up by clicking [here](HTTPS://aka.ms/vsls-signup).
 
 Happy Coding!
 
 Amanda
 
-[@amandaksilver](https://twitter.com/amandaksilver) <a href="https://twitter.com/search?f=tweets&q=%23VSLiveShare&src=typd">#VSLiveShare</a>
+[@amandaksilver](HTTPS://twitter.com/amandaksilver) <a href="HTTPS://twitter.com/search?f=tweets&q=%23VSLiveShare&src=typd">#VSLiveShare</a>

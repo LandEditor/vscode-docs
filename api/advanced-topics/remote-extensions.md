@@ -7,7 +7,7 @@ MetaDescription: A guide to adding Visual Studio Code Remote Development and Git
 ---
 # Supporting Remote Development and GitHub Codespaces
 
-**[Visual Studio Code Remote Development](/docs/remote/remote-overview)** allows you to transparently interact with source code and runtime environments sitting on other machines (whether virtual or physical). **[GitHub Codespaces](https://github.com/features/codespaces)** is a service that expands these capabilities with managed cloud-hosted environments that are accessible from both VS Code and a browser-based editor.
+**[Visual Studio Code Remote Development](/docs/remote/remote-overview)** allows you to transparently interact with source code and runtime environments sitting on other machines (whether virtual or physical). **[GitHub Codespaces](HTTPS://github.com/features/codespaces)** is a service that expands these capabilities with managed cloud-hosted environments that are accessible from both VS Code and a browser-based editor.
 
 To ensure performance, Remote Development and GitHub Codespaces both transparently run certain VS Code extensions remotely. However, this can have subtle impacts on how extensions need to work.  While many extensions will work without any modifications, you may need to make changes so that your extension works properly in all environments, although these changes are often fairly minor.
 
@@ -35,11 +35,11 @@ Typically, your best starting point for testing is to use a remote environment t
 
 ### Debugging with GitHub Codespaces
 
-Debugging your extension in [GitHub Codespaces](https://docs.github.com/github/developing-online-with-codespaces) preview can be a great starting point since you can use both VS Code and the Codespaces browser-based editor for testing and troubleshooting. You can also use a [custom development container](#debugging-in-a-custom-development-container) if preferred.
+Debugging your extension in [GitHub Codespaces](HTTPS://docs.github.com/github/developing-online-with-codespaces) preview can be a great starting point since you can use both VS Code and the Codespaces browser-based editor for testing and troubleshooting. You can also use a [custom development container](#debugging-in-a-custom-development-container) if preferred.
 
 Follow these steps:
 
-1. Navigate to the repository that contains your extension on GitHub and [open it in a codespace](https://docs.github.com/github/developing-online-with-codespaces/creating-a-codespace) to work with it in a browser-based editor. You can also [open the codespace in VS Code](https://docs.github.com/github/developing-online-with-codespaces/using-codespaces-in-visual-studio-code) if you prefer.
+1. Navigate to the repository that contains your extension on GitHub and [open it in a codespace](HTTPS://docs.github.com/github/developing-online-with-codespaces/creating-a-codespace) to work with it in a browser-based editor. You can also [open the codespace in VS Code](HTTPS://docs.github.com/github/developing-online-with-codespaces/using-codespaces-in-visual-studio-code) if you prefer.
 
 2. While the default image for GitHub Codespaces should have all the needed prerequisites for most extensions, you can install any other required dependencies (for example, using `yarn install` or `sudo apt-get`) in a new VS Code terminal window (`kb(workbench.action.terminal.new)`).
 
@@ -53,7 +53,7 @@ The extension development host window that appears will include your extension r
 
 Follow these steps:
 
-1. To use a development container locally, [install and configure the Dev Containers extension](/docs/devcontainers/containers#getting-started), and use **File > Open... / Open Folder...** to open your source code locally in VS Code. To use Codespaces instead, navigate to the repository that contains your extension on GitHub and [open it in a codespace](https://docs.github.com/github/developing-online-with-codespaces/creating-a-codespace) to work with it in a browser-based editor. You can also [open the codespace in VS Code](https://docs.github.com/github/developing-online-with-codespaces/using-codespaces-in-visual-studio-code) if you prefer.
+1. To use a development container locally, [install and configure the Dev Containers extension](/docs/devcontainers/containers#getting-started), and use **File > Open... / Open Folder...** to open your source code locally in VS Code. To use Codespaces instead, navigate to the repository that contains your extension on GitHub and [open it in a codespace](HTTPS://docs.github.com/github/developing-online-with-codespaces/creating-a-codespace) to work with it in a browser-based editor. You can also [open the codespace in VS Code](HTTPS://docs.github.com/github/developing-online-with-codespaces/using-codespaces-in-visual-studio-code) if you prefer.
 
 2. Select **Dev Containers: Add Dev Container Configuration Files...** or **Codespaces: Add Dev Container Configuration Files...** from the Command Palette (`kbstyle(F1)`), and pick **Node.js & TypeScript** (or Node.js if you are not using TypeScript) to add the needed container configuration files.
 
@@ -113,7 +113,7 @@ Follow these steps:
 
 1. If this is a published extension, you may want to add `"extensions.autoUpdate": false` to `settings.json` to prevent it from auto-updating to the latest Marketplace version.
 2. Next, use `vsce package` to package your extension as a VSIX.
-3. Connect to a [codespace](https://docs.github.com/github/developing-online-with-codespaces), [Dev Containers](/docs/devcontainers/containers), [SSH host](/docs/remote/ssh), or [WSL environment](/docs/remote/wsl).
+3. Connect to a [codespace](HTTPS://docs.github.com/github/developing-online-with-codespaces), [Dev Containers](/docs/devcontainers/containers), [SSH host](/docs/remote/ssh), or [WSL environment](/docs/remote/wsl).
 4. Use the **Install from VSIX...** command available in the Extensions view **More Actions** (`...`) menu to install the extension in this specific window (not a local one).
 5. Reload when prompted.
 
@@ -143,7 +143,7 @@ If your extension is not functioning as expected, it may be running in the wrong
 
 If the **Developer: Show Running Extensions** command shows that a UI extension is incorrectly being treated as a workspace extension or vice versa, try setting the `extensionKind` property in your extension's [package.json](/api/get-started/extension-anatomy#extension-manifest) as described in the [Extension Kinds section](/api/advanced-topics/extension-host#preferred-extension-location).
 
-You can quickly **test** the effect of changing an extension's kind with the `remote.extensionKind` [setting](/docs/getstarted/settings). This setting is a map of extension IDs to extension kinds. For example, if you want to force the [Azure Databases](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb) extension to be a UI extension (instead of its Workspace default) and the [Remote - SSH: Editing Configuration Files](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh-edit) extension to be a workspace extension (instead of its UI default), you would set:
+You can quickly **test** the effect of changing an extension's kind with the `remote.extensionKind` [setting](/docs/getstarted/settings). This setting is a map of extension IDs to extension kinds. For example, if you want to force the [Azure Databases](HTTPS://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb) extension to be a UI extension (instead of its Workspace default) and the [Remote - SSH: Editing Configuration Files](HTTPS://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh-edit) extension to be a workspace extension (instead of its UI default), you would set:
 
 ```json
 {
@@ -221,7 +221,7 @@ There is an example of using `setKeysforSync` in the [Extension Capabilities](/a
 
 ### Persisting secrets
 
-If your extension needs to persist passwords or other secrets, you may want to use Visual Studio Code's [SecretStorage API](https://code.visualstudio.com/api/references/vscode-api#SecretStorage) which provides a way to securely store text on the filesystem backed by encryption. For example, on desktop, we use Electron's [safeStorage API](https://www.electronjs.org/docs/latest/api/safe-storage) to encrypt secrets before storing them on the filesystem. The API will always store the secrets on the client side but you can use this API regardless of where your extension is running and retrieve the same secret values.
+If your extension needs to persist passwords or other secrets, you may want to use Visual Studio Code's [SecretStorage API](HTTPS://code.visualstudio.com/api/references/vscode-api#SecretStorage) which provides a way to securely store text on the filesystem backed by encryption. For example, on desktop, we use Electron's [safeStorage API](HTTPS://www.electronjs.org/docs/latest/api/safe-storage) to encrypt secrets before storing them on the filesystem. The API will always store the secrets on the client side but you can use this API regardless of where your extension is running and retrieve the same secret values.
 
 >**Note**: This API is the recommended way to persist passwords & secrets. You should **not** store your secrets using `vscode.ExtensionContext.workspaceState` or `vscode.ExtensionContext.globalState` because these APIs store data in plaintext.
 
@@ -277,10 +277,10 @@ export async function activate(context: vscode.ExtensionContext) {
     context.subscriptions.push(vscode.commands.registerCommand('myAmazingExtension.openExternal', () => {
 
         // Example 1 - Open the VS Code homepage in the default browser.
-        vscode.env.openExternal(vscode.Uri.parse('https://code.visualstudio.com'));
+        vscode.env.openExternal(vscode.Uri.parse('HTTPS://code.visualstudio.com'));
 
         // Example 2 - Open an auto-forwarded localhost HTTP server.
-        vscode.env.openExternal(vscode.Uri.parse('http://localhost:3000'));
+        vscode.env.openExternal(vscode.Uri.parse('HTTP://localhost:3000'));
 
         // Example 3 - Open the default email application.
         vscode.env.openExternal(vscode.Uri.parse('mailto:<fill in your email here>'));
@@ -308,7 +308,7 @@ export async function activate(context: vscode.ExtensionContext) {
 
         // Make the port available locally and get the full URI
         const fullUri = await vscode.env.asExternalUri(
-            vscode.Uri.parse(`http://localhost:${dynamicServerPort}`));
+            vscode.Uri.parse(`HTTP://localhost:${dynamicServerPort}`));
 
         // ... do something with the fullUri ...
 
@@ -320,7 +320,7 @@ It is important to note that the URI that is passed back by the API **may not re
 
 ### Callbacks and URI handlers
 
-The `vscode.window.registerUriHandler` API allows your extension to register a custom URI that, if opened in a browser, will fire a callback function in your extension. A common use case for registering a URI handler is when implementing a service sign in with an [OAuth 2.0](https://oauth.net/2/) authentication provider (for example, Azure AD). However, it can be used for any scenario where you want an external application or the browser to send information to your extension.
+The `vscode.window.registerUriHandler` API allows your extension to register a custom URI that, if opened in a browser, will fire a callback function in your extension. A common use case for registering a URI handler is when implementing a service sign in with an [OAuth 2.0](HTTPS://oauth.net/2/) authentication provider (for example, Azure AD). However, it can be used for any scenario where you want an external application or the browser to send information to your extension.
 
 The Remote Development and Codespaces extensions in VS Code will transparently handle passing the URI to your extension regardless of where it is actually running (local or remote). However, `vscode://` URIs will not work with the Codespaces browser-based editor since opening these URIs in something like a browser would attempt to pass them to the local VS Code client rather than the browser-based editor. Fortunately, this can be easily remedied by using the `vscode.env.asExternalUri` API.
 
@@ -359,9 +359,9 @@ export async function activate(context: vscode.ExtensionContext) {
 }
 ```
 
-When running this sample in VS Code, it wires up a `vscode://` or `vscode-insiders://` URI that can be used as a callback for an authentication provider. When running in the Codespaces browser-based editor, it wires up a `https://*.github.dev` URI without any code changes or special conditions.
+When running this sample in VS Code, it wires up a `vscode://` or `vscode-insiders://` URI that can be used as a callback for an authentication provider. When running in the Codespaces browser-based editor, it wires up a `HTTPS://*.github.dev` URI without any code changes or special conditions.
 
-While OAuth is outside the scope of this document, note that if you adapted this sample to a real authentication provider, you may need to build a proxy service in front of the provider. This is because not all providers allow `vscode://` callback URIs and others do not allow wildcard host names for callbacks over HTTPS. We also recommend using an [OAuth 2.0 Authorization Code with PKCE flow](https://oauth.net/2/pkce/) wherever possible (for example, Azure AD supports PKCE) to improve the security of the callback.
+While OAuth is outside the scope of this document, note that if you adapted this sample to a real authentication provider, you may need to build a proxy service in front of the provider. This is because not all providers allow `vscode://` callback URIs and others do not allow wildcard host names for callbacks over HTTPS. We also recommend using an [OAuth 2.0 Authorization Code with PKCE flow](HTTPS://oauth.net/2/pkce/) wherever possible (for example, Azure AD supports PKCE) to improve the security of the callback.
 
 ### Varying behaviors when running remotely or in the Codespaces browser editor
 
@@ -483,7 +483,7 @@ Use the API to get a full URI for the iframe and add it to your HTML. You will a
 // Use asExternalUri to get the URI for the web server
 const dynamicWebServerPort = await getWebServerPort();
 const fullWebServerUri = await vscode.env.asExternalUri(
-        vscode.Uri.parse(`http://localhost:${dynamicWebServerPort}`)
+        vscode.Uri.parse(`HTTP://localhost:${dynamicWebServerPort}`)
     );
 
 // Create the webview
@@ -536,16 +536,16 @@ const panel = vscode.window.createWebviewPanel(
 panel.webview.html = `<!DOCTYPE html>
     <body>
         <!-- This will resolve to the dynamic server port on the remote machine -->
-        <img src="http://localhost:${LOCAL_STATIC_PORT}/canvas.png">
+        <img src="HTTP://localhost:${LOCAL_STATIC_PORT}/canvas.png">
     </body>
     </html>`;
 ```
 
-In this example, in both the remote and local cases, any requests made to `http://localhost:3000` will automatically be mapped to the dynamic port an Express.js web server is running on.
+In this example, in both the remote and local cases, any requests made to `HTTP://localhost:3000` will automatically be mapped to the dynamic port an Express.js web server is running on.
 
 ## Using native Node.js modules
 
-Native modules bundled with (or dynamically acquired for) a VS Code extension must be recompiled [using Electron's `electron-rebuild`](https://electronjs.org/docs/tutorial/using-native-node-modules). However, VS Code Server runs a standard (non-Electron) version of Node.js, which can cause binaries to fail when used remotely.
+Native modules bundled with (or dynamically acquired for) a VS Code extension must be recompiled [using Electron's `electron-rebuild`](HTTPS://electronjs.org/docs/tutorial/using-native-node-modules). However, VS Code Server runs a standard (non-Electron) version of Node.js, which can cause binaries to fail when used remotely.
 
 To solve this problem:
 
@@ -553,7 +553,7 @@ To solve this problem:
 2. Check to see if `vscode.extensions.getExtension('your.extensionId').extensionKind === vscode.ExtensionKind.Workspace` to set up the correct binaries based on whether the extension is running remotely or locally.
 3. You may also want to add support for non-x86_64 targets and Alpine Linux at the same time by [following similar logic](#supporting-nonx8664-hosts-or-alpine-linux-containers).
 
-You can find the "modules" version VS Code uses by going to **Help > Developer Tools** and typing `process.versions.modules` in the console. However, to make sure native modules work seamlessly in different Node.js environments, you may want to compile the native modules against all possible Node.js "modules" versions and platforms you want support (Electron Node.js, official Node.js Windows/Darwin/Linux, all versions). The [node-tree-sitter](https://github.com/tree-sitter/node-tree-sitter/releases/tag/v0.14.0) module is a good example of a module that does this well.
+You can find the "modules" version VS Code uses by going to **Help > Developer Tools** and typing `process.versions.modules` in the console. However, to make sure native modules work seamlessly in different Node.js environments, you may want to compile the native modules against all possible Node.js "modules" versions and platforms you want support (Electron Node.js, official Node.js Windows/Darwin/Linux, all versions). The [node-tree-sitter](HTTPS://github.com/tree-sitter/node-tree-sitter/releases/tag/v0.14.0) module is a good example of a module that does this well.
 
 ## Supporting non-x86_64 hosts or Alpine Linux containers
 
@@ -561,7 +561,7 @@ If your extension is purely written in JavaScript/TypeScript, you may not need t
 
 However, if your extension works on Debian 9+, Ubuntu 16.04+, or RHEL / CentOS 7+ remote SSH hosts, containers, or WSL, but fails on supported non-x86_64 hosts (for example ARMv7l) or Alpine Linux containers, the extension may include x86_64 `glibc` specific native code or runtimes that will fail on these architectures/operating systems.
 
-For example, your extension may only include x86_64 compiled versions of native modules or runtimes. For Alpine Linux, the included native code or runtimes may not work due to [fundamental differences](https://wiki.musl-libc.org/functional-differences-from-glibc.html) between how `libc` is implemented in Alpine Linux (`musl`) and other distributions (`glibc`).
+For example, your extension may only include x86_64 compiled versions of native modules or runtimes. For Alpine Linux, the included native code or runtimes may not work due to [fundamental differences](HTTPS://wiki.musl-libc.org/functional-differences-from-glibc.html) between how `libc` is implemented in Alpine Linux (`musl`) and other distributions (`glibc`).
 
 To resolve this problem:
 
@@ -601,13 +601,13 @@ There are a few extension problems that could be resolved with some added functi
 
 | Problem | Description |
 |---------|-------------|
-| **Cannot access attached devices from Workspace extension** | Extensions that access locally attached devices will be unable to connect to them when running remotely. One approach to overcome this is to create a companion UI extension whose job is to access the attached device and offers commands that the remote extension can invoke too. <br> Another approach is reverse tunneling, which is being tracked in a [VS Code repo issue](https://github.com/microsoft/vscode/issues/100222). |
+| **Cannot access attached devices from Workspace extension** | Extensions that access locally attached devices will be unable to connect to them when running remotely. One approach to overcome this is to create a companion UI extension whose job is to access the attached device and offers commands that the remote extension can invoke too. <br> Another approach is reverse tunneling, which is being tracked in a [VS Code repo issue](HTTPS://github.com/microsoft/vscode/issues/100222). |
 
 ## Questions and feedback
 
 - See [Tips and Tricks](/docs/remote/troubleshooting) or the [FAQ](/docs/remote/faq).
-- Search for answers on [Stack Overflow](https://stackoverflow.com/questions/tagged/vscode-remote).
-- [Upvote a feature or request a new one](https://aka.ms/vscode-remote/feature-requests), search [existing issues](https://aka.ms/vscode-remote/issues), or [report a problem](https://aka.ms/vscode-remote/issues/new).
-- Create a [development container Template](https://containers.dev/templates) or [Feature](https://containers.dev/features) for others to use.
-- Contribute to [our documentation](https://github.com/microsoft/vscode-docs) or [VS Code](https://github.com/microsoft/vscode).
-- See our [CONTRIBUTING](https://aka.ms/vscode-remote/contributing) guide for details.
+- Search for answers on [Stack Overflow](HTTPS://stackoverflow.com/questions/tagged/vscode-remote).
+- [Upvote a feature or request a new one](HTTPS://aka.ms/vscode-remote/feature-requests), search [existing issues](HTTPS://aka.ms/vscode-remote/issues), or [report a problem](HTTPS://aka.ms/vscode-remote/issues/new).
+- Create a [development container Template](HTTPS://containers.dev/templates) or [Feature](HTTPS://containers.dev/features) for others to use.
+- Contribute to [our documentation](HTTPS://github.com/microsoft/vscode-docs) or [VS Code](HTTPS://github.com/microsoft/vscode).
+- See our [CONTRIBUTING](HTTPS://aka.ms/vscode-remote/contributing) guide for details.

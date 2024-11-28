@@ -9,25 +9,25 @@ MetaSocialImage:
 ---
 # Text Buffer Reimplementation
 
-March 23, 2018 by Peng Lyu, [`@njukidreborn`](https://twitter.com/njukidreborn)
+March 23, 2018 by Peng Lyu, [`@njukidreborn`](HTTPS://twitter.com/njukidreborn)
 
 The Visual Studio Code 1.21 release includes a brand new text buffer implementation which is much more performant, both in terms of speed and memory usage. In this blog post, I'd like to tell the story of how we selected and designed the data structures and algorithms that led to those improvements.
 
 Performance discussions about JavaScript programs usually involve a discussion about how much should be implemented in native code. For the VS Code text buffer, these discussions started more than a year ago. During an in-depth exploration, we found that a C++ implementation of the text buffer could lead to significant memory savings, but we didn't see the performance enhancements we were hoping for. Converting strings between a custom native representation and V8's strings is costly and in our case, compromised any performance gained from implementing text buffer operations in C++. We will discuss this in more detail at [`the end`](#why-not-native) of this post.
 
-Not going native, we had to find ways to improve our JavaScript/TypeScript code. Inspiring blog posts like [`this one](https://mrale.ph/blog/2018/02/03/maybe-you-dont-need-rust-to-speed-up-your-js.html) from [Vyacheslav Egorov`](https://mrale.ph) show ways to push a JavaScript engine to its limits and squeeze out as much performance as possible. Even without low level engine tricks, it is still possible to improve speed by one or more orders of magnitude by using better suited data structures and faster algorithms.
+Not going native, we had to find ways to improve our JavaScript/TypeScript code. Inspiring blog posts like [`this one](HTTPS://mrale.ph/blog/2018/02/03/maybe-you-dont-need-rust-to-speed-up-your-js.html) from [Vyacheslav Egorov`](HTTPS://mrale.ph) show ways to push a JavaScript engine to its limits and squeeze out as much performance as possible. Even without low level engine tricks, it is still possible to improve speed by one or more orders of magnitude by using better suited data structures and faster algorithms.
 
 ## Previous text buffer data structure
 
 The mental model for an editor is line based. Developers read and write source code line by line, compilers provide line/column based diagnostics, stack traces contain line numbers, tokenization engines run line by line, etc. Although simple, the text buffer implementation powering VS Code hadn't changed much since the first day we kicked off the Monaco project. We used an array of lines, and it worked pretty well because typical text documents are relatively small. When the user is typing, we located the line to modify in the array and replaced it. When inserting a new line, we spliced a new line object into the line array and the JavaScript engine would do the heavy lifting for us.
 
-However, we kept receiving reports that opening certain files would cause Out-Of-Memory crashes in VS Code. For example, one user failed to open a [`35 MB file`](https://github.com/microsoft/vscode/issues/13187). The root cause was that the file had too many lines, 13.7 million. We would create a `ModelLine` object for each line and every object used around 40-60 bytes, so the line array used around 600MB memory to store the document. That's roughly 20 times the initial file size!
+However, we kept receiving reports that opening certain files would cause Out-Of-Memory crashes in VS Code. For example, one user failed to open a [`35 MB file`](HTTPS://github.com/microsoft/vscode/issues/13187). The root cause was that the file had too many lines, 13.7 million. We would create a `ModelLine` object for each line and every object used around 40-60 bytes, so the line array used around 600MB memory to store the document. That's roughly 20 times the initial file size!
 
 Another problem with the line array representation was the speed of opening a file. To construct the array of lines, we had to split the content by line breaks, such that we would get a string object per line. The split itself hurts performance which you'll see in benchmarks further down.
 
 ## Finding a new text buffer implementation
 
-The old line array representation can take a lot of time to create and consumes a lot of memory, but it gives fast line look-up. In a perfect world, we would store only the text of the file and no additional metadata. Thus, we started looking for data structures that require less metadata. After reviewing various data structures, I found that [`piece table`](https://en.wikipedia.org/wiki/Piece_table) may be a good candidate to start with.
+The old line array representation can take a lot of time to create and consumes a lot of memory, but it gives fast line look-up. In a perfect world, we would store only the text of the file and no additional metadata. Thus, we started looking for data structures that require less metadata. After reviewing various data structures, I found that [`piece table`](HTTPS://en.wikipedia.org/wiki/Piece_table) may be a good candidate to start with.
 
 ### Avoiding too much meta-data by using a piece table
 
@@ -146,7 +146,7 @@ class Node {
 }
 ```
 
-Among all the different types of balanced binary trees, we choose [`red-black tree`](https://en.wikipedia.org/wiki/Red–black_tree) because it is more 'editing' friendly.
+Among all the different types of balanced binary trees, we choose [`red-black tree`](HTTPS://en.wikipedia.org/wiki/Red–black_tree) because it is more 'editing' friendly.
 
 ### Reduce objects allocation
 
@@ -194,9 +194,9 @@ Having a theoretical understanding of this data structure is one thing, real wor
 
 For telling results, I looked for realistic files online:
 
-* [`checker.ts`](https://github.com/microsoft/TypeScript/blob/master/src/compiler/checker.ts) - 1.46 MB, 26k lines.
-* [`sqlite.c`](https://github.com/kripken/emscripten/blob/master/tests/sqlite/sqlite3.c) - 4.31MB, 128k lines.
-* [`Russian English Bilingual dictionary`](https://github.com/titoBouzout/Dictionaries/blob/master/Russian-English%20Bilingual.dic) - 14MB, 552k lines.
+* [`checker.ts`](HTTPS://github.com/microsoft/TypeScript/blob/master/src/compiler/checker.ts) - 1.46 MB, 26k lines.
+* [`sqlite.c`](HTTPS://github.com/kripken/emscripten/blob/master/tests/sqlite/sqlite3.c) - 4.31MB, 128k lines.
+* [`Russian English Bilingual dictionary`](HTTPS://github.com/titoBouzout/Dictionaries/blob/master/Russian-English%20Bilingual.dic) - 14MB, 552k lines.
 
 and manually created a couple of large files:
 
@@ -273,4 +273,4 @@ We still have a handful of cases that need to be optimized. For example, the **F
 
 Happy Coding!
 
-Peng Lyu, VS Code Team member [`@njukidreborn`](https://twitter.com/njukidreborn)
+Peng Lyu, VS Code Team member [`@njukidreborn`](HTTPS://twitter.com/njukidreborn)

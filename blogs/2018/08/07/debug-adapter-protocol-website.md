@@ -10,15 +10,15 @@ Author: André Weinand
 ---
 # New home for the Debug Adapter Protocol
 
-August 7, 2018 André Weinand, [`@weinand`](https://twitter.com/weinand)
+August 7, 2018 André Weinand, [`@weinand`](HTTPS://twitter.com/weinand)
 
-One goal of the July milestone was to move the **Debug Adapter Protocol** -- which was hiding itself in a somewhat obscure [`GitHub project](https://github.com/microsoft/vscode-debugadapter-node) -- to a more prominent website (see feature request [#19636`](https://github.com/microsoft/vscode/issues/19636)).
+One goal of the July milestone was to move the **Debug Adapter Protocol** -- which was hiding itself in a somewhat obscure [`GitHub project](HTTPS://github.com/microsoft/vscode-debugadapter-node) -- to a more prominent website (see feature request [#19636`](HTTPS://github.com/microsoft/vscode/issues/19636)).
 
 This blog provides some background about protocols, the Debug Adapter Protocol, and the motivation behind the move.
 
 ## Why the need for decoupling with protocols?
 
-From another [`blog`](https://code.visualstudio.com/blogs/2016/06/27/common-language-protocol):
+From another [`blog`](HTTPS://code.visualstudio.com/blogs/2016/06/27/common-language-protocol):
 
 **_"Visual Studio Code is an editor for any developer, no matter what programming language you use."_**
 
@@ -36,7 +36,7 @@ The latter might come as a surprise to some, but it was always our firm belief t
 
 But adding a debugger for a new language to an IDE or editor is a significant effort as the list of standard debugging features is not small:
 
-- Source, function, conditional, inline breakpoints, and [`logpoints`](https://code.visualstudio.com/blogs/2018/07/12/introducing-logpoints-and-auto-attach).
+- Source, function, conditional, inline breakpoints, and [`logpoints`](HTTPS://code.visualstudio.com/blogs/2018/07/12/introducing-logpoints-and-auto-attach).
 - Variable values shown in hovers or inlined in the source.
 - Multi-process and multi-thread support.
 - Navigating through complex data structures.
@@ -55,7 +55,7 @@ Today we believe that we have achieved this ambitious goal:
 
 We have created two abstract protocols that allow for decoupling the editing and debugging user interfaces in the "frontend" from the language specific smartness and debugging functionality provided by "backend" components.
 
-The "deep understanding of a language" is surfaced by the [`Language Server Protocol`](https://microsoft.github.io/language-server-protocol/) (LSP) and the "debugging support" by the Debug Adapter Protocol (DAP).
+The "deep understanding of a language" is surfaced by the [`Language Server Protocol`](HTTPS://microsoft.github.io/language-server-protocol/) (LSP) and the "debugging support" by the Debug Adapter Protocol (DAP).
 
 ## The Debug Adapter Protocol
 
@@ -75,7 +75,7 @@ We assume that the user has already started a debug session, but is currently st
 - In response to this `stopped` event, the development tool updates its UI and shows a stack trace view. This triggers a `stacktrace` request which returns all the information that is displayed for the individual stack frames.
 - If the user selects one stack frame, the development tool requests the variables of that frame with a `variables` request.
 
-For [`historical reasons](https://github.com/microsoft/vscode-debugadapter-node/issues/58), DAP uses a JSON-based wire-format inspired by the (now obsolete) [V8 Debugging Protocol`](https://github.com/dtretyakov/node-tools/wiki/Debugging-Protocol). Please note that this format is similar to but not compatible with the JSON-RPC used in the LSP.
+For [`historical reasons](HTTPS://github.com/microsoft/vscode-debugadapter-node/issues/58), DAP uses a JSON-based wire-format inspired by the (now obsolete) [V8 Debugging Protocol`](HTTPS://github.com/dtretyakov/node-tools/wiki/Debugging-Protocol). Please note that this format is similar to but not compatible with the JSON-RPC used in the LSP.
 
 After this short example of DAP communication, let's review the characteristics of the DAP approach:
 
@@ -86,39 +86,39 @@ The picture shows two important benefits of the DAP approach:
 - Debug Adapters can be shared between different development tools, which helps amortize their development cost.
 - The Debug Adapter Protocol is not tied to VS Code and can be used as the foundation for a generic debugger UI in other development tools.
 
-These characteristics are similar to those of the Language Server Protocol published on its own [`website`](https://microsoft.github.io/language-server-protocol/) in 2016.
+These characteristics are similar to those of the Language Server Protocol published on its own [`website`](HTTPS://microsoft.github.io/language-server-protocol/) in 2016.
 
 ## A new home for the DAP
 
-Now we have followed suit for the Debug Adapter Protocol by moving the DAP specification from its [`old location](https://github.com/microsoft/vscode-debugadapter-node) to a new website [https://microsoft.github.io/debug-adapter-protocol](https://microsoft.github.io/debug-adapter-protocol/) and a corresponding repository [https://github.com/microsoft/debug-adapter-protocol`](https://github.com/microsoft/debug-adapter-protocol).
+Now we have followed suit for the Debug Adapter Protocol by moving the DAP specification from its [`old location](HTTPS://github.com/microsoft/vscode-debugadapter-node) to a new website [HTTPS://microsoft.github.io/debug-adapter-protocol](HTTPS://microsoft.github.io/debug-adapter-protocol/) and a corresponding repository [HTTPS://github.com/microsoft/debug-adapter-protocol`](HTTPS://github.com/microsoft/debug-adapter-protocol).
 
-This move should emphasize that the Debug Adapter Protocol in not specific to Visual Studio Code. For example, Visual Studio is now also [`supporting this protocol`](https://devblogs.microsoft.com/visualstudio/adding-support-for-debug-adapters-to-visual-studio-ide).
+This move should emphasize that the Debug Adapter Protocol in not specific to Visual Studio Code. For example, Visual Studio is now also [`supporting this protocol`](HTTPS://devblogs.microsoft.com/visualstudio/adding-support-for-debug-adapters-to-visual-studio-ide).
 
 In the new location we provide:
 
-- An [`overview and introduction`](https://microsoft.github.io/debug-adapter-protocol/overview) to the protocol.
-- The [`protocol specification](https://microsoft.github.io/debug-adapter-protocol/debugAdapterProtocol.json) as a machine-processable [JSON-schema`](https://json-schema.org).
-- [`Detailed documentation`](https://microsoft.github.io/debug-adapter-protocol/specification) automatically generated from the protocol specification.
-- [`Debug Adapters`](https://microsoft.github.io/debug-adapter-protocol/implementors/adapters/) implementing the protocol.
-- [`Development tools`](https://microsoft.github.io/debug-adapter-protocol/implementors/tools/) hosting the protocol.
-- [`SDKs`](https://microsoft.github.io/debug-adapter-protocol/implementors/sdks/) supporting the protocol.
-- Bugs, feature requests, and pull requests can be created under the [`Issues`](https://github.com/microsoft/debug-adapter-protocol/issues) section of the new repository.
+- An [`overview and introduction`](HTTPS://microsoft.github.io/debug-adapter-protocol/overview) to the protocol.
+- The [`protocol specification](HTTPS://microsoft.github.io/debug-adapter-protocol/debugAdapterProtocol.json) as a machine-processable [JSON-schema`](HTTPS://json-schema.org).
+- [`Detailed documentation`](HTTPS://microsoft.github.io/debug-adapter-protocol/specification) automatically generated from the protocol specification.
+- [`Debug Adapters`](HTTPS://microsoft.github.io/debug-adapter-protocol/implementors/adapters/) implementing the protocol.
+- [`Development tools`](HTTPS://microsoft.github.io/debug-adapter-protocol/implementors/tools/) hosting the protocol.
+- [`SDKs`](HTTPS://microsoft.github.io/debug-adapter-protocol/implementors/sdks/) supporting the protocol.
+- Bugs, feature requests, and pull requests can be created under the [`Issues`](HTTPS://github.com/microsoft/debug-adapter-protocol/issues) section of the new repository.
 
-The [`old location`](https://github.com/microsoft/vscode-debugadapter-node) will continue to host the source for the three npm modules for DAP:
+The [`old location`](HTTPS://github.com/microsoft/vscode-debugadapter-node) will continue to host the source for the three npm modules for DAP:
 
-- [`vscode-debugprotocol`](https://www.npmjs.com/package/vscode-debugprotocol)
-- [`vscode-debugadapter`](https://www.npmjs.com/package/vscode-debugadapter)
-- [`vscode-debugadapter-testsupport`](https://www.npmjs.com/package/vscode-debugadapter-testsupport)
+- [`vscode-debugprotocol`](HTTPS://www.npmjs.com/package/vscode-debugprotocol)
+- [`vscode-debugadapter`](HTTPS://www.npmjs.com/package/vscode-debugadapter)
+- [`vscode-debugadapter-testsupport`](HTTPS://www.npmjs.com/package/vscode-debugadapter-testsupport)
 
 ## What's Next?
 
 Since the Debug Adapter Protocol has already been available for quite some time, the move to a new website is not really an inception, but just a move to a new home...
 
 We'd like to invite all existing and future users of the DAP to visit our new home and continue the collaboration there. For example, you can help to keep the list of supporting tools and implementations up to date by submitting pull requests in GitHub against these Markdown files:
-[`Debug Adapters`](https://github.com/microsoft/debug-adapter-protocol/blob/gh-pages/_implementors/adapters.md),
-[`Tools`](https://github.com/microsoft/debug-adapter-protocol/blob/gh-pages/_implementors/tools.md), and
-[`SDKs`](https://github.com/microsoft/debug-adapter-protocol/blob/gh-pages/_implementors/sdks.md).
+[`Debug Adapters`](HTTPS://github.com/microsoft/debug-adapter-protocol/blob/gh-pages/_implementors/adapters.md),
+[`Tools`](HTTPS://github.com/microsoft/debug-adapter-protocol/blob/gh-pages/_implementors/tools.md), and
+[`SDKs`](HTTPS://github.com/microsoft/debug-adapter-protocol/blob/gh-pages/_implementors/sdks.md).
 
 On behalf of the VS Code team: Happy Coding!
 
-André Weinand -  [`@weinand on Twitter`](https://twitter.com/weinand)
+André Weinand -  [`@weinand on Twitter`](HTTPS://twitter.com/weinand)

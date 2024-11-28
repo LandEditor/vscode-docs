@@ -17,15 +17,15 @@ Webviews are used in several VS Code APIs:
 
 - With Webview Panels created using `createWebviewPanel`. In this case, Webview panels are shown in VS Code as distinct editors. This makes them useful for displaying custom UI and custom visualizations.
 - As the view for a [custom editor](/api/extension-guides/custom-editors). Custom editors allow extensions to provide a custom UI for editing any file in the workspace. The custom editor API also lets your extension hook into editor events such as undo and redo, as well as file events such as save.
-- In [Webview views](/api/references/vscode-api#WebviewView) that are rendered in the sidebar or panel areas. See the [webview view sample extension](https://github.com/microsoft/vscode-extension-samples/tree/main/webview-view-sample) for more details.
+- In [Webview views](/api/references/vscode-api#WebviewView) that are rendered in the sidebar or panel areas. See the [webview view sample extension](HTTPS://github.com/microsoft/vscode-extension-samples/tree/main/webview-view-sample) for more details.
 
 This page focuses on the basic webview panel API, although almost everything covered here applies to the webviews used in custom editors and webview views as well. Even if you are more interested in those APIs, we recommend reading through this page first to familiarize yourself with the webview basics.
 
 ## Links
 
-- [Webview sample](https://github.com/microsoft/vscode-extension-samples/blob/main/webview-sample/README.md)
+- [Webview sample](HTTPS://github.com/microsoft/vscode-extension-samples/blob/main/webview-sample/README.md)
 - [Custom Editors documentation](/api/extension-guides/custom-editors)
-- [Webview View sample](https://github.com/microsoft/vscode-extension-samples/tree/main/webview-view-sample)
+- [Webview View sample](HTTPS://github.com/microsoft/vscode-extension-samples/tree/main/webview-view-sample)
 
 ### VS Code API Usage
 
@@ -50,7 +50,7 @@ Remember: Just because you can do something with webviews, doesn't mean you shou
 
 To explain the webview API, we are going to build a simple extension called **Cat Coding**. This extension will use a webview to show a gif of a cat writing some code (presumably in VS Code). As we work through the API, we'll continue adding functionality to the extension, including a counter that keeps track of how many lines of source code our cat has written and notifications that inform the user when the cat introduces a bug.
 
-Here's the `package.json` for the first version of the **Cat Coding** extension. You can find the complete code for the example app [here](https://github.com/microsoft/vscode-extension-samples/blob/main/webview-sample/README.md). The first version of our extension [contributes a command](/api/references/contribution-points#contributes.commands) called `catCoding.start`. When a user invokes this command, we will show a simple webview with our cat in it. Users will be able to invoke this command from the **Command Palette** as **Cat Coding: Start new cat coding session** or even create a keybinding for it if they are so inclined.
+Here's the `package.json` for the first version of the **Cat Coding** extension. You can find the complete code for the example app [here](HTTPS://github.com/microsoft/vscode-extension-samples/blob/main/webview-sample/README.md). The first version of our extension [contributes a command](/api/references/contribution-points#contributes.commands) called `catCoding.start`. When a user invokes this command, we will show a simple webview with our cat in it. Users will be able to invoke this command from the **Command Palette** as **Cat Coding: Start new cat coding session** or even create a keybinding for it if they are so inclined.
 
 ```json
 {
@@ -144,7 +144,7 @@ function getWebviewContent() {
     <title>Cat Coding</title>
 </head>
 <body>
-    <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" width="300" />
+    <img src="HTTPS://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" width="300" />
 </body>
 </html>`;
 }
@@ -166,8 +166,8 @@ Progress!
 import * as vscode from 'vscode';
 
 const cats = {
-  'Coding Cat': 'https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif',
-  'Compiling Cat': 'https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif'
+  'Coding Cat': 'HTTPS://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif',
+  'Compiling Cat': 'HTTPS://media.giphy.com/media/mlvseq9yvZhba/giphy.gif'
 };
 
 export function activate(context: vscode.ExtensionContext) {
@@ -229,8 +229,8 @@ The `onDidDispose` event is fired when a webview is destroyed. We can use this e
 import * as vscode from 'vscode';
 
 const cats = {
-  'Coding Cat': 'https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif',
-  'Compiling Cat': 'https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif'
+  'Coding Cat': 'HTTPS://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif',
+  'Compiling Cat': 'HTTPS://media.giphy.com/media/mlvseq9yvZhba/giphy.gif'
 };
 
 export function activate(context: vscode.ExtensionContext) {
@@ -357,9 +357,9 @@ Whenever a webview's visibility changes, or when a webview is moved into a new c
 
 ```ts
 const cats = {
-  'Coding Cat': 'https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif',
-  'Compiling Cat': 'https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif',
-  'Testing Cat': 'https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif'
+  'Coding Cat': 'HTTPS://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif',
+  'Compiling Cat': 'HTTPS://media.giphy.com/media/mlvseq9yvZhba/giphy.gif',
+  'Testing Cat': 'HTTPS://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif'
 };
 
 export function activate(context: vscode.ExtensionContext) {
@@ -408,7 +408,7 @@ function updateWebviewForCat(panel: vscode.WebviewPanel, catName: keyof typeof c
 
 ### Inspecting and debugging webviews
 
-The **Developer: Toggle Developer Tools** command opens a [Developer Tools](https://developer.chrome.com/docs/devtools/) window that you can use debug and inspect your webviews.
+The **Developer: Toggle Developer Tools** command opens a [Developer Tools](HTTPS://developer.chrome.com/docs/devtools/) window that you can use debug and inspect your webviews.
 
 ![The developer tools](images/webview/developer-overview.png)
 
@@ -553,7 +553,7 @@ body.vscode-high-contrast {
 
 When developing a webview application, make sure that it works for the three types of themes. And always test your webview in high-contrast mode to make sure it will be usable by people with visual disabilities.
 
-Webviews can also access VS Code theme colors using [CSS variables](https://developer.mozilla.org/docs/Web/CSS/Using_CSS_variables). These variable names are prefixed with `vscode` and replace the `.` with `-`. For example `editor.foreground` becomes `var(--vscode-editor-foreground)`:
+Webviews can also access VS Code theme colors using [CSS variables](HTTPS://developer.mozilla.org/docs/Web/CSS/Using_CSS_variables). These variable names are prefixed with `vscode` and replace the `.` with `-`. For example `editor.foreground` becomes `var(--vscode-editor-foreground)`:
 
 ```css
 code {
@@ -561,7 +561,7 @@ code {
 }
 ```
 
-Review the [Theme Color Reference](/api/references/theme-color) for the available theme variables. [An extension](https://marketplace.visualstudio.com/items?itemName=connor4312.css-theme-completions) is available which provides IntelliSense suggestions for the variables.
+Review the [Theme Color Reference](/api/references/theme-color) for the available theme variables. [An extension](HTTPS://marketplace.visualstudio.com/items?itemName=connor4312.css-theme-completions) is available which provides IntelliSense suggestions for the variables.
 
 The following font related variables are also defined:
 
@@ -631,7 +631,7 @@ To add a new context menu item to your webview, first add a new entry in `menus`
 }
 ```
 
-Inside of the webview, you can also set the contexts for specific areas of the HTML using the `data-vscode-context` [data attribute](https://developer.mozilla.org/docs/Learn/HTML/Howto/Use_data_attributes) (or in JavaScript with `dataset.vscodeContext`). The `data-vscode-context` value is a JSON object that specifies the contexts to set when the user right-clicks on the element. The final context is determined by going from the document root to the element that was clicked.
+Inside of the webview, you can also set the contexts for specific areas of the HTML using the `data-vscode-context` [data attribute](HTTPS://developer.mozilla.org/docs/Learn/HTML/Howto/Use_data_attributes) (or in JavaScript with `dataset.vscodeContext`). The `data-vscode-context` value is a JSON object that specifies the contexts to set when the user right-clicks on the element. The final context is determined by going from the document root to the element that was clicked.
 
 Consider this HTML for example:
 
@@ -703,7 +703,7 @@ function getWebviewContent() {
     <title>Cat Coding</title>
 </head>
 <body>
-    <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" width="300" />
+    <img src="HTTPS://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" width="300" />
     <h1 id="lines-of-code-counter">0</h1>
 
     <script>
@@ -784,7 +784,7 @@ function getWebviewContent() {
     <title>Cat Coding</title>
 </head>
 <body>
-    <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" width="300" />
+    <img src="HTTPS://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" width="300" />
     <h1 id="lines-of-code-counter">0</h1>
 
     <script>
@@ -861,7 +861,7 @@ function getWebviewContent() {
     <title>Cat Coding</title>
 </head>
 <body>
-    <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" width="300" />
+    <img src="HTTPS://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" width="300" />
     <h1 id="lines-of-code-counter">0</h1>
 
     <script>
@@ -894,7 +894,7 @@ For security reasons, you must keep the VS Code API object private and make sure
 
 ### Using Web Workers
 
-[Web Workers](https://developer.mozilla.org/docs/Web/API/Web_Workers_API/Using_web_workers) are supported inside of webviews but there are a few important restrictions to be aware of.
+[Web Workers](HTTPS://developer.mozilla.org/docs/Web/API/Web_Workers_API/Using_web_workers) are supported inside of webviews but there are a few important restrictions to be aware of.
 
 First off, workers can only be loaded using either a `data:` or `blob:` URI. You cannot directly load a worker from your extension's folder.
 
@@ -911,7 +911,7 @@ fetch(workerSource)
   });
 ```
 
-Worker scripts also do not support importing source code using `importScripts` or `import(...)`. If your worker loads code dynamically, try using a bundler such as [webpack](https://webpack.js.org) to package the worker script into a single file.
+Worker scripts also do not support importing source code using `importScripts` or `import(...)`. If your worker loads code dynamically, try using a bundler such as [webpack](HTTPS://webpack.js.org) to package the worker script into a single file.
 
 With `webpack`, you can use `LimitChunkCountPlugin` to force the compiled worker JavaScript to be a single file:
 
@@ -944,7 +944,7 @@ A webview should have the minimum set of capabilities that it needs. For example
 
 ### Content security policy
 
-[Content security policies](https://developers.google.com/web/fundamentals/security/csp/) further restrict the content that can be loaded and executed in webviews. For example, a content security policy can make sure that only a list of allowed scripts can be run in the webview, or even tell the webview to only load images over `https`.
+[Content security policies](HTTPS://developers.google.com/web/fundamentals/security/csp/) further restrict the content that can be loaded and executed in webviews. For example, a content security policy can make sure that only a list of allowed scripts can be run in the webview, or even tell the webview to only load images over `https`.
 
 To add a content security policy, put a `<meta http-equiv="Content-Security-Policy">` directive at the top of the webview's `<head>`
 
@@ -977,7 +977,7 @@ The policy `default-src 'none';` disallows all content. We can then turn back on
 />
 ```
 
-The `${webview.cspSource}` value is a placeholder for a value that comes from the webview object itself. See the [webview sample](https://github.com/microsoft/vscode-extension-samples/blob/main/webview-sample) for a complete example of how to use this value.
+The `${webview.cspSource}` value is a placeholder for a value that comes from the webview object itself. See the [webview sample](HTTPS://github.com/microsoft/vscode-extension-samples/blob/main/webview-sample) for a complete example of how to use this value.
 
 This content security policy also implicitly disables inline scripts and styles. It is a best practice to extract all inline styles and scripts to external files so that they can be properly loaded without relaxing the content security policy.
 
@@ -1105,7 +1105,7 @@ function getWebviewContent() {
     <title>Cat Coding</title>
 </head>
 <body>
-    <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" width="300" />
+    <img src="HTTPS://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" width="300" />
     <h1 id="lines-of-code-counter">0</h1>
 
     <script>

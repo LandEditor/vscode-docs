@@ -10,7 +10,7 @@ Author: Chris Dias
 
 # April 2016 Release
 
-May 9, 2016 by The VS Code Team, [`@code`](https://twitter.com/code)
+May 9, 2016 by The VS Code Team, [`@code`](HTTPS://twitter.com/code)
 
 Today we are releasing the April 2016 build of Visual Studio Code. This is our first monthly release after our 1.0 announcement last month and we really appreciate your support and feedback.
 
@@ -34,9 +34,9 @@ With this release, we're bringing many improvements to your development experien
 * Automated test support for authoring Debug Adapters
 * New APIs for working with folders and JSON files
 
-Please see our [`Release Notes`](https://go.microsoft.com/fwlink/?LinkID=533483) for the full list of features and fixes.
+Please see our [`Release Notes`](HTTPS://go.microsoft.com/fwlink/?LinkID=533483) for the full list of features and fixes.
 
-If you have automatic updates turned on (OS X and Windows) then you'll get prompted soon. Otherwise, [`download VS Code today`](https://code.visualstudio.com)!
+If you have automatic updates turned on (OS X and Windows) then you'll get prompted soon. Otherwise, [`download VS Code today`](HTTPS://code.visualstudio.com)!
 
 Happy Coding!!
 

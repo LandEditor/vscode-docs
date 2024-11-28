@@ -10,7 +10,7 @@ Author: Chris Dias
 ---
 # The Icon Journey
 
-October 24, 2017 Chris Dias, [@chrisdias](https://twitter.com/chrisdias)
+October 24, 2017 Chris Dias, [@chrisdias](HTTPS://twitter.com/chrisdias)
 
 ## TL;DR
 
@@ -20,7 +20,7 @@ Thanks for all the passionate feedback. It has been very helpful, painful, and e
 
 ## What is your favorite color?
 
-In [Monty Python and the Holy Grail](https://en.wikipedia.org/wiki/Monty_Python_and_the_Holy_Grail), the bridge keeper asks Sir Lancelot three questions before allowing him to cross the Bridge of Death. Answer all three correctly and Sir Lancelot can pass. Answer incorrectly and it's an untimely death. [Sir Lancelot answered blue when asked his favorite color and was allowed to cross](https://www.youtube.com/watch?v=qry9IeJnbNU).
+In [Monty Python and the Holy Grail](HTTPS://en.wikipedia.org/wiki/Monty_Python_and_the_Holy_Grail), the bridge keeper asks Sir Lancelot three questions before allowing him to cross the Bridge of Death. Answer all three correctly and Sir Lancelot can pass. Answer incorrectly and it's an untimely death. [Sir Lancelot answered blue when asked his favorite color and was allowed to cross](HTTPS://www.youtube.com/watch?v=qry9IeJnbNU).
 
 We answered "orange".
 
@@ -32,7 +32,7 @@ For complete transparency, we want to share some history as we think it helps to
 
 ## Welcome to the family
 
-Back in [March](https://devblogs.microsoft.com/visualstudio/iterations-on-infinity), we (the broader Visual Studio team) set out to create a "family" feel across all of the developer tools we produce. If you read that blog post again, you can see that we had to work within a set of "challenging" corporate branding guidelines (for example, a single color).
+Back in [March](HTTPS://devblogs.microsoft.com/visualstudio/iterations-on-infinity), we (the broader Visual Studio team) set out to create a "family" feel across all of the developer tools we produce. If you read that blog post again, you can see that we had to work within a set of "challenging" corporate branding guidelines (for example, a single color).
 
 It is easy to blame the guidelines, but at the same time, having a set of products that are easily and broadly recognizable is a valuable asset. Instead, we took on the challenge of working within the constraints while also working across the company to evolve the guidelines and address the problems we faced.
 
@@ -60,7 +60,7 @@ Until we landed on the current "fish", which tested well with admittedly, a smal
 
 ## Rotation
 
-We have a lot more design freedom on macOS (and Linux), which is why we have a different icon there. While we wanted to keep the same icon shape, we were not limited to a single color and we could resolve contrast issues by mounting the icon on a dark panel. The rotation actually adheres to the [Apple design guidelines](https://developer.apple.com/macos/human-interface-guidelines/icons-and-images/app-icon).
+We have a lot more design freedom on macOS (and Linux), which is why we have a different icon there. While we wanted to keep the same icon shape, we were not limited to a single color and we could resolve contrast issues by mounting the icon on a dark panel. The rotation actually adheres to the [Apple design guidelines](HTTPS://developer.apple.com/macos/human-interface-guidelines/icons-and-images/app-icon).
 
 That said, the feedback that the rotation is outdated and the mount makes the icon appear smaller than other icons in the Dock is completely fair.
 
@@ -82,9 +82,9 @@ Voila, Insiders:
 
 ## Icon Squatting
 
-Before VS Code existed, there was [Visual Studio Monaco](https://azure.microsoft.com/en-us/resources/videos/building-web-sites-with-visual-studio-online-monaco/), which was our fully browser-based workbench that lets you live edit your Azure App Service web apps. Since it was an online offering and we needed an icon, we "borrowed" the blue infinity.
+Before VS Code existed, there was [Visual Studio Monaco](HTTPS://azure.microsoft.com/en-us/resources/videos/building-web-sites-with-visual-studio-online-monaco/), which was our fully browser-based workbench that lets you live edit your Azure App Service web apps. Since it was an online offering and we needed an icon, we "borrowed" the blue infinity.
 
-When we first released VS Code, everything was happening so quickly, and the icon was the least of our concerns. Regardless of what you think about the new icon, [the old one looks pretty bad](https://github.com/microsoft/vscode/issues/11274) on the desktop and in the Taskbar and Dock, it was really meant to be a favicon.
+When we first released VS Code, everything was happening so quickly, and the icon was the least of our concerns. Regardless of what you think about the new icon, [the old one looks pretty bad](HTTPS://github.com/microsoft/vscode/issues/11274) on the desktop and in the Taskbar and Dock, it was really meant to be a favicon.
 
 ![Original blue infinity icon](originalblueicon.png)
 
@@ -112,9 +112,9 @@ Each day there were additional comments, each expressing a dislike of the new ic
 
 And that brings us to today.
 
-We've reviewed all of the feedback from the breadth of issues opened and commented upon since we released 1.17.0 where we introduced the orange icon for Stable. It is clear that the [Halloween release](https://github.com/microsoft/vscode/issues/35783#issuecomment-337200769) of VS Code didn't work well for a lot of you, and for that we apologize.
+We've reviewed all of the feedback from the breadth of issues opened and commented upon since we released 1.17.0 where we introduced the orange icon for Stable. It is clear that the [Halloween release](HTTPS://github.com/microsoft/vscode/issues/35783#issuecomment-337200769) of VS Code didn't work well for a lot of you, and for that we apologize.
 
-Coincidentally as I write this, [mdb07a](https://github.com/mdb07a) did a nice job [summarizing the feedback and issues on Windows](https://github.com/microsoft/vscode/issues/35783#issuecomment-338432169). I'm paraphrasing and there are more issues, but the top issues are:
+Coincidentally as I write this, [mdb07a](HTTPS://github.com/mdb07a) did a nice job [summarizing the feedback and issues on Windows](HTTPS://github.com/microsoft/vscode/issues/35783#issuecomment-338432169). I'm paraphrasing and there are more issues, but the top issues are:
 
 - The color change was far too drastic, orange is the opposite color of blue, making that which looked good before, look horrible now.
 - A flat single color icon that relies entirely on transparency to create negative space makes it less distinct and aggravates the distinguishability problems.
@@ -130,13 +130,13 @@ Which works well with the Status Bar and other blues in the editor:
 
 ![Stable drop of VS Code with the blue icon](stablewithblue.png)
 
-For folks that have difficulty seeing the difference between Stable and Insiders, the green and blue work better together. Here's the two icons using the [Sim Daltonism](https://michelf.ca/projects/sim-daltonism/) app (Deuteranomaly):
+For folks that have difficulty seeing the difference between Stable and Insiders, the green and blue work better together. Here's the two icons using the [Sim Daltonism](HTTPS://michelf.ca/projects/sim-daltonism/) app (Deuteranomaly):
 
 ![screenshot of Sim Daltonism app with the Deuteranomaly effect](colorrecognition.png)
 
 It is inevitable that we will have multiple products that share colors, so we are no longer concerned that VS Code shares the blue color.
 
-We are [exploring using a non-tilted icon for macOS]( https://github.com/microsoft/vscode/issues/36692) based on @donysukardi's comment [here](https://github.com/microsoft/vscode/issues/6607#issuecomment-335664326). We can't say yet that we'll do this, but we are going to explore it and either way, we'll post updates in that issue.
+We are [exploring using a non-tilted icon for macOS]( HTTPS://github.com/microsoft/vscode/issues/36692) based on @donysukardi's comment [here](HTTPS://github.com/microsoft/vscode/issues/6607#issuecomment-335664326). We can't say yet that we'll do this, but we are going to explore it and either way, we'll post updates in that issue.
 
 ## Looking Ahead
 

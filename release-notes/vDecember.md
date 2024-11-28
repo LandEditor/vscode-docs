@@ -10,15 +10,15 @@ Hi,
 
 November was a big release for us (adding extensibility support and moving to open source) and we appreciate all the support we received leading up to and during the Connect(); event. We've kept busy in December and we hope you like this release.
 
-These release notes only capture what's new in the core of Visual Studio Code. Do not forget to check out the [`marketplace`](https://marketplace.visualstudio.com/VSCode) for new extensions.
+These release notes only capture what's new in the core of Visual Studio Code. Do not forget to check out the [`marketplace`](HTTPS://marketplace.visualstudio.com/VSCode) for new extensions.
 
-Downloads: [`Windows](https://az764295.vo.msecnd.net/public/0.10.6/VSCodeSetup.exe) | [OS X](https://az764295.vo.msecnd.net/public/0.10.6/VSCode-darwin.zip) | [Linux 32-bit](https://az764295.vo.msecnd.net/public/0.10.6/VSCode-linux32.zip) | [Linux 64-bit`](https://az764295.vo.msecnd.net/public/0.10.6/VSCode-linux64.zip)
+Downloads: [`Windows](HTTPS://az764295.vo.msecnd.net/public/0.10.6/VSCodeSetup.exe) | [OS X](HTTPS://az764295.vo.msecnd.net/public/0.10.6/VSCode-darwin.zip) | [Linux 32-bit](HTTPS://az764295.vo.msecnd.net/public/0.10.6/VSCode-linux32.zip) | [Linux 64-bit`](HTTPS://az764295.vo.msecnd.net/public/0.10.6/VSCode-linux64.zip)
 
 ## Thanks
 
 A big thanks for the great contributions we have received. The community has filed over 200 bugs, 280 feature requests, and submitted 70 pull requests. We have addressed many of these issues and merged most of the pull requests.
 
-These are the [`closed bugs](https://github.com/microsoft/vscode/issues?q=is%3Aissue+milestone%3A%22Dec+2015%22+label%3Abug+is%3Aclosed) and these are the [closed feature requests`](https://github.com/microsoft/vscode/issues?q=is%3Aissue+milestone%3A%22Dec+2015%22+label%3Afeature-request+is%3Aclosed) for the December milestone.
+These are the [`closed bugs](HTTPS://github.com/microsoft/vscode/issues?q=is%3Aissue+milestone%3A%22Dec+2015%22+label%3Abug+is%3Aclosed) and these are the [closed feature requests`](HTTPS://github.com/microsoft/vscode/issues?q=is%3Aissue+milestone%3A%22Dec+2015%22+label%3Afeature-request+is%3Aclosed) for the December milestone.
 
 Regarding fixes, if you want to find out when a fix to your issue is available in a VS Code update, please check the **milestone** assigned to the issue.
 
@@ -26,7 +26,7 @@ Regarding fixes, if you want to find out when a fix to your issue is available i
 
 In regex mode:
 
-* Can now search for `^`, `$` or `^$` thanks to a [`community contribution`](https://github.com/microsoft/vscode/pull/314).
+* Can now search for `^`, `$` or `^$` thanks to a [`community contribution`](HTTPS://github.com/microsoft/vscode/pull/314).
 * Can now replace with `\n` or `\t`.
 
 Keyboard shortcuts:
@@ -43,15 +43,15 @@ Keyboard shortcuts:
 
 ## Editor - Cursor Blinking Options
 
-New setting to configure cursor blinking: `editor.cursorBlinking` with values `blink`, `visible` and `hidden` thanks to [`community contribution`](https://github.com/microsoft/vscode/pull/500).
+New setting to configure cursor blinking: `editor.cursorBlinking` with values `blink`, `visible` and `hidden` thanks to [`community contribution`](HTTPS://github.com/microsoft/vscode/pull/500).
 
 ## Editor - Select Current Line Command
 
-New select current line command (`kb(expandLineSelection)`) thanks to a [`community contribution`](https://github.com/microsoft/vscode/pull/961).
+New select current line command (`kb(expandLineSelection)`) thanks to a [`community contribution`](HTTPS://github.com/microsoft/vscode/pull/961).
 
 ## Editor - Scroll Viewport Commands
 
-Thanks to a [`community contribution`](https://github.com/microsoft/vscode/pull/1051), VS Code has improved editor scroll support:
+Thanks to a [`community contribution`](HTTPS://github.com/microsoft/vscode/pull/1051), VS Code has improved editor scroll support:
 
 * Scroll by one line up (`kb(scrollLineUp)`) / down (`kb(scrollLineDown)`)
 * Scroll by one page up (`kb(scrollPageUp)`) / down (`kb(scrollPageDown)`)
@@ -70,7 +70,7 @@ Added support for function keys `kbstyle(f13-f19)` and for the numeric keypad ke
 
 ## Improvements for non US standard keyboard layouts
 
-VS Code dispatches key bindings based on [`keyboard codes](https://msdn.microsoft.com/en-us/library/windows/desktop/dd375731). In `keybindings.json` and in all the UI, we used to render the key codes with the produced characters under the US standard keyboard layout. We received feedback that this was very confusing, therefore, we created a new Node.js module [`native-keymap`](https://www.npmjs.com/package/native-keymap) that is used in VS Code to render the key bindings using the system's current keyboard layout.
+VS Code dispatches key bindings based on [`keyboard codes](HTTPS://msdn.microsoft.com/en-us/library/windows/desktop/dd375731). In `keybindings.json` and in all the UI, we used to render the key codes with the produced characters under the US standard keyboard layout. We received feedback that this was very confusing, therefore, we created a new Node.js module [`native-keymap`](HTTPS://www.npmjs.com/package/native-keymap) that is used in VS Code to render the key bindings using the system's current keyboard layout.
 
 For example, `Split Editor` when using a French (France) keyboard layout is now rendered as `kbstyle(Ctrl+*)`:
 ![`render key binding`](images/December/render-key-binding.png)
@@ -87,19 +87,19 @@ Finally, we added a new widget that helps input the key binding rule when editin
 
 ## ES6 is the new default
 
-We have made ES6 the default for JavaScript files. This means you don't need to create `jsconfig.json` files to enable new syntax and by default you get suggestions for ES6-types, like `Promise`, `Set`, `Map`, `String.startsWith` and much more. Thanks to a community [`contribution`](https://github.com/microsoft/vscode/pull/337).
+We have made ES6 the default for JavaScript files. This means you don't need to create `jsconfig.json` files to enable new syntax and by default you get suggestions for ES6-types, like `Promise`, `Set`, `Map`, `String.startsWith` and much more. Thanks to a community [`contribution`](HTTPS://github.com/microsoft/vscode/pull/337).
 
 At the same time, the grammar used to colorize JavaScript was also updated to support the ES6 syntax.
 
 ## TypeScript Update
 
-The TypeScript language service was updated to version [`1.7.5`](https://devblogs.microsoft.com/typescript/announcing-typescript-1-7).
+The TypeScript language service was updated to version [`1.7.5`](HTTPS://devblogs.microsoft.com/typescript/announcing-typescript-1-7).
 
 ## JSX Support
 
-To improve the JavaScript and JSX support, the plan is to adopt [`Salsa`](https://github.com/microsoft/TypeScript/issues/4789). There is good progress on the Salsa project, but until VS Code has switched over to Salsa, we can only offer a **workaround** for using VS Code with JSX.
+To improve the JavaScript and JSX support, the plan is to adopt [`Salsa`](HTTPS://github.com/microsoft/TypeScript/issues/4789). There is good progress on the Salsa project, but until VS Code has switched over to Salsa, we can only offer a **workaround** for using VS Code with JSX.
 
-* Install the [`vscode-eslint extension`](https://marketplace.visualstudio.com/items/dbaeumer.vscode-eslint) and configure JSX support. This will provide you with validation in JSX files.
+* Install the [`vscode-eslint extension`](HTTPS://marketplace.visualstudio.com/items/dbaeumer.vscode-eslint) and configure JSX support. This will provide you with validation in JSX files.
 
 ```
 {
@@ -111,7 +111,7 @@ To improve the JavaScript and JSX support, the plan is to adopt [`Salsa`](https:
 }
 ```
 
-* If you are using React constructs inside `.js` files then you can install the `js-is-jsx` [`extension`](https://marketplace.visualstudio.com/items/eg2.js-is-jsx) which changes the file mapping so that `.js` files are treated as `.jsx` files. **Be aware** that if you install this extension, you lose the existing language support for `.js` files.
+* If you are using React constructs inside `.js` files then you can install the `js-is-jsx` [`extension`](HTTPS://marketplace.visualstudio.com/items/eg2.js-is-jsx) which changes the file mapping so that `.js` files are treated as `.jsx` files. **Be aware** that if you install this extension, you lose the existing language support for `.js` files.
 
 The grammars used to colorize JS and JSX are now aligned.
 
@@ -121,7 +121,7 @@ We improved extension debugging when connecting the debugger to the extension. T
 
 ## Extensions Show Outdated Extensions
 
-Thanks to a [`community contribution`](https://github.com/microsoft/vscode/pull/517), there is now a `Show Outdated Extensions` command, that shows all outdated extensions and lets you quickly install their updates.
+Thanks to a [`community contribution`](HTTPS://github.com/microsoft/vscode/pull/517), there is now a `Show Outdated Extensions` command, that shows all outdated extensions and lets you quickly install their updates.
 
 ## Installed Extension Issues
 
@@ -131,7 +131,7 @@ If VS Code identifies an issue with an installed extension, it will display an `
 
 ## Extension Marketplace
 
-There is now [`proxy support for the Extension Marketplace`](https://github.com/microsoft/vscode/issues/69).
+There is now [`proxy support for the Extension Marketplace`](HTTPS://github.com/microsoft/vscode/issues/69).
 
 ## Extension Deactivation
 
@@ -199,7 +199,7 @@ Extensions can now contribute JSON schema associations. The `jsonValidation` con
     "contributes": {
         "jsonValidation": [{
             "fileMatch": ".jshintrc",
-            "url": "https://json.schemastore.org/jshintrc"
+            "url": "HTTPS://json.schemastore.org/jshintrc"
         }]
     }
 ```
@@ -223,28 +223,28 @@ The language server protocol now supports all available language features. Pleas
 
 For Node.js based debug adapter development, we've made the VS Code Debug Protocol and an adapter default implementation available as npm modules:
 
-* [`vscode-debugprotocol`](https://www.npmjs.com/package/vscode-debugprotocol)
-* [`vscode-debugadapter`](https://www.npmjs.com/package/vscode-debugadapter)
+* [`vscode-debugprotocol`](HTTPS://www.npmjs.com/package/vscode-debugprotocol)
+* [`vscode-debugadapter`](HTTPS://www.npmjs.com/package/vscode-debugadapter)
 
-The source for these modules lives in the GitHub repository [`vscode-debugadapter-node](https://github.com/microsoft/vscode-debugadapter-node). Both [mock-debug](https://github.com/microsoft/vscode-mock-debug) and [node-debug`](https://github.com/microsoft/vscode-node-debug) have been updated to use the npm modules.
+The source for these modules lives in the GitHub repository [`vscode-debugadapter-node](HTTPS://github.com/microsoft/vscode-debugadapter-node). Both [mock-debug](HTTPS://github.com/microsoft/vscode-mock-debug) and [node-debug`](HTTPS://github.com/microsoft/vscode-node-debug) have been updated to use the npm modules.
 
 ## Engineering
 
 The VS Code GitHub repository supports continued integration for branches and pull requests:
 
-* [`Travis CI`](https://travis-ci.org/Microsoft/vscode/) - Linux and OS X
-* [`AppVeyor`](https://ci.appveyor.com/project/VSCode/vscode) - Windows
+* [`Travis CI`](HTTPS://travis-ci.org/Microsoft/vscode/) - Linux and OS X
+* [`AppVeyor`](HTTPS://ci.appveyor.com/project/VSCode/vscode) - Windows
 
 During this first iteration of VS Code being open source, we tuned and documented more of our development workflows:
 
-* [`How we do issue tracking`](https://github.com/microsoft/vscode/wiki/Issue-Tracking)
-* [`How we use the different feedback channels`](https://github.com/microsoft/vscode/wiki/Feedback-Channels)
+* [`How we do issue tracking`](HTTPS://github.com/microsoft/vscode/wiki/Issue-Tracking)
+* [`How we use the different feedback channels`](HTTPS://github.com/microsoft/vscode/wiki/Feedback-Channels)
 
 We updated Electron to version 0.34.5.  This includes a bug fix for the issue on Linux where the editor font was showing blurry on certain high DPI displays.
 
 ## Notable Bug Fixes
 
-* Submitted [`pull request](https://github.com/atom/node-oniguruma/pull/46) to `atom/node-oniguruma` in order to [improve performance`](https://github.com/microsoft/vscode/issues/94) when colorizing long lines with multi-byte characters.
+* Submitted [`pull request](HTTPS://github.com/atom/node-oniguruma/pull/46) to `atom/node-oniguruma` in order to [improve performance`](HTTPS://github.com/microsoft/vscode/issues/94) when colorizing long lines with multi-byte characters.
 
 ## What's next
 
