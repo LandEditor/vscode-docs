@@ -27,11 +27,11 @@ In the diagram below, you'll see an example of three dev containers: one for Pyt
 
 ### Prerequisites
 
-To get started with using dev containers in VS Code, you'll need to download the [`Dev Containers`](HTTPS://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension from the VS Code Marketplace.
+To get started with using dev containers in VS Code, you'll need to download the [`Dev Containers`](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension from the VS Code Marketplace.
 
 ![`Dev Containers extension`](images/containers/dev-containers-extension.png)
 
-You'll also need to download [`Docker`](HTTPS://docs.docker.com/docker-for-windows/install-windows-home/), which is the industry standard for building and sharing containers.
+You'll also need to download [`Docker`](https://docs.docker.com/docker-for-windows/install-windows-home/), which is the industry standard for building and sharing containers.
 
 ### Sample dev containers
 
@@ -39,14 +39,14 @@ Rather than creating dev containers from scratch, Dev Containers has several way
 
 Below is a list of sample dev containers we'd recommend starting out with:
 
-- [`Try Out Development Containers: Python`](HTTPS://github.com/microsoft/vscode-remote-try-python)
-- [`Try Out Development Containers: Java`](HTTPS://github.com/microsoft/vscode-remote-try-java)
-- [`Try Out Development Containers: C++`](HTTPS://github.com/microsoft/vscode-remote-try-cpp)
-- [`Try Out Development Containers: Node.js`](HTTPS://github.com/microsoft/vscode-remote-try-node)
-- [`Try Out Development Containers: .NET`](HTTPS://github.com/microsoft/vscode-remote-try-dotnetcore)
-- [`Try Out Development Containers: Go`](HTTPS://github.com/microsoft/vscode-remote-try-go)
-- [`Try Out Development Containers: PHP`](HTTPS://github.com/microsoft/vscode-remote-try-php)
-- [`Try Out Development Containers: Rust`](HTTPS://github.com/microsoft/vscode-remote-try-rust)
+- [`Try Out Development Containers: Python`](https://github.com/microsoft/vscode-remote-try-python)
+- [`Try Out Development Containers: Java`](https://github.com/microsoft/vscode-remote-try-java)
+- [`Try Out Development Containers: C++`](https://github.com/microsoft/vscode-remote-try-cpp)
+- [`Try Out Development Containers: Node.js`](https://github.com/microsoft/vscode-remote-try-node)
+- [`Try Out Development Containers: .NET`](https://github.com/microsoft/vscode-remote-try-dotnetcore)
+- [`Try Out Development Containers: Go`](https://github.com/microsoft/vscode-remote-try-go)
+- [`Try Out Development Containers: PHP`](https://github.com/microsoft/vscode-remote-try-php)
+- [`Try Out Development Containers: Rust`](https://github.com/microsoft/vscode-remote-try-rust)
 
 ## Learning resources
 

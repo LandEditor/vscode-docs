@@ -29,14 +29,14 @@ Since you may be working with teammates using Linux or deploying to a Linux prod
 
 ## How do I get started with remote development?
 
-To get started with remote development in VS Code, you can download the [`Remote Development extension pack`](HTTPS://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack) from the Extension Marketplace.
+To get started with remote development in VS Code, you can download the [`Remote Development extension pack`](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack) from the Extension Marketplace.
 
 ![`Remote Development Extension Pack`](images/overview/remote-dev-pack.png)
 
 This extension pack includes three extensions (which can also be downloaded individually):
 
-- [`Remote - SSH`](HTTPS://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh) - Connect to any location by opening folders on a remote computer or virtual machine (VM) using SSH.
-- [`Dev Containers`](HTTPS://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) - Develop within a container, which is a piece of software that includes your app and any dependencies your app needs to run.
-- [`WSL`](HTTPS://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) - Get a Linux-powered development experience while on Windows using the Windows Subsystem for Linux (WSL).
+- [`Remote - SSH`](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh) - Connect to any location by opening folders on a remote computer or virtual machine (VM) using SSH.
+- [`Dev Containers`](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) - Develop within a container, which is a piece of software that includes your app and any dependencies your app needs to run.
+- [`WSL`](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) - Get a Linux-powered development experience while on Windows using the Windows Subsystem for Linux (WSL).
 
 Check out the topics in this section to learn more about each of the remote development extensions in Visual Studio Code.

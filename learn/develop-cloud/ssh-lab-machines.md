@@ -21,7 +21,7 @@ In the classroom, you might SSH into lab machines to access computers with certa
 
 ## Get started with SSH in VS Code
 
-To get started with using SSH in VS Code, you'll need to download the [`Remote - SSH extension`](HTTPS://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh) from the Extension Marketplace.
+To get started with using SSH in VS Code, you'll need to download the [`Remote - SSH extension`](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh) from the Extension Marketplace.
 
 ![`Remote SSH extension`](images/ssh-lab-machines/remote-ssh.png)
 

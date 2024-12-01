@@ -10,7 +10,7 @@ Hi,
 
 With this release, we mark our official Beta milestone and the big news is that VS Code now supports extensions (plug-ins) and is open source!
 
-Downloads: [`Windows](HTTPS://az764295.vo.msecnd.net/public/0.10.3/VSCodeSetup.exe) | [OS X](HTTPS://az764295.vo.msecnd.net/public/0.10.3/VSCode-darwin.zip) | [Linux 32-bit](HTTPS://az764295.vo.msecnd.net/public/0.10.3/VSCode-linux32.zip) | [Linux 64-bit`](HTTPS://az764295.vo.msecnd.net/public/0.10.3/VSCode-linux64.zip)
+Downloads: [`Windows](https://az764295.vo.msecnd.net/public/0.10.3/VSCodeSetup.exe) | [OS X](https://az764295.vo.msecnd.net/public/0.10.3/VSCode-darwin.zip) | [Linux 32-bit](https://az764295.vo.msecnd.net/public/0.10.3/VSCode-linux32.zip) | [Linux 64-bit`](https://az764295.vo.msecnd.net/public/0.10.3/VSCode-linux64.zip)
 
 ## VS Code Supports Extensions!
 
@@ -28,7 +28,7 @@ VS Code has two new `Extensions` commands (`kb(workbench.action.showCommands)` t
 
 ![`extension commands`](images/0_10_0/extension-commands.png)
 
-The VS Code also has a [`Marketplace`](HTTPS://marketplace.visualstudio.com/VSCode) where you can browse and learn more about extensions.
+The VS Code also has a [`Marketplace`](https://marketplace.visualstudio.com/VSCode) where you can browse and learn more about extensions.
 
 ## Extensibility SDK
 
@@ -48,19 +48,19 @@ The [`vsce` publishing tool`](/docs/extensions/publish-extension.md) lets you ea
 
 ## Extension samples
 
-If you'd rather start your extension by modifying a working example, you can find [`extension samples](/docs/extensions/samples/.md) as well as the source code for many extensions on GitHub ([Go Language Support`](HTTPS://github.com/golang/vscode-go)).
+If you'd rather start your extension by modifying a working example, you can find [`extension samples](/docs/extensions/samples/.md) as well as the source code for many extensions on GitHub ([Go Language Support`](https://github.com/golang/vscode-go)).
 
 ## VS Code is Open Source!
 
-You spoke and we listened.  With this release, VS Code development is now open source on [`GitHub`](HTTPS://github.com/microsoft/vscode).
+You spoke and we listened.  With this release, VS Code development is now open source on [`GitHub`](https://github.com/microsoft/vscode).
 
 ![`hello code`](images/0_10_0/hello-code.png)
 
 You can now contribute to VS Code:
-* Submit [`bugs`](HTTPS://github.com/microsoft/vscode/issues) and help us verify fixes as they are checked in.
+* Submit [`bugs`](https://github.com/microsoft/vscode/issues) and help us verify fixes as they are checked in.
 * Review the source code changes.
 * Contribute bug fixes through pull requests.
-* Update and add to the [`documentation`](HTTPS://github.com/microsoft/vscode-docs).
+* Update and add to the [`documentation`](https://github.com/microsoft/vscode-docs).
 
 ## Add TextMate Snippets
 

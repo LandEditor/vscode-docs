@@ -10,7 +10,7 @@ MetaDescription: A Over the Moon project tutorial using the Python extension in 
 
 # Learn Python with Over The Moon
 
-[`Over the Moon`](HTTPS://www.youtube.com/watch?v=26DIABx44Tw) is a Netflix film about Fei Fei, a young girl who builds a rocket to go to the moon on a mission to prove the existence of a legendary Moon Goddess. These lessons were inspired by Fei Fei's story and the story of real NASA engineers and astronauts. Try out these space-travel themed challenges that will introduce you to data science, machine learning, and artificial intelligence with tools like Python, Visual Studio Code, and Azure.
+[`Over the Moon`](https://www.youtube.com/watch?v=26DIABx44Tw) is a Netflix film about Fei Fei, a young girl who builds a rocket to go to the moon on a mission to prove the existence of a legendary Moon Goddess. These lessons were inspired by Fei Fei's story and the story of real NASA engineers and astronauts. Try out these space-travel themed challenges that will introduce you to data science, machine learning, and artificial intelligence with tools like Python, Visual Studio Code, and Azure.
 
 Get a glimpse into the Python programming language with this introductory learning path that requires no prior background.
 

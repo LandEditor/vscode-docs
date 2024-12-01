@@ -9,7 +9,7 @@ MetaDescription: NASA project tutorials using the Python extension in Visual Stu
 ---
 # NASA Inspired Lessons
 
-This learning path introduces you to the world of Python. Explore modules and learning paths inspired by National Aeronautics and Space Administration (NASA) scientists to prepare you for a career in space exploration. Visit [`Microsoft Learn training`](HTTPS://learn.microsoft.com/training/topics/nasa) for the full list of modules.
+This learning path introduces you to the world of Python. Explore modules and learning paths inspired by National Aeronautics and Space Administration (NASA) scientists to prepare you for a career in space exploration. Visit [`Microsoft Learn training`](https://learn.microsoft.com/training/topics/nasa) for the full list of modules.
 
 Through these modules, you will:
 
