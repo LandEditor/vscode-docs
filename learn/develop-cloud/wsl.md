@@ -25,11 +25,11 @@ You'll also need WSL and a Linux distribution installed. We recommend using WSL 
 
 Check out the WSL extension in action:
 
-<img src="HTTPS://github.com/microsoft/vscode-remote-release/blob/main/docs/images/remote-wsl-open-code.gif?raw=true" alt="Using the WSL extension with an Ubuntu distro on WSL" aria-hidden="true" class="thumb"/>
+<img src="https://github.com/microsoft/vscode-remote-release/blob/main/docs/images/remote-wsl-open-code.gif?raw=true" alt="Using the WSL extension with an Ubuntu distro on WSL" aria-hidden="true" class="thumb"/>
 
 The typical flow is you'll open a Linux command prompt, navigate to a folder of your choosing, and type `code .` to launch a new instance of VS Code connected to WSL. From there, you get the full experience of using VS Code as if you were developing on Linux, except you're on a Windows machine!
 
-<iframe src="HTTPS://www.youtube-nocookie.com/embed/mIHprjsSO9o?rel=0&amp;disablekb=0&amp;modestbranding=1&amp;showinfo=0" frameborder="0" allowfullscreen title="Visual Studio Code WSL"></iframe>
+<iframe src="https://www.youtube-nocookie.com/embed/mIHprjsSO9o?rel=0&amp;disablekb=0&amp;modestbranding=1&amp;showinfo=0" frameborder="0" allowfullscreen title="Visual Studio Code WSL"></iframe>
 
 ## Next steps
 

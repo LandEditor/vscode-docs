@@ -25,4 +25,4 @@ Get a glimpse into the Python programming language with this introductory learni
 
 For a video walkthrough of the first lesson, you can follow along with this:
 
-<iframe src="HTTPS://www.youtube-nocookie.com/embed/VH_mU42lQkQ" frameborder="0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Crack the code and reveal a secret with Python and Visual Studio Code"></iframe>
+<iframe src="https://www.youtube-nocookie.com/embed/VH_mU42lQkQ" frameborder="0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Crack the code and reveal a secret with Python and Visual Studio Code"></iframe>

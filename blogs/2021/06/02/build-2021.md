@@ -25,13 +25,13 @@ Among all the sessions that were presented, here is a hand-picked selection for 
 
 Join Sana Ajani and Jeffrey Mew for some of the newest features of VS Code, including new debugging and testing features, custom notebooks, better support for Python, PyTorch, and Jupyter Notebooks.
 
-<iframe width="560" height="315" src="HTTPS://www.youtube-nocookie.com/embed/eKJftIqv8Uo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/eKJftIqv8Uo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Application development with Scott Hanselman & friends
 
 Why did this "not a keynote" keynote get so many rave reviews? Find out for yourself, and learn about what's new for developers from Microsoft, including with VS Code: custom notebooks, GitHub integration, GitHub Codespaces, and more.
 
-<iframe width="560" height="315" src="HTTPS://www.youtube-nocookie.com/embed/EWYYgEkGJfs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/EWYYgEkGJfs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### What's new with TypeScript
 
@@ -51,13 +51,13 @@ VS Code developer Christof Marti gives a brief demo of developing in a container
 
 [`Dapr`](HTTPS://dapr.io/) is a distributed application runtime to build microservice-based apps and works with any programming language. Check out Dapr and how it is used with VS Code.
 
-<iframe width="560" height="315" src="HTTPS://www.youtube-nocookie.com/embed/DyKYB76SDx0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/DyKYB76SDx0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Build cloud-native applications that run anywhere
 
 Use VS Code and Azure to build, debug, and run serverless or containerized apps.
 
-<iframe width="560" height="315" src="HTTPS://www.youtube-nocookie.com/embed/jN2INtCLRTo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/jN2INtCLRTo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Learn new skills
 
@@ -67,19 +67,19 @@ This year's Build had a large "student zone", for beginners and perennial learne
 
 Learn how VS Code and GitHub can help student and beginning programmers learn to code. Hosted by Sana Ajani, from the VS Code team, and Meaghan Lewis.
 
-<iframe width="560" height="315" src="HTTPS://www.youtube-nocookie.com/embed/Jk708pQJSyk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Jk708pQJSyk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### The art of artificial intelligence: creating images with Python and Azure
 
 Learn how to use AI to generate images and photos, with Python and Jupyter Notebooks in VS Code.
 
-<iframe width="560" height="315" src="HTTPS://www.youtube-nocookie.com/embed/WyAikmxLlhs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/WyAikmxLlhs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Get started with popular programming languages: Intro to Python and C#
 
 James Montemagno and Christopher Harrison offer a beginner-friendly introduction to programming in C# and Python, and of course using VS Code.
 
-<iframe width="560" height="315" src="HTTPS://www.youtube-nocookie.com/embed/wiUzCG_mEGo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/wiUzCG_mEGo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Reach out
 
