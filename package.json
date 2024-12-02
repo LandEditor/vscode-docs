@@ -10,7 +10,6 @@
 	},
 	"name": "vscode-docs",
 	"scripts": {
-		"check-lfs": "node ./build/check-lfs.js",
-		"prepare": "husky install"
+		"check-lfs": "node ./build/check-lfs.js"
 	}
 }
