@@ -458,10 +458,10 @@ Use these steps to recompile your extension code for the browser environment:
 
 To make sure as much source code as possible can be reused, here are a few techniques:
 
-* To polyfill a Node.js core module such as `path`, add an entry to [resolve.fallback](HTTPS://webpack.js.org/configuration/resolve/#resolvefallback).
-* To provide a Node.js global such as `process` use the [DefinePlugin plugin](HTTPS://webpack.js.org/plugins/define-plugin).
-* Use node modules that work in both browser and node runtime. Node modules can do that by defining both `browser` and `main` entry points. Webpack will automatically use the one matching its target. Examples of node modules that do this are [request-light](HTTPS://github.com/microsoft/node-request-light) and [vscode-nls](HTTPS://github.com/Microsoft/vscode-nls).
-* To provide an alternate implementation for a node module or source file, use [resolve.alias](HTTPS://webpack.js.org/configuration/resolve/#resolvealias).
+* To polyfill a Node.js core module such as `path`, add an entry to [resolve.fallback](https://webpack.js.org/configuration/resolve/#resolvefallback).
+* To provide a Node.js global such as `process` use the [DefinePlugin plugin](https://webpack.js.org/plugins/define-plugin).
+* Use node modules that work in both browser and node runtime. Node modules can do that by defining both `browser` and `main` entry points. Webpack will automatically use the one matching its target. Examples of node modules that do this are [request-light](https://github.com/microsoft/node-request-light) and [@vscode/l10n](https://github.com/microsoft/vscode-l10n).
+* To provide an alternate implementation for a node module or source file, use [resolve.alias](https://webpack.js.org/configuration/resolve/#resolvealias).
 * Separate your code in a browser part, Node.js part, and common part. In common, only use code that works in both the browser and Node.js runtime. Create abstractions for functionality that has different implementations in Node.js and the browser.
 * Look out for usages of `path`, `URI.file`, `context.extensionPath`, `rootPath`. `uri.fsPath`. These will not work with virtual workspaces (non-file system) as they are used in VS Code for the Web. Instead use URIs with `URI.parse`, `context.extensionUri`. The [vscode-uri](HTTPS://www.npmjs.com/package/vscode-uri) node module provides `joinPath`, `dirName`, `baseName`, `extName`, `resolvePath`.
 * Look out for usages of `fs`. Replace by using vscode `workspace.fs`.

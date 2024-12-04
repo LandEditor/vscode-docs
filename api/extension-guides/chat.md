@@ -17,7 +17,7 @@ Chat participants are domain experts that can answer user queries within a speci
 - Forward the user request to a backend service
 - Use procedural logic and local resources
 
-Participants can use the language model in a wide range of ways. Some participants only make use of the language model to get answers to custom prompts, for example the [sample chat participant](HTTPS://github.com/microsoft/vscode-extension-samples/tree/main/chat-sample). Other participants are more advanced and act like autonomous agents that invoke multiple tools with the help of the language model. An example of such an advanced participant is the built-in `@workspace` that knows about your workspace and can answer questions about it. Internally, `@workspace` is powered by multiple tools: GitHub's knowledge graph, combined with semantic search, local code indexes, and VS Code's language services.
+Participants can use the language model in a wide range of ways. Some participants only make use of the language model to get answers to custom prompts, for example the [sample chat participant](https://github.com/microsoft/vscode-extension-samples/tree/main/chat-sample). Other participants are more advanced and act like autonomous agents that invoke multiple tools with the help of the language model. An example of such an advanced participant is the built-in `@workspace` that knows about your workspace and can answer questions about it. Internally, `@workspace` is powered by multiple tools: GitHub's knowledge graph, combined with semantic search, local code indexes, and VS Code's language services.
 
 When a user explicitly mentions a `@participant` in their chat prompt, that prompt is forwarded to the extension that contributed that specific chat participant. The participant then uses a `ResponseStream` to respond to the request. To provide a smooth user experience, the Chat API is streaming-based. A chat response can contain rich content, such as Markdown, file trees, command buttons, and more. Get more info about the [supported response output types](#supported-chat-response-output-types).
 
@@ -27,7 +27,7 @@ Participants can also contribute *commands*, which are a shorthand notation for 
 
 ## Extending GitHub Copilot via GitHub Apps
 
-Alternatively, it is possible to extend GitHub Copilot by creating a GitHub App that contributes a chat participant in the Chat view. A GitHub App is backed by a service and works across all GitHub Copilot surfaces, such as github.com, Visual Studio, or VS Code. On the other hand, GitHub Apps do not have full access to the VS Code API. To learn more about extending GitHub Copilot through a GitHub App see the [GitHub documentation](HTTPS://docs.github.com/en/copilot/building-copilot-extensions/about-building-copilot-extensions).
+Alternatively, it is possible to extend GitHub Copilot by creating a GitHub App that contributes a chat participant in the Chat view. A GitHub App is backed by a service and works across all GitHub Copilot surfaces, such as github.com, Visual Studio, or VS Code. On the other hand, GitHub Apps do not have full access to the VS Code API. To learn more about extending GitHub Copilot through a GitHub App see the [GitHub documentation](https://docs.github.com/en/copilot/building-copilot-extensions/about-building-copilot-extensions).
 
 ## Links
 
@@ -52,7 +52,7 @@ The following screenshot shows the different chat concepts in the Visual Studio 
 
 ## Develop a chat extension
 
-A chat extension is an extension that contributes a chat participant to the [Chat](HTTPS://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat) view.
+A chat extension is an extension that contributes a chat participant to the [Chat](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat) view.
 
 The minimum functionality that is needed for implementing a chat extension is:
 
@@ -288,22 +288,24 @@ The following code snippet shows how to implement participant detection at the p
 ```json
 "contributes": {
     "chatParticipants": [
-        "id": "chat-sample.cat",
-        "fullName": "Cat",
-        "name": "cat",
-        "description": "Meow! What can I teach you?",
+        {
+            "id": "chat-sample.cat",
+            "fullName": "Cat",
+            "name": "cat",
+            "description": "Meow! What can I teach you?",
 
-        "disambiguation": [
-            {
-                "category": "cat",
-                "description": "The user wants to learn a specific computer science topic in an informal way.",
-                "examples": [
-                    "Teach me C++ pointers using metaphors",
-                    "Explain to me what is a linked list in a simple way",
-                    "Can you explain to me what is a function in programming?"
-                ]
-            }
-        ]
+            "disambiguation": [
+                {
+                    "category": "cat",
+                    "description": "The user wants to learn a specific computer science topic in an informal way.",
+                    "examples": [
+                        "Teach me C++ pointers using metaphors",
+                        "Explain to me what is a linked list in a simple way",
+                        "Can you explain to me what is a function in programming?"
+                    ]
+                }
+            ]
+        }
     ]
 }
 ```
@@ -473,7 +475,7 @@ const logger = vscode.env.createTelemetryLogger({
 });
 
 cat.onDidReceiveFeedback((feedback: vscode.ChatResultFeedback) => {
-    // Log chat result feedback to be able to compute the success matric of the participant
+    // Log chat result feedback to be able to compute the success metric of the participant
     logger.logUsage('chatResultFeedback', {
         kind: feedback.kind
     });
@@ -519,9 +521,9 @@ Chat extensions should explicitly ask for user consent if they are about to do a
 
 Once you have created your AI extension, you can publish your extension to the Visual Studio Marketplace:
 
-- Before publishing to the VS Marketplace we recommend that you read the [Microsoft AI tools and practices guidelines](HTTPS://www.microsoft.com/en-us/ai/tools-practices). These guidelines provide best practices for the responsible development and use of AI technologies.
-- By publishing to the VS Marketplace, your extension is adhering to the [GitHub Copilot extensibility acceptable development and use policy](HTTPS://docs.github.com/en/early-access/copilot/github-copilot-extensibility-platform-partnership-plugin-acceptable-development-and-use-policy).
-- Upload to the Marketplace as described in [Publishing Extension](HTTPS://code.visualstudio.com/api/working-with-extensions/publishing-extension).
+- Before publishing to the VS Marketplace we recommend that you read the [Microsoft AI tools and practices guidelines](https://www.microsoft.com/en-us/ai/tools-practices). These guidelines provide best practices for the responsible development and use of AI technologies.
+- By publishing to the VS Marketplace, your extension is adhering to the [GitHub Copilot extensibility acceptable development and use policy](https://docs.github.com/en/early-access/copilot/github-copilot-extensibility-platform-partnership-plugin-acceptable-development-and-use-policy).
+- Upload to the Marketplace as described in [Publishing Extension](https://code.visualstudio.com/api/working-with-extensions/publishing-extension).
 - If your extension already contributes functionality other than chat, we recommend that you do not introduce an extension dependency on GitHub Copilot in the [extension manifest](/api/references/extension-manifest). This ensures that extension users that do not use GitHub Copilot can use the non-chat functionality without having to install GitHub Copilot.
 
 ## Related content
