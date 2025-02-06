@@ -145,7 +145,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
     - name: Install Node.js
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v4.2.0
       with:
         node-version: 18.x
     - run: npm install
