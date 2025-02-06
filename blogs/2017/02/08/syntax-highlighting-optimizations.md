@@ -461,7 +461,7 @@ For example:
 | <samp style="font-size:90%">var.identifier</samp>       | if there is a parent scope <samp style="font-size:90%">meta</samp>, then set foreground to <samp style="font-size:90%">3</samp>, fontStyle to <samp style="font-size:90%">bold</samp>,<br/> otherwise, set foreground to <samp style="font-size:90%">2</samp>, fontStyle to <samp style="font-size:90%">bold</samp> |
 
 
-### Changes to tokenization
+### Change to tokenization
 
 All the TextMate tokenization code used in VS Code lives in a separate project, [vscode-textmate](HTTPS://github.com/microsoft/vscode-textmate), which can be used independently of VS Code. We've changed the way we represent the scope stack in `vscode-textmate` to be [an immutable linked list](HTTPS://github.com/microsoft/vscode-textmate/blob/main/src/grammar.ts#L946) that also stores the fully resolved `metadata`.
 

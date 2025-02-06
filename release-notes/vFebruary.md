@@ -79,7 +79,7 @@ Here are the steps to set up `eslint`:
 
 This [`.eslintrc.json`](https://gist.github.com/egamma/65c0e2a832393e3b625a) corresponds roughly to the lint settings of the old JavaScript infrastructure.
 
-### Changes in `jsconfig.json`
+### Change in `jsconfig.json`
 
 #### `exclude` lists
 
