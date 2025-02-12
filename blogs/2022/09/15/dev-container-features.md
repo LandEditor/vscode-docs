@@ -19,7 +19,7 @@ When creating dev containers, you may have the same "I just need one more thing!
 
 What if there was an easy way to install that extra tool in your dev container, simply by mentioning the tool's name and version? Or what if as a tool user or author, you could create an easy way for others to install it? Sharing manual scripts can help with reuse, but when referencing one, you may forget to reference container or tooling settings, such as enabling ptrace support for Go, Rust, or C++ debugging, adding a specific entry point to fire on container start, or ensuring the right VS Code extensions are included.
 
-## Features
+## Feature
 
 We're happy to share that dev container **Features** help you smoothly get the tools you need in your dev container!
 

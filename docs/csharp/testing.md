@@ -83,7 +83,7 @@ From the Terminal, run the following command:
 dotnet add [location of your test csproj file] reference [location of the csproj file for project to be tested]
 ```
 
-## Features
+## Feature
 
 ### Run/Debug test cases
 

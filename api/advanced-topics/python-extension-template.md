@@ -39,7 +39,7 @@ To get started, follow the instructions in the template [README](HTTPS://github.
 
 The [README](HTTPS://github.com/microsoft/vscode-python-tools-extension-template#readme) has the most up-to-date instructions and also goes into details on how to customize the extension's `package.json` placeholders (`<pythontool-module>`, `<pythontool-display-name>`, etc.).
 
-## Features of the template
+## Feature of the template
 
 After creating your extension via the template, it will include the following extension contributions. Assume `<pytool-module>` was replaced with `mytool`, and `<pytool-display-name>` with`My Tool`:
 

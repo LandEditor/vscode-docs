@@ -43,7 +43,7 @@ To install the Azure Kubernetes Services VS Code extension, open the Extensions 
 
 ![Sign in to your Azure Account](images/aksextensions/Sign-in.png)
 
-## Features
+## Feature
 
 Once you successfully sign in with your Azure Account, you can view all AKS clusters in your Azure subscriptions(s) under the section named **Azure**. You can right-click on your AKS cluster and select a menu item to perform the following actions.
 

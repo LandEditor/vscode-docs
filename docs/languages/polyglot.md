@@ -34,7 +34,7 @@ When polyglot programming meets notebooks, you get Polyglot Notebooks! As oppose
 - SQL
 - KQL (Kusto Query Language)
 
-## Features
+## Feature
 
 In addition to executing the code for the languages above, you can take advantage of:
 

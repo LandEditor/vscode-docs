@@ -347,7 +347,7 @@ A Feature is a self contained entity in a folder with at least a `devcontainer-f
 
 Check out the [feature/starter](https://github.com/devcontainers/feature-starter) repository for instructions on using the dev container CLI to publish your own public or private Features.
 
-### Features specification and distribution
+### Feature specification and distribution
 
 Features are a key part of the open-source [Development Containers Specification](https://containers.dev). You can review [more information about how Features work](https://containers.dev/implementors/features) and their [distribution](https://containers.dev/implementors/features-distribution).
 

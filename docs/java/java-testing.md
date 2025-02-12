@@ -132,7 +132,7 @@ If your project does not use any build tools, you can enable TestNG via the [Tes
 - [jcommander.jar](https://search.maven.org/search?q=g:com.beust%20AND%20a:jcommander)
 - [slf4j-api.jar](https://search.maven.org/search?q=g:org.slf4j%20AND%20a:slf4j-api)
 
-## Features
+## Feature
 
 ### Run/Debug test cases
 
