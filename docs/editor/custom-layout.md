@@ -4,7 +4,7 @@ Area: editor
 TOCTitle: Custom Layout
 ContentId: 71e2c9c1-fb19-469a-9620-877d4b08fb0d
 PageTitle: Custom layout of Visual Studio Code
-DateApproved: 12/11/2024
+DateApproved: 02/06/2025
 MetaDescription: Visual Studio Code custom user interface layout.
 ---
 # Custom Layout
@@ -29,7 +29,7 @@ To change the position of the Primary Side Bar, you can:
 * Right-click the Activity Bar and select **Move Primary Side Bar Right**
 * Run **View: Toggle Primary Side Bar Position** to switch the Primary side bar right and left
 * Use the **View** > **Appearance** > **Move Primary Side Bar Right** menu item
-* Set the **Workbench > Side Bar: Location** (`setting(workbench.sideBar.location)`) setting to `right` in the [Settings editor](/docs/getstarted/settings.md)
+* Set the **Workbench > Side Bar: Location** (`setting(workbench.sideBar.location)`) setting to `right` in the [Settings editor](/docs/editor/settings.md)
 
 ### Secondary side bar
 
@@ -54,6 +54,12 @@ At any time, you can drag and drop views and panels into the Primary or Secondar
 
 > [!NOTE]
 > You can reset views and panels back to their default locations with the **View: Reset View Locations** command.
+
+### Command Palette position
+
+You can move the Command Palette to another location by grabbing the top edge with the mouse cursor and dragging it somewhere else. You can also select the **Customize Layout** control in the title bar, and then select one of the preconfigured **Quick Input Positions**.
+
+![Screenshot that shows the Command Palette in a different location, highlighting the Customize Layout control in the title bar and the preconfigured position options.](images/custom-layout/command-palette-position.png)
 
 ### Activity Bar position
 
@@ -190,7 +196,7 @@ To navigate between the sides:
 * **View: Focus Second Side in Active Editor** - Move focus to the second (right or bottom) side.
 * **View: Focus Other Side in Active Editor** - Toggle between the split editor sides.
 
-The **Workbench > Editor: Split in Group Layout** (`setting(workbench.editor.splitInGroupLayout)`) [setting](/docs/getstarted/settings.md) lets you set the preferred split editor layout to either horizontal (default) or vertical.
+The **Workbench > Editor: Split in Group Layout** (`setting(workbench.editor.splitInGroupLayout)`) [setting](/docs/editor/settings.md) lets you set the preferred split editor layout to either horizontal (default) or vertical.
 
 ### Grid layout
 

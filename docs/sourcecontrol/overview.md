@@ -4,7 +4,7 @@ Area: sourcecontrol
 TOCTitle: Overview
 ContentId: 7E22CCC0-2AB8-4729-A4C9-BE2B16853820
 PageTitle: Source Control with Git in Visual Studio Code
-DateApproved: 12/11/2024
+DateApproved: 02/06/2025
 MetaDescription: Visual Studio Code source control management with integrated Git support.
 ---
 # Using Git source control in VS Code
@@ -118,6 +118,29 @@ You can disable this functionality by toggling the `setting(git.useEditorAsCommi
 
 To use the same flow for git commit commands executed in the integrated terminal, enable the `setting(git.terminalGitEditor)` setting.
 
+## Git blame information
+
+VS Code can show git blame information inline in the editor and in the Status Bar. Hover over the Status Bar item or inline hint to view detailed git blame information.
+
+To enable or disable git blame information, use the **Git: Toggle Git Blame Editor Decoration** and **Git: Toggle Git Blame Status Bar Item** commands, or configure these settings:
+
+- `setting(git.blame.statusBarItem.enabled)` (enabled by default)
+- `setting(git.blame.editorDecoration.enabled)`
+
+<video src="images/overview/git-blame.mp4" title="Show git blame information in editor and Status Bar." autoplay loop controls muted></video>
+
+You can customize the format of the message that is shown in the editor and in the Status Bar with the `setting(git.blame.editorDecoration.template)` and `setting(git.blame.statusBarItem.template)` settings. You can use variables for the most common information.
+
+For example, the following template shows the subject of the commit, the author's name, and the author's date relative to now:
+
+```json
+{
+  "git.blame.editorDecoration.template": "${subject}, ${authorName} (${authorDateAgo})"
+}
+```
+
+To adjust the color of the editor decoration, use the `git.blame.editorDecorationForeground` theme color.
+
 ## Review uncommitted code changes with AI
 
 GitHub Copilot in VS Code can help you review your uncommitted code changes.
@@ -155,10 +178,10 @@ The **Git: Create Branch** command lets you quickly create a new branch. Just pr
 
 Given that your repository is connected to some remote and that your checked out branch has an [upstream link](https://git-scm.com/book/ch3-5.html) to a branch in that remote, VS Code offers you useful actions to **push**, **pull**, and **sync** that branch (the latter will run a **pull** command followed by a **push** command). You can find these actions in the **Views and More Actions** `...` menu, along with the option to **add or remove a remote**.
 
-VS Code is able to periodically fetch changes from your remotes. This enables VS Code to show how many changes your local repository is ahead or behind the remote. This feature is disabled by default and you can use the `setting(git.autofetch)` [setting](/docs/getstarted/settings.md) to enable it.
+VS Code is able to periodically fetch changes from your remotes. This enables VS Code to show how many changes your local repository is ahead or behind the remote. This feature is disabled by default and you can use the `setting(git.autofetch)` [setting](/docs/editor/settings.md) to enable it.
 
 > [!TIP]
-> You should [set up a credential helper](https://docs.github.com/get-started/getting-started-with-git/caching-your-github-credentials-in-git) to avoid getting asked for credentials every time VS Code talks to your Git remotes.  If you don't do this, you may want to consider disabling automatic fetching via the `setting(git.autofetch)` [setting](/docs/getstarted/settings.md) to reduce the number of prompts you get.
+> You should [set up a credential helper](https://docs.github.com/get-started/getting-started-with-git/caching-your-github-credentials-in-git) to avoid getting asked for credentials every time VS Code talks to your Git remotes.  If you don't do this, you may want to consider disabling automatic fetching via the `setting(git.autofetch)` [setting](/docs/editor/settings.md) to reduce the number of prompts you get.
 
 ## Source Control Graph
 

@@ -4,7 +4,7 @@ Area: nodejs
 TOCTitle: Vue Tutorial
 ContentId: 85ce0bcc-d2b8-4b7c-b744-5eddce9a8d00
 PageTitle: Vue JavaScript Tutorial in Visual Studio Code
-DateApproved: 12/11/2024
+DateApproved: 02/06/2025
 MetaDescription: Vue JavaScript tutorial showing IntelliSense, debugging, and code navigation support in the Visual Studio Code editor.
 ---
 # Using Vue in Visual Studio Code
@@ -128,7 +128,7 @@ Let's update the sample application to render "Hello World!". In `App.vue` repla
 Once you save the `App.vue` file (`kb(workbench.action.files.save)`), Vite's [Hot Module Replacement (HMR)](https://vite.dev/guide/features.html#hot-module-replacement) feature will instantly reflect the updates in the browser, and you'll see "Hello World!". Keep the server running as we move on to learn about Vue.js client-side debugging.
 
 
->**Tip**: VS Code supports Auto Save, which by default saves your files after a delay. Check the **Auto Save** option in the **File** menu to turn on Auto Save or directly configure the `files.autoSave` user [setting](/docs/getstarted/settings.md).
+>**Tip**: VS Code supports Auto Save, which by default saves your files after a delay. Check the **Auto Save** option in the **File** menu to turn on Auto Save or directly configure the `files.autoSave` user [setting](/docs/editor/settings.md).
 
 ---
 

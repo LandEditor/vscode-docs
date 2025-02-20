@@ -4,7 +4,7 @@ Area: editor
 TOCTitle: Emmet
 ContentId: baf4717c-ea52-486e-9ea3-7bf1c4134dad
 PageTitle: Emmet in Visual Studio Code
-DateApproved: 12/11/2024
+DateApproved: 02/06/2025
 MetaDescription: Using Emmet abbreviations inside Visual Studio Code.
 ---
 # Emmet in Visual Studio Code
@@ -31,7 +31,7 @@ This setting allows using the `kbstyle(Tab)` key for indentation when text is no
 
 ### Emmet when quickSuggestions are disabled
 
-If you have disabled the `setting(editor.quickSuggestions)` [setting](/docs/getstarted/settings.md), you won't see suggestions as you type. You can still trigger suggestions manually by pressing `kb(editor.action.triggerSuggest)` and see the preview.
+If you have disabled the `setting(editor.quickSuggestions)` [setting](/docs/editor/settings.md), you won't see suggestions as you type. You can still trigger suggestions manually by pressing `kb(editor.action.triggerSuggest)` and see the preview.
 
 ### Disable Emmet in suggestions
 
@@ -203,7 +203,7 @@ The syntax for tab stops in custom Emmet snippets follows the [Textmate snippets
 
 ## Emmet configuration
 
-Below are Emmet [settings](/docs/getstarted/settings.md) that you can use to customize your Emmet experience in VS Code.
+Below are Emmet [settings](/docs/editor/settings.md) that you can use to customize your Emmet experience in VS Code.
 
 * `setting(emmet.includeLanguages)`
 

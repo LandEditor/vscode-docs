@@ -4,7 +4,7 @@ Area: languages
 TOCTitle: PowerShell
 ContentId: 8688bb6d-793e-4a37-aed2-5af4cfe89940
 PageTitle: PowerShell editing with Visual Studio Code
-DateApproved: 12/11/2024
+DateApproved: 02/06/2025
 MetaDescription: Learn about using PowerShell in Visual Studio Code
 ---
 # PowerShell in Visual Studio Code
@@ -226,8 +226,8 @@ If you find a bug, [open an issue][18] and revert to the stable version while we
 [04]: /docs/editor/editingevolved#_reference-information
 [05]: /docs/editor/intellisense
 [06]: /docs/editor/userdefinedsnippets
-[07]: /docs/getstarted/settings
-[08]: /docs/getstarted/themes
+[07]: /docs/editor/settings
+[08]: /docs/editor/themes
 [09]: /docs/getstarted/tips-and-tricks#_errors-and-warnings
 [10]: /docs/getstarted/userinterface#_outline-view
 [11]: http://github.com/PowerShell/PSScriptAnalyzer
