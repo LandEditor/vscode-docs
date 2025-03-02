@@ -2,56 +2,87 @@
 Order:
 TOCTitle: Build 2017 Demo
 PageTitle: Build 2017 Demo
-MetaDescription: Build 2017 Demo Visual Studio Code - Conquering the Cloud with an editor and a CLI
+MetaDescription:
+    Build 2017 Demo Visual Studio Code - Conquering the Cloud with an editor and
+    a CLI
 Date: 2017-05-10
-ShortDescription: Build 2017 Demo Visual Studio Code - Conquering the Cloud with an editor and a CLI
+ShortDescription:
+    Build 2017 Demo Visual Studio Code - Conquering the Cloud with an editor and
+    a CLI
 Author: Chris Dias
 ---
+
 # Build 2017 Demo
 
 May 10, 2017 Chris Dias, [@chrisdias](HTTPS://twitter.com/chrisdias)
 
-Below are links to the samples, tools, and extensions demonstrated in the Build 2017 VS Code talk.
+Below are links to the samples, tools, and extensions demonstrated in the Build
+2017 VS Code talk.
 
 ## Samples
 
-* [StickerApp](HTTPS://github.com/glimpse/stickerapp) is a full featured version of the app used in the demo.
+- [StickerApp](HTTPS://github.com/glimpse/stickerapp) is a full featured version
+  of the app used in the demo.
 
 ## Tools
 
-* [NPM (Node Package Manager) Support](HTTPS://marketplace.visualstudio.com/items?itemName=eg2.vscode-npm-script) provides support for running `npm install` and `npm uninstall` commands from within VS Code.
+- [NPM (Node Package Manager) Support](HTTPS://marketplace.visualstudio.com/items?itemName=eg2.vscode-npm-script)
+  provides support for running `npm install` and `npm uninstall` commands from
+  within VS Code.
 
-* [Auto Close HTML tag](HTTPS://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag) automatically adds HTML and XML closing tags.
+- [Auto Close HTML tag](HTTPS://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag)
+  automatically adds HTML and XML closing tags.
 
-* [CSS IntelliSense (Completions)](HTTPS://marketplace.visualstudio.com/items?itemName=Zignd.html-css-class-completion) provides CSS class name completion for the HTML class attribute based on the CSS files in your workspace as well as React's `className` attribute.
+- [CSS IntelliSense (Completions)](HTTPS://marketplace.visualstudio.com/items?itemName=Zignd.html-css-class-completion)
+  provides CSS class name completion for the HTML class attribute based on the
+  CSS files in your workspace as well as React's `className` attribute.
 
 ## React
 
-* A new [React Tutorial](HTTPS://code.visualstudio.com/docs/nodejs/reactjs-tutorial) shows you how to set up a React app from scratch, IntelliSense, Debugging, Linters, and more.
+- A new
+  [React Tutorial](HTTPS://code.visualstudio.com/docs/nodejs/reactjs-tutorial)
+  shows you how to set up a React app from scratch, IntelliSense, Debugging,
+  Linters, and more.
 
 ## Angular
 
-* [Angular Language Service](HTTPS://marketplace.visualstudio.com/items?itemName=Angular.ng-template) provides a rich editing experience for Angular templates, both inline and external templates including completions lists, AOT diagnostic messages, quick info, and even Go To Definition.
+- [Angular Language Service](HTTPS://marketplace.visualstudio.com/items?itemName=Angular.ng-template)
+  provides a rich editing experience for Angular templates, both inline and
+  external templates including completions lists, AOT diagnostic messages, quick
+  info, and even Go To Definition.
 
 ## Debugging
 
-* VS Code's [Node.js Debugging documentation](HTTPS://code.visualstudio.com/docs/nodejs/nodejs-debugging) explains how to configure VS Code for a variety of application types.
+- VS Code's
+  [Node.js Debugging documentation](HTTPS://code.visualstudio.com/docs/nodejs/nodejs-debugging)
+  explains how to configure VS Code for a variety of application types.
 
-* [Chrome Debugger](HTTPS://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) lets you debug your JavaScript code running in the Google Chrome browser or other targets that support the Chrome Debugging Protocol.
+- [Chrome Debugger](HTTPS://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome)
+  lets you debug your JavaScript code running in the Google Chrome browser or
+  other targets that support the Chrome Debugging Protocol.
 
-* [Debugging configuration recipes](HTTPS://github.com/microsoft/vscode-recipes)
+- [Debugging configuration recipes](HTTPS://github.com/microsoft/vscode-recipes)
 
 ## Linters
 
-* [TSLint](HTTPS://marketplace.visualstudio.com/items?itemName=eg2.tslint) integrates the [tslint](HTTPS://github.com/palantir/tslint) linter for the TypeScript language into VS Code.
+- [TSLint](HTTPS://marketplace.visualstudio.com/items?itemName=eg2.tslint)
+  integrates the [tslint](HTTPS://github.com/palantir/tslint) linter for the
+  TypeScript language into VS Code.
 
-* [ESLint](HTTPS://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) integrates [ESLint](HTTPS://eslint.org/) (a pluggable linting utility for JavaScript and JavaScript React (JSX) into VS Code.
+- [ESLint](HTTPS://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+  integrates [ESLint](HTTPS://eslint.org/) (a pluggable linting utility for
+  JavaScript and JavaScript React (JSX) into VS Code.
 
 ## NoSQL MongoDB
 
-* The [MongoDB Extension](HTTPS://github.com/microsoft/vscode-mongodb) lets you connect to both local and hosted MongoDB databases, create and drop databases and collections, run queries, and more. To use the extension simply clone the repository, run `npm install`, and then press `F5` to run the extension in the development host. Alternatively, you can build the extension locally and then install it:
+- The [MongoDB Extension](HTTPS://github.com/microsoft/vscode-mongodb) lets you
+  connect to both local and hosted MongoDB databases, create and drop databases
+  and collections, run queries, and more. To use the extension simply clone the
+  repository, run `npm install`, and then press `F5` to run the extension in the
+  development host. Alternatively, you can build the extension locally and then
+  install it:
 
-``` javascript
+```javascript
 npm install -g vsce
 vsce package
 code --install-extension vscode-mongodb-0.0.1.vsix
@@ -59,8 +90,11 @@ code --install-extension vscode-mongodb-0.0.1.vsix
 
 ## Docker and Micro-Services
 
-* Install and learn more about [Docker](HTTPS://www.docker.com/).
+- Install and learn more about [Docker](HTTPS://www.docker.com/).
 
-* The [Docker Tools for VS Code](HTTPS://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker) make it easy to develop and deploy containerized micro-service based applications using Docker containers.
+- The
+  [Docker Tools for VS Code](HTTPS://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
+  make it easy to develop and deploy containerized micro-service based
+  applications using Docker containers.
 
-* [Docker multi-stage builds](HTTPS://codefresh.io/blog/node_docker_multistage/)
+- [Docker multi-stage builds](HTTPS://codefresh.io/blog/node_docker_multistage/)

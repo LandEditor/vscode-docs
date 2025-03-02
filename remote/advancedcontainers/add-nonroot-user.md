@@ -7,41 +7,75 @@ ContentId: 59f77c6b-0800-41e6-b7c8-a2d8e749ea17
 MetaDescription: Add non-root user to a container
 DateApproved: 02/06/2025
 ---
+
 # Add a non-root user to a container
 
-Many Docker images use root as the default user, but there are cases where you may prefer to use a non-root user instead. If you do so, there are some **quirks with local filesystem (bind) mounts** that you should know about. Specifically:
+Many Docker images use root as the default user, but there are cases where you
+may prefer to use a non-root user instead. If you do so, there are some **quirks
+with local filesystem (bind) mounts** that you should know about. Specifically:
 
-* **Docker Desktop for Mac**: Inside the container, any mounted files/folders will act as if they are owned by the container user you specify. Locally, all filesystem operations will use the permissions of your local user instead.
+- **Docker Desktop for Mac**: Inside the container, any mounted files/folders
+  will act as if they are owned by the container user you specify. Locally, all
+  filesystem operations will use the permissions of your local user instead.
 
-* **Docker Desktop for Windows**: Inside the container, any mounted files/folders will appear as if they are owned by `root` but the user you specify will still be able to read/write them and all files will be executable. Locally, all filesystem operations will use the permissions of your local user instead. This is because there is fundamentally no way to directly map Windows-style file permissions to Linux.
+- **Docker Desktop for Windows**: Inside the container, any mounted
+  files/folders will appear as if they are owned by `root` but the user you
+  specify will still be able to read/write them and all files will be
+  executable. Locally, all filesystem operations will use the permissions of
+  your local user instead. This is because there is fundamentally no way to
+  directly map Windows-style file permissions to Linux.
 
-* **Docker CE/EE on Linux**: Inside the container, any mounted files/folders will have the exact same permissions as outside the container - including the owner user ID (UID) and group ID (GID). Because of this, your container user will either need to have the same UID or be in a group with the same GID. The actual name of the user / group does not matter. The first user on a machine typically gets a UID of 1000, so most containers use this as the ID of the user to try to avoid this problem.
+- **Docker CE/EE on Linux**: Inside the container, any mounted files/folders
+  will have the exact same permissions as outside the container - including the
+  owner user ID (UID) and group ID (GID). Because of this, your container user
+  will either need to have the same UID or be in a group with the same GID. The
+  actual name of the user / group does not matter. The first user on a machine
+  typically gets a UID of 1000, so most containers use this as the ID of the
+  user to try to avoid this problem.
 
 ## Specifying a user for VS Code
 
-If the image or Dockerfile you are using **already provides an optional non-root user** (like the `node` image) but still defaults to root, you can opt into having Visual Studio Code (server) and any sub-processes (terminals, tasks, debugging) use it by specifying the `remoteUser` property in `devcontainer.json`:
+If the image or Dockerfile you are using **already provides an optional non-root
+user** (like the `node` image) but still defaults to root, you can opt into
+having Visual Studio Code (server) and any sub-processes (terminals, tasks,
+debugging) use it by specifying the `remoteUser` property in
+`devcontainer.json`:
 
 ```json
 "remoteUser": "user-name-goes-here"
 ```
 
-On Linux, if you are referencing a **Dockerfile, image, or Docker Compose** in `devcontainer.json`, this will also automatically update the container user's UID/GID to match your local user to avoid the bind mount permissions problem that exists in this environment (unless you set `"updateRemoteUserUID": false`).
+On Linux, if you are referencing a **Dockerfile, image, or Docker Compose** in
+`devcontainer.json`, this will also automatically update the container user's
+UID/GID to match your local user to avoid the bind mount permissions problem
+that exists in this environment (unless you set `"updateRemoteUserUID": false`).
 
-Since this setting only affects VS Code and related sub-processes, VS Code needs to be restarted (or the window reloaded) for it to take effect. However, UID/GID updates are only applied when the container is created and requires a rebuild to change.
+Since this setting only affects VS Code and related sub-processes, VS Code needs
+to be restarted (or the window reloaded) for it to take effect. However, UID/GID
+updates are only applied when the container is created and requires a rebuild to
+change.
 
 ## Specifying the default container user
 
-In some cases, you may need all processes in the container to run as a different user (for example, due to startup requirements) rather than just VS Code. How you do this varies slightly depending on whether or not you are using Docker Compose.
+In some cases, you may need all processes in the container to run as a different
+user (for example, due to startup requirements) rather than just VS Code. How
+you do this varies slightly depending on whether or not you are using Docker
+Compose.
 
-* **Dockerfile and image**: Add the `containerUser` property to this same file.
+- **Dockerfile and image**: Add the `containerUser` property to this same file.
 
     ```json
     "containerUser": "user-name-goes-here"
     ```
 
-    On Linux, like `remoteUser`, this will also automatically update the container user's UID/GID to match your local user to avoid the bind mount permissions problem that exists in this environment (unless you set `"updateRemoteUserUID": false`).
+    On Linux, like `remoteUser`, this will also automatically update the
+    container user's UID/GID to match your local user to avoid the bind mount
+    permissions problem that exists in this environment (unless you set
+    `"updateRemoteUserUID": false`).
 
-* **Docker Compose**: Update (or [`extend`](/docs/devcontainers/create-dev-container.md#extend-your-docker-compose-file-for-development)) your `docker-compose.yml` with the following for the appropriate service:
+- **Docker Compose**: Update (or
+  [`extend`](/docs/devcontainers/create-dev-container.md#extend-your-docker-compose-file-for-development))
+  your `docker-compose.yml` with the following for the appropriate service:
 
     ```yaml
     user: user-name-or-UID-goes-here
@@ -49,9 +83,16 @@ In some cases, you may need all processes in the container to run as a different
 
 ## Creating a non-root user
 
-While any images or Dockerfiles that come from the Dev Containers extension will include a non-root user with a UID/GID of 1000 (typically either called `vscode` or `node`), many base images and Dockerfiles do not.  Fortunately, you can update or create a Dockerfile that adds a non-root user into your container.
+While any images or Dockerfiles that come from the Dev Containers extension will
+include a non-root user with a UID/GID of 1000 (typically either called `vscode`
+or `node`), many base images and Dockerfiles do not. Fortunately, you can update
+or create a Dockerfile that adds a non-root user into your container.
 
-Running your application as a non-root user is recommended even in production (since it is more secure), so this is a good idea even if you're reusing an existing Dockerfile. For example, this snippet for a Debian/Ubuntu container will create a user called `user-name-goes-here`, give it the ability to use `sudo`, and set it as the default:
+Running your application as a non-root user is recommended even in production
+(since it is more secure), so this is a good idea even if you're reusing an
+existing Dockerfile. For example, this snippet for a Debian/Ubuntu container
+will create a user called `user-name-goes-here`, give it the ability to use
+`sudo`, and set it as the default:
 
 ```docker
 ARG USERNAME=user-name-goes-here
@@ -76,13 +117,21 @@ RUN groupadd --gid $USER_GID $USERNAME \
 USER $USERNAME
 ```
 
-> **Tip:** If you hit an error when building about the GID or UID already existing, the image you selected likely already has a non-root user you can take advantage of directly.
+> **Tip:** If you hit an error when building about the GID or UID already
+> existing, the image you selected likely already has a non-root user you can
+> take advantage of directly.
 
-In either case, if you've already built the container and connected to it, run **Dev Containers: Rebuild Container** from the Command Palette (`kbstyle(F1)`) to pick up the change. Otherwise run **Dev Containers: Open Folder in Container...** to connect to the container.
+In either case, if you've already built the container and connected to it, run
+**Dev Containers: Rebuild Container** from the Command Palette (`kbstyle(F1)`)
+to pick up the change. Otherwise run **Dev Containers: Open Folder in
+Container...** to connect to the container.
 
 ## Change the UID/GID of an existing container user
 
-While the `remoteUser` property tries to automatically update the UID/GID as appropriate on Linux when using a **Dockerfile or image**, you can use this snippet in your Dockerfile to manually change the UID/GID of a user instead. Update the `ARG` values as appropriate.
+While the `remoteUser` property tries to automatically update the UID/GID as
+appropriate on Linux when using a **Dockerfile or image**, you can use this
+snippet in your Dockerfile to manually change the UID/GID of a user instead.
+Update the `ARG` values as appropriate.
 
 ```docker
 ARG USERNAME=user-name-goes-here
