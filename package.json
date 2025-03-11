@@ -1,17 +1,17 @@
 {
-	"dependencies": {},
-	"devDependencies": {
-		"lint-staged": "15.4.3",
-		"shelljs": "0.8.5"
+	"name": "@codeeditorland/docs",
+	"scripts": {
+		"check-lfs": "node ./build/check-lfs.js",
+		"prepare": "husky install"
 	},
 	"lint-staged": {
 		"*.{gif,mp4,jpg,png,GIF,MP4,JPG,PNG}": [
 			"npm run check-lfs"
 		]
 	},
-	"name": "@codeeditorland/docs",
-	"scripts": {
-		"check-lfs": "node ./build/check-lfs.js",
-		"prepare": "husky install"
+	"dependencies": {},
+	"devDependencies": {
+		"lint-staged": "15.4.3",
+		"shelljs": "0.8.5"
 	}
 }
